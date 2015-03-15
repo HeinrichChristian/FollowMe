@@ -1,0 +1,46 @@
+﻿<Window x:Class="FollowMe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        Title="MainWindow" Height="807" Width="1281">
+    <Grid Margin="0,0,0,0">
+
+        <Button Content="Mit Drone verbinden" Name="ButtonConnect" HorizontalAlignment="Left" Margin="21,20,0,0" VerticalAlignment="Top" Width="200" Click="ButtonConnect_Click"/>
+        <Button Content="Zeige Kamerabild" Name="ButtonShowCamera" HorizontalAlignment="Left" Margin="30,176,0,0" VerticalAlignment="Top" Width="200" Click="ButtonShowCamera_Click" Height="64"/>
+
+        <WindowsFormsHost Margin="330,115,374,254">
+            <wf:Panel x:Name="CameraPanel" Width="320" Height="240">
+            </wf:Panel>
+        </WindowsFormsHost>
+
+        <TextBox Name="TextConnectionStatus" HorizontalAlignment="Left" Height="23" Margin="237,17,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215"/>
+        <Button Content="Verbindung beenden" Name="ButtonDisconnect" HorizontalAlignment="Left" Margin="491,17,0,0" VerticalAlignment="Top" Width="200" Click="ButtonDisconnect_Click"/>
+        <Button Content="Blinken" Name="ButtonBlinkLeds" HorizontalAlignment="Left" Margin="21,54,0,0" VerticalAlignment="Top" Width="138" Click="ButtonBlinkLeds_Click"/>
+        <TextBox Name="TextBoxXCoordinate" HorizontalAlignment="Left" Height="23" Margin="267,590,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TextBoxYCoordinate" HorizontalAlignment="Left" Height="23" Margin="267,633,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Rotes Ziel X-Koordinate" HorizontalAlignment="Left" Margin="116,587,0,0" VerticalAlignment="Top" Width="151"/>
+        <Label Content="Rotes Ziel Y-Koordinate" HorizontalAlignment="Left" Margin="116,630,0,0" VerticalAlignment="Top" Width="137"/>
+        <Label Content="QR-Code" HorizontalAlignment="Left" Margin="128,707,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox Name="TextBoxQrCode" HorizontalAlignment="Left" Height="23" Margin="267,710,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Batterie" HorizontalAlignment="Left" Margin="699,17,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBox Name="TextBoxBattery" HorizontalAlignment="Left" Height="23" Margin="754,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TextBoxJoystick" HorizontalAlignment="Left" Height="180" Margin="919,433,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="324"/>
+        <ComboBox Name="ComboBoxJoysticks" HorizontalAlignment="Left" Margin="1027,15,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBoxJoysticks_SelectionChanged"/>
+        <Label Content="Joysticks" HorizontalAlignment="Left" Margin="958,15,0,0" VerticalAlignment="Top"/>
+        <Button Name="ButtonRefreshJoysticks" Content="aktualisieren" HorizontalAlignment="Left" Margin="1168,15,0,0" VerticalAlignment="Top" Width="75" Click="ButtonRefreshJoysticks_Click"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="201" Margin="958,55,0,0" Stroke="Black" VerticalAlignment="Top" Width="285"/>
+        <RadioButton Name="RadioButton1" Content="Button 1" HorizontalAlignment="Left" Margin="975,55,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="RadioButton2" Content="Button 2" HorizontalAlignment="Left" Margin="975,75,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="RadioButton3" Content="Button 3" HorizontalAlignment="Left" Margin="975,95,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="RadioButton4" Content="Button 4" HorizontalAlignment="Left" Margin="975,115,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="RadioButton5" Content="Button 5" HorizontalAlignment="Left" Margin="1092,55,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="RadioButton6" Content="Button 6" HorizontalAlignment="Left" Margin="1092,75,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="RadioButton7" Content="Button 7" HorizontalAlignment="Left" Margin="1092,95,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="RadioButton8" Content="Button 8" HorizontalAlignment="Left" Margin="1092,115,0,0" VerticalAlignment="Top"/>
+        <Label Content="linker Knüppel" HorizontalAlignment="Left" Margin="975,138,0,0" VerticalAlignment="Top"/>
+        <Label Content="rechter Knüppel" HorizontalAlignment="Left" Margin="1135,138,0,0" VerticalAlignment="Top"/>
+        <Slider Name="SliderLeftXAxes" HorizontalAlignment="Left" Margin="989,193,0,0" VerticalAlignment="Top" Width="63" Minimum="-1" Maximum="1"/>
+
+
+    </Grid>
+</Window>
