@@ -1,22 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using EZ_B;
+using EZ_B.ARDrone;
 using EZ_B.CameraDetection;
+using EZ_B.Joystick;
 
 namespace FollowMe
 {
@@ -27,12 +20,13 @@ namespace FollowMe
     {
         float moveSensitivivivity = 0.20f;
         int moveSleepTime = 400;
-        EZ_B.Joystick.Joystick _joystick = null;
+        Joystick joystick = null;
 
 
         Camera camera;
-        private System.Timers.Timer batteryTimer;
+        private Timer batteryTimer;
         private readonly UCEZB_Connect ezB_Connect1 = new UCEZB_Connect();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -40,7 +34,7 @@ namespace FollowMe
             camera = new Camera(ezB_Connect1.EZB);
             camera.OnNewFrame += _camera_OnNewFrame;
 
-            
+            RefreshJoysticks();
 
             
         }
@@ -106,20 +100,31 @@ namespace FollowMe
         private  void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             Debug.WriteLine("Battery: " + ezB_Connect1.EZB.ARDrone.CurrentNavigationData.BatteryLevel);
-           Dispatcher.Invoke(() => TextBoxBattery.Text = ezB_Connect1.EZB.ARDrone.CurrentNavigationData.BatteryLevel.ToString());
-
+           Dispatcher.Invoke(
+               () =>
+               {
+                   TextBoxBattery.Text = ezB_Connect1.EZB.ARDrone.CurrentNavigationData.BatteryLevel.ToString();
+                   if (ezB_Connect1.EZB.ARDrone.CurrentNavigationData.BatteryLevel > 17)
+                   {
+                       TextBoxBattery.Background =  Brushes.GreenYellow;
+                   }
+                   else
+                   {
+                       TextBoxBattery.Background = Brushes.OrangeRed;
+                   }
+               });
             
         }
         private void ButtonConnect_Click(object sender, RoutedEventArgs e)
         {
-            batteryTimer = new System.Timers.Timer();
+            batteryTimer = new Timer();
             batteryTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             batteryTimer.Interval = 5000;
             batteryTimer.Enabled = true;
 
             try
             {
-                ezB_Connect1.EZB.ARDrone.Connect(EZ_B.ARDrone.ARDrone.ARDroneVersionEnum.V2);
+                ezB_Connect1.EZB.ARDrone.Connect(ARDrone.ARDroneVersionEnum.V2);
 
                 if (ezB_Connect1.EZB.ARDrone.IsConnected)
                 {
@@ -156,21 +161,24 @@ namespace FollowMe
 
         private void ButtonBlinkLeds_Click(object sender, RoutedEventArgs e)
         {
-            ezB_Connect1.EZB.ARDrone.PlayLedAnimation(EZ_B.ARDrone.Commands.LedAnimationEnum.BlinkRed, 2, 10);
+            ezB_Connect1.EZB.ARDrone.PlayLedAnimation(Commands.LedAnimationEnum.BlinkRed, 2, 10);
         }
 
         private void ButtonRefreshJoysticks_Click(object sender, RoutedEventArgs e)
         {
-        
-            if (_joystick != null) 
+            RefreshJoysticks();
+        }
+
+        private void RefreshJoysticks()
+        {
+            if (joystick != null)
             {
-                _joystick.Dispose();
-                _joystick = null;
-         //       Invokers.SetAppendText(textBox1, true, "Disconnected");
+                joystick.Dispose();
+                joystick = null;
             }
 
             ComboBoxJoysticks.Items.Clear();
-            var availableDevices = EZ_B.Joystick.Joystick.GetAvailableDevices();
+            var availableDevices = Joystick.GetAvailableDevices();
             if (availableDevices != null)
             {
                 foreach (var availableDevice in availableDevices)
@@ -182,24 +190,27 @@ namespace FollowMe
 
         private void ComboBoxJoysticks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            EZ_B.Joystick.JoystickDevice jd = (EZ_B.Joystick.JoystickDevice)ComboBoxJoysticks.SelectedItem;
-            _joystick = new EZ_B.Joystick.Joystick(jd, ezB_Connect1.EZB);
-            _joystick.OnControllerAction += new EZ_B.Joystick.Joystick.OnJoystickMoveHandler(_joystick_OnControllerAction);
-            _joystick.StartEventWatcher();
+            JoystickDevice jd = (JoystickDevice)ComboBoxJoysticks.SelectedItem;
+            joystick = new Joystick(jd, ezB_Connect1.EZB);
+            joystick.OnControllerAction += new Joystick.OnJoystickMoveHandler(_joystick_OnControllerAction);
+            joystick.StartEventWatcher();
         }
 
         void _joystick_OnControllerAction()
         {
-            if (_joystick.ButtonPressed(0))
+            // Button 1 -> blink LEDs
+            if (joystick.ButtonPressed(0))
             {
                 Dispatcher.Invoke(() => RadioButton1.IsChecked = true);
+                if(ezB_Connect1.EZB.ARDrone.IsConnected)
+                    ezB_Connect1.EZB.ARDrone.PlayLedAnimation(Commands.LedAnimationEnum.BlinkRed, 2, 10);
             }
             else
             {
                 Dispatcher.Invoke(() => RadioButton1.IsChecked = false);
             }
 
-            if (_joystick.ButtonPressed(2))
+            if (joystick.ButtonPressed(1))
             {
                 Dispatcher.Invoke(() => RadioButton2.IsChecked = true);
             }
@@ -208,7 +219,7 @@ namespace FollowMe
                 Dispatcher.Invoke(() => RadioButton2.IsChecked = false);
             }
 
-            if (_joystick.ButtonPressed(3))
+            if (joystick.ButtonPressed(2))
             {
                 Dispatcher.Invoke(() => RadioButton3.IsChecked = true);
             }
@@ -217,7 +228,7 @@ namespace FollowMe
                 Dispatcher.Invoke(() => RadioButton3.IsChecked = false);
             }
 
-            if (_joystick.ButtonPressed(4))
+            if (joystick.ButtonPressed(3))
             {
                 Dispatcher.Invoke(() => RadioButton4.IsChecked = true);
             }
@@ -226,7 +237,7 @@ namespace FollowMe
                 Dispatcher.Invoke(() => RadioButton4.IsChecked = false);
             }
 
-            if (_joystick.ButtonPressed(5))
+            if (joystick.ButtonPressed(4))
             {
                 Dispatcher.Invoke(() => RadioButton5.IsChecked = true);
             }
@@ -235,7 +246,7 @@ namespace FollowMe
                 Dispatcher.Invoke(() => RadioButton5.IsChecked = false);
             }
 
-            if (_joystick.ButtonPressed(6))
+            if (joystick.ButtonPressed(5))
             {
                 Dispatcher.Invoke(() => RadioButton6.IsChecked = true);
             }
@@ -244,7 +255,7 @@ namespace FollowMe
                 Dispatcher.Invoke(() => RadioButton6.IsChecked = false);
             }
 
-            if (_joystick.ButtonPressed(7))
+            if (joystick.ButtonPressed(6))
             {
                 Dispatcher.Invoke(() => RadioButton7.IsChecked = true);
             }
@@ -253,24 +264,37 @@ namespace FollowMe
                 Dispatcher.Invoke(() => RadioButton7.IsChecked = false);
             }
 
-            if (_joystick.ButtonPressed(8))
+            // Button 8 -> Takeoff (deadman switch)
+            if (joystick.ButtonPressed(7))
             {
+                ezB_Connect1.EZB.ARDrone.TakeOff();
                 Dispatcher.Invoke(() => RadioButton8.IsChecked = true);
             }
             else
             {
+                ezB_Connect1.EZB.ARDrone.Land();
                 Dispatcher.Invoke(() => RadioButton8.IsChecked = false);
             }
 
-
-            if (_joystick.AxisXStateChanged())
+            // left stick
+            if (joystick.AxisXStateChanged())
             {
-                Dispatcher.Invoke(() => TextBoxJoystick.Text += _joystick.GetAxisX.ToString());
+                Dispatcher.Invoke(() => TextBoxLeftXAxes.Text = joystick.GetAxisX.ToString(CultureInfo.InvariantCulture));
             }
 
-            if (_joystick.AxisYStateChanged())
+            if (joystick.AxisYStateChanged())
             {
-                Dispatcher.Invoke(() => TextBoxJoystick.Text += _joystick.GetAxisY.ToString());
+                Dispatcher.Invoke(() => TextBoxLeftYAxes.Text = joystick.GetAxisY.ToString(CultureInfo.InvariantCulture));
+            }
+
+            // right stick
+            if (joystick.AxisZStateChanged())
+            {
+                Dispatcher.Invoke(() => TextBoxRightXAxes.Text = joystick.GetAxisZ.ToString(CultureInfo.InvariantCulture));
+            }
+            if (joystick.AxisRzStateChanged())
+            {
+                Dispatcher.Invoke(() => TextBoxRightYAxes.Text = joystick.GetAxisRz.ToString(CultureInfo.InvariantCulture));
             }
         }
     }
