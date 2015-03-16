@@ -1,8 +1,8 @@
-﻿<Window x:Class="FollowMe.MainWindow"
+﻿<Window x:Class="FollowMe.DroneControlView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
-        Title="MainWindow" Height="1024" Width="1280">
+        Title="DroneControlView" Height="1024" Width="1280">
     <Grid Margin="0,0,0,0">
 
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Margin="788,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>

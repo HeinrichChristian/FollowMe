@@ -1,0 +1,51 @@
+<Window x:Class="FollowMe.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DroneControlView" Height="500" Width="1280">
+
+    <Grid Margin="0,0,0,67">
+
+        <!--<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Margin="788,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>-->
+
+
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="352" Margin="920,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="323"/>
+
+        <Button Content="Mit Drone verbinden" x:Name="ButtonConnect" HorizontalAlignment="Left" Margin="21,20,0,0" VerticalAlignment="Top" Width="200" Height="50" />
+        <Button Content="Zeige Kamerabild" x:Name="ButtonShowCamera" HorizontalAlignment="Left" Margin="21,115,0,0" VerticalAlignment="Top" Width="200" Height="42"/>
+
+        <TextBox x:Name="DroneStatus" HorizontalAlignment="Left" Height="23" Margin="242,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215"/>
+        <Button Content="Verbindung beenden" x:Name="ButtonDisconnect" HorizontalAlignment="Left" Margin="491,17,0,0" VerticalAlignment="Top" Width="200" Height="53" />
+        <TextBox x:Name="TextBoxXCoordinate" HorizontalAlignment="Left" Height="23" Margin="161,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TextBoxYCoordinate" HorizontalAlignment="Left" Height="23" Margin="161,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Rotes Ziel X-Koordinate" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" Width="151"/>
+        <Label Content="Rotes Ziel Y-Koordinate" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" Width="137"/>
+        <Label Content="QR-Code" HorizontalAlignment="Left" Margin="367,228,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="TextBoxQrCode" HorizontalAlignment="Left" Height="23" Margin="551,228,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Batterie" HorizontalAlignment="Left" Margin="808,19,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="BatteryLevel" HorizontalAlignment="Left" Height="23" Margin="808,51,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60"/>
+        <ComboBox x:Name="AvailableJoystickDevices" SelectedItem="{Binding SelectedJoystickDevice}" HorizontalAlignment="Left" Margin="995,15,0,0" VerticalAlignment="Top" Width="152" 
+                   DisplayMemberPath="Name" SelectedValuePath="Name"/>
+        <Label Content="Joysticks" HorizontalAlignment="Left" Margin="934,10,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonRefreshJoysticks" Content="aktualisieren" HorizontalAlignment="Left" Margin="1152,17,0,0" VerticalAlignment="Top" Width="75" />
+        <RadioButton x:Name="Button1Pressed" Content="1 - Rotes LED-Blinken (10sec)" HorizontalAlignment="Left" Margin="975,55,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Button2Pressed" Content="2" HorizontalAlignment="Left" Margin="975,75,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Button3Pressed" Content="3" HorizontalAlignment="Left" Margin="975,95,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Button4Pressed" Content="4" HorizontalAlignment="Left" Margin="975,115,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Button5Pressed" Content="5" HorizontalAlignment="Left" Margin="975,136,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Button6Pressed" Content="6" HorizontalAlignment="Left" Margin="975,156,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Button7Pressed" Content="7" HorizontalAlignment="Left" Margin="975,176,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Button8Pressed" Content="8 - Takeoff - zum Landen loslassen " HorizontalAlignment="Left" Margin="975,196,0,0" VerticalAlignment="Top"/>
+        <Label Content="linker Knppel &#xD;&#xA;Pitch / Yaw" HorizontalAlignment="Left" Margin="986,228,0,0" VerticalAlignment="Top"/>
+        <Label Content="rechter Knppel &#xA;Nick / Roll" HorizontalAlignment="Left" Margin="1118,228,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="LeftStickXAxis" HorizontalAlignment="Left" Height="23" Margin="995,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105"/>
+        <Label Content="X" HorizontalAlignment="Left" Margin="973,272,0,0" VerticalAlignment="Top"/>
+        <Label Content="Y" HorizontalAlignment="Left" Margin="973,308,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="LeftStickYAxis" HorizontalAlignment="Left" Height="23" Margin="995,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105"/>
+        <TextBox x:Name="RightStickXAxis" HorizontalAlignment="Left" Height="23" Margin="1118,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105"/>
+        <TextBox x:Name="RightStickYAxis" HorizontalAlignment="Left" Height="23" Margin="1118,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105"/>
+
+
+    </Grid>
+
+</Window>

@@ -6,8 +6,6 @@ E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\aForge.dll
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\EZ-QRCode.dll
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\EZ_B.xml
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.csprojResolveAssemblyReference.cache
-E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\MainWindow.baml
-E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\MainWindow.g.cs
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\App.g.cs
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe_MarkupCompile.cache
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.g.resources
@@ -15,3 +13,17 @@ E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.Prop
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.csproj.GenerateResource.Cache
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.exe
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.pdb
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\Caliburn.Micro.dll
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\Caliburn.Micro.Platform.dll
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\System.Windows.Interactivity.dll
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\Caliburn.Micro.xml
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\Caliburn.Micro.Platform.xml
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\System.Windows.Interactivity.xml
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\ShellView.baml
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\ShellView.g.cs
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe_MarkupCompile.lref
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\App.baml
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\DroneControlView.baml
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\DroneControlView.g.cs
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.CameraForm.resources

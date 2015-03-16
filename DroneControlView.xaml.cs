@@ -14,9 +14,9 @@ using EZ_B.Joystick;
 namespace FollowMe
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für DroneControlView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DroneControlView : Window
     {
         float moveSensitivivivity = 0.20f;
         int moveSleepTime = 400;
@@ -27,7 +27,7 @@ namespace FollowMe
         private Timer batteryTimer;
         private readonly UCEZB_Connect ezB_Connect1 = new UCEZB_Connect();
 
-        public MainWindow()
+        public DroneControlView()
         {
             InitializeComponent();
             ezB_Connect1.EZB.ShowDebugWindow();
