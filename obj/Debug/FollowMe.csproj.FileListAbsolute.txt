@@ -24,6 +24,4 @@ E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\ShellView.g.c
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\GeneratedInternalTypeHelper.g.cs
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe_MarkupCompile.lref
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\App.baml
-E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\DroneControlView.baml
-E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\DroneControlView.g.cs
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.CameraForm.resources

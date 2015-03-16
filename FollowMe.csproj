@@ -75,20 +75,10 @@
     <Compile Include="CameraForm.Designer.cs">
       <DependentUpon>CameraForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DroneControlViewModel.cs" />
     <Compile Include="IShell.cs" />
     <Compile Include="ShellViewModel.cs" />
-    <Page Include="DroneControlView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Invokers.cs" />
-    <Compile Include="DroneControlView.xaml.cs">
-      <DependentUpon>DroneControlView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ShellView.xaml">
