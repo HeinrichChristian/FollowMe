@@ -2,9 +2,20 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converter="clr-namespace:FollowMe.Converter"
         Title="DroneControlView" Height="500" Width="1280">
+    <Window.Resources>
+        <converter:BatteryValueToColorConverter x:Key="BatteryValueToColorConverter" />
+    </Window.Resources>
 
     <Grid Margin="0,0,0,67">
+
+        <!--<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Margin="788,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>-->
+
+
+      
+        <Rectangle Fill="{Binding Path=BatteryLevel, Converter={StaticResource BatteryValueToColorConverter}}" HorizontalAlignment="Left" Height="80" Margin="796,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="84"/>
+
 
         <!--<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Margin="788,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>-->
 
@@ -36,7 +47,7 @@
         <RadioButton x:Name="Button6Pressed" Content="6" HorizontalAlignment="Left" Margin="975,156,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="Button7Pressed" Content="7" HorizontalAlignment="Left" Margin="975,176,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="Button8Pressed" Content="8 - Takeoff - zum Landen loslassen " HorizontalAlignment="Left" Margin="975,196,0,0" VerticalAlignment="Top"/>
-        <Label Content="linker Knppel &#xD;&#xA;Pitch / Yaw" HorizontalAlignment="Left" Margin="986,228,0,0" VerticalAlignment="Top"/>
+        <Label Content="linker Knppel &#xA;Pitch / Yaw" HorizontalAlignment="Left" Margin="986,228,0,0" VerticalAlignment="Top"/>
         <Label Content="rechter Knppel &#xA;Nick / Roll" HorizontalAlignment="Left" Margin="1118,228,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="LeftStickXAxis" HorizontalAlignment="Left" Height="23" Margin="995,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105"/>
         <Label Content="X" HorizontalAlignment="Left" Margin="973,272,0,0" VerticalAlignment="Top"/>
