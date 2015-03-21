@@ -10,9 +10,7 @@ namespace FollowMe.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var batteryValue = 0;
-            Int32.TryParse(value as string, out batteryValue);
-
+            int batteryValue = Int32.Parse(value.ToString());
             if (batteryValue < 17)
             {
                 return Brushes.Red;

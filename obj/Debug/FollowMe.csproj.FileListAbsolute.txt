@@ -25,3 +25,10 @@ E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\GeneratedInte
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe_MarkupCompile.lref
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\App.baml
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.CameraForm.resources
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\Caliburn.Micro.Logging.dll
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\Caliburn.Micro.Logging.pdb
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\Caliburn.Micro.Logging.log4net.dll
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\log4net.dll
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\Caliburn.Micro.Logging.log4net.pdb
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\log4net.xml
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\log4net.config

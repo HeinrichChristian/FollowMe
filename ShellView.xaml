@@ -22,7 +22,7 @@
 
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="352" Margin="920,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="323"/>
 
-        <Button Content="Mit Drone verbinden" x:Name="ButtonConnect" HorizontalAlignment="Left" Margin="21,20,0,0" VerticalAlignment="Top" Width="200" Height="50" />
+        <Button Content="Mit Drone verbinden" x:Name="ButtonConnect" HorizontalAlignment="Left" Margin="21,20,0,0" VerticalAlignment="Top" Width="200" Height="50" IsEnabled="{Binding ArDroneNetworkVisible}"/>
         <Button Content="Zeige Kamerabild" x:Name="ButtonShowCamera" HorizontalAlignment="Left" Margin="21,115,0,0" VerticalAlignment="Top" Width="200" Height="42"/>
 
         <TextBox x:Name="DroneStatus" HorizontalAlignment="Left" Height="23" Margin="242,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215"/>
@@ -45,7 +45,7 @@
         <RadioButton x:Name="Button4Pressed" Content="4" HorizontalAlignment="Left" Margin="975,115,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="Button5Pressed" Content="5" HorizontalAlignment="Left" Margin="975,136,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="Button6Pressed" Content="6" HorizontalAlignment="Left" Margin="975,156,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="Button7Pressed" Content="7" HorizontalAlignment="Left" Margin="975,176,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Button7Pressed" Content="7 - Set flat trim - vor Takeoff ausf&uml;hren" HorizontalAlignment="Left" Margin="975,176,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="Button8Pressed" Content="8 - Takeoff - zum Landen loslassen " HorizontalAlignment="Left" Margin="975,196,0,0" VerticalAlignment="Top"/>
         <Label Content="linker Knppel &#xA;Pitch / Yaw" HorizontalAlignment="Left" Margin="986,228,0,0" VerticalAlignment="Top"/>
         <Label Content="rechter Knppel &#xA;Nick / Roll" HorizontalAlignment="Left" Margin="1118,228,0,0" VerticalAlignment="Top"/>

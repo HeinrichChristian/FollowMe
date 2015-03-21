@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Globalization;
+using System.Threading;
 using System.Timers;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Forms;
-using System.Windows.Threading;
 using Caliburn.Micro;
 using EZ_B;
 using EZ_B.ARDrone;
@@ -15,8 +13,10 @@ using EZ_B.Joystick;
 using Timer = System.Timers.Timer;
 
 namespace FollowMe {
-    public class ShellViewModel : Caliburn.Micro.PropertyChangedBase, IShell
+    public class ShellViewModel : PropertyChangedBase, IShell
     {
+        private static readonly ILog log = LogManager.GetLog(typeof(ShellViewModel));
+
         #region privates
         private float moveSensitivivivity = 0.20f;
         private int moveSleepTime = 400;
@@ -25,6 +25,7 @@ namespace FollowMe {
         private Timer batteryTimer;
         private readonly UCEZB_Connect ezB_Connect1 = new UCEZB_Connect();
         private int _batteryLevel;
+        private bool ardroneAccessPointVisible;
         private bool _button1Pressed;
         private bool _button2Pressed;
         private bool _button3Pressed;
@@ -41,13 +42,15 @@ namespace FollowMe {
         private float _targetYCoordinate;
         private List<JoystickDevice> _availableJoystickDevices;
         private string _qrCode;
-        private System.Windows.Forms.Control _cameraPanel = new System.Windows.Forms.Control();
+        private Control _cameraPanel = new Control();
         private JoystickDevice _selectedJoystickDevice;
         private string _droneStatus;
         private CameraForm cameraForm;
+        private bool _arDroneNetworkVisible;
+
         #endregion
 
- 
+     
 
         #region public properties
 
@@ -74,6 +77,16 @@ namespace FollowMe {
             {
                 _button1Pressed = value;
                 NotifyOfPropertyChange(() => Button1Pressed);
+            }
+        }
+
+        public bool ArDroneNetworkVisible
+        {
+            get { return _arDroneNetworkVisible; }
+            set
+            {
+                _arDroneNetworkVisible = value;
+                NotifyOfPropertyChange(() => ArDroneNetworkVisible);
             }
         }
 
@@ -151,6 +164,7 @@ namespace FollowMe {
             set
             {
                 _button7Pressed = value;
+                
                 NotifyOfPropertyChange(() => Button7Pressed);
             }
         }
@@ -282,7 +296,7 @@ namespace FollowMe {
         /// <summary>
         /// The control to show the camera view
         /// </summary>
-        public System.Windows.Forms.Control CameraPanel
+        public Control CameraPanel
         {
             get { return _cameraPanel; }
             set
@@ -309,6 +323,7 @@ namespace FollowMe {
         /// </summary>
         public ShellViewModel()
         {
+            log.Info("Init");
             ezB_Connect1.EZB.ShowDebugWindow();
             camera = new Camera(ezB_Connect1.EZB);
             camera.OnNewFrame += _camera_OnNewFrame;
@@ -317,14 +332,16 @@ namespace FollowMe {
 
             cameraForm = new CameraForm();
             cameraForm.Show();
+
+            batteryTimer = new Timer();
+            batteryTimer.Elapsed += OnArDroneStatusTimedEvent;
+            batteryTimer.Interval = 5000;
+            batteryTimer.Enabled = true;
         }
 
         public void ButtonConnect(object sender, RoutedEventArgs e)
         {
-            batteryTimer = new Timer();
-            batteryTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            batteryTimer.Interval = 5000;
-            batteryTimer.Enabled = true;
+           
 
             try
             {
@@ -379,19 +396,12 @@ namespace FollowMe {
             RefreshJoysticks();
         }
 
-        private void OnTimedEvent(object source, ElapsedEventArgs e)
+
+        private void OnArDroneStatusTimedEvent(object source, ElapsedEventArgs e)
         {
-            Debug.WriteLine("Battery: " + ezB_Connect1.EZB.ARDrone.CurrentNavigationData.BatteryLevel);
             
+            //ArDroneNetworkVisible = IsArdroneNetworkVisible();
             BatteryLevel = ezB_Connect1.EZB.ARDrone.CurrentNavigationData.BatteryLevel;
-                    //if (ezB_Connect1.EZB.ARDrone.CurrentNavigationData.BatteryLevel > 17)
-                    //{
-                    //    TextBoxBattery.Background = Brushes.GreenYellow;
-                    //}
-                    //else
-                    //{
-                    //    TextBoxBattery.Background = Brushes.OrangeRed;
-                    //}
         }
 
         private void RefreshJoysticks()
@@ -435,6 +445,7 @@ namespace FollowMe {
                 Button1Pressed = false;
             }
 
+            // Button 2
             if (joystick.ButtonPressed(1))
             {
                 Button2Pressed = true;
@@ -480,9 +491,11 @@ namespace FollowMe {
                 Button6Pressed = false;
             }
 
+            //  Must be called before take-off (start engines). Must be called on a flat surface. This flattens the trim values for the surface. 
             if (joystick.ButtonPressed(6))
             {
                 Button7Pressed = true;
+                ezB_Connect1.EZB.ARDrone.SetFlatTrim();
             }
             else
             {
@@ -501,25 +514,77 @@ namespace FollowMe {
                 Button8Pressed = false;
             }
 
-            // left stick
+            // left stick, X axis -> yaw
             if (joystick.AxisXStateChanged())
             {
                 LeftStickXAxis = joystick.GetAxisX;
-            }
 
+                ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, joystick.GetAxisX);
+                Thread.Sleep(moveSleepTime);
+                ezB_Connect1.EZB.ARDrone.Hover();
+
+            }
+            // left stick, Y axis -> pitch
             if (joystick.AxisYStateChanged())
             {
                 LeftStickYAxis = joystick.GetAxisY;
+
+                if (joystick.GetAxisY > 0.3)
+                {
+                    ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(0, 0, -moveSensitivivivity, 0);
+                    Thread.Sleep(moveSleepTime);
+                    ezB_Connect1.EZB.ARDrone.Hover();
+                }
+
+                if (joystick.GetAxisY < - 0.3)
+                {
+                    ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(0, 0, moveSensitivivivity, 0);
+                    Thread.Sleep(moveSleepTime);
+                    ezB_Connect1.EZB.ARDrone.Hover();
+                }
             }
 
-            // right stick
+            // right stick, X axis-> roll
             if (joystick.AxisZStateChanged())
             {
                 RightStickXAxis = joystick.GetAxisZ;
+
+                if (joystick.GetAxisZ > 0.3)
+                {
+                    ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(-moveSensitivivivity, 0, 0, 0);
+                    Thread.Sleep(moveSleepTime);
+                    ezB_Connect1.EZB.ARDrone.Hover();
+                }
+
+                if (joystick.GetAxisZ < -0.3)
+                {
+                    ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(moveSensitivivivity, 0, 0, 0);
+                    Thread.Sleep(moveSleepTime);
+                    ezB_Connect1.EZB.ARDrone.Hover();
+                }
+
+
             }
+            // right stick, Y axis -> nick
             if (joystick.AxisRzStateChanged())
             {
                 RightStickYAxis = joystick.GetAxisRz;
+
+                if (joystick.GetAxisRz > 0.3)
+                {
+                    ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(0, moveSensitivivivity, 0, 0);
+                    Thread.Sleep(moveSleepTime);
+                    ezB_Connect1.EZB.ARDrone.Hover();
+                }
+
+                if (joystick.GetAxisRz < -0.3)
+                {
+                    ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(0, -moveSensitivivivity, 0, 0);
+                    Thread.Sleep(moveSleepTime);
+                    ezB_Connect1.EZB.ARDrone.Hover();
+                }
+
+                
             }
         }
         void _camera_OnNewFrame()
@@ -565,6 +630,25 @@ namespace FollowMe {
 
             }
 
+        }
+
+
+        public bool IsArdroneNetworkVisible()
+        {
+            //WlanClient client = new WlanClient();
+            //foreach (WlanClient.WlanInterface wlanIface in client.Interfaces)
+            //{
+            //    // Lists all networks with WEP security
+            //    Wlan.WlanAvailableNetwork[] networks = wlanIface.GetAvailableNetworkList(0);
+            //    foreach (Wlan.WlanAvailableNetwork network in networks)
+            //    {
+            //        if (network.dot11DefaultCipherAlgorithm == Wlan.Dot11CipherAlgorithm.None && network.profileName.StartsWith("ardrone2"))
+            //        {
+                        return true;
+            //        }
+            //    }
+            //}
+            //return false;
         }
     }
 }
