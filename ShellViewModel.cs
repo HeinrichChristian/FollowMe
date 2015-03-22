@@ -13,40 +13,52 @@ using EZ_B.Joystick;
 using Timer = System.Timers.Timer;
 
 namespace FollowMe {
+    /// <summary>
+    /// The viewModel for the shellview.
+    /// </summary>
     public class ShellViewModel : PropertyChangedBase, IShell
     {
-        private static readonly ILog log = LogManager.GetLog(typeof(ShellViewModel));
+        private static readonly ILog Log = LogManager.GetLog(typeof(ShellViewModel));
 
         #region privates
-        private float moveSensitivivivity = 0.20f;
-        private int moveSleepTime = 400;
-        private Joystick joystick = null;
+
+        /// <summary>
+        /// This value is send to the drone
+        /// </summary>
+        private const float MoveSensitivivivity = 0.20f;
+
+        /// <summary>
+        /// After sending a move command this amount of milliseconds the thread sleeps
+        /// </summary>
+        private const int MoveSleepTimeMilliseconds = 400;
+
+        private Joystick joystick;
         private Camera camera;
-        private Timer batteryTimer;
-        private readonly UCEZB_Connect ezB_Connect1 = new UCEZB_Connect();
-        private int _batteryLevel;
+        private Timer arDroneStatusTimer;
+        private readonly UCEZB_Connect ezbConnect = new UCEZB_Connect();
+        private int batteryLevel;
         private bool ardroneAccessPointVisible;
-        private bool _button1Pressed;
-        private bool _button2Pressed;
-        private bool _button3Pressed;
-        private bool _button4Pressed;
-        private bool _button5Pressed;
-        private bool _button6Pressed;
-        private bool _button7Pressed;
-        private bool _button8Pressed;
-        private float _leftStickXAxis;
-        private float _leftStickYAxis;
-        private float _rightStickXAxis;
-        private float _rightStickYAxis;
-        private float _targetXCoordinate;
-        private float _targetYCoordinate;
-        private List<JoystickDevice> _availableJoystickDevices;
-        private string _qrCode;
-        private Control _cameraPanel = new Control();
-        private JoystickDevice _selectedJoystickDevice;
-        private string _droneStatus;
-        private CameraForm cameraForm;
-        private bool _arDroneNetworkVisible;
+        private bool button1Pressed;
+        private bool button2Pressed;
+        private bool button3Pressed;
+        private bool button4Pressed;
+        private bool button5Pressed;
+        private bool button6Pressed;
+        private bool button7Pressed;
+        private bool button8Pressed;
+        private float leftStickXAxis;
+        private float leftStickYAxis;
+        private float rightStickXAxis;
+        private float rightStickYAxis;
+        private float targetXCoordinate;
+        private float targetYCoordinate;
+        private List<JoystickDevice> availableJoystickDevices;
+        private string qrCode;
+        private Control cameraPanel = new Control();
+        private JoystickDevice selectedJoystickDevice;
+        private string droneStatus;
+        private readonly CameraForm cameraForm;
+        private bool connectToDroneEnabled;
 
         #endregion
 
@@ -59,11 +71,21 @@ namespace FollowMe {
         /// </summary>
         public int BatteryLevel
         {
-            get { return _batteryLevel; }
+            get { return batteryLevel; }
             set
             {
-                _batteryLevel = value;
+                batteryLevel = value;
                 NotifyOfPropertyChange(() => BatteryLevel);
+            }
+        }
+
+        public bool ConnectToDroneEnabled
+        {
+            get { return connectToDroneEnabled; }
+            set
+            {
+                connectToDroneEnabled = value;
+                NotifyOfPropertyChange(() => ConnectToDroneEnabled);
             }
         }
 
@@ -72,33 +94,23 @@ namespace FollowMe {
         /// </summary>
         public bool Button1Pressed
         {
-            get { return _button1Pressed; }
+            get { return button1Pressed; }
             set
             {
-                _button1Pressed = value;
+                button1Pressed = value;
                 NotifyOfPropertyChange(() => Button1Pressed);
             }
         }
-
-        public bool ArDroneNetworkVisible
-        {
-            get { return _arDroneNetworkVisible; }
-            set
-            {
-                _arDroneNetworkVisible = value;
-                NotifyOfPropertyChange(() => ArDroneNetworkVisible);
-            }
-        }
-
+        
         /// <summary>
         /// true, if the button 2 of the joystick is pressed
         /// </summary>
         public bool Button2Pressed
         {
-            get { return _button2Pressed; }
+            get { return button2Pressed; }
             set
             {
-                _button2Pressed = value;
+                button2Pressed = value;
                 NotifyOfPropertyChange(() => Button2Pressed);
             }
         }
@@ -108,10 +120,10 @@ namespace FollowMe {
         /// </summary>
         public bool Button3Pressed
         {
-            get { return _button3Pressed; }
+            get { return button3Pressed; }
             set
             {
-                _button3Pressed = value;
+                button3Pressed = value;
                 NotifyOfPropertyChange(() => Button3Pressed);
             }
         }
@@ -121,10 +133,10 @@ namespace FollowMe {
         /// </summary>
         public bool Button4Pressed
         {
-            get { return _button4Pressed; }
+            get { return button4Pressed; }
             set
             {
-                _button4Pressed = value;
+                button4Pressed = value;
                 NotifyOfPropertyChange(() => Button4Pressed);
             }
         }
@@ -134,10 +146,10 @@ namespace FollowMe {
         /// </summary>
         public bool Button5Pressed
         {
-            get { return _button5Pressed; }
+            get { return button5Pressed; }
             set
             {
-                _button5Pressed = value;
+                button5Pressed = value;
                 NotifyOfPropertyChange(() => Button5Pressed);
             }
         }
@@ -147,97 +159,116 @@ namespace FollowMe {
         /// </summary>
         public bool Button6Pressed
         {
-            get { return _button6Pressed; }
+            get { return button6Pressed; }
             set
             {
-                _button6Pressed = value;
+                button6Pressed = value;
                 NotifyOfPropertyChange(() => Button6Pressed);
             }
         }
 
         /// <summary>
-        /// true, if the button 2 of the joystick is pressed
+        /// true, if the button 7 of the joystick is pressed
         /// </summary>
         public bool Button7Pressed
         {
-            get { return _button7Pressed; }
+            get { return button7Pressed; }
             set
             {
-                _button7Pressed = value;
+                button7Pressed = value;
                 
                 NotifyOfPropertyChange(() => Button7Pressed);
             }
         }
 
         /// <summary>
-        /// true, if the button 2 of the joystick is pressed
+        /// true, if the button 8 of the joystick is pressed
+        /// Used to TakeOff
         /// </summary>
         public bool Button8Pressed
         {
-            get { return _button8Pressed; }
+            get { return button8Pressed; }
             set
             {
-                _button8Pressed = value;
+                button8Pressed = value;
                 NotifyOfPropertyChange(() => Button8Pressed);
             }
         }
 
+        /// <summary>
+        /// Yaw - X axis of left stick
+        /// </summary>
         public float LeftStickXAxis
         {
-            get { return _leftStickXAxis; }
+            get { return leftStickXAxis; }
             set
             {
-                _leftStickXAxis = value; 
+                leftStickXAxis = value; 
                 NotifyOfPropertyChange(() => LeftStickXAxis);
             }
         }
 
+        /// <summary>
+        /// Pitch - Y axis of left stick
+        /// </summary>
         public float LeftStickYAxis
         {
-            get { return _leftStickYAxis; }
+            get { return leftStickYAxis; }
             set
             {
-                _leftStickYAxis = value; 
+                leftStickYAxis = value; 
                 NotifyOfPropertyChange(() => LeftStickYAxis);
             }
         }
 
+        /// <summary>
+        /// Roll - X axis of right stick
+        /// </summary>
         public float RightStickXAxis
         {
-            get { return _rightStickXAxis; }
+            get { return rightStickXAxis; }
             set
             {
-                _rightStickXAxis = value;
+                rightStickXAxis = value;
                 NotifyOfPropertyChange(() => RightStickXAxis);
             }
         }
 
+        /// <summary>
+        /// Nick -  Y axis of right stick
+        /// </summary>
         public float RightStickYAxis
         {
-            get { return _rightStickYAxis; }
+            get { return rightStickYAxis; }
             set
             {
-                _rightStickYAxis = value; 
+                rightStickYAxis = value; 
                 NotifyOfPropertyChange(() => RightStickYAxis);
             }
         }
 
+        /// <summary>
+        /// The X coordinate of a recognized target
+        /// </summary>
         public float TargetXCoordinate
         {
-            get { return _targetXCoordinate; }
+            get { return targetXCoordinate; }
             set
             {
-                _targetXCoordinate = value; 
+                targetXCoordinate = value; 
                 NotifyOfPropertyChange(() => TargetXCoordinate);
             }
         }
 
+        /// <summary>
+        /// The Y coordinate of a recognized target
+        /// </summary>
         public float TargetYCoordinate
         {
-            get { return _targetYCoordinate; }
+            get { return targetYCoordinate; }
             set
             {
-                _targetYCoordinate = value; 
+                targetYCoordinate = value; 
                 NotifyOfPropertyChange(() => TargetYCoordinate);
             }
         }
@@ -249,16 +280,16 @@ namespace FollowMe {
         {
             get
             {
-                if (_availableJoystickDevices == null)
+                if (availableJoystickDevices == null)
                 {
-                    _availableJoystickDevices = new List<JoystickDevice>();
+                    availableJoystickDevices = new List<JoystickDevice>();
                     RefreshJoysticks();
                 }
-                return _availableJoystickDevices;
+                return availableJoystickDevices;
             }
             set
             {
-                _availableJoystickDevices = value; 
+                availableJoystickDevices = value; 
                 NotifyOfPropertyChange(() => AvailableJoystickDevices);
             }
         }
@@ -268,10 +299,10 @@ namespace FollowMe {
         /// </summary>
         public JoystickDevice SelectedJoystickDevice
         {
-            get { return _selectedJoystickDevice; }
+            get { return selectedJoystickDevice; }
             set
             {
-                _selectedJoystickDevice = value;
+                selectedJoystickDevice = value;
                 if (value != null)
                 {
                     ActivateJoystick();
@@ -285,10 +316,10 @@ namespace FollowMe {
         /// </summary>
         public string QrCode
         {
-            get { return _qrCode; }
+            get { return qrCode; }
             set
             {
-                _qrCode = value; 
+                qrCode = value; 
                 NotifyOfPropertyChange(() => QrCode);
             }
         }
@@ -298,20 +329,20 @@ namespace FollowMe {
         /// </summary>
         public Control CameraPanel
         {
-            get { return _cameraPanel; }
+            get { return cameraPanel; }
             set
             {
-                _cameraPanel = value;
+                cameraPanel = value;
                 NotifyOfPropertyChange(() => CameraPanel);
             }
         }
 
         public string DroneStatus
         {
-            get { return _droneStatus; }
+            get { return droneStatus; }
             set
             {
-                _droneStatus = value;
+                droneStatus = value;
                 NotifyOfPropertyChange(() => DroneStatus);
             }
         }
@@ -319,13 +350,15 @@ namespace FollowMe {
         #endregion
 
         /// <summary>
-        /// Constructor
+        /// Constructor.
+        /// Starts a timer which checks every 5 seconds the battery level of the connected AR.Drone
         /// </summary>
-        public ShellViewModel()
+        public ShellViewModel(bool ardroneAccessPointVisible)
         {
-            log.Info("Init");
-            ezB_Connect1.EZB.ShowDebugWindow();
-            camera = new Camera(ezB_Connect1.EZB);
+            this.ardroneAccessPointVisible = ardroneAccessPointVisible;
+            Log.Info("Init");
+            ezbConnect.EZB.ShowDebugWindow();
+            camera = new Camera(ezbConnect.EZB);
             camera.OnNewFrame += _camera_OnNewFrame;
 
             RefreshJoysticks();
@@ -333,43 +366,55 @@ namespace FollowMe {
             cameraForm = new CameraForm();
             cameraForm.Show();
 
-            batteryTimer = new Timer();
-            batteryTimer.Elapsed += OnArDroneStatusTimedEvent;
-            batteryTimer.Interval = 5000;
-            batteryTimer.Enabled = true;
+            ConnectToDroneEnabled = true;
+
+            arDroneStatusTimer = new Timer();
+            arDroneStatusTimer.Elapsed += OnArDroneStatusTimedEvent;
+            arDroneStatusTimer.Interval = 5000;
+            arDroneStatusTimer.Enabled = true;
         }
 
+        /// <summary>
+        /// Connect to AR.Drone.
+        /// The PC must first be connected via WIFI to the AR.Drone.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ButtonConnect(object sender, RoutedEventArgs e)
         {
-           
-
             try
             {
-                ezB_Connect1.EZB.ARDrone.Connect(ARDrone.ARDroneVersionEnum.V2);
-
-                if (ezB_Connect1.EZB.ARDrone.IsConnected)
+                ezbConnect.EZB.ARDrone.Connect(ARDrone.ARDroneVersionEnum.V2);
+                 var controlConfig = ezbConnect.EZB.ARDrone.GetControlConfig();
+                Log.Info(controlConfig);
+                if (!string.IsNullOrEmpty(controlConfig) && ezbConnect.EZB.ARDrone.IsConnected)
                 {
                     DroneStatus = "Verbunden";
+                    ConnectToDroneEnabled = false;
                 }
                 else
                 {
                     DroneStatus = "Nicht Verbunden";
                 }
-                //Debug.WriteLine(ezB_Connect1.EZB.ARDrone.GetControlConfig());
             }
             catch (Exception exception)
             {
                 DroneStatus = "Fehler " + exception;
-                //MessageBox.Show("Fehler: " + exception.ToString());
+                Log.Error(exception);
             }
         }
 
-        public void ButtonDisconnect()
-        {
-            ezB_Connect1.EZB.ARDrone.Disconnect();
-        }
+        //public void ButtonDisconnect()
+        //{
+        //    ezB_Connect1.EZB.ARDrone.Disconnect();
+        //    ConnectToDroneEnabled = true;
+        //}
 
-
+        /// <summary>
+        /// Start the camera
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ButtonShowCamera(object sender, RoutedEventArgs e)
         {
             camera.StartCamera(
@@ -378,19 +423,34 @@ namespace FollowMe {
                   320,
                   240);
 
-            ezB_Connect1.EZB.ARDrone.StartVideo();
+            ezbConnect.EZB.ARDrone.StartVideo();
         }
 
+        /// <summary>
+        /// Disconnect from AR.Drone
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ButtonDisconnect(object sender, RoutedEventArgs e)
         {
-            ezB_Connect1.EZB.ARDrone.Disconnect();
+            ezbConnect.EZB.ARDrone.Disconnect();
         }
 
+        /// <summary>
+        /// Play LED animation on AR.Drone
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ButtonBlinkLeds(object sender, RoutedEventArgs e)
         {
-            ezB_Connect1.EZB.ARDrone.PlayLedAnimation(Commands.LedAnimationEnum.BlinkRed, 2, 10);
+            ezbConnect.EZB.ARDrone.PlayLedAnimation(Commands.LedAnimationEnum.BlinkRed, 2, 10);
         }
 
+        /// <summary>
+        /// Refresh the joystick list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ButtonRefreshJoysticks(object sender, RoutedEventArgs e)
         {
             RefreshJoysticks();
@@ -400,8 +460,8 @@ namespace FollowMe {
         private void OnArDroneStatusTimedEvent(object source, ElapsedEventArgs e)
         {
             
-            //ArDroneNetworkVisible = IsArdroneNetworkVisible();
-            BatteryLevel = ezB_Connect1.EZB.ARDrone.CurrentNavigationData.BatteryLevel;
+            //ConnectToDroneEnabled = IsArdroneNetworkVisible();
+            BatteryLevel = ezbConnect.EZB.ARDrone.CurrentNavigationData.BatteryLevel;
         }
 
         private void RefreshJoysticks()
@@ -423,22 +483,30 @@ namespace FollowMe {
             }
         }
 
+        /// <summary>
+        /// Activate the selected joystick for EZB.
+        /// Define method _joystick_OnControllerAction to be called on a controller action.
+        /// </summary>
         private void ActivateJoystick()
         {
-            JoystickDevice jd = SelectedJoystickDevice;
-            joystick = new Joystick(jd, ezB_Connect1.EZB);
-            joystick.OnControllerAction += new Joystick.OnJoystickMoveHandler(_joystick_OnControllerAction);
+            JoystickDevice joystickDevice = SelectedJoystickDevice;
+            joystick = new Joystick(joystickDevice, ezbConnect.EZB);
+            joystick.OnControllerAction += _joystick_OnControllerAction;
             joystick.StartEventWatcher();
         }
 
-        void _joystick_OnControllerAction()
+        /// <summary>
+        /// Called on a controller action.
+        /// Check every button if pressed and every stick if moved and execute the defined methods.
+        /// </summary>
+        private void _joystick_OnControllerAction()
         {
             // Button 1 -> blink LEDs
             if (joystick.ButtonPressed(0))
             {
                 Button1Pressed = true;
-                if (ezB_Connect1.EZB.ARDrone.IsConnected)
-                    ezB_Connect1.EZB.ARDrone.PlayLedAnimation(Commands.LedAnimationEnum.BlinkRed, 2, 10);
+                if (ezbConnect.EZB.ARDrone.IsConnected)
+                    ezbConnect.EZB.ARDrone.PlayLedAnimation(Commands.LedAnimationEnum.BlinkRed, 2, 10);
             }
             else
             {
@@ -446,56 +514,21 @@ namespace FollowMe {
             }
 
             // Button 2
-            if (joystick.ButtonPressed(1))
-            {
-                Button2Pressed = true;
-            }
-            else
-            {
-                Button2Pressed = false;
-            }
+            Button2Pressed = joystick.ButtonPressed(1);
 
-            if (joystick.ButtonPressed(2))
-            {
-                Button3Pressed = true;
-            }
-            else
-            {
-                Button3Pressed = false;
-            }
+            Button3Pressed = joystick.ButtonPressed(2);
 
-            if (joystick.ButtonPressed(3))
-            {
-                Button4Pressed = true;
-            }
-            else
-            {
-                Button4Pressed = false;
-            }
+            Button4Pressed = joystick.ButtonPressed(3);
 
-            if (joystick.ButtonPressed(4))
-            {
-                Button5Pressed = true;
-            }
-            else
-            {
-                Button5Pressed = false;
-            }
+            Button5Pressed = joystick.ButtonPressed(4);
 
-            if (joystick.ButtonPressed(5))
-            {
-                Button6Pressed = true;
-            }
-            else
-            {
-                Button6Pressed = false;
-            }
+            Button6Pressed = joystick.ButtonPressed(5);
 
             //  Must be called before take-off (start engines). Must be called on a flat surface. This flattens the trim values for the surface. 
             if (joystick.ButtonPressed(6))
             {
                 Button7Pressed = true;
-                ezB_Connect1.EZB.ARDrone.SetFlatTrim();
+                ezbConnect.EZB.ARDrone.SetFlatTrim();
             }
             else
             {
@@ -505,12 +538,12 @@ namespace FollowMe {
             // Button 8 -> Takeoff (deadman switch)
             if (joystick.ButtonPressed(7))
             {
-                ezB_Connect1.EZB.ARDrone.TakeOff();
+                ezbConnect.EZB.ARDrone.TakeOff();
                 Button8Pressed = true;
             }
             else
             {
-                ezB_Connect1.EZB.ARDrone.Land();
+                ezbConnect.EZB.ARDrone.Land();
                 Button8Pressed = false;
             }
 
@@ -519,9 +552,9 @@ namespace FollowMe {
             {
                 LeftStickXAxis = joystick.GetAxisX;
 
-                ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, joystick.GetAxisX);
-                Thread.Sleep(moveSleepTime);
-                ezB_Connect1.EZB.ARDrone.Hover();
+                //ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, joystick.GetAxisX);
+                //Thread.Sleep(moveSleepTimeMilliseconds);
+                //ezB_Connect1.EZB.ARDrone.Hover();
 
             }
             // left stick, Y axis -> pitch
@@ -531,16 +564,18 @@ namespace FollowMe {
 
                 if (joystick.GetAxisY > 0.3)
                 {
-                    ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(0, 0, -moveSensitivivivity, 0);
-                    Thread.Sleep(moveSleepTime);
-                    ezB_Connect1.EZB.ARDrone.Hover();
+                    Log.Info("joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisY, 0, 0, -MoveSensitivivivity, 0);
+                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, -MoveSensitivivivity, 0);
+                    Thread.Sleep(MoveSleepTimeMilliseconds);
+                    ezbConnect.EZB.ARDrone.Hover();
                 }
 
                 if (joystick.GetAxisY < - 0.3)
                 {
-                    ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(0, 0, moveSensitivivivity, 0);
-                    Thread.Sleep(moveSleepTime);
-                    ezB_Connect1.EZB.ARDrone.Hover();
+                    Log.Info("joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisY, 0, 0, MoveSensitivivivity, 0);
+                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, MoveSensitivivivity, 0);
+                    Thread.Sleep(MoveSleepTimeMilliseconds);
+                    ezbConnect.EZB.ARDrone.Hover();
                 }
             }
 
@@ -551,16 +586,18 @@ namespace FollowMe {
 
                 if (joystick.GetAxisZ > 0.3)
                 {
-                    ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(-moveSensitivivivity, 0, 0, 0);
-                    Thread.Sleep(moveSleepTime);
-                    ezB_Connect1.EZB.ARDrone.Hover();
+                    Log.Info("joystick.GetAxisZ {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisZ, -MoveSensitivivivity, 0, 0, 0);
+                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(-MoveSensitivivivity, 0, 0, 0);
+                    Thread.Sleep(MoveSleepTimeMilliseconds);
+                    ezbConnect.EZB.ARDrone.Hover();
                 }
 
                 if (joystick.GetAxisZ < -0.3)
                 {
-                    ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(moveSensitivivivity, 0, 0, 0);
-                    Thread.Sleep(moveSleepTime);
-                    ezB_Connect1.EZB.ARDrone.Hover();
+                    Log.Info("joystick.GetAxisZ {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisZ, MoveSensitivivivity, 0, 0, 0);
+                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(MoveSensitivivivity, 0, 0, 0);
+                    Thread.Sleep(MoveSleepTimeMilliseconds);
+                    ezbConnect.EZB.ARDrone.Hover();
                 }
 
 
@@ -572,21 +609,27 @@ namespace FollowMe {
 
                 if (joystick.GetAxisRz > 0.3)
                 {
-                    ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(0, moveSensitivivivity, 0, 0);
-                    Thread.Sleep(moveSleepTime);
-                    ezB_Connect1.EZB.ARDrone.Hover();
+                    Log.Info("joystick.GetAxisRz {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisRz, 0, MoveSensitivivivity, 0, 0);
+                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, MoveSensitivivivity, 0, 0);
+                    Thread.Sleep(MoveSleepTimeMilliseconds);
+                    ezbConnect.EZB.ARDrone.Hover();
                 }
 
                 if (joystick.GetAxisRz < -0.3)
                 {
-                    ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(0, -moveSensitivivivity, 0, 0);
-                    Thread.Sleep(moveSleepTime);
-                    ezB_Connect1.EZB.ARDrone.Hover();
+                    Log.Info("joystick.GetAxisRz {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisRz, 0, -MoveSensitivivivity, 0, 0);
+                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, -MoveSensitivivivity, 0, 0);
+                    Thread.Sleep(MoveSleepTimeMilliseconds);
+                    ezbConnect.EZB.ARDrone.Hover();
                 }
 
                 
             }
         }
+
+        /// <summary>
+        /// New camera frame available, so we look again for markers
+        /// </summary>
         void _camera_OnNewFrame()
         {
             camera.UpdatePreview();
@@ -602,6 +645,7 @@ namespace FollowMe {
             }
             catch (Exception exception)
             {
+                Log.Error(exception);
             }
 
             try
@@ -625,30 +669,11 @@ namespace FollowMe {
                 //        btnRight_Click(null, null);
                 //}
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-
+                Log.Error(exception);
             }
 
-        }
-
-
-        public bool IsArdroneNetworkVisible()
-        {
-            //WlanClient client = new WlanClient();
-            //foreach (WlanClient.WlanInterface wlanIface in client.Interfaces)
-            //{
-            //    // Lists all networks with WEP security
-            //    Wlan.WlanAvailableNetwork[] networks = wlanIface.GetAvailableNetworkList(0);
-            //    foreach (Wlan.WlanAvailableNetwork network in networks)
-            //    {
-            //        if (network.dot11DefaultCipherAlgorithm == Wlan.Dot11CipherAlgorithm.None && network.profileName.StartsWith("ardrone2"))
-            //        {
-                        return true;
-            //        }
-            //    }
-            //}
-            //return false;
         }
     }
 }

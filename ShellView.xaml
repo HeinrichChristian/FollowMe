@@ -22,7 +22,7 @@
 
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="352" Margin="920,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="323"/>
 
-        <Button Content="Mit Drone verbinden" x:Name="ButtonConnect" HorizontalAlignment="Left" Margin="21,20,0,0" VerticalAlignment="Top" Width="200" Height="50" IsEnabled="{Binding ArDroneNetworkVisible}"/>
+        <Button Content="Mit Drone verbinden" x:Name="ButtonConnect" HorizontalAlignment="Left" Margin="21,20,0,0" VerticalAlignment="Top" Width="200" Height="50" IsEnabled="{Binding ConnectToDroneEnabled}"/>
         <Button Content="Zeige Kamerabild" x:Name="ButtonShowCamera" HorizontalAlignment="Left" Margin="21,115,0,0" VerticalAlignment="Top" Width="200" Height="42"/>
 
         <TextBox x:Name="DroneStatus" HorizontalAlignment="Left" Height="23" Margin="242,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215"/>
