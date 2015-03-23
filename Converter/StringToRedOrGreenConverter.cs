@@ -1,24 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Data;
-using System.Windows.Media;
 
 namespace FollowMe.Converter
 {
-    [ValueConversion(typeof(int), typeof(Brushes))]   
-    public class BatteryValueToColorConverter : IValueConverter
+   [ValueConversion(typeof(string), typeof(Brushes))]   
+  
+    public class StringToRedOrGreenConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            int batteryValue = Int32.Parse(value.ToString());
-            if (batteryValue < 17)
+            
+            if (value == null ||  string.IsNullOrEmpty(value.ToString()))
             {
                 return Brushes.Red;
             }
-            else if(batteryValue < 40)
-            {
-                return Brushes.Orange;
-            }
+            
             return Brushes.LawnGreen;
         }
 

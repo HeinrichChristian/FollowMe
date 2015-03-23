@@ -87,6 +87,7 @@
       <DependentUpon>CameraForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Converter\BatteryValueToColorConverter.cs" />
+    <Compile Include="Converter\StringToRedOrGreenConverter.cs" />
     <Compile Include="IShell.cs" />
     <Compile Include="ShellViewModel.cs" />
     <Compile Include="App.xaml.cs">

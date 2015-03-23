@@ -34,7 +34,7 @@ namespace FollowMe {
 
         private Joystick joystick;
         private Camera camera;
-        private Timer arDroneStatusTimer;
+        private readonly Timer arDroneStatusTimer;
         private readonly UCEZB_Connect ezbConnect = new UCEZB_Connect();
         private int batteryLevel;
         private bool ardroneAccessPointVisible;
@@ -59,6 +59,13 @@ namespace FollowMe {
         private string droneStatus;
         private readonly CameraForm cameraForm;
         private bool connectToDroneEnabled;
+        private string selectedJoystick;
+        private float maxYaw;
+        private int maxVerticalSpeed;
+        private float maxEulerAngle;
+        private int maxAltitude;
+        private bool isOutside;
+        private bool flyingWithoutShell;
 
         #endregion
 
@@ -307,7 +314,18 @@ namespace FollowMe {
                 {
                     ActivateJoystick();
                 }
+                SelectedJoystick = selectedJoystickDevice.Name;
                 NotifyOfPropertyChange(() => SelectedJoystickDevice);
+            }
+        }
+
+        public string SelectedJoystick
+        {
+            get { return selectedJoystick; }
+            set
+            {
+                selectedJoystick = value; 
+                NotifyOfPropertyChange(() => SelectedJoystick);
             }
         }
 
@@ -344,6 +362,102 @@ namespace FollowMe {
             {
                 droneStatus = value;
                 NotifyOfPropertyChange(() => DroneStatus);
+            }
+        }
+
+
+        
+
+        #endregion
+        #region Settings
+
+        /// <summary>
+        /// Set true if you are flying outside 
+        /// ->  Method:EZ_B.AR­Drone.­Drone­Control.­Set­Is­Outside(­System.­Boolean) 
+        /// </summary>
+        public bool IsOutside
+        {
+            get { return isOutside; }
+            set
+            {
+                isOutside = value; 
+                NotifyOfPropertyChange(() => IsOutside);
+            }
+        }
+
+        /// <summary>
+        /// Set to TRUE if you are flying with the outside shell 
+        /// -> Method:EZ_B.AR­Drone.­Drone­Control.­Set­Is­Flying­Without­Shell(­System.­Boolean) 
+        /// </summary>
+        public bool FlyingWithoutShell
+        {
+            get { return flyingWithoutShell; }
+            set
+            {
+                flyingWithoutShell = value;
+                NotifyOfPropertyChange(() => FlyingWithoutShell);
+            }
+        }
+
+        /// <summary>
+        /// Maximum yaw (spin) speed of the AR.Drone, in radians per second. 
+        /// Recommanded values goes from (0.7) 40/s to (6.11) 350/s. Others values may cause instability. Default: 3.0 
+        /// -> Method:EZ_B.AR­Drone.­Drone­Control.­Set­Yaw(­System.­Single) 
+        /// </summary>
+        public float MaxYaw
+        {
+            get { return maxYaw; }
+            set
+            {
+                maxYaw = value;
+                NotifyOfPropertyChange(() => MaxYaw);
+            }
+        }
+
+        /// <summary>
+        /// Maximum vertical speed of the AR.Drone, in milimeters per second. 
+        /// Recommanded values goes from 200 to 2000. Others values may cause instability. Default: 1000 
+        /// -> Method:EZ_B.AR­Drone.­Drone­Control.­SetVZ­Max(­System.­Int32) 
+        /// </summary>
+        public int MaxVerticalSpeed
+        {
+            get { return maxVerticalSpeed; }
+            set
+            {
+                maxVerticalSpeed = value; 
+                NotifyOfPropertyChange(() => MaxVerticalSpeed);
+            }
+        }
+
+        /// <summary>
+        /// Set maximum bending angle for drone in radians for pitch and roll. 
+        /// I.E. Maximum angle for going forward, back, left or right.
+        /// This does not affect YAW (spin) Floating point between 0 (0 deg) and 0.52 (32 deg) Default: 0.25 
+        /// -> Method:EZ_B.AR­Drone.­Drone­Control.­Set­Euler­Angle­Max(­System.­Single) 
+        /// </summary>
+        public float MaxEulerAngle
+        {
+            get { return maxEulerAngle; }
+            set
+            {
+                maxEulerAngle = value;
+                NotifyOfPropertyChange(() => MaxEulerAngle);
+            }
+        }
+
+        /// <summary>
+        /// Maximum drone altitude in millimeters.
+        /// Give an integer value between 500 and 5000 to prevent the drone from flying above this limit, 
+        /// or set it to 10000 to let the drone fly as high as desired. Default: 3000 
+        /// -> Method:EZ_B.AR­Drone.­Drone­Control.­Set­Altitude­Max(­System.­Int32)
+        /// </summary>
+        public int MaxAltitude
+        {
+            get { return maxAltitude; }
+            set
+            {
+                maxAltitude = value;
+                NotifyOfPropertyChange(() => MaxAltitude);
             }
         }
 
@@ -404,6 +518,71 @@ namespace FollowMe {
             }
         }
 
+        /// <summary>
+        /// -> Method:EZ_B.AR­Drone.­Drone­Control.­Set­Yaw(­System.­Single) 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ButtonSendMaxYaw(object sender, RoutedEventArgs e)
+        {
+            Log.Info("SetYaw: {0}", MaxYaw);
+            ezbConnect.EZB.ARDrone.SetYaw(MaxYaw);
+        }
+
+        /// <summary>
+        /// -> Method:EZ_B.AR­Drone.­Drone­Control.­SetVZ­Max(­System.­Int32) 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ButtonSendMaxVerticalSpeed(object sender, RoutedEventArgs e)
+        {
+            Log.Info("SetVZMax: {0}", MaxVerticalSpeed);
+            ezbConnect.EZB.ARDrone.SetVZMax(MaxVerticalSpeed);
+        }
+
+        /// <summary>
+        /// -> Method:EZ_B.AR­Drone.­Drone­Control.­Set­Euler­Angle­Max(­System.­Single)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ButtonSendMaxEulerAngle(object sender, RoutedEventArgs e)
+        {
+            Log.Info("SetEulerAngleMax: {0}", MaxEulerAngle);
+            ezbConnect.EZB.ARDrone.SetEulerAngleMax(MaxEulerAngle);
+        }
+
+        /// <summary>
+        /// -> Method:EZ_B.AR­Drone.­Drone­Control.­Set­Altitude­Max(­System.­Int32)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ButtonSendMaxAltitude(object sender, RoutedEventArgs e)
+        {
+            Log.Info("SetAltitudeMax: {0}", MaxAltitude);
+            ezbConnect.EZB.ARDrone.SetAltitudeMax(MaxAltitude);
+        }
+
+        /// <summary>
+        ///  ->  Method:EZ_B.AR­Drone.­Drone­Control.­Set­Is­Outside(­System.­Boolean) 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ButtonSendIsOutside(object sender, RoutedEventArgs e)
+        {
+            Log.Info("SetIsOutside: {0}", IsOutside);
+            ezbConnect.EZB.ARDrone.SetIsOutside(IsOutside);
+        }
+
+        /// <summary>
+        /// -> Method:EZ_B.AR­Drone.­Drone­Control.­Set­Is­Flying­Without­Shell(­System.­Boolean) 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ButtonSendFlyingWithoutShell(object sender, RoutedEventArgs e)
+        {
+            Log.Info("SetIsFlyingWithoutShell: {0}", FlyingWithoutShell);
+            ezbConnect.EZB.ARDrone.SetIsFlyingWithoutShell(FlyingWithoutShell);
+        }
         //public void ButtonDisconnect()
         //{
         //    ezB_Connect1.EZB.ARDrone.Disconnect();
@@ -417,6 +596,7 @@ namespace FollowMe {
         /// <param name="e"></param>
         public void ButtonShowCamera(object sender, RoutedEventArgs e)
         {
+            Log.Info("StartCamera");
             camera.StartCamera(
                   new ValuePair(Camera.CAMERA_NAME_AR_DRONE, Camera.CAMERA_NAME_AR_DRONE),
                     cameraForm.ExternalCameraPanel,
@@ -433,6 +613,7 @@ namespace FollowMe {
         /// <param name="e"></param>
         public void ButtonDisconnect(object sender, RoutedEventArgs e)
         {
+            Log.Info("Disconnect");
             ezbConnect.EZB.ARDrone.Disconnect();
         }
 
@@ -443,6 +624,7 @@ namespace FollowMe {
         /// <param name="e"></param>
         public void ButtonBlinkLeds(object sender, RoutedEventArgs e)
         {
+            Log.Info("PlayLedAnimation");
             ezbConnect.EZB.ARDrone.PlayLedAnimation(Commands.LedAnimationEnum.BlinkRed, 2, 10);
         }
 
