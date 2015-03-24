@@ -1,541 +1,234 @@
-2015-03-23 20:31:25,521 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxEulerAngle.
-2015-03-23 20:31:25,521 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxAltitude.
-2015-03-23 20:31:25,521 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxAltitude.
-2015-03-23 20:31:25,521 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonConnect on element ButtonConnect(sender,e).
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonShowCamera on element ButtonShowCamera(sender,e).
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonDisconnect on element ButtonDisconnect(sender,e).
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ButtonBlinkLeds.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonRefreshJoysticks on element ButtonRefreshJoysticks(sender,e).
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for add_PropertyChanged.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for remove_PropertyChanged.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsNotifying.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsNotifying.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Refresh.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ToString.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Equals.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetHashCode.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetType.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element SelectedJoystick.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ArDroneConnected did not match a property.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element BatteryLevel.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element AvailableJoystickDevices.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button1Pressed.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button2Pressed.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button3Pressed.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button4Pressed.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button5Pressed.
-2015-03-23 20:31:25,552 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button6Pressed.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button7Pressed.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button8Pressed.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickXAxis.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickYAxis.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickXAxis.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickYAxis.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ButtonStopCamera did not match a property.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element DroneStatus.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxXCoordinate did not match a property.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxYCoordinate did not match a property.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxQrCode did not match a property.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxYawSlider did not match a property.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxYaw.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxVerticalSpeedSlider did not match a property.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxVerticalSpeed.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxEulerAngleSlider did not match a property.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxEulerAngle.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxAltitudeSlider did not match a property.
-2015-03-23 20:31:25,568 [8] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxAltitude.
-2015-03-23 20:31:25,646 [8] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
-2015-03-23 20:31:25,646 [8] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
-2015-03-23 20:31:25,646 [8] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonConnect availability update.
-2015-03-23 20:31:25,646 [8] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonDisconnect availability update.
-2015-03-23 20:31:25,646 [8] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowCamera availability update.
-2015-03-23 20:31:46,812 [9] INFO  FollowMe.App [(null)] - Hello Caliburn.Micro.Logging.NLog World!
-2015-03-23 20:31:47,000 [9] INFO  FollowMe.ShellViewModel [(null)] - Init
-2015-03-23 20:31:47,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding FollowMe.ShellView and FollowMe.ShellViewModel.
-2015-03-23 20:31:47,297 [9] INFO  Caliburn.Micro.Action [(null)] - Setting DC of FollowMe.ShellView to FollowMe.ShellViewModel.
-2015-03-23 20:31:47,297 [9] INFO  Caliburn.Micro.Action [(null)] - Attaching message handler FollowMe.ShellViewModel to FollowMe.ShellView.
-2015-03-23 20:31:47,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_BatteryLevel.
-2015-03-23 20:31:47,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_BatteryLevel.
-2015-03-23 20:31:47,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_ConnectToDroneEnabled.
-2015-03-23 20:31:47,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_ConnectToDroneEnabled.
-2015-03-23 20:31:47,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button1Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button1Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button2Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button2Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button3Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button3Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button4Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button4Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button5Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button5Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button6Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button6Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button7Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button7Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button8Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button8Pressed.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_LeftStickXAxis.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_LeftStickXAxis.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_LeftStickYAxis.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_LeftStickYAxis.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_RightStickXAxis.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_RightStickXAxis.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_RightStickYAxis.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_RightStickYAxis.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_TargetXCoordinate.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_TargetXCoordinate.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_TargetYCoordinate.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_TargetYCoordinate.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_AvailableJoystickDevices.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_AvailableJoystickDevices.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SelectedJoystickDevice.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SelectedJoystickDevice.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SelectedJoystick.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SelectedJoystick.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_QrCode.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_QrCode.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_CameraPanel.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_CameraPanel.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_DroneStatus.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_DroneStatus.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxYaw.
-2015-03-23 20:31:47,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxYaw.
-2015-03-23 20:31:47,328 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxVerticalSpeed.
-2015-03-23 20:31:47,328 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxVerticalSpeed.
-2015-03-23 20:31:47,328 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxEulerAngle.
-2015-03-23 20:31:47,328 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxEulerAngle.
-2015-03-23 20:31:47,328 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxAltitude.
-2015-03-23 20:31:47,328 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxAltitude.
-2015-03-23 20:31:47,328 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonConnect on element ButtonConnect(sender,e).
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonShowCamera on element ButtonShowCamera(sender,e).
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonDisconnect on element ButtonDisconnect(sender,e).
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ButtonBlinkLeds.
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonRefreshJoysticks on element ButtonRefreshJoysticks(sender,e).
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for add_PropertyChanged.
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for remove_PropertyChanged.
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsNotifying.
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsNotifying.
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Refresh.
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ToString.
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Equals.
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetHashCode.
-2015-03-23 20:31:47,343 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetType.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element SelectedJoystick.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ArDroneConnected did not match a property.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element BatteryLevel.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element AvailableJoystickDevices.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button1Pressed.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button2Pressed.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button3Pressed.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button4Pressed.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button5Pressed.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button6Pressed.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button7Pressed.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button8Pressed.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickXAxis.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickYAxis.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickXAxis.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickYAxis.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ButtonStopCamera did not match a property.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element DroneStatus.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxXCoordinate did not match a property.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxYCoordinate did not match a property.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxQrCode did not match a property.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxYawSlider did not match a property.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxYaw.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxVerticalSpeedSlider did not match a property.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxVerticalSpeed.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxEulerAngleSlider did not match a property.
-2015-03-23 20:31:47,359 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxEulerAngle.
-2015-03-23 20:31:47,375 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxAltitudeSlider did not match a property.
-2015-03-23 20:31:47,375 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxAltitude.
-2015-03-23 20:31:47,438 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
-2015-03-23 20:31:47,438 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
-2015-03-23 20:31:47,438 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonConnect availability update.
-2015-03-23 20:31:47,438 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonDisconnect availability update.
-2015-03-23 20:31:47,438 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowCamera availability update.
-2015-03-23 21:47:31,918 [10] INFO  FollowMe.App [(null)] - Hello Caliburn.Micro.Logging.NLog World!
-2015-03-23 21:47:32,119 [10] INFO  FollowMe.ShellViewModel [(null)] - Init
-2015-03-23 21:47:32,486 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding FollowMe.ShellView and FollowMe.ShellViewModel.
-2015-03-23 21:47:32,486 [10] INFO  Caliburn.Micro.Action [(null)] - Setting DC of FollowMe.ShellView to FollowMe.ShellViewModel.
-2015-03-23 21:47:32,486 [10] INFO  Caliburn.Micro.Action [(null)] - Attaching message handler FollowMe.ShellViewModel to FollowMe.ShellView.
-2015-03-23 21:47:32,501 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_BatteryLevel.
-2015-03-23 21:47:32,501 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_BatteryLevel.
-2015-03-23 21:47:32,501 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_ConnectToDroneEnabled.
-2015-03-23 21:47:32,501 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_ConnectToDroneEnabled.
-2015-03-23 21:47:32,501 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button1Pressed.
-2015-03-23 21:47:32,501 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button1Pressed.
-2015-03-23 21:47:32,501 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button2Pressed.
-2015-03-23 21:47:32,501 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button2Pressed.
-2015-03-23 21:47:32,501 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button3Pressed.
-2015-03-23 21:47:32,501 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button3Pressed.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button4Pressed.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button4Pressed.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button5Pressed.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button5Pressed.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button6Pressed.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button6Pressed.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button7Pressed.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button7Pressed.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button8Pressed.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button8Pressed.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_LeftStickXAxis.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_LeftStickXAxis.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_LeftStickYAxis.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_LeftStickYAxis.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_RightStickXAxis.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_RightStickXAxis.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_RightStickYAxis.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_RightStickYAxis.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_TargetXCoordinate.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_TargetXCoordinate.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_TargetYCoordinate.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_TargetYCoordinate.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_AvailableJoystickDevices.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_AvailableJoystickDevices.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SelectedJoystickDevice.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SelectedJoystickDevice.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SelectedJoystick.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SelectedJoystick.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_QrCode.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_QrCode.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_CameraPanel.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_CameraPanel.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_DroneStatus.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_DroneStatus.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsOutside.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsOutside.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_FlyingWithoutShell.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_FlyingWithoutShell.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxYaw.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxYaw.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxVerticalSpeed.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxVerticalSpeed.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxEulerAngle.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxEulerAngle.
-2015-03-23 21:47:32,517 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxAltitude.
-2015-03-23 21:47:32,533 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxAltitude.
-2015-03-23 21:47:32,533 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonConnect on element ButtonConnect(sender,e).
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonShowCamera on element ButtonShowCamera(sender,e).
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonDisconnect on element ButtonDisconnect(sender,e).
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ButtonBlinkLeds.
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonRefreshJoysticks on element ButtonRefreshJoysticks(sender,e).
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for add_PropertyChanged.
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for remove_PropertyChanged.
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsNotifying.
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsNotifying.
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Refresh.
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ToString.
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Equals.
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetHashCode.
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetType.
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element SelectedJoystick.
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ArDroneConnected did not match a property.
-2015-03-23 21:47:32,548 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element BatteryLevel.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element AvailableJoystickDevices.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button1Pressed.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button2Pressed.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button3Pressed.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button4Pressed.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button5Pressed.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button6Pressed.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button7Pressed.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button8Pressed.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickXAxis.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickYAxis.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickXAxis.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickYAxis.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ButtonStopCamera did not match a property.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element DroneStatus.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxXCoordinate did not match a property.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxYCoordinate did not match a property.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxQrCode did not match a property.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxYawSlider did not match a property.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxYaw.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxVerticalSpeedSlider did not match a property.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxVerticalSpeed.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxEulerAngleSlider did not match a property.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxEulerAngle.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxAltitudeSlider did not match a property.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxAltitude.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element IsOutside.
-2015-03-23 21:47:32,564 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element FlyingWithoutShell.
-2015-03-23 21:47:32,626 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
-2015-03-23 21:47:32,626 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
-2015-03-23 21:47:32,626 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonConnect availability update.
-2015-03-23 21:47:32,626 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonDisconnect availability update.
-2015-03-23 21:47:32,626 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowCamera availability update.
-2015-03-23 21:59:42,612 [9] INFO  FollowMe.App [(null)] - Hello Caliburn.Micro.Logging.NLog World!
-2015-03-23 21:59:42,953 [9] INFO  FollowMe.ShellViewModel [(null)] - Init
-2015-03-23 21:59:43,234 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding FollowMe.ShellView and FollowMe.ShellViewModel.
-2015-03-23 21:59:43,234 [9] INFO  Caliburn.Micro.Action [(null)] - Setting DC of FollowMe.ShellView to FollowMe.ShellViewModel.
-2015-03-23 21:59:43,234 [9] INFO  Caliburn.Micro.Action [(null)] - Attaching message handler FollowMe.ShellViewModel to FollowMe.ShellView.
-2015-03-23 21:59:43,234 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonShowCamera on element ButtonShowCamera(sender,e).
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonDisconnect on element ButtonDisconnect(sender,e).
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ButtonBlinkLeds.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonRefreshJoysticks on element ButtonRefreshJoysticks(sender,e).
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_BatteryLevel.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_BatteryLevel.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_ConnectToDroneEnabled.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_ConnectToDroneEnabled.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button1Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button1Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button2Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button2Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button3Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button3Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button4Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button4Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button5Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button5Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button6Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button6Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button7Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button7Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button8Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button8Pressed.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_LeftStickXAxis.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_LeftStickXAxis.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_LeftStickYAxis.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_LeftStickYAxis.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_RightStickXAxis.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_RightStickXAxis.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_RightStickYAxis.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_RightStickYAxis.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_TargetXCoordinate.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_TargetXCoordinate.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_TargetYCoordinate.
-2015-03-23 21:59:43,266 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_TargetYCoordinate.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_AvailableJoystickDevices.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_AvailableJoystickDevices.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SelectedJoystickDevice.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SelectedJoystickDevice.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SelectedJoystick.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SelectedJoystick.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_QrCode.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_QrCode.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_CameraPanel.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_CameraPanel.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_DroneStatus.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_DroneStatus.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsOutside.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsOutside.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_FlyingWithoutShell.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_FlyingWithoutShell.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxYaw.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxYaw.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxVerticalSpeed.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxVerticalSpeed.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxEulerAngle.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxEulerAngle.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxAltitude.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxAltitude.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonConnect on element ButtonConnect(sender,e).
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxYaw on element ButtonSendMaxYaw(sender,e).
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxVerticalSpeed on element ButtonSendMaxVerticalSpeed(sender,e).
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxEulerAngle on element ButtonSendMaxEulerAngle(sender,e).
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxAltitude on element ButtonSendMaxAltitude(sender,e).
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendIsOutside on element ButtonSendIsOutside(sender,e).
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendFlyingWithoutShell on element ButtonSendFlyingWithoutShell(sender,e).
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for add_PropertyChanged.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for remove_PropertyChanged.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsNotifying.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsNotifying.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Refresh.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ToString.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Equals.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetHashCode.
-2015-03-23 21:59:43,281 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetType.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element SelectedJoystick.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ArDroneConnected did not match a property.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element BatteryLevel.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element AvailableJoystickDevices.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button1Pressed.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button2Pressed.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button3Pressed.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button4Pressed.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button5Pressed.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button6Pressed.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button7Pressed.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button8Pressed.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickXAxis.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickYAxis.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickXAxis.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickYAxis.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ButtonStopCamera did not match a property.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element DroneStatus.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxXCoordinate did not match a property.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxYCoordinate did not match a property.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxQrCode did not match a property.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxYawSlider did not match a property.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxYaw.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxVerticalSpeedSlider did not match a property.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxVerticalSpeed.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxEulerAngleSlider did not match a property.
-2015-03-23 21:59:43,297 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxEulerAngle.
-2015-03-23 21:59:43,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxAltitudeSlider did not match a property.
-2015-03-23 21:59:43,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxAltitude.
-2015-03-23 21:59:43,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element IsOutside.
-2015-03-23 21:59:43,312 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element FlyingWithoutShell.
-2015-03-23 21:59:43,375 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
-2015-03-23 21:59:43,375 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
-2015-03-23 21:59:43,375 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonConnect availability update.
-2015-03-23 21:59:43,375 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonDisconnect availability update.
-2015-03-23 21:59:43,375 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowCamera availability update.
-2015-03-23 21:59:43,375 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxYaw availability update.
-2015-03-23 21:59:43,375 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxVerticalSpeed availability update.
-2015-03-23 21:59:43,375 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxEulerAngle availability update.
-2015-03-23 21:59:43,375 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxAltitude availability update.
-2015-03-23 21:59:43,375 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendIsOutside availability update.
-2015-03-23 21:59:43,375 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendFlyingWithoutShell availability update.
-2015-03-23 21:59:53,055 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonSendIsOutside.
-2015-03-23 21:59:53,055 [9] INFO  FollowMe.ShellViewModel [(null)] - ButtonSendIsOutside: True
-2015-03-23 21:59:55,259 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonSendFlyingWithoutShell.
-2015-03-23 21:59:55,259 [9] INFO  FollowMe.ShellViewModel [(null)] - ButtonSendFlyingWithoutShell: False
-2015-03-23 21:59:57,853 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonSendMaxAltitude.
-2015-03-23 21:59:57,853 [9] INFO  FollowMe.ShellViewModel [(null)] - ButtonSendMaxAltitude: 0
-2015-03-23 22:00:01,060 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonSendMaxAltitude.
-2015-03-23 22:00:01,060 [9] INFO  FollowMe.ShellViewModel [(null)] - ButtonSendMaxAltitude: 1839
-2015-03-23 22:00:05,014 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonSendMaxEulerAngle.
-2015-03-23 22:00:05,014 [9] INFO  FollowMe.ShellViewModel [(null)] - ButtonSendMaxEulerAngle: 0.142145328719723
-2015-03-23 22:00:10,062 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonSendMaxVerticalSpeed.
-2015-03-23 22:00:10,062 [9] INFO  FollowMe.ShellViewModel [(null)] - ButtonSendMaxVerticalSpeed: 388
-2015-03-23 22:00:14,626 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonSendMaxYaw.
-2015-03-23 22:00:14,626 [9] INFO  FollowMe.ShellViewModel [(null)] - ButtonSendMaxYaw: 2.34733564013841
-2015-03-23 22:11:48,716 [9] INFO  FollowMe.App [(null)] - Hello Caliburn.Micro.Logging.NLog World!
-2015-03-23 22:11:49,024 [9] INFO  FollowMe.ShellViewModel [(null)] - Init
-2015-03-23 22:11:49,305 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding FollowMe.ShellView and FollowMe.ShellViewModel.
-2015-03-23 22:11:49,305 [9] INFO  Caliburn.Micro.Action [(null)] - Setting DC of FollowMe.ShellView to FollowMe.ShellViewModel.
-2015-03-23 22:11:49,305 [9] INFO  Caliburn.Micro.Action [(null)] - Attaching message handler FollowMe.ShellViewModel to FollowMe.ShellView.
-2015-03-23 22:11:49,320 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonShowCamera on element ButtonShowCamera(sender,e).
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonDisconnect on element ButtonDisconnect(sender,e).
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ButtonBlinkLeds.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonRefreshJoysticks on element ButtonRefreshJoysticks(sender,e).
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_BatteryLevel.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_BatteryLevel.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_ConnectToDroneEnabled.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_ConnectToDroneEnabled.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button1Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button1Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button2Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button2Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button3Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button3Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button4Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button4Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button5Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button5Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button6Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button6Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button7Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button7Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button8Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button8Pressed.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_LeftStickXAxis.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_LeftStickXAxis.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_LeftStickYAxis.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_LeftStickYAxis.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_RightStickXAxis.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_RightStickXAxis.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_RightStickYAxis.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_RightStickYAxis.
-2015-03-23 22:11:49,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_TargetXCoordinate.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_TargetXCoordinate.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_TargetYCoordinate.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_TargetYCoordinate.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_AvailableJoystickDevices.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_AvailableJoystickDevices.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SelectedJoystickDevice.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SelectedJoystickDevice.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SelectedJoystick.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SelectedJoystick.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_QrCode.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_QrCode.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_CameraPanel.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_CameraPanel.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_DroneStatus.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_DroneStatus.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsOutside.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsOutside.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_FlyingWithoutShell.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_FlyingWithoutShell.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxYaw.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxYaw.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxVerticalSpeed.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxVerticalSpeed.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxEulerAngle.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxEulerAngle.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxAltitude.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxAltitude.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonConnect on element ButtonConnect(sender,e).
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxYaw on element ButtonSendMaxYaw(sender,e).
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxVerticalSpeed on element ButtonSendMaxVerticalSpeed(sender,e).
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxEulerAngle on element ButtonSendMaxEulerAngle(sender,e).
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxAltitude on element ButtonSendMaxAltitude(sender,e).
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendIsOutside on element ButtonSendIsOutside(sender,e).
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendFlyingWithoutShell on element ButtonSendFlyingWithoutShell(sender,e).
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for add_PropertyChanged.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for remove_PropertyChanged.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsNotifying.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsNotifying.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Refresh.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ToString.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Equals.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetHashCode.
-2015-03-23 22:11:49,367 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetType.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element SelectedJoystick.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ArDroneConnected did not match a property.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element BatteryLevel.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element AvailableJoystickDevices.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button1Pressed.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button2Pressed.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button3Pressed.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button4Pressed.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button5Pressed.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button6Pressed.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button7Pressed.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button8Pressed.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickXAxis.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickYAxis.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickXAxis.
-2015-03-23 22:11:49,383 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickYAxis.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ButtonStopCamera did not match a property.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element DroneStatus.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxXCoordinate did not match a property.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxYCoordinate did not match a property.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxQrCode did not match a property.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxYawSlider did not match a property.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxYaw.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxVerticalSpeedSlider did not match a property.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxVerticalSpeed.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxEulerAngleSlider did not match a property.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxEulerAngle.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxAltitudeSlider did not match a property.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxAltitude.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element IsOutside.
-2015-03-23 22:11:49,399 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element FlyingWithoutShell.
-2015-03-23 22:11:49,462 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
-2015-03-23 22:11:49,462 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
-2015-03-23 22:11:49,462 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonConnect availability update.
-2015-03-23 22:11:49,462 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonDisconnect availability update.
-2015-03-23 22:11:49,462 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowCamera availability update.
-2015-03-23 22:11:49,462 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxYaw availability update.
-2015-03-23 22:11:49,462 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxVerticalSpeed availability update.
-2015-03-23 22:11:49,462 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxEulerAngle availability update.
-2015-03-23 22:11:49,477 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxAltitude availability update.
-2015-03-23 22:11:49,477 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendIsOutside availability update.
-2015-03-23 22:11:49,477 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendFlyingWithoutShell availability update.
-2015-03-23 22:11:52,790 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonSendMaxEulerAngle.
-2015-03-23 22:11:52,790 [9] INFO  FollowMe.ShellViewModel [(null)] - SetEulerAngleMax: 0
-2015-03-23 22:12:05,839 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonSendMaxEulerAngle.
-2015-03-23 22:12:05,839 [9] INFO  FollowMe.ShellViewModel [(null)] - SetEulerAngleMax: 0.1979239
+2015-03-24 20:54:14,755 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetType.
+2015-03-24 20:54:14,770 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element SelectedJoystick.
+2015-03-24 20:54:14,770 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ArDroneConnected did not match a property.
+2015-03-24 20:54:14,771 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element BatteryLevel.
+2015-03-24 20:54:14,773 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element AvailableJoystickDevices.
+2015-03-24 20:54:14,774 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button1Pressed.
+2015-03-24 20:54:14,775 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button2Pressed.
+2015-03-24 20:54:14,775 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button3Pressed.
+2015-03-24 20:54:14,776 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button4Pressed.
+2015-03-24 20:54:14,777 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button5Pressed.
+2015-03-24 20:54:14,777 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button6Pressed.
+2015-03-24 20:54:14,777 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button7Pressed.
+2015-03-24 20:54:14,778 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button8Pressed.
+2015-03-24 20:54:14,779 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickXAxis.
+2015-03-24 20:54:14,779 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickYAxis.
+2015-03-24 20:54:14,780 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickXAxis.
+2015-03-24 20:54:14,780 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickYAxis.
+2015-03-24 20:54:14,781 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ButtonStopCamera did not match a property.
+2015-03-24 20:54:14,781 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element DroneStatus.
+2015-03-24 20:54:14,782 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxXCoordinate did not match a property.
+2015-03-24 20:54:14,782 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxYCoordinate did not match a property.
+2015-03-24 20:54:14,782 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxQrCode did not match a property.
+2015-03-24 20:54:14,783 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxYawSlider did not match a property.
+2015-03-24 20:54:14,783 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxYaw.
+2015-03-24 20:54:14,783 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxVerticalSpeedSlider did not match a property.
+2015-03-24 20:54:14,784 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxVerticalSpeed.
+2015-03-24 20:54:14,784 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxEulerAngleSlider did not match a property.
+2015-03-24 20:54:14,785 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxEulerAngle.
+2015-03-24 20:54:14,785 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxAltitudeSlider did not match a property.
+2015-03-24 20:54:14,786 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxAltitude.
+2015-03-24 20:54:14,786 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element IsOutside.
+2015-03-24 20:54:14,787 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element FlyingWithoutShell.
+2015-03-24 20:54:14,838 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
+2015-03-24 20:54:14,839 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
+2015-03-24 20:54:14,840 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonConnect availability update.
+2015-03-24 20:54:14,840 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonDisconnect availability update.
+2015-03-24 20:54:14,841 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowCamera availability update.
+2015-03-24 20:54:14,841 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxYaw availability update.
+2015-03-24 20:54:14,842 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxVerticalSpeed availability update.
+2015-03-24 20:54:14,842 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxEulerAngle availability update.
+2015-03-24 20:54:14,843 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxAltitude availability update.
+2015-03-24 20:54:14,843 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendIsOutside availability update.
+2015-03-24 20:54:14,844 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendFlyingWithoutShell availability update.
+2015-03-24 20:54:14,844 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowActualConfigOfArDrone availability update.
+2015-03-24 20:54:17,431 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonShowActualConfigOfArDrone.
+2015-03-24 20:54:17,433 [10] INFO  FollowMe.ShellViewModel [(null)] - 
+2015-03-24 20:54:17,436 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding FollowMe.Views.ControlConfigView and FollowMe.ViewModels.ControlConfigViewModel.
+2015-03-24 20:54:17,436 [10] INFO  Caliburn.Micro.Action [(null)] - Setting DC of FollowMe.Views.ControlConfigView to FollowMe.ViewModels.ControlConfigViewModel.
+2015-03-24 20:54:17,436 [10] INFO  Caliburn.Micro.Action [(null)] - Attaching message handler FollowMe.ViewModels.ControlConfigViewModel to FollowMe.Views.ControlConfigView.
+2015-03-24 20:54:17,437 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_HeaderWithTimestamp.
+2015-03-24 20:54:17,437 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_ControlConfig.
+2015-03-24 20:54:17,438 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_ControlConfig.
+2015-03-24 20:54:17,438 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsNotifying.
+2015-03-24 20:54:17,439 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsNotifying.
+2015-03-24 20:54:17,439 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for add_PropertyChanged.
+2015-03-24 20:54:17,439 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for remove_PropertyChanged.
+2015-03-24 20:54:17,440 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Refresh.
+2015-03-24 20:54:17,440 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
+2015-03-24 20:54:17,440 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
+2015-03-24 20:54:17,441 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ToString.
+2015-03-24 20:54:17,441 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Equals.
+2015-03-24 20:54:17,441 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetHashCode.
+2015-03-24 20:54:17,442 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetType.
+2015-03-24 20:54:17,442 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element HeaderWithTimestamp.
+2015-03-24 20:54:17,443 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element ControlConfig.
+2015-03-24 20:54:28,635 [9] INFO  FollowMe.App [(null)] - Hello Caliburn.Micro.Logging.NLog World!
+2015-03-24 20:54:28,859 [9] INFO  FollowMe.ShellViewModel [(null)] - Init
+2015-03-24 20:54:29,146 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding FollowMe.ShellView and FollowMe.ShellViewModel.
+2015-03-24 20:54:29,147 [9] INFO  Caliburn.Micro.Action [(null)] - Setting DC of FollowMe.ShellView to FollowMe.ShellViewModel.
+2015-03-24 20:54:29,148 [9] INFO  Caliburn.Micro.Action [(null)] - Attaching message handler FollowMe.ShellViewModel to FollowMe.ShellView.
+2015-03-24 20:54:29,159 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_BatteryLevel.
+2015-03-24 20:54:29,159 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_BatteryLevel.
+2015-03-24 20:54:29,160 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_ConnectToDroneEnabled.
+2015-03-24 20:54:29,160 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_ConnectToDroneEnabled.
+2015-03-24 20:54:29,161 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button1Pressed.
+2015-03-24 20:54:29,161 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button1Pressed.
+2015-03-24 20:54:29,161 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button2Pressed.
+2015-03-24 20:54:29,162 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button2Pressed.
+2015-03-24 20:54:29,162 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button3Pressed.
+2015-03-24 20:54:29,162 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button3Pressed.
+2015-03-24 20:54:29,163 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button4Pressed.
+2015-03-24 20:54:29,163 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button4Pressed.
+2015-03-24 20:54:29,163 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button5Pressed.
+2015-03-24 20:54:29,164 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button5Pressed.
+2015-03-24 20:54:29,164 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button6Pressed.
+2015-03-24 20:54:29,164 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button6Pressed.
+2015-03-24 20:54:29,165 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button7Pressed.
+2015-03-24 20:54:29,165 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button7Pressed.
+2015-03-24 20:54:29,165 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button8Pressed.
+2015-03-24 20:54:29,166 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button8Pressed.
+2015-03-24 20:54:29,166 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_LeftStickXAxis.
+2015-03-24 20:54:29,166 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_LeftStickXAxis.
+2015-03-24 20:54:29,167 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_LeftStickYAxis.
+2015-03-24 20:54:29,167 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_LeftStickYAxis.
+2015-03-24 20:54:29,167 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_RightStickXAxis.
+2015-03-24 20:54:29,168 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_RightStickXAxis.
+2015-03-24 20:54:29,168 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_RightStickYAxis.
+2015-03-24 20:54:29,168 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_RightStickYAxis.
+2015-03-24 20:54:29,168 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_TargetXCoordinate.
+2015-03-24 20:54:29,169 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_TargetXCoordinate.
+2015-03-24 20:54:29,169 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_TargetYCoordinate.
+2015-03-24 20:54:29,169 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_TargetYCoordinate.
+2015-03-24 20:54:29,170 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_AvailableJoystickDevices.
+2015-03-24 20:54:29,170 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_AvailableJoystickDevices.
+2015-03-24 20:54:29,170 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SelectedJoystickDevice.
+2015-03-24 20:54:29,171 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SelectedJoystickDevice.
+2015-03-24 20:54:29,171 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SelectedJoystick.
+2015-03-24 20:54:29,171 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SelectedJoystick.
+2015-03-24 20:54:29,171 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_QrCode.
+2015-03-24 20:54:29,172 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_QrCode.
+2015-03-24 20:54:29,172 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_CameraPanel.
+2015-03-24 20:54:29,172 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_CameraPanel.
+2015-03-24 20:54:29,173 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_DroneStatus.
+2015-03-24 20:54:29,173 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_DroneStatus.
+2015-03-24 20:54:29,174 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsOutside.
+2015-03-24 20:54:29,174 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsOutside.
+2015-03-24 20:54:29,174 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_FlyingWithoutShell.
+2015-03-24 20:54:29,175 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_FlyingWithoutShell.
+2015-03-24 20:54:29,175 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxYaw.
+2015-03-24 20:54:29,175 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxYaw.
+2015-03-24 20:54:29,175 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxVerticalSpeed.
+2015-03-24 20:54:29,176 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxVerticalSpeed.
+2015-03-24 20:54:29,176 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxEulerAngle.
+2015-03-24 20:54:29,176 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxEulerAngle.
+2015-03-24 20:54:29,177 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxAltitude.
+2015-03-24 20:54:29,177 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxAltitude.
+2015-03-24 20:54:29,177 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsNotifying.
+2015-03-24 20:54:29,177 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsNotifying.
+2015-03-24 20:54:29,178 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonShowCamera on element ButtonShowCamera(sender,e).
+2015-03-24 20:54:29,199 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonDisconnect on element ButtonDisconnect(sender,e).
+2015-03-24 20:54:29,200 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ButtonBlinkLeds.
+2015-03-24 20:54:29,201 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonShowActualConfigOfArDrone on element ButtonShowActualConfigOfArDrone(sender,e).
+2015-03-24 20:54:29,201 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonRefreshJoysticks on element ButtonRefreshJoysticks(sender,e).
+2015-03-24 20:54:29,202 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonConnect on element ButtonConnect(sender,e).
+2015-03-24 20:54:29,202 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxYaw on element ButtonSendMaxYaw(sender,e).
+2015-03-24 20:54:29,203 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxVerticalSpeed on element ButtonSendMaxVerticalSpeed(sender,e).
+2015-03-24 20:54:29,203 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxEulerAngle on element ButtonSendMaxEulerAngle(sender,e).
+2015-03-24 20:54:29,203 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxAltitude on element ButtonSendMaxAltitude(sender,e).
+2015-03-24 20:54:29,204 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendIsOutside on element ButtonSendIsOutside(sender,e).
+2015-03-24 20:54:29,204 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendFlyingWithoutShell on element ButtonSendFlyingWithoutShell(sender,e).
+2015-03-24 20:54:29,205 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for add_PropertyChanged.
+2015-03-24 20:54:29,205 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for remove_PropertyChanged.
+2015-03-24 20:54:29,205 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Refresh.
+2015-03-24 20:54:29,205 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
+2015-03-24 20:54:29,206 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
+2015-03-24 20:54:29,206 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ToString.
+2015-03-24 20:54:29,206 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Equals.
+2015-03-24 20:54:29,207 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetHashCode.
+2015-03-24 20:54:29,207 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetType.
+2015-03-24 20:54:29,213 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element SelectedJoystick.
+2015-03-24 20:54:29,214 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ArDroneConnected did not match a property.
+2015-03-24 20:54:29,214 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element BatteryLevel.
+2015-03-24 20:54:29,216 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element AvailableJoystickDevices.
+2015-03-24 20:54:29,217 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button1Pressed.
+2015-03-24 20:54:29,218 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button2Pressed.
+2015-03-24 20:54:29,218 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button3Pressed.
+2015-03-24 20:54:29,219 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button4Pressed.
+2015-03-24 20:54:29,219 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button5Pressed.
+2015-03-24 20:54:29,220 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button6Pressed.
+2015-03-24 20:54:29,220 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button7Pressed.
+2015-03-24 20:54:29,221 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button8Pressed.
+2015-03-24 20:54:29,221 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickXAxis.
+2015-03-24 20:54:29,222 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickYAxis.
+2015-03-24 20:54:29,223 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickXAxis.
+2015-03-24 20:54:29,223 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickYAxis.
+2015-03-24 20:54:29,224 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ButtonStopCamera did not match a property.
+2015-03-24 20:54:29,224 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element DroneStatus.
+2015-03-24 20:54:29,224 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxXCoordinate did not match a property.
+2015-03-24 20:54:29,225 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxYCoordinate did not match a property.
+2015-03-24 20:54:29,225 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxQrCode did not match a property.
+2015-03-24 20:54:29,225 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxYawSlider did not match a property.
+2015-03-24 20:54:29,226 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxYaw.
+2015-03-24 20:54:29,226 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxVerticalSpeedSlider did not match a property.
+2015-03-24 20:54:29,227 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxVerticalSpeed.
+2015-03-24 20:54:29,227 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxEulerAngleSlider did not match a property.
+2015-03-24 20:54:29,228 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxEulerAngle.
+2015-03-24 20:54:29,228 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxAltitudeSlider did not match a property.
+2015-03-24 20:54:29,228 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxAltitude.
+2015-03-24 20:54:29,229 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element IsOutside.
+2015-03-24 20:54:29,229 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element FlyingWithoutShell.
+2015-03-24 20:54:29,283 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
+2015-03-24 20:54:29,284 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
+2015-03-24 20:54:29,285 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonConnect availability update.
+2015-03-24 20:54:29,285 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonDisconnect availability update.
+2015-03-24 20:54:29,285 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowCamera availability update.
+2015-03-24 20:54:29,286 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxYaw availability update.
+2015-03-24 20:54:29,286 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxVerticalSpeed availability update.
+2015-03-24 20:54:29,286 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxEulerAngle availability update.
+2015-03-24 20:54:29,287 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxAltitude availability update.
+2015-03-24 20:54:29,287 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendIsOutside availability update.
+2015-03-24 20:54:29,288 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendFlyingWithoutShell availability update.
+2015-03-24 20:54:29,288 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowActualConfigOfArDrone availability update.
+2015-03-24 20:54:31,529 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonShowActualConfigOfArDrone.
+2015-03-24 20:54:31,531 [9] INFO  FollowMe.ShellViewModel [(null)] - 
+2015-03-24 20:54:31,533 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding FollowMe.Views.ControlConfigView and FollowMe.ViewModels.ControlConfigViewModel.
+2015-03-24 20:54:31,534 [9] INFO  Caliburn.Micro.Action [(null)] - Setting DC of FollowMe.Views.ControlConfigView to FollowMe.ViewModels.ControlConfigViewModel.
+2015-03-24 20:54:31,535 [9] INFO  Caliburn.Micro.Action [(null)] - Attaching message handler FollowMe.ViewModels.ControlConfigViewModel to FollowMe.Views.ControlConfigView.
+2015-03-24 20:54:31,535 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_HeaderWithTimestamp.
+2015-03-24 20:54:31,535 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_ControlConfig.
+2015-03-24 20:54:31,535 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_ControlConfig.
+2015-03-24 20:54:31,536 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsNotifying.
+2015-03-24 20:54:31,536 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsNotifying.
+2015-03-24 20:54:31,537 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for add_PropertyChanged.
+2015-03-24 20:54:31,537 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for remove_PropertyChanged.
+2015-03-24 20:54:31,537 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Refresh.
+2015-03-24 20:54:31,538 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
+2015-03-24 20:54:31,539 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
+2015-03-24 20:54:31,539 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ToString.
+2015-03-24 20:54:31,539 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Equals.
+2015-03-24 20:54:31,539 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetHashCode.
+2015-03-24 20:54:31,539 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetType.
+2015-03-24 20:54:31,540 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element HeaderWithTimestamp.
+2015-03-24 20:54:31,541 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element ControlConfig.
+2015-03-24 20:54:37,347 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonShowActualConfigOfArDrone.
+2015-03-24 20:54:37,347 [9] INFO  FollowMe.ShellViewModel [(null)] - 
+2015-03-24 20:54:37,348 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding FollowMe.Views.ControlConfigView and FollowMe.ViewModels.ControlConfigViewModel.
+2015-03-24 20:54:37,349 [9] INFO  Caliburn.Micro.Action [(null)] - Setting DC of FollowMe.Views.ControlConfigView to FollowMe.ViewModels.ControlConfigViewModel.
+2015-03-24 20:54:37,350 [9] INFO  Caliburn.Micro.Action [(null)] - Attaching message handler FollowMe.ViewModels.ControlConfigViewModel to FollowMe.Views.ControlConfigView.
+2015-03-24 20:54:37,350 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_HeaderWithTimestamp.
+2015-03-24 20:54:37,350 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_ControlConfig.
+2015-03-24 20:54:37,350 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_ControlConfig.
+2015-03-24 20:54:37,351 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsNotifying.
+2015-03-24 20:54:37,351 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsNotifying.
+2015-03-24 20:54:37,351 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for add_PropertyChanged.
+2015-03-24 20:54:37,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for remove_PropertyChanged.
+2015-03-24 20:54:37,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Refresh.
+2015-03-24 20:54:37,352 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
+2015-03-24 20:54:37,353 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
+2015-03-24 20:54:37,353 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ToString.
+2015-03-24 20:54:37,353 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Equals.
+2015-03-24 20:54:37,354 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetHashCode.
+2015-03-24 20:54:37,354 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetType.
+2015-03-24 20:54:37,354 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element HeaderWithTimestamp.
+2015-03-24 20:54:37,355 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element ControlConfig.

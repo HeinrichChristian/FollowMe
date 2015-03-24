@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.Threading;
 using System.Timers;
@@ -10,14 +11,17 @@ using EZ_B;
 using EZ_B.ARDrone;
 using EZ_B.CameraDetection;
 using EZ_B.Joystick;
+using FollowMe.ViewModels;
 using Timer = System.Timers.Timer;
 
 namespace FollowMe {
     /// <summary>
     /// The viewModel for the shellview.
     /// </summary>
+    [Export(typeof(ShellViewModel))]
     public class ShellViewModel : PropertyChangedBase, IShell
     {
+        private readonly IWindowManager windowManager;
         private static readonly ILog Log = LogManager.GetLog(typeof(ShellViewModel));
 
         #region privates
@@ -467,9 +471,11 @@ namespace FollowMe {
         /// Constructor.
         /// Starts a timer which checks every 5 seconds the battery level of the connected AR.Drone
         /// </summary>
-        public ShellViewModel(bool ardroneAccessPointVisible)
+        [ImportingConstructor]
+        public ShellViewModel(IWindowManager windowManager)
         {
-            this.ardroneAccessPointVisible = ardroneAccessPointVisible;
+            this.windowManager = windowManager;
+            //this.ardroneAccessPointVisible = ardroneAccessPointVisible;
             Log.Info("Init");
             ezbConnect.EZB.ShowDebugWindow();
             camera = new Camera(ezbConnect.EZB);
@@ -527,6 +533,7 @@ namespace FollowMe {
         {
             Log.Info("SetYaw: {0}", MaxYaw);
             ezbConnect.EZB.ARDrone.SetYaw(MaxYaw);
+            
         }
 
         /// <summary>
@@ -583,12 +590,7 @@ namespace FollowMe {
             Log.Info("SetIsFlyingWithoutShell: {0}", FlyingWithoutShell);
             ezbConnect.EZB.ARDrone.SetIsFlyingWithoutShell(FlyingWithoutShell);
         }
-        //public void ButtonDisconnect()
-        //{
-        //    ezB_Connect1.EZB.ARDrone.Disconnect();
-        //    ConnectToDroneEnabled = true;
-        //}
-
+     
         /// <summary>
         /// Start the camera
         /// </summary>
@@ -626,6 +628,14 @@ namespace FollowMe {
         {
             Log.Info("PlayLedAnimation");
             ezbConnect.EZB.ARDrone.PlayLedAnimation(Commands.LedAnimationEnum.BlinkRed, 2, 10);
+        }
+
+        public void ButtonShowActualConfigOfArDrone(object sender, RoutedEventArgs e)
+        {
+            Log.Info("");
+            var controlConfig = "hallo"; //ezbConnect.EZB.ARDrone.GetControlConfig();
+            
+            this.windowManager.ShowWindow(new ControlConfigViewModel(controlConfig));
         }
 
         /// <summary>

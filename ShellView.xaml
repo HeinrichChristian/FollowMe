@@ -69,7 +69,7 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                
-                    <Border Grid.Column="1" Margin="10,10,10,10" BorderThickness="2" BorderBrush="LightSlateGray">
+                    <Border Grid.Column="0" Margin="10,10,10,10" BorderThickness="2" BorderBrush="LightSlateGray">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="350"></ColumnDefinition>
@@ -121,6 +121,7 @@
                                 <CheckBox Grid.Row="11" Grid.Column="1" Content="" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="FlyingWithoutShell"/>
                                 <Button Grid.Row="11" Grid.Column="2" x:Name="ButtonSendFlyingWithoutShell" Content="Sende Wert an AR.Drone" Margin="2"></Button>
 
+                            <Button Grid.Row="13" Grid.Column="2" Margin="2" Content="Zeige aktuelle Config von AR.Drone" x:Name="ButtonShowActualConfigOfArDrone"></Button>
                             </Grid>
                     </Border>
 
