@@ -632,9 +632,10 @@ namespace FollowMe {
 
         public void ButtonShowActualConfigOfArDrone(object sender, RoutedEventArgs e)
         {
-            Log.Info("");
-            var controlConfig = "hallo"; //ezbConnect.EZB.ARDrone.GetControlConfig();
+            Log.Info("GetControlConfig");
+            var controlConfig = ezbConnect.EZB.ARDrone.GetControlConfig();
             
+            Log.Info(controlConfig);
             this.windowManager.ShowWindow(new ControlConfigViewModel(controlConfig));
         }
 

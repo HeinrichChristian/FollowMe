@@ -80,6 +80,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppBootstrapper.cs" />
+    <Compile Include="ArDrone\ArDroneConfig.cs" />
+    <Compile Include="ArDrone\ControlConfigBasedArDroneConfigProvider.cs" />
+    <Compile Include="Interfaces\IArDroneConfigProvider.cs" />
     <Compile Include="Caliburn\Micro\Logging\DebugLogger.cs" />
     <Compile Include="CameraForm.cs">
       <SubType>Form</SubType>
