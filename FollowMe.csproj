@@ -116,6 +116,7 @@
     <Compile Include="Converter\BatteryValueToColorConverter.cs" />
     <Compile Include="Converter\StringToRedOrGreenConverter.cs" />
     <Compile Include="IShell.cs" />
+    <Compile Include="Messages\HuePickerMessage.cs" />
     <Compile Include="ShellViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>

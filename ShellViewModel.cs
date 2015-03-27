@@ -12,6 +12,7 @@ using EZ_B.ARDrone;
 using EZ_B.CameraDetection;
 using EZ_B.Joystick;
 using FollowMe.ArDrone;
+using FollowMe.Messages;
 using FollowMe.ViewModels;
 using Timer = System.Timers.Timer;
 
@@ -20,9 +21,10 @@ namespace FollowMe {
     /// The viewModel for the shellview.
     /// </summary>
     [Export(typeof(ShellViewModel))]
-    public class ShellViewModel : PropertyChangedBase, IShell
+    public class ShellViewModel : PropertyChangedBase, IShell, IHandle<HuePickerMessage>
     {
         private readonly IWindowManager windowManager;
+        private readonly IEventAggregator eventAggregator;
         private static readonly ILog Log = LogManager.GetLog(typeof(ShellViewModel));
 
         #region privates
@@ -79,6 +81,8 @@ namespace FollowMe {
         private float saturationMax;
         private float luminanceMin;
         private float luminanceMax;
+        private int hueMin;
+        private int hueMax;
 
         #endregion
 
@@ -486,6 +490,26 @@ namespace FollowMe {
             }
         }
 
+        public int HueMin
+        {
+            get { return hueMin; }
+            set
+            {
+                hueMin = value;
+                NotifyOfPropertyChange(() => HueMin);
+            }
+        }
+
+        public int HueMax
+        {
+            get { return hueMax; }
+            set
+            {
+                hueMax = value;
+                NotifyOfPropertyChange(() => HueMax);
+            }
+        }
+
         #endregion
 
 
@@ -588,20 +612,22 @@ namespace FollowMe {
         /// Starts a timer which checks every 5 seconds the battery level of the connected AR.Drone
         /// </summary>
         [ImportingConstructor]
-        public ShellViewModel(IWindowManager windowManager)
+        public ShellViewModel(IWindowManager windowManager, IEventAggregator eventAggregator)
         {
+            if (windowManager == null) throw new ArgumentNullException("windowManager");
+            if (eventAggregator == null) throw new ArgumentNullException("eventAggregator");
+
             this.windowManager = windowManager;
+            this.eventAggregator = eventAggregator;
+
+            this.eventAggregator.Subscribe(this);
+
             Log.Info("Init");
             ezbConnect.EZB.ShowDebugWindow();
-            //camera = new Camera(ezbConnect.EZB);
-            //camera.OnNewFrame += _camera_OnNewFrame;
-
+           
             RefreshJoysticks();
 
-            //cameraForm = new CameraForm();
-            //cameraForm.Show();
-
-            ConnectToDroneEnabled = true;
+           ConnectToDroneEnabled = true;
 
             var arDroneStatusTimer = new Timer();
             arDroneStatusTimer.Elapsed += OnArDroneStatusTimedEvent;
@@ -744,7 +770,7 @@ namespace FollowMe {
 
         public void ShowHuePicker(object sender, RoutedEventArgs e)
         {
-            huePickerForm = new HuePickerForm();
+            huePickerForm = new HuePickerForm(this.eventAggregator);
             huePickerForm.Show();
         }
         /// <summary>
@@ -1069,6 +1095,12 @@ namespace FollowMe {
                 Log.Error(exception);
             }
 
+        }
+
+        public void Handle(HuePickerMessage message)
+        {
+            HueMax = message.HuePicker.Max;
+            HueMin = message.HuePicker.Min;
         }
     }
 }

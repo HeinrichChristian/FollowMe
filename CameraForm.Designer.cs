@@ -62,5 +62,6 @@
         #endregion
 
         public System.Windows.Forms.Panel ExternalCameraPanel;
+        public System.Windows.Forms.Panel ExternalCameraPanelTrackingPreview;
     }
 }
