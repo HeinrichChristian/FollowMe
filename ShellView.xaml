@@ -56,8 +56,8 @@
                             <ColumnDefinition Width="*"/>
 
                         </Grid.ColumnDefinitions>
-                        <Button Content="Mit Drone verbinden" x:Name="ButtonConnect" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="50" Margin="39,96,0,0" />
-                        <Button Content="Verbindung trennen" x:Name="ButtonDisconnect" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="53" Margin="41,168,0,0" />
+                        <Button Content="Mit AR.Drone verbinden" x:Name="ButtonConnect" IsEnabled="{Binding ConnectToDroneEnabled}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="50" Margin="39,96,0,0" />
+                        <Button Content="Verbindung trennen" x:Name="ButtonDisconnect" IsEnabled="{Binding ConnectToDroneEnabled, Converter={StaticResource InvertBoolConverter}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="53" Margin="41,168,0,0" />
                         <TextBlock HorizontalAlignment="Left" Margin="39,24,0,0" TextWrapping="Wrap" Text="Bevor Sie sich hier mit der AR.Drone verbinden können, muss eine WLAN-Verbindung von diesem PC zur AR.Drone hergestellt werden." VerticalAlignment="Top" Height="47" Width="306"/>
                     </Grid>
                 </TabItem>
@@ -140,11 +140,54 @@
                 </TabItem>
                 <TabItem Header="Tracking">
                     <Grid>
-                        <TextBlock HorizontalAlignment="Left" Margin="40,24,0,0" TextWrapping="Wrap" Text="Das Kamerabild live von der AR.Drone
-                                   (wird in einem extra Fenster angezeigt)" VerticalAlignment="Top" Height="42" Width="253"/>
-                        <Button Content="Starte Kameraübertragung" x:Name="ButtonShowCamera" IsEnabled="{Binding CameraStarted, Converter={StaticResource InvertBoolConverter}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="42" Margin="40,71,0,0"/>
-                        <Button Content="Stoppe Kameraübertragung" x:Name="ButtonStopCamera" IsEnabled="{Binding CameraStarted}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="42" Margin="269,71,0,0"/>
-                        <CheckBox Content="Aktiviere Objekterkennung" Name="ObjectDetectionEnabled"  HorizontalAlignment="Left" Margin="60,201,0,0" VerticalAlignment="Top"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250"></ColumnDefinition>
+                                <ColumnDefinition Width="200"></ColumnDefinition>
+                                <ColumnDefinition Width="200"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"></RowDefinition>
+                                <RowDefinition Height="60"></RowDefinition>
+                                <RowDefinition Height="60"></RowDefinition>
+                                <RowDefinition Height="35"></RowDefinition>
+                                <RowDefinition Height="35"></RowDefinition>
+                                <RowDefinition Height="35"></RowDefinition>
+                                <RowDefinition Height="35"></RowDefinition>
+                                <RowDefinition Height="35"></RowDefinition>
+                                <RowDefinition Height="35"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Das Kamerabild live von der AR.Drone (wird in einem extra Fenster angezeigt)" VerticalAlignment="Top" Height="42" Width="253"/>
+                        <Button Grid.Row="1" Grid.Column="0" Margin="7" Content="Starte Kameraübertragung" x:Name="ButtonShowCamera" IsEnabled="{Binding CameraStarted, Converter={StaticResource InvertBoolConverter}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="42" />
+                        <Button Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="7" Content="Stoppe Kameraübertragung" x:Name="ButtonStopCamera" IsEnabled="{Binding CameraStarted}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="42" />
+                        <CheckBox Grid.Row="2" Grid.Column="0" Content="Aktiviere Objekterkennung" Name="ObjectDetectionEnabled"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="Objektgröße" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                        <Slider Grid.Row="3" Grid.Column="1" Value="{Binding SearchObjectSizePixels}" Minimum="1" Maximum="100" Width="200" HorizontalAlignment="Left" Margin="7" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="SearchObjectSizePixels" VerticalAlignment="Top" Width="120"/>
+                     
+                        <Label Grid.Row="4" Grid.Column="0" Content="Objekthelligkeit" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <Slider Grid.Row="4" Grid.Column="1" Value="{Binding ColorBrightness}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="0" Maximum="255" />
+                        <TextBlock Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="ColorBrightness" VerticalAlignment="Center"/>
+
+                       <Label Grid.Row="5" Grid.Column="0" Content="Saturation Min" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                       <Slider Grid.Row="5" Grid.Column="1" Value="{Binding SaturationMin}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="0" Maximum="255" />
+                        <TextBlock Grid.Row="5" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="SaturationMin" VerticalAlignment="Center"/>
+
+                        <Label Grid.Row="6" Grid.Column="0" Content="Saturation Max" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <Slider Grid.Row="6" Grid.Column="1" Value="{Binding SaturationMax}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="0" Maximum="255" />
+                        <TextBlock Grid.Row="6" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="SaturationMax" VerticalAlignment="Center"/>
+
+                        <Label Grid.Row="7" Grid.Column="0" Content="Luminanz Min" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <Slider Grid.Row="7" Grid.Column="1" Value="{Binding LuminanceMin}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="0" Maximum="255" />
+                        <TextBlock Grid.Row="7" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="LuminanceMin" VerticalAlignment="Center"/>
+
+                        <Label Grid.Row="8" Grid.Column="0" Content="Luminanz Max" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <Slider Grid.Row="8" Grid.Column="1" Value="{Binding LuminanceMax}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="0" Maximum="255" />
+                        <TextBlock Grid.Row="8" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="LuminanceMax" VerticalAlignment="Center"/>
+
+                        </Grid>
 
 
                     </Grid>

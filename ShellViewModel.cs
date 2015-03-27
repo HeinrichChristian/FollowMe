@@ -72,6 +72,12 @@ namespace FollowMe {
         private ArDroneConfig arDroneConfig = new ArDroneConfig();
         private bool objectDetectionEnabled;
         private bool cameraStarted;
+        private int searchObjectSizePixels;
+        private byte colorBrightness;
+        private float saturationMin;
+        private float saturationMax;
+        private float luminanceMin;
+        private float luminanceMax;
 
         #endregion
 
@@ -416,6 +422,72 @@ namespace FollowMe {
         
 
         #endregion
+
+        #region Object tracking
+
+        public int SearchObjectSizePixels
+        {
+            get { return searchObjectSizePixels; }
+            set
+            {
+                searchObjectSizePixels = value;
+                NotifyOfPropertyChange(() => SearchObjectSizePixels);
+            }
+        }
+
+        public byte ColorBrightness
+        {
+            get { return colorBrightness; }
+            set
+            {
+                colorBrightness = value; 
+                NotifyOfPropertyChange(() => ColorBrightness);
+            }
+        }
+
+        public float SaturationMin
+        {
+            get { return saturationMin; }
+            set
+            {
+                saturationMin = value; 
+                NotifyOfPropertyChange(() => SaturationMin);
+            }
+        }
+
+        public float SaturationMax
+        {
+            get { return saturationMax; }
+            set
+            {
+                saturationMax = value;
+                NotifyOfPropertyChange(() => SaturationMax);
+            }
+        }
+
+        public float LuminanceMin
+        {
+            get { return luminanceMin; }
+            set
+            {
+                luminanceMin = value;
+                NotifyOfPropertyChange(() => LuminanceMin);
+            }
+        }
+
+        public float LuminanceMax
+        {
+            get { return luminanceMax; }
+            set
+            {
+                luminanceMax = value;
+                NotifyOfPropertyChange(() => LuminanceMax);
+            }
+        }
+
+        #endregion
+
+
         #region Settings
 
         /// <summary>
@@ -551,7 +623,7 @@ namespace FollowMe {
                 ezbConnect.EZB.ARDrone.Connect(ARDrone.ARDroneVersionEnum.V2);
                  var controlConfig = ezbConnect.EZB.ARDrone.GetControlConfig();
                 Log.Info(controlConfig);
-                if (!string.IsNullOrEmpty(controlConfig) && ezbConnect.EZB.ARDrone.IsConnected)
+                if (!string.IsNullOrEmpty(controlConfig))
                 {
                     DroneStatus = "Verbunden";
                     ConnectToDroneEnabled = false;
@@ -677,6 +749,7 @@ namespace FollowMe {
         {
             Log.Info("Disconnect");
             ezbConnect.EZB.ARDrone.Disconnect();
+            ConnectToDroneEnabled = true;
         }
 
         /// <summary>
@@ -926,14 +999,33 @@ namespace FollowMe {
             {
                 try
                 {
-                    ObjectLocation objectLocationByColor = camera.CameraBasicColorDetection.GetObjectLocationByColor(true, ColorDetection.ColorEnum.Red, 50, 80);
-                    if (objectLocationByColor != null)
+                    //ObjectLocation objectLocationByColor = camera.CameraBasicColorDetection.GetObjectLocationByColor(true, ColorDetection.ColorEnum.Red, SearchObjectSizePixels, ColorBrightness);
+                    //if (objectLocationByColor != null)
+                    //{
+                    //    Debug.WriteLine(objectLocationByColor.VerticalLocation.ToString());
+                    //    TargetXCoordinate = objectLocationByColor.CenterX;
+                    //    Log.Info("Object detected: X = {0}", objectLocationByColor.CenterX);
+                    //    TargetYCoordinate = objectLocationByColor.CenterY;
+                    //    Log.Info("Object detected: Y = {0}", objectLocationByColor.CenterY);
+                    //}
+
+
+
+                    ObjectLocation objectLocation = camera.CameraCustomColorDetection.GetObjectLocationByColor(
+                        true, 20, 20, 40, 50, 100, 10, 100);
+         //huePicker1.Min,
+         //huePicker1.Max,
+         //scSatMin.Value,
+         //scSatMax.Value,
+         //scLumMin.Value,
+         //scLumMax.Value);
+                    if (objectLocation != null && objectLocation.IsObjectFound)
                     {
-                        Debug.WriteLine(objectLocationByColor.VerticalLocation.ToString());
-                        TargetXCoordinate = objectLocationByColor.CenterX;
-                        Log.Info("Object detected: X = {0}", objectLocationByColor.CenterX);
-                        TargetYCoordinate = objectLocationByColor.CenterY;
-                        Log.Info("Object detected: Y = {0}", objectLocationByColor.CenterY);
+                        Debug.WriteLine(objectLocation.VerticalLocation.ToString());
+                        TargetXCoordinate = objectLocation.CenterX;
+                        Log.Info("Object detected: X = {0}", objectLocation.CenterX);
+                        TargetYCoordinate = objectLocation.CenterY;
+                        Log.Info("Object detected: Y = {0}", objectLocation.CenterY);
                     }
                 }
                 catch (Exception exception)
