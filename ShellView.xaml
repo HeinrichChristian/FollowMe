@@ -7,80 +7,77 @@
     <Window.Resources>
         <converter:BatteryValueToColorConverter x:Key="BatteryValueToColorConverter" />
         <converter:StringToRedOrGreenConverter x:Key="StringToRedOrGreenConverter" />
+        <converter:InvertBoolConverter x:Key="InvertBoolConverter"></converter:InvertBoolConverter>
     </Window.Resources>
     <Grid>
         <Grid>
-        <TabControl HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="1017" Height="563">
-            <TabItem Header="Joystick wählen">
-                <Grid Margin="10">
-                    <Grid.ColumnDefinitions>
+            <TabControl HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="1017" Height="563">
+                <TabItem Header="Joystick wählen">
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
 
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                    <!--<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Margin="788,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>-->
+                        <!--<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Margin="788,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>-->
 
 
-                    <!--<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Margin="788,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>-->
-                    <ComboBox x:Name="AvailableJoystickDevices" SelectedItem="{Binding SelectedJoystickDevice}" HorizontalAlignment="Left" Margin="118,19,0,0" VerticalAlignment="Top" Width="228" 
+                        <!--<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Margin="788,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>-->
+                        <ComboBox x:Name="AvailableJoystickDevices" SelectedItem="{Binding SelectedJoystickDevice}" HorizontalAlignment="Left" Margin="118,19,0,0" VerticalAlignment="Top" Width="228" 
                    DisplayMemberPath="Name" SelectedValuePath="Name"/>
-                    <Label Content="Joysticks" HorizontalAlignment="Left" Margin="36,19,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="ButtonRefreshJoysticks" Content="aktualisieren" HorizontalAlignment="Left" Margin="365,19,0,0" VerticalAlignment="Top" Width="75" />
-                    <RadioButton x:Name="Button1Pressed" Content="1 - Rotes LED-Blinken (10sec)" HorizontalAlignment="Left" Margin="677,55,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <Label Content="Joysticks" HorizontalAlignment="Left" Margin="36,19,0,0" VerticalAlignment="Top"/>
+                        <Button x:Name="ButtonRefreshJoysticks" Content="aktualisieren" HorizontalAlignment="Left" Margin="365,19,0,0" VerticalAlignment="Top" Width="75" />
+                        <RadioButton x:Name="Button1Pressed" Content="1 - Rotes LED-Blinken (10sec)" HorizontalAlignment="Left" Margin="677,55,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                         <RadioButton x:Name="Button2Pressed" Content="2 - Set flat trim - vor Takeoff ausführen" HorizontalAlignment="Left" Margin="677,75,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <RadioButton x:Name="Button3Pressed" Content="3" HorizontalAlignment="Left" Margin="677,95,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <RadioButton x:Name="Button4Pressed" Content="4" HorizontalAlignment="Left" Margin="677,115,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <RadioButton x:Name="Button5Pressed" Content="5" HorizontalAlignment="Left" Margin="677,136,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <RadioButton x:Name="Button6Pressed" Content="6" HorizontalAlignment="Left" Margin="677,156,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <RadioButton x:Name="Button7Pressed" Content="7 - Emergency - Motoren aus!" HorizontalAlignment="Left" Margin="677,176,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <RadioButton x:Name="Button8Pressed" Content="8 - Takeoff - zum Landen loslassen" HorizontalAlignment="Left" Margin="677,196,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content="linker Knppel &#xA;Pitch / Yaw" HorizontalAlignment="Left" Margin="688,228,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content="rechter Knppel &#xA;Nick / Roll" HorizontalAlignment="Left" Margin="820,228,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <TextBox x:Name="LeftStickXAxis" HorizontalAlignment="Left" Height="23" Margin="697,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" Grid.Column="1"/>
-                    <Label Content="X" HorizontalAlignment="Left" Margin="675,272,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content="Y" HorizontalAlignment="Left" Margin="675,308,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <TextBox x:Name="LeftStickYAxis" HorizontalAlignment="Left" Height="23" Margin="697,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" Grid.Column="1"/>
-                    <TextBox x:Name="RightStickXAxis" HorizontalAlignment="Left" Height="23" Margin="820,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" Grid.Column="1"/>
-                    <TextBox x:Name="RightStickYAxis" HorizontalAlignment="Left" Height="23" Margin="820,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" Grid.Column="1"/>
+                        <RadioButton x:Name="Button3Pressed" Content="3" HorizontalAlignment="Left" Margin="677,95,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <RadioButton x:Name="Button4Pressed" Content="4" HorizontalAlignment="Left" Margin="677,115,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <RadioButton x:Name="Button5Pressed" Content="5" HorizontalAlignment="Left" Margin="677,136,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <RadioButton x:Name="Button6Pressed" Content="6" HorizontalAlignment="Left" Margin="677,156,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <RadioButton x:Name="Button7Pressed" Content="7 - Emergency - Motoren aus!" HorizontalAlignment="Left" Margin="677,176,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <RadioButton x:Name="Button8Pressed" Content="8 - Takeoff - zum Landen loslassen" HorizontalAlignment="Left" Margin="677,196,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <Label Content="linker Knppel &#xA;Pitch / Yaw" HorizontalAlignment="Left" Margin="688,228,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <Label Content="rechter Knppel &#xA;Nick / Roll" HorizontalAlignment="Left" Margin="820,228,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <TextBox x:Name="LeftStickXAxis" HorizontalAlignment="Left" Height="23" Margin="697,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" Grid.Column="1"/>
+                        <Label Content="X" HorizontalAlignment="Left" Margin="675,272,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <Label Content="Y" HorizontalAlignment="Left" Margin="675,308,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <TextBox x:Name="LeftStickYAxis" HorizontalAlignment="Left" Height="23" Margin="697,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" Grid.Column="1"/>
+                        <TextBox x:Name="RightStickXAxis" HorizontalAlignment="Left" Height="23" Margin="820,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" Grid.Column="1"/>
+                        <TextBox x:Name="RightStickYAxis" HorizontalAlignment="Left" Height="23" Margin="820,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" Grid.Column="1"/>
 
                         <!--<TextBox  Height="23" TextWrapping="Wrap" Text="Place the cursor in this textbox. On emergency hit any key!" Margin="132,246,435,246" KeyDown="{Binding HandleEmergencyCommand}"/>-->
 
 
                     </Grid>
-            </TabItem>
-         
-            <TabItem Header="AR.Drone Verbindung herstellen">
-                <Grid Background="WhiteSmoke">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
+                </TabItem>
 
-                    </Grid.ColumnDefinitions>
-                    <Button Content="Mit Drone verbinden" x:Name="ButtonConnect" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="50" Margin="39,96,0,0" />
-                    <Button Content="Verbindung trennen" x:Name="ButtonDisconnect" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="53" Margin="41,168,0,0" />
-                    <Button Content="Starte Kameraübertragung" x:Name="ButtonShowCamera" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="42" Margin="506,96,0,0"/>
-                    <Button Content="Stoppe Kameraübertragung" x:Name="ButtonStopCamera" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="42" Margin="506,186,0,0"/>
+                <TabItem Header="AR.Drone Verbindung herstellen">
+                    <Grid Background="WhiteSmoke">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
 
-                    <TextBlock HorizontalAlignment="Left" Margin="39,24,0,0" TextWrapping="Wrap" Text="Bevor Sie sich hier mit der AR.Drone verbinden können, muss eine WLAN-Verbindung von diesem PC zur AR.Drone hergestellt werden." VerticalAlignment="Top" Height="47" Width="306"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="513,24,0,0" TextWrapping="Wrap" Text="Das Kamerabild live von der AR.Drone kann wird in einem extra Fenster angezeigt." VerticalAlignment="Top" Height="67" Width="193"/>
-                </Grid>
-            </TabItem>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="Mit Drone verbinden" x:Name="ButtonConnect" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="50" Margin="39,96,0,0" />
+                        <Button Content="Verbindung trennen" x:Name="ButtonDisconnect" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="53" Margin="41,168,0,0" />
+                        <TextBlock HorizontalAlignment="Left" Margin="39,24,0,0" TextWrapping="Wrap" Text="Bevor Sie sich hier mit der AR.Drone verbinden können, muss eine WLAN-Verbindung von diesem PC zur AR.Drone hergestellt werden." VerticalAlignment="Top" Height="47" Width="306"/>
+                    </Grid>
+                </TabItem>
 
-            <TabItem Header="Einstellungen">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-               
-                    <Border Grid.Column="0" Margin="10,10,10,10" BorderThickness="2" BorderBrush="LightSlateGray">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="350"></ColumnDefinition>
+                <TabItem Header="Einstellungen">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0" Margin="10,10,10,10" BorderThickness="2" BorderBrush="LightSlateGray">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="350"></ColumnDefinition>
                                     <ColumnDefinition Width="150"></ColumnDefinition>
                                     <ColumnDefinition Width="200"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="30"></RowDefinition>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"></RowDefinition>
                                     <RowDefinition Height="40"></RowDefinition>
                                     <RowDefinition Height="40"></RowDefinition>
                                     <RowDefinition Height="30"></RowDefinition>
@@ -97,13 +94,13 @@
                                     <RowDefinition Height="40"></RowDefinition>
                                     <RowDefinition Height="30"></RowDefinition>
                                 </Grid.RowDefinitions>
-                            <TextBlock Grid.Column="3" Margin="7" HorizontalAlignment="Center" Width="Auto"> Aktueller Wert in der AR.Drone</TextBlock>
+                                <TextBlock Grid.Column="3" Margin="7" HorizontalAlignment="Center" Width="Auto"> Aktueller Wert in der AR.Drone</TextBlock>
                                 <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" TextWrapping="WrapWithOverflow" Margin="10,10,0,0">Maximale Giergeschwindigkeit (Radiale pro Sekunde, empfohlene Werte zwischen 0.7 und 6.11, default 3.0)</TextBlock>
                                 <Slider Grid.Row="2" Grid.Column="0" x:Name="MaxYawSlider" Value="{Binding MaxYaw, Mode=TwoWay}" Minimum="0.7" Maximum="6.11" Margin="10"  Width="300"/>
                                 <TextBlock Grid.Row="2" Grid.Column="1" x:Name="MaxYaw" Margin="10" Width="100" ></TextBlock>
                                 <Button Grid.Row="2" Grid.Column="2" x:Name="ButtonSendMaxYaw"  Content="Sende Wert an AR.Drone" Margin="2" ></Button>
-                                <TextBlock Grid.Row="2" Grid.Column="3" Text="{Binding Path=ArDroneConfig.ControlYaw}" Margin="100,0,0,0" VerticalAlignment="Center"></TextBlock>    
-                            
+                                <TextBlock Grid.Row="2" Grid.Column="3" Text="{Binding Path=ArDroneConfig.ControlYaw}" Margin="100,0,0,0" VerticalAlignment="Center"></TextBlock>
+
                                 <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" TextWrapping="WrapWithOverflow" Margin="10,10,0,0"> Maximale Vertikalgeschwindigkeit (Millimeter pro Sekunde, empfohlene Werte zwischen 200 und 2000, default 1000)</TextBlock>
                                 <Slider Grid.Row="4" Grid.Column="0" x:Name="MaxVerticalSpeedSlider" Value="{Binding MaxVerticalSpeed, Mode=TwoWay}" Minimum="200" Maximum="2000" Margin="10" Width="300"/>
                                 <TextBlock Grid.Row="4" Grid.Column="1"  x:Name="MaxVerticalSpeed" Height="20" Margin="10" Width="100"></TextBlock>
@@ -134,37 +131,48 @@
 
                                 <Button Grid.Row="13" Grid.RowSpan="2" Grid.Column="3" Margin="2,15" Content="Zeige aktuelle Config von AR.Drone" x:Name="ButtonShowActualConfigOfArDrone"></Button>
                                 <Button Grid.Row="13" Grid.RowSpan="2" Grid.Column="2" Margin="2,15" Content="Sende Default Werte zur AR.Drone" x:Name="ButtonSendDefaultValues"></Button>
-                                
+
                             </Grid>
-                    </Border>
+                        </Border>
 
-                </Grid>
+                    </Grid>
 
-            </TabItem>
-            <TabItem Header="AR.Drone manuell fliegen">
-                <Grid>
+                </TabItem>
+                <TabItem Header="Tracking">
+                    <Grid>
+                        <TextBlock HorizontalAlignment="Left" Margin="40,24,0,0" TextWrapping="Wrap" Text="Das Kamerabild live von der AR.Drone
+                                   (wird in einem extra Fenster angezeigt)" VerticalAlignment="Top" Height="42" Width="253"/>
+                        <Button Content="Starte Kameraübertragung" x:Name="ButtonShowCamera" IsEnabled="{Binding CameraStarted, Converter={StaticResource InvertBoolConverter}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="42" Margin="40,71,0,0"/>
+                        <Button Content="Stoppe Kameraübertragung" x:Name="ButtonStopCamera" IsEnabled="{Binding CameraStarted}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="42" Margin="269,71,0,0"/>
+                        <CheckBox Content="Aktiviere Objekterkennung" Name="ObjectDetectionEnabled"  HorizontalAlignment="Left" Margin="60,201,0,0" VerticalAlignment="Top"/>
 
-                    <TextBox x:Name="DroneStatus" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Margin="204,108,0,0"/>
 
-                    <TextBox x:Name="TextBoxXCoordinate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="TextBoxYCoordinate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="Rotes Ziel X-Koordinate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="151"/>
-                    <Label Content="Rotes Ziel Y-Koordinate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="137" Margin="234,22,0,0"/>
-                    <Label Content="QR-Code" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Margin="327,48,0,0"/>
-                    <TextBox x:Name="TextBoxQrCode" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="543,10,0,0"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="AR.Drone manuell fliegen">
+                    <Grid>
 
-                    <Button Margin="600,74,173,81">
-                        <Grid>
-                            <Label Content="Not Aus" Foreground="Teal"  Margin="57,21,40,170" RenderTransformOrigin="0.538,-1.346"/>
-                            <Ellipse Fill="Yellow" Height="217" Stroke="Black" Width="214"/>
-                            <Ellipse Fill="Red" HorizontalAlignment="Left" Height="126" Stroke="Black" VerticalAlignment="Top" Width="126" Margin="48,49,0,0"/>
-                        </Grid>
-                    </Button>
-                </Grid>
-            </TabItem>
-               </TabControl>
-        <StatusBar HorizontalAlignment="Left" Height="33" Margin="0" VerticalAlignment="Bottom" Width="1017">
-             <Label Content="Joystick: "/>
+                        <TextBox x:Name="DroneStatus" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Margin="204,108,0,0"/>
+
+                        <TextBox x:Name="TextBoxXCoordinate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="TextBoxYCoordinate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <Label Content="Rotes Ziel X-Koordinate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="151"/>
+                        <Label Content="Rotes Ziel Y-Koordinate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="137" Margin="234,22,0,0"/>
+                        <Label Content="QR-Code" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Margin="327,48,0,0"/>
+                        <TextBox x:Name="TextBoxQrCode" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="543,10,0,0"/>
+
+                        <Button Margin="600,74,173,81">
+                            <Grid>
+                                <Label Content="Not Aus" Foreground="Teal"  Margin="57,21,40,170" RenderTransformOrigin="0.538,-1.346"/>
+                                <Ellipse Fill="Yellow" Height="217" Stroke="Black" Width="214"/>
+                                <Ellipse Fill="Red" HorizontalAlignment="Left" Height="126" Stroke="Black" VerticalAlignment="Top" Width="126" Margin="48,49,0,0"/>
+                            </Grid>
+                        </Button>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <StatusBar HorizontalAlignment="Left" Height="33" Margin="0" VerticalAlignment="Bottom" Width="1017">
+                <Label Content="Joystick: "/>
                 <TextBlock x:Name="SelectedJoystick" HorizontalAlignment="Center" Width="160" Height="23" VerticalAlignment="Center" TextWrapping="Wrap" Text="" Background="{Binding SelectedJoystick, Converter={StaticResource StringToRedOrGreenConverter}}"/>
                 <!--<TextBlock x:Name="SelectedJoystick" ToolTip="{Binding SelectedJoystick}" Width="160" Background="{Binding SelectedJoystick, Converter={StaticResource StringToRedOrGreenConverter}}" />-->
                 <Label Content="Verbindung zu AR.Drone:"/>

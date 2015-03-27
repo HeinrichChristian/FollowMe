@@ -39,10 +39,8 @@ namespace FollowMe {
 
         private Joystick joystick;
         private Camera camera;
-        private readonly Timer arDroneStatusTimer;
         private readonly UCEZB_Connect ezbConnect = new UCEZB_Connect();
         private int batteryLevel;
-        private bool ardroneAccessPointVisible;
         private bool button1Pressed;
         private bool button2Pressed;
         private bool button3Pressed;
@@ -62,7 +60,7 @@ namespace FollowMe {
         private Control cameraPanel = new Control();
         private JoystickDevice selectedJoystickDevice;
         private string droneStatus;
-        private readonly CameraForm cameraForm;
+        private CameraForm cameraForm;
         private bool connectToDroneEnabled;
         private string selectedJoystick;
         private float maxYaw;
@@ -72,6 +70,8 @@ namespace FollowMe {
         private bool isOutside;
         private bool flyingWithoutShell;
         private ArDroneConfig arDroneConfig = new ArDroneConfig();
+        private bool objectDetectionEnabled;
+        private bool cameraStarted;
 
         #endregion
 
@@ -79,6 +79,9 @@ namespace FollowMe {
 
         #region public properties
 
+        /// <summary>
+        /// The Config of the AR.Drone
+        /// </summary>
         public ArDroneConfig ArDroneConfig
         {
             get
@@ -114,6 +117,29 @@ namespace FollowMe {
             {
                 connectToDroneEnabled = value;
                 NotifyOfPropertyChange(() => ConnectToDroneEnabled);
+            }
+        }
+
+        /// <summary>
+        /// If true, the detection of objects is enabled
+        /// </summary>
+        public bool ObjectDetectionEnabled
+        {
+            get { return objectDetectionEnabled; }
+            set
+            {
+                objectDetectionEnabled = value;
+                NotifyOfPropertyChange(() => ObjectDetectionEnabled);
+            }
+        }
+
+        public bool CameraStarted
+        {
+            get { return cameraStarted; }
+            set
+            {
+                cameraStarted = value;
+                NotifyOfPropertyChange(() => CameraStarted);
             }
         }
 
@@ -499,12 +525,12 @@ namespace FollowMe {
 
             RefreshJoysticks();
 
-            cameraForm = new CameraForm();
-            cameraForm.Show();
+            //cameraForm = new CameraForm();
+            //cameraForm.Show();
 
             ConnectToDroneEnabled = true;
 
-            arDroneStatusTimer = new Timer();
+            var arDroneStatusTimer = new Timer();
             arDroneStatusTimer.Elapsed += OnArDroneStatusTimedEvent;
             arDroneStatusTimer.Interval = 5000;
             arDroneStatusTimer.Enabled = true;
@@ -616,6 +642,13 @@ namespace FollowMe {
         /// <param name="e"></param>
         public void ButtonShowCamera(object sender, RoutedEventArgs e)
         {
+            camera = new Camera(ezbConnect.EZB);
+            camera.OnNewFrame += _camera_OnNewFrame;
+
+
+            cameraForm = new CameraForm();
+            cameraForm.Show();
+
             Log.Info("StartCamera");
             camera.StartCamera(
                   new ValuePair(Camera.CAMERA_NAME_AR_DRONE, Camera.CAMERA_NAME_AR_DRONE),
@@ -624,6 +657,15 @@ namespace FollowMe {
                   240);
 
             ezbConnect.EZB.ARDrone.StartVideo();
+            CameraStarted = true;
+        }
+
+        public void ButtonStopCamera(object sender, RoutedEventArgs e)
+        {
+            CameraStarted = false;
+            cameraForm.Dispose();
+            cameraForm = null;
+            camera.StopCamera();   
         }
 
         /// <summary>
@@ -655,15 +697,10 @@ namespace FollowMe {
             
             Log.Info(controlConfig);
             var arDroneConfigProvider = new ControlConfigBasedArDroneConfigProvider(controlConfig);
-            this.ArDroneConfig = arDroneConfigProvider.GetArDroneConfig();
-            this.windowManager.ShowWindow(new ControlConfigViewModel(controlConfig));
+            ArDroneConfig = arDroneConfigProvider.GetArDroneConfig();
+            windowManager.ShowWindow(new ControlConfigViewModel(controlConfig));
         }
-
-        public void HandleEmergencyCommand(object sender, System.Windows.Forms.KeyPressEventArgs e)
-        {
-            Log.Info("HandleEmergencyCommand");
-        }
-
+        
 
         public void ButtonSendDefaultValues(object sender, RoutedEventArgs e)
         {
@@ -713,8 +750,7 @@ namespace FollowMe {
         private void ActivateJoystick()
         {
             JoystickDevice joystickDevice = SelectedJoystickDevice;
-            joystick = new Joystick(joystickDevice, ezbConnect.EZB);
-            joystick.EventWatcherResolution = 100;
+            joystick = new Joystick(joystickDevice, ezbConnect.EZB) {EventWatcherResolution = 100};
             joystick.OnControllerAction += _joystick_OnControllerAction;
             joystick.StartEventWatcher();
         }
@@ -806,12 +842,6 @@ namespace FollowMe {
                     Thread.Sleep(MoveSleepTimeMilliseconds);
                     ezbConnect.EZB.ARDrone.Hover();
                 }
-
-
-                //ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, joystick.GetAxisX);
-                //Thread.Sleep(moveSleepTimeMilliseconds);
-                //ezB_Connect1.EZB.ARDrone.Hover();
-
             }
             // left stick, Y axis -> pitch
             if (joystick.AxisYStateChanged())
@@ -891,34 +921,40 @@ namespace FollowMe {
         void _camera_OnNewFrame()
         {
             camera.UpdatePreview();
-            try
+
+            if(ObjectDetectionEnabled)
             {
-                ObjectLocation objectLocationByColor = camera.CameraBasicColorDetection.GetObjectLocationByColor(true, ColorDetection.ColorEnum.Red, 50, 80);
-                if (objectLocationByColor != null)
+                try
                 {
-                    Debug.WriteLine(objectLocationByColor.VerticalLocation.ToString());
-                    TargetXCoordinate = objectLocationByColor.CenterX;
-                    TargetYCoordinate = objectLocationByColor.CenterY;
+                    ObjectLocation objectLocationByColor = camera.CameraBasicColorDetection.GetObjectLocationByColor(true, ColorDetection.ColorEnum.Red, 50, 80);
+                    if (objectLocationByColor != null)
+                    {
+                        Debug.WriteLine(objectLocationByColor.VerticalLocation.ToString());
+                        TargetXCoordinate = objectLocationByColor.CenterX;
+                        Log.Info("Object detected: X = {0}", objectLocationByColor.CenterX);
+                        TargetYCoordinate = objectLocationByColor.CenterY;
+                        Log.Info("Object detected: Y = {0}", objectLocationByColor.CenterY);
+                    }
                 }
-            }
-            catch (Exception exception)
-            {
-                Log.Error(exception);
+                catch (Exception exception)
+                {
+                    Log.Error(exception);
+                }
             }
 
             try
             {
-                ObjectLocation objectLocationByQrCode = camera.CameraQRCodeDetection.GetObjectLocationByQRCode();
+                //ObjectLocation objectLocationByQrCode = camera.CameraQRCodeDetection.GetObjectLocationByQRCode();
 
-                if (objectLocationByQrCode != null)
-                {
-                    QrCode = objectLocationByQrCode.QRCodeText;
-                    Debug.WriteLine(objectLocationByQrCode.QRCodeText);
-                }
-                else
-                {
-                    QrCode = string.Empty;
-                }
+                //if (objectLocationByQrCode != null)
+                //{
+                //    QrCode = objectLocationByQrCode.QRCodeText;
+                //    Debug.WriteLine(objectLocationByQrCode.QRCodeText);
+                //}
+                //else
+                //{
+                //    QrCode = string.Empty;
+                //}
 
 
                 //    if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left)

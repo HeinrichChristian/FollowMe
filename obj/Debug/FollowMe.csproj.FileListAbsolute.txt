@@ -18,7 +18,6 @@ E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\Caliburn.Micr
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\EZ_B.xml
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\log4net.xml
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\System.Windows.Interactivity.xml
-E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.csprojResolveAssemblyReference.cache
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\ShellView.g.cs
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\App.g.cs
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -34,3 +33,4 @@ E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.exe
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.pdb
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\Views\ControlConfigView.baml
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\Views\ControlConfigView.g.cs
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.csprojResolveAssemblyReference.cache
