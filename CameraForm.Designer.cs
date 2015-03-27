@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.ExternalCameraPanel = new System.Windows.Forms.Panel();
+            this.ExternalCameraPanelTrackingPreview = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // ExternalCameraPanel
@@ -38,11 +39,19 @@
             this.ExternalCameraPanel.Size = new System.Drawing.Size(666, 507);
             this.ExternalCameraPanel.TabIndex = 0;
             // 
+            // ExternalCameraPanelTrackingPreview
+            // 
+            this.ExternalCameraPanelTrackingPreview.Location = new System.Drawing.Point(708, 12);
+            this.ExternalCameraPanelTrackingPreview.Name = "ExternalCameraPanelTrackingPreview";
+            this.ExternalCameraPanelTrackingPreview.Size = new System.Drawing.Size(666, 507);
+            this.ExternalCameraPanelTrackingPreview.TabIndex = 1;
+            // 
             // CameraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 519);
+            this.ClientSize = new System.Drawing.Size(1382, 519);
+            this.Controls.Add(this.ExternalCameraPanelTrackingPreview);
             this.Controls.Add(this.ExternalCameraPanel);
             this.Name = "CameraForm";
             this.Text = "Live AR.Drone Frontkamera";

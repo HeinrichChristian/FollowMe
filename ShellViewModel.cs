@@ -61,6 +61,7 @@ namespace FollowMe {
         private JoystickDevice selectedJoystickDevice;
         private string droneStatus;
         private CameraForm cameraForm;
+        private HuePickerForm huePickerForm;
         private bool connectToDroneEnabled;
         private string selectedJoystick;
         private float maxYaw;
@@ -725,6 +726,7 @@ namespace FollowMe {
             camera.StartCamera(
                   new ValuePair(Camera.CAMERA_NAME_AR_DRONE, Camera.CAMERA_NAME_AR_DRONE),
                     cameraForm.ExternalCameraPanel,
+                    cameraForm.ExternalCameraPanelTrackingPreview,
                   320,
                   240);
 
@@ -740,6 +742,11 @@ namespace FollowMe {
             camera.StopCamera();   
         }
 
+        public void ShowHuePicker(object sender, RoutedEventArgs e)
+        {
+            huePickerForm = new HuePickerForm();
+            huePickerForm.Show();
+        }
         /// <summary>
         /// Disconnect from AR.Drone
         /// </summary>
@@ -1012,13 +1019,15 @@ namespace FollowMe {
 
 
                     ObjectLocation objectLocation = camera.CameraCustomColorDetection.GetObjectLocationByColor(
-                        true, 20, 20, 40, 50, 100, 10, 100);
-         //huePicker1.Min,
-         //huePicker1.Max,
-         //scSatMin.Value,
-         //scSatMax.Value,
-         //scLumMin.Value,
-         //scLumMax.Value);
+                                        true,
+                                        SearchObjectSizePixels, 
+                                        20, 
+                                        40,
+                                        SaturationMin, 
+                                        SaturationMax, 
+                                        LuminanceMin, 
+                                        LuminanceMax);
+        
                     if (objectLocation != null && objectLocation.IsObjectFound)
                     {
                         Debug.WriteLine(objectLocation.VerticalLocation.ToString());

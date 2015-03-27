@@ -34,3 +34,13 @@ E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.pdb
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\Views\ControlConfigView.baml
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\Views\ControlConfigView.g.cs
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.csprojResolveAssemblyReference.cache
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\AForge.Controls.dll
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\AForge.Imaging.dll
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\AForge.Math.dll
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\AForge.Video.dll
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\AForge.xml
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\AForge.Controls.xml
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\AForge.Imaging.xml
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\AForge.Math.xml
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\AForge.Video.xml
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.HuePickerForm.resources
