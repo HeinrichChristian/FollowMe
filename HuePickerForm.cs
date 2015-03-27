@@ -27,8 +27,6 @@ namespace FollowMe
 
         void huePicker1_ValuesChanged(object sender, EventArgs e)
         {
-            //this.hueMaxTextBox.Text = huePicker1.Max.ToString();
-            //this.hueMinTextBox.Text = huePicker1.Min.ToString();
             eventAggregator.Publish(new HuePickerMessage(huePicker1.Min, huePicker1.Max), action =>
             {
                 Task.Factory.StartNew(action);

@@ -753,12 +753,14 @@ namespace FollowMe {
             Log.Info("StartCamera");
             camera.StartCamera(
                   new ValuePair(Camera.CAMERA_NAME_AR_DRONE, Camera.CAMERA_NAME_AR_DRONE),
-                    cameraForm.ExternalCameraPanel,
+                    
                     cameraForm.ExternalCameraPanelTrackingPreview,
+                    cameraForm.ExternalCameraPanel,
                   320,
                   240);
 
             ezbConnect.EZB.ARDrone.StartVideo();
+
             CameraStarted = true;
         }
 
@@ -1057,8 +1059,8 @@ namespace FollowMe {
                     ObjectLocation objectLocation = camera.CameraCustomColorDetection.GetObjectLocationByColor(
                                         true,
                                         SearchObjectSizePixels, 
-                                        20, 
-                                        40,
+                                        HueMin, 
+                                        HueMax,
                                         SaturationMin, 
                                         SaturationMax, 
                                         LuminanceMin, 
@@ -1066,7 +1068,6 @@ namespace FollowMe {
         
                     if (objectLocation != null && objectLocation.IsObjectFound)
                     {
-                        Debug.WriteLine(objectLocation.VerticalLocation.ToString());
                         TargetXCoordinate = objectLocation.CenterX;
                         Log.Info("Object detected: X = {0}", objectLocation.CenterX);
                         TargetYCoordinate = objectLocation.CenterY;
