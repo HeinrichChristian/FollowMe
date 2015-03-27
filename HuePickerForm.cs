@@ -10,13 +10,18 @@ namespace FollowMe
     public partial class HuePickerForm : Form
     {
         private readonly IEventAggregator eventAggregator;
+        
         private HuePicker huePicker;
 
-        public HuePickerForm(IEventAggregator eventAggregator)
+        public HuePickerForm(IEventAggregator eventAggregator, HuePickerMessage huePickerMessage)
         {
             if (eventAggregator == null) throw new ArgumentNullException("eventAggregator");
             this.eventAggregator = eventAggregator;
+            
             InitializeComponent();
+            huePicker1.Max = huePickerMessage.HueMax;
+            huePicker1.Min = huePickerMessage.HueMin;
+            huePicker1.Invalidate();
             huePicker1.ValuesChanged += huePicker1_ValuesChanged;
         }
 
@@ -24,24 +29,12 @@ namespace FollowMe
         {
             //this.hueMaxTextBox.Text = huePicker1.Max.ToString();
             //this.hueMinTextBox.Text = huePicker1.Min.ToString();
-            eventAggregator.Publish(new HuePickerMessage(huePicker1), action =>
+            eventAggregator.Publish(new HuePickerMessage(huePicker1.Min, huePicker1.Max), action =>
             {
                 Task.Factory.StartNew(action);
 
             });
         }
-
-        private void btnUebernehmen_Click(object sender, EventArgs e)
-        {
-            var value = this.huePicker1.Value;
-            eventAggregator.Publish(new HuePickerMessage(huePicker1), action =>
-            {
-                Task.Factory.StartNew(action);
-
-            });
-        
-
-    ;
-        }
+     
     }
 }

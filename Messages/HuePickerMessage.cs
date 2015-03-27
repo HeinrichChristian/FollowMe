@@ -1,24 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AForge.Controls;
-
-namespace FollowMe.Messages
+﻿namespace FollowMe.Messages
 {
     public class HuePickerMessage
     {
-        private readonly HuePicker huePicker;
+        public int HueMin { get; private set; }
+        public int HueMax { get; private set; }
+        
 
-        public HuePickerMessage(HuePicker huePicker)
+        public HuePickerMessage(int hueMin, int hueMax)
         {
-            this.huePicker = huePicker;
-        }
-
-        public HuePicker HuePicker
-        {
-            get { return huePicker; }
+            HueMin = hueMin;
+            HueMax = hueMax;
         }
     }
 }

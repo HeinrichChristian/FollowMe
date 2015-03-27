@@ -6,6 +6,7 @@ using System.Threading;
 using System.Timers;
 using System.Windows;
 using System.Windows.Forms;
+using AForge.Controls;
 using Caliburn.Micro;
 using EZ_B;
 using EZ_B.ARDrone;
@@ -14,6 +15,7 @@ using EZ_B.Joystick;
 using FollowMe.ArDrone;
 using FollowMe.Messages;
 using FollowMe.ViewModels;
+using Joystick = EZ_B.Joystick.Joystick;
 using Timer = System.Timers.Timer;
 
 namespace FollowMe {
@@ -770,7 +772,7 @@ namespace FollowMe {
 
         public void ShowHuePicker(object sender, RoutedEventArgs e)
         {
-            huePickerForm = new HuePickerForm(this.eventAggregator);
+            huePickerForm = new HuePickerForm(this.eventAggregator, new HuePickerMessage(HueMin,HueMax));
             huePickerForm.Show();
         }
         /// <summary>
@@ -825,11 +827,19 @@ namespace FollowMe {
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="e"></param>
         private void OnArDroneStatusTimedEvent(object source, ElapsedEventArgs e)
         {
             BatteryLevel = ezbConnect.EZB.ARDrone.CurrentNavigationData.BatteryLevel;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void RefreshJoysticks()
         {
             if (joystick != null)
@@ -1099,8 +1109,8 @@ namespace FollowMe {
 
         public void Handle(HuePickerMessage message)
         {
-            HueMax = message.HuePicker.Max;
-            HueMin = message.HuePicker.Min;
+            HueMax = message.HueMax;
+            HueMin = message.HueMin;
         }
     }
 }
