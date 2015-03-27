@@ -753,9 +753,8 @@ namespace FollowMe {
             Log.Info("StartCamera");
             camera.StartCamera(
                   new ValuePair(Camera.CAMERA_NAME_AR_DRONE, Camera.CAMERA_NAME_AR_DRONE),
-                    
-                    cameraForm.ExternalCameraPanelTrackingPreview,
                     cameraForm.ExternalCameraPanel,
+                    cameraForm.ExternalCameraPanelTrackingPreview,
                   320,
                   240);
 
@@ -1038,7 +1037,7 @@ namespace FollowMe {
         /// </summary>
         void _camera_OnNewFrame()
         {
-            camera.UpdatePreview();
+            ObjectLocation objectLocation = null;
 
             if(ObjectDetectionEnabled)
             {
@@ -1056,7 +1055,7 @@ namespace FollowMe {
 
 
 
-                    ObjectLocation objectLocation = camera.CameraCustomColorDetection.GetObjectLocationByColor(
+                    objectLocation = camera.CameraCustomColorDetection.GetObjectLocationByColor(
                                         true,
                                         SearchObjectSizePixels, 
                                         HueMin, 
@@ -1066,19 +1065,24 @@ namespace FollowMe {
                                         LuminanceMin, 
                                         LuminanceMax);
         
-                    if (objectLocation != null && objectLocation.IsObjectFound)
-                    {
-                        TargetXCoordinate = objectLocation.CenterX;
-                        Log.Info("Object detected: X = {0}", objectLocation.CenterX);
-                        TargetYCoordinate = objectLocation.CenterY;
-                        Log.Info("Object detected: Y = {0}", objectLocation.CenterY);
-                    }
                 }
                 catch (Exception exception)
                 {
                     Log.Error(exception);
                 }
             }
+
+            camera.UpdatePreview();
+
+
+            if (objectLocation != null && objectLocation.IsObjectFound)
+            {
+                TargetXCoordinate = objectLocation.CenterX;
+                Log.Info("Object detected: X = {0}", objectLocation.CenterX);
+                TargetYCoordinate = objectLocation.CenterY;
+                Log.Info("Object detected: Y = {0}", objectLocation.CenterY);
+            }
+            
 
             try
             {

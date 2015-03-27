@@ -144,7 +144,7 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="250"></ColumnDefinition>
-                                <ColumnDefinition Width="200"></ColumnDefinition>
+                                <ColumnDefinition Width="250"></ColumnDefinition>
                                 <ColumnDefinition Width="200"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
@@ -168,7 +168,7 @@
 
 
                         <Label Grid.Row="3" Grid.Column="0" Content="Objektgröße" HorizontalAlignment="Right" VerticalAlignment="Top" />
-                        <Slider Grid.Row="3" Grid.Column="1" Value="{Binding SearchObjectSizePixels}" Minimum="1" Maximum="100" Width="200" HorizontalAlignment="Left" Margin="7" VerticalAlignment="Center"/>
+                        <Slider Grid.Row="3" Grid.Column="1" Value="{Binding SearchObjectSizePixels}" Minimum="-255" Maximum="255" Width="200" HorizontalAlignment="Left" Margin="7" VerticalAlignment="Center"/>
                         <TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="SearchObjectSizePixels" VerticalAlignment="Top" Width="120"/>
                      
                         <Label Grid.Row="4" Grid.Column="0" Content="Objekthelligkeit" HorizontalAlignment="Right" VerticalAlignment="Center"/>
@@ -176,19 +176,19 @@
                         <TextBlock Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="ColorBrightness" VerticalAlignment="Center"/>
 
                        <Label Grid.Row="5" Grid.Column="0" Content="Saturation Min" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                       <Slider Grid.Row="5" Grid.Column="1" Value="{Binding SaturationMin}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="0" Maximum="255" />
+                       <Slider Grid.Row="5" Grid.Column="1" Value="{Binding SaturationMin}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
                         <TextBlock Grid.Row="5" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="SaturationMin" VerticalAlignment="Center"/>
 
                         <Label Grid.Row="6" Grid.Column="0" Content="Saturation Max" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <Slider Grid.Row="6" Grid.Column="1" Value="{Binding SaturationMax}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="0" Maximum="255" />
+                        <Slider Grid.Row="6" Grid.Column="1" Value="{Binding SaturationMax}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
                         <TextBlock Grid.Row="6" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="SaturationMax" VerticalAlignment="Center"/>
 
                         <Label Grid.Row="7" Grid.Column="0" Content="Luminanz Min" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <Slider Grid.Row="7" Grid.Column="1" Value="{Binding LuminanceMin}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="0" Maximum="255" />
+                        <Slider Grid.Row="7" Grid.Column="1" Value="{Binding LuminanceMin}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
                         <TextBlock Grid.Row="7" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="LuminanceMin" VerticalAlignment="Center"/>
 
                         <Label Grid.Row="8" Grid.Column="0" Content="Luminanz Max" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <Slider Grid.Row="8" Grid.Column="1" Value="{Binding LuminanceMax}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="0" Maximum="255" />
+                        <Slider Grid.Row="8" Grid.Column="1" Value="{Binding LuminanceMax}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
                         <TextBlock Grid.Row="8" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="LuminanceMax" VerticalAlignment="Center"/>
 
                         <Label Grid.Row="9" Grid.Column="0" Content="Hue Min" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
