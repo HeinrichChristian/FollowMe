@@ -11,6 +11,7 @@ using EZ_B;
 using EZ_B.ARDrone;
 using EZ_B.CameraDetection;
 using EZ_B.Joystick;
+using FollowMe.ArDrone;
 using FollowMe.ViewModels;
 using Timer = System.Timers.Timer;
 
@@ -34,7 +35,7 @@ namespace FollowMe {
         /// <summary>
         /// After sending a move command this amount of milliseconds the thread sleeps
         /// </summary>
-        private const int MoveSleepTimeMilliseconds = 400;
+        private const int MoveSleepTimeMilliseconds = 100;
 
         private Joystick joystick;
         private Camera camera;
@@ -70,12 +71,28 @@ namespace FollowMe {
         private int maxAltitude;
         private bool isOutside;
         private bool flyingWithoutShell;
+        private ArDroneConfig arDroneConfig = new ArDroneConfig();
 
         #endregion
 
      
 
         #region public properties
+
+        public ArDroneConfig ArDroneConfig
+        {
+            get
+            {
+                return arDroneConfig;
+
+            }
+            set
+            {
+
+                arDroneConfig = value;
+                NotifyOfPropertyChange(() => ArDroneConfig);
+            }
+        }
 
         /// <summary>
         /// The battery level of the AR.Drone - value between 0 and 100, lower than 17 is not good
@@ -475,11 +492,10 @@ namespace FollowMe {
         public ShellViewModel(IWindowManager windowManager)
         {
             this.windowManager = windowManager;
-            //this.ardroneAccessPointVisible = ardroneAccessPointVisible;
             Log.Info("Init");
             ezbConnect.EZB.ShowDebugWindow();
-            camera = new Camera(ezbConnect.EZB);
-            camera.OnNewFrame += _camera_OnNewFrame;
+            //camera = new Camera(ezbConnect.EZB);
+            //camera.OnNewFrame += _camera_OnNewFrame;
 
             RefreshJoysticks();
 
@@ -492,6 +508,8 @@ namespace FollowMe {
             arDroneStatusTimer.Elapsed += OnArDroneStatusTimedEvent;
             arDroneStatusTimer.Interval = 5000;
             arDroneStatusTimer.Enabled = true;
+
+            
         }
 
         /// <summary>
@@ -636,7 +654,21 @@ namespace FollowMe {
             var controlConfig = ezbConnect.EZB.ARDrone.GetControlConfig();
             
             Log.Info(controlConfig);
+            var arDroneConfigProvider = new ControlConfigBasedArDroneConfigProvider(controlConfig);
+            this.ArDroneConfig = arDroneConfigProvider.GetArDroneConfig();
             this.windowManager.ShowWindow(new ControlConfigViewModel(controlConfig));
+        }
+
+        public void HandleEmergencyCommand(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            Log.Info("HandleEmergencyCommand");
+        }
+
+
+        public void ButtonSendDefaultValues(object sender, RoutedEventArgs e)
+        {
+            Log.Info("SendDefaultValues");
+            ezbConnect.EZB.ARDrone.SendDefaultValues();
         }
 
         /// <summary>
@@ -652,8 +684,6 @@ namespace FollowMe {
 
         private void OnArDroneStatusTimedEvent(object source, ElapsedEventArgs e)
         {
-            
-            //ConnectToDroneEnabled = IsArdroneNetworkVisible();
             BatteryLevel = ezbConnect.EZB.ARDrone.CurrentNavigationData.BatteryLevel;
         }
 
@@ -684,6 +714,7 @@ namespace FollowMe {
         {
             JoystickDevice joystickDevice = SelectedJoystickDevice;
             joystick = new Joystick(joystickDevice, ezbConnect.EZB);
+            joystick.EventWatcherResolution = 100;
             joystick.OnControllerAction += _joystick_OnControllerAction;
             joystick.StartEventWatcher();
         }
@@ -694,6 +725,21 @@ namespace FollowMe {
         /// </summary>
         private void _joystick_OnControllerAction()
         {
+
+            // Button 8 -> Takeoff (deadman switch)
+            if (joystick.ButtonPressed(7) && !Button8Pressed)
+            {
+                Log.Info("TakeOff");
+                ezbConnect.EZB.ARDrone.TakeOff();
+                Button8Pressed = true;
+            }
+            else if (joystick.ButtonPressed(7) == false)
+            {
+                Log.Info("Land");
+                ezbConnect.EZB.ARDrone.Land();
+                Button8Pressed = false;
+            }
+
             // Button 1 -> blink LEDs
             if (joystick.ButtonPressed(0))
             {
@@ -707,7 +753,18 @@ namespace FollowMe {
             }
 
             // Button 2
-            Button2Pressed = joystick.ButtonPressed(1);
+            //  Must be called before take-off (start engines). Must be called on a flat surface. This flattens the trim values for the surface. 
+            if (joystick.ButtonPressed(1))
+            {
+                Button2Pressed = true;
+                ezbConnect.EZB.ARDrone.SetFlatTrim();
+            }
+            else
+            {
+                Button2Pressed = false;
+            }
+
+            
 
             Button3Pressed = joystick.ButtonPressed(2);
 
@@ -717,33 +774,39 @@ namespace FollowMe {
 
             Button6Pressed = joystick.ButtonPressed(5);
 
-            //  Must be called before take-off (start engines). Must be called on a flat surface. This flattens the trim values for the surface. 
+            // Emergency
             if (joystick.ButtonPressed(6))
             {
+                ezbConnect.EZB.ARDrone.Emergency();
+                Log.Info("Emergency");
                 Button7Pressed = true;
-                ezbConnect.EZB.ARDrone.SetFlatTrim();
             }
             else
             {
                 Button7Pressed = false;
             }
 
-            // Button 8 -> Takeoff (deadman switch)
-            if (joystick.ButtonPressed(7))
-            {
-                ezbConnect.EZB.ARDrone.TakeOff();
-                Button8Pressed = true;
-            }
-            else
-            {
-                ezbConnect.EZB.ARDrone.Land();
-                Button8Pressed = false;
-            }
-
             // left stick, X axis -> yaw
             if (joystick.AxisXStateChanged())
             {
                 LeftStickXAxis = joystick.GetAxisX;
+
+                if (joystick.GetAxisX > 0.3)
+                {
+                    Log.Info("joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisY, 0, 0, 0, MoveSensitivivivity);
+                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, MoveSensitivivivity);
+                    Thread.Sleep(MoveSleepTimeMilliseconds);
+                    ezbConnect.EZB.ARDrone.Hover();
+                }
+
+                if (joystick.GetAxisX < -0.3)
+                {
+                    Log.Info("joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisY, 0, 0, 0, -MoveSensitivivivity);
+                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, -MoveSensitivivivity);
+                    Thread.Sleep(MoveSleepTimeMilliseconds);
+                    ezbConnect.EZB.ARDrone.Hover();
+                }
+
 
                 //ezB_Connect1.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, joystick.GetAxisX);
                 //Thread.Sleep(moveSleepTimeMilliseconds);
@@ -777,18 +840,20 @@ namespace FollowMe {
             {
                 RightStickXAxis = joystick.GetAxisZ;
 
+                // to the right
                 if (joystick.GetAxisZ > 0.3)
                 {
                     Log.Info("joystick.GetAxisZ {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisZ, -MoveSensitivivivity, 0, 0, 0);
-                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(-MoveSensitivivivity, 0, 0, 0);
+                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(MoveSensitivivivity, 0, 0, 0);
                     Thread.Sleep(MoveSleepTimeMilliseconds);
                     ezbConnect.EZB.ARDrone.Hover();
                 }
 
+                // to the left
                 if (joystick.GetAxisZ < -0.3)
                 {
                     Log.Info("joystick.GetAxisZ {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisZ, MoveSensitivivivity, 0, 0, 0);
-                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(MoveSensitivivivity, 0, 0, 0);
+                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(-MoveSensitivivivity, 0, 0, 0);
                     Thread.Sleep(MoveSleepTimeMilliseconds);
                     ezbConnect.EZB.ARDrone.Hover();
                 }

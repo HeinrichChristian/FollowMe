@@ -1,21 +1,516 @@
-2015-03-26 20:30:57,833 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxYaw.
-2015-03-26 20:30:57,843 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxVerticalSpeedSlider did not match a property.
-2015-03-26 20:30:57,844 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxVerticalSpeed.
-2015-03-26 20:30:57,844 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxEulerAngleSlider did not match a property.
-2015-03-26 20:30:57,845 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxEulerAngle.
-2015-03-26 20:30:57,845 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxAltitudeSlider did not match a property.
-2015-03-26 20:30:57,846 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxAltitude.
-2015-03-26 20:30:57,846 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element IsOutside.
-2015-03-26 20:30:57,847 [10] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element FlyingWithoutShell.
-2015-03-26 20:30:57,914 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
-2015-03-26 20:30:57,915 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
-2015-03-26 20:30:57,916 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonConnect availability update.
-2015-03-26 20:30:57,916 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonDisconnect availability update.
-2015-03-26 20:30:57,917 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowCamera availability update.
-2015-03-26 20:30:57,917 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxYaw availability update.
-2015-03-26 20:30:57,918 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxVerticalSpeed availability update.
-2015-03-26 20:30:57,918 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxEulerAngle availability update.
-2015-03-26 20:30:57,919 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxAltitude availability update.
-2015-03-26 20:30:57,919 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendIsOutside availability update.
-2015-03-26 20:30:57,920 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendFlyingWithoutShell availability update.
-2015-03-26 20:30:57,920 [10] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowActualConfigOfArDrone availability update.
+2015-03-27 18:13:00,424 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsOutside.
+2015-03-27 18:13:00,438 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_FlyingWithoutShell.
+2015-03-27 18:13:00,438 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_FlyingWithoutShell.
+2015-03-27 18:13:00,439 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxYaw.
+2015-03-27 18:13:00,439 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxYaw.
+2015-03-27 18:13:00,440 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxVerticalSpeed.
+2015-03-27 18:13:00,440 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxVerticalSpeed.
+2015-03-27 18:13:00,441 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxEulerAngle.
+2015-03-27 18:13:00,442 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxEulerAngle.
+2015-03-27 18:13:00,442 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxAltitude.
+2015-03-27 18:13:00,443 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxAltitude.
+2015-03-27 18:13:00,443 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsNotifying.
+2015-03-27 18:13:00,444 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsNotifying.
+2015-03-27 18:13:00,444 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendIsOutside on element ButtonSendIsOutside(sender,e).
+2015-03-27 18:13:00,468 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendFlyingWithoutShell on element ButtonSendFlyingWithoutShell(sender,e).
+2015-03-27 18:13:00,469 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonShowCamera on element ButtonShowCamera(sender,e).
+2015-03-27 18:13:00,469 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonDisconnect on element ButtonDisconnect(sender,e).
+2015-03-27 18:13:00,470 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ButtonBlinkLeds.
+2015-03-27 18:13:00,470 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonShowActualConfigOfArDrone on element ButtonShowActualConfigOfArDrone(sender,e).
+2015-03-27 18:13:00,471 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for HandleEmergencyCommand.
+2015-03-27 18:13:00,471 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendDefaultValues on element ButtonSendDefaultValues(sender,e).
+2015-03-27 18:13:00,472 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonRefreshJoysticks on element ButtonRefreshJoysticks(sender,e).
+2015-03-27 18:13:00,472 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonConnect on element ButtonConnect(sender,e).
+2015-03-27 18:13:00,473 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxYaw on element ButtonSendMaxYaw(sender,e).
+2015-03-27 18:13:00,473 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxVerticalSpeed on element ButtonSendMaxVerticalSpeed(sender,e).
+2015-03-27 18:13:00,473 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxEulerAngle on element ButtonSendMaxEulerAngle(sender,e).
+2015-03-27 18:13:00,474 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxAltitude on element ButtonSendMaxAltitude(sender,e).
+2015-03-27 18:13:00,474 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for add_PropertyChanged.
+2015-03-27 18:13:00,474 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for remove_PropertyChanged.
+2015-03-27 18:13:00,475 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Refresh.
+2015-03-27 18:13:00,475 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
+2015-03-27 18:13:00,475 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
+2015-03-27 18:13:00,476 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ToString.
+2015-03-27 18:13:00,476 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Equals.
+2015-03-27 18:13:00,476 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetHashCode.
+2015-03-27 18:13:00,477 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetType.
+2015-03-27 18:13:00,488 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element SelectedJoystick.
+2015-03-27 18:13:00,489 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ArDroneConnected did not match a property.
+2015-03-27 18:13:00,490 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element BatteryLevel.
+2015-03-27 18:13:00,491 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element AvailableJoystickDevices.
+2015-03-27 18:13:00,492 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button1Pressed.
+2015-03-27 18:13:00,492 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button2Pressed.
+2015-03-27 18:13:00,493 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button3Pressed.
+2015-03-27 18:13:00,493 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button4Pressed.
+2015-03-27 18:13:00,494 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button5Pressed.
+2015-03-27 18:13:00,494 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button6Pressed.
+2015-03-27 18:13:00,495 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button7Pressed.
+2015-03-27 18:13:00,495 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button8Pressed.
+2015-03-27 18:13:00,496 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickXAxis.
+2015-03-27 18:13:00,496 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickYAxis.
+2015-03-27 18:13:00,497 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickXAxis.
+2015-03-27 18:13:00,497 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickYAxis.
+2015-03-27 18:13:00,498 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ButtonStopCamera did not match a property.
+2015-03-27 18:13:00,498 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element DroneStatus.
+2015-03-27 18:13:00,498 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxXCoordinate did not match a property.
+2015-03-27 18:13:00,499 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxYCoordinate did not match a property.
+2015-03-27 18:13:00,499 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element TextBoxQrCode did not match a property.
+2015-03-27 18:13:00,499 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxYawSlider did not match a property.
+2015-03-27 18:13:00,500 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxYaw.
+2015-03-27 18:13:00,500 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxVerticalSpeedSlider did not match a property.
+2015-03-27 18:13:00,501 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxVerticalSpeed.
+2015-03-27 18:13:00,501 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxEulerAngleSlider did not match a property.
+2015-03-27 18:13:00,501 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxEulerAngle.
+2015-03-27 18:13:00,502 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxAltitudeSlider did not match a property.
+2015-03-27 18:13:00,502 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxAltitude.
+2015-03-27 18:13:00,503 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element IsOutside.
+2015-03-27 18:13:00,503 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element FlyingWithoutShell.
+2015-03-27 18:13:00,579 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
+2015-03-27 18:13:00,580 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
+2015-03-27 18:13:00,581 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonConnect availability update.
+2015-03-27 18:13:00,582 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonDisconnect availability update.
+2015-03-27 18:13:00,582 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowCamera availability update.
+2015-03-27 18:13:00,582 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxYaw availability update.
+2015-03-27 18:13:00,583 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxVerticalSpeed availability update.
+2015-03-27 18:13:00,583 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxEulerAngle availability update.
+2015-03-27 18:13:00,584 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxAltitude availability update.
+2015-03-27 18:13:00,584 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendIsOutside availability update.
+2015-03-27 18:13:00,585 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendFlyingWithoutShell availability update.
+2015-03-27 18:13:00,585 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowActualConfigOfArDrone availability update.
+2015-03-27 18:13:00,586 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendDefaultValues availability update.
+2015-03-27 18:13:13,469 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonConnect.
+2015-03-27 18:13:14,623 [9] INFO  FollowMe.ShellViewModel [(null)] - <log4net.Error>Exception during StringFormat: Die Eingabezeichenfolge hat das falsche Format. <format>cat /data/config.ini
+
+[general]
+num_version_config             = 1
+num_version_mb                 = 34
+num_version_soft               = 2.4.8
+drone_serial                   = PS721003AG3L052944
+soft_build_date                = 2013-09-16 14:49
+motor1_soft                    = 1.43
+motor1_hard                    = 6.0
+motor1_supplier                = 1.1
+motor2_soft                    = 1.43
+motor2_hard                    = 6.0
+motor2_supplier                = 1.1
+motor3_soft                    = 1.43
+motor3_hard                    = 6.0
+motor3_supplier                = 1.1
+motor4_soft                    = 1.43
+motor4_hard                    = 6.0
+motor4_supplier                = 1.1
+ardrone_name                   = My ARDrone
+flying_time                    = 2674
+navdata_demo                   = TRUE
+com_watchdog                   = 2
+video_enable                   = TRUE
+vision_enable                  = TRUE
+vbat_min                       = 9000
+gps_soft                       = 0.0
+gps_hard                       = 0.0
+timezone                       = +0800
+battery_type                   = 0
+gps_soft_update                = 4.1.2-P6
+
+[control]
+accs_offset                    = { -4.1936479e+03 3.8041470e+03 4.0829834e+03 }
+accs_gains                     = {  1.9550196e+00 9.4805144e-02 -9.7676441e-03  7.8259587e-02 -1.9442046e+00 -1.8539310e-02  -3.7120908e-02 -3.7572004e-03 -1.9037731e+00 }
+gyros_offset                   = { -4.4282501e+01 3.1038750e+01 -1.8388750e+01 }
+gyros_gains                    = { 1.0684397e-03 -1.0689500e-03 -1.0675595e-03 }
+gyros110_offset                = { 1.6625000e+03 1.6625000e+03 }
+gyros110_gains                 = { 1.5271631e-03 -1.5271631e-03 }
+magneto_offset                 = { 9.6505623e+01 -2.2411734e+02 0.0000000e+00 }
+magneto_radius                 = 3.6836496e+02
+gyro_offset_thr_x              = 4.0000000e+00
+gyro_offset_thr_y              = 4.0000000e+00
+gyro_offset_thr_z              = 5.0000000e-01
+pwm_ref_gyros                  = 500
+osctun_value                   = 63
+osctun_test                    = TRUE
+altitude_max                   = 5000
+altitude_min                   = 50
+outdoor                        = FALSE
+flight_without_shell           = TRUE
+autonomous_flight              = FALSE
+control_level                  = 0
+euler_angle_max                = 2.5000000e-01
+control_iphone_tilt            = 3.4906584e-01
+control_vz_max                 = 1.0000000e+03
+control_yaw                    = 3.0000000e+00
+manual_trim                    = FALSE
+indoor_euler_angle_max         = 2.5000000e-01
+indoor_control_vz_max          = 1.0000000e+03
+indoor_control_yaw             = 3.0000000e+00
+outdoor_euler_angle_max        = 3.4906584e-01
+outdoor_control_vz_max         = 1.0000000e+03
+outdoor_control_yaw            = 3.4906585e+00
+
+[network]
+ssid_single_player             = ardrone2_052944
+ssid_multi_player              = ardrone2_052944
+wifi_mode                      = 0
+owner_mac                      = 00:00:00:00:00:00
+
+[pic]
+ultrasound_freq                = 8
+ultrasound_watchdog            = 3
+pic_version                    = 184877090
+
+[video]
+camif_fps                      = 30
+camif_buffers                  = 2
+num_trackers                   = 12
+video_on_usb                   = TRUE
+video_file_index               = 2
+codec_fps                      = 30
+exposure_mode                  = 0,0,0,0
+saturation_mode                = 0
+whitebalance_mode              = 0,0
+
+[leds]
+
+[detect]
+enemy_colors                   = 3
+enemy_without_shell            = 0
+groundstripe_colors            = 16
+detect_type                    = 3
+detections_select_h            = 0
+detections_select_v_hsync      = 0
+detections_select_v            = 0
+
+[syslog]
+output                         = 7
+max_size                       = 102400
+nb_files                       = 5
+
+[custom]
+application_desc               = Default application configuration
+profile_desc                   = Default profile configuration
+session_desc                   = Default session configuration
+
+[userbox]
+
+[gps]
+latitude                       = 5.0000000000000000e+02
+longitude                      = 5.0000000000000000e+02
+altitude                       = 0.0000000000000000e+00
+accuracy                       = 0.0000000000000000e+00
+
+[flightplan]
+default_validation_radius      = 3.0000000e+00
+default_validation_time        = 1.0000000e-03
+max_distance_from_takeoff      = 1000
+gcs_ip                         = 3
+video_stop_delay               = 10
+low_battery_go_home            = FALSE
+automatic_heading              = TRUE
+com_lost_action_delay          = 0
+altitude_go_home               = 0.0000000e+00
+mavlink_js_roll_left           = x-
+mavlink_js_roll_right          = x+
+mavlink_js_pitch_front         = y+
+mavlink_js_pitch_back          = y-
+mavlink_js_yaw_left            = 4
+mavlink_js_yaw_right           = 5
+mavlink_js_go_up               = 0
+mavlink_js_go_down             = 1
+mavlink_js_inc_gains           = 6
+mavlink_js_dec_gains           = 7
+mavlink_js_select              = 8
+mavlink_js_start               = 9
+
+[rescue]
+
+# </format><args>{}</args></log4net.Error>
+2015-03-27 18:13:17,925 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonSendFlyingWithoutShell.
+2015-03-27 18:13:17,926 [9] INFO  FollowMe.ShellViewModel [(null)] - SetIsFlyingWithoutShell: False
+2015-03-27 18:13:18,930 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonShowActualConfigOfArDrone.
+2015-03-27 18:13:18,931 [9] INFO  FollowMe.ShellViewModel [(null)] - GetControlConfig
+2015-03-27 18:13:19,356 [9] INFO  FollowMe.ShellViewModel [(null)] - <log4net.Error>Exception during StringFormat: Die Eingabezeichenfolge hat das falsche Format. <format>cat /data/config.ini
+
+[general]
+num_version_config             = 1
+num_version_mb                 = 34
+num_version_soft               = 2.4.8
+drone_serial                   = PS721003AG3L052944
+soft_build_date                = 2013-09-16 14:49
+motor1_soft                    = 1.43
+motor1_hard                    = 6.0
+motor1_supplier                = 1.1
+motor2_soft                    = 1.43
+motor2_hard                    = 6.0
+motor2_supplier                = 1.1
+motor3_soft                    = 1.43
+motor3_hard                    = 6.0
+motor3_supplier                = 1.1
+motor4_soft                    = 1.43
+motor4_hard                    = 6.0
+motor4_supplier                = 1.1
+ardrone_name                   = My ARDrone
+flying_time                    = 2674
+navdata_demo                   = TRUE
+com_watchdog                   = 2
+video_enable                   = TRUE
+vision_enable                  = TRUE
+vbat_min                       = 9000
+gps_soft                       = 0.0
+gps_hard                       = 0.0
+timezone                       = +0800
+battery_type                   = 0
+gps_soft_update                = 4.1.2-P6
+
+[control]
+accs_offset                    = { -4.1936479e+03 3.8041470e+03 4.0829834e+03 }
+accs_gains                     = {  1.9550196e+00 9.4805144e-02 -9.7676441e-03  7.8259587e-02 -1.9442046e+00 -1.8539310e-02  -3.7120908e-02 -3.7572004e-03 -1.9037731e+00 }
+gyros_offset                   = { -4.4282501e+01 3.1038750e+01 -1.8388750e+01 }
+gyros_gains                    = { 1.0684397e-03 -1.0689500e-03 -1.0675595e-03 }
+gyros110_offset                = { 1.6625000e+03 1.6625000e+03 }
+gyros110_gains                 = { 1.5271631e-03 -1.5271631e-03 }
+magneto_offset                 = { 9.6505623e+01 -2.2411734e+02 0.0000000e+00 }
+magneto_radius                 = 3.6836496e+02
+gyro_offset_thr_x              = 4.0000000e+00
+gyro_offset_thr_y              = 4.0000000e+00
+gyro_offset_thr_z              = 5.0000000e-01
+pwm_ref_gyros                  = 500
+osctun_value                   = 63
+osctun_test                    = TRUE
+altitude_max                   = 5000
+altitude_min                   = 50
+outdoor                        = FALSE
+flight_without_shell           = FALSE
+autonomous_flight              = FALSE
+control_level                  = 0
+euler_angle_max                = 2.5000000e-01
+control_iphone_tilt            = 3.4906584e-01
+control_vz_max                 = 1.0000000e+03
+control_yaw                    = 3.0000000e+00
+manual_trim                    = FALSE
+indoor_euler_angle_max         = 2.5000000e-01
+indoor_control_vz_max          = 1.0000000e+03
+indoor_control_yaw             = 3.0000000e+00
+outdoor_euler_angle_max        = 3.4906584e-01
+outdoor_control_vz_max         = 1.0000000e+03
+outdoor_control_yaw            = 3.4906585e+00
+
+[network]
+ssid_single_player             = ardrone2_052944
+ssid_multi_player              = ardrone2_052944
+wifi_mode                      = 0
+owner_mac                      = 00:00:00:00:00:00
+
+[pic]
+ultrasound_freq                = 8
+ultrasound_watchdog            = 3
+pic_version                    = 184877090
+
+[video]
+camif_fps                      = 30
+camif_buffers                  = 2
+num_trackers                   = 12
+video_on_usb                   = TRUE
+video_file_index               = 2
+codec_fps                      = 30
+exposure_mode                  = 0,0,0,0
+saturation_mode                = 0
+whitebalance_mode              = 0,0
+
+[leds]
+
+[detect]
+enemy_colors                   = 3
+enemy_without_shell            = 0
+groundstripe_colors            = 16
+detect_type                    = 3
+detections_select_h            = 0
+detections_select_v_hsync      = 0
+detections_select_v            = 0
+
+[syslog]
+output                         = 7
+max_size                       = 102400
+nb_files                       = 5
+
+[custom]
+application_desc               = Default application configuration
+profile_desc                   = Default profile configuration
+session_desc                   = Default session configuration
+
+[userbox]
+
+[gps]
+latitude                       = 5.0000000000000000e+02
+longitude                      = 5.0000000000000000e+02
+altitude                       = 0.0000000000000000e+00
+accuracy                       = 0.0000000000000000e+00
+
+[flightplan]
+default_validation_radius      = 3.0000000e+00
+default_validation_time        = 1.0000000e-03
+max_distance_from_takeoff      = 1000
+gcs_ip                         = 3
+video_stop_delay               = 10
+low_battery_go_home            = FALSE
+automatic_heading              = TRUE
+com_lost_action_delay          = 0
+altitude_go_home               = 0.0000000e+00
+mavlink_js_roll_left           = x-
+mavlink_js_roll_right          = x+
+mavlink_js_pitch_front         = y+
+mavlink_js_pitch_back          = y-
+mavlink_js_yaw_left            = 4
+mavlink_js_yaw_right           = 5
+mavlink_js_go_up               = 0
+mavlink_js_go_down             = 1
+mavlink_js_inc_gains           = 6
+mavlink_js_dec_gains           = 7
+mavlink_js_select              = 8
+mavlink_js_start               = 9
+
+[rescue]
+
+# </format><args>{}</args></log4net.Error>
+2015-03-27 18:13:19,412 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding FollowMe.Views.ControlConfigView and FollowMe.ViewModels.ControlConfigViewModel.
+2015-03-27 18:13:19,413 [9] INFO  Caliburn.Micro.Action [(null)] - Setting DC of FollowMe.Views.ControlConfigView to FollowMe.ViewModels.ControlConfigViewModel.
+2015-03-27 18:13:19,414 [9] INFO  Caliburn.Micro.Action [(null)] - Attaching message handler FollowMe.ViewModels.ControlConfigViewModel to FollowMe.Views.ControlConfigView.
+2015-03-27 18:13:19,414 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_HeaderWithTimestamp.
+2015-03-27 18:13:19,414 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_ControlConfig.
+2015-03-27 18:13:19,414 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_ControlConfig.
+2015-03-27 18:13:19,414 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsNotifying.
+2015-03-27 18:13:19,415 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsNotifying.
+2015-03-27 18:13:19,415 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for add_PropertyChanged.
+2015-03-27 18:13:19,415 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for remove_PropertyChanged.
+2015-03-27 18:13:19,416 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Refresh.
+2015-03-27 18:13:19,417 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
+2015-03-27 18:13:19,417 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
+2015-03-27 18:13:19,417 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ToString.
+2015-03-27 18:13:19,418 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Equals.
+2015-03-27 18:13:19,418 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetHashCode.
+2015-03-27 18:13:19,418 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetType.
+2015-03-27 18:13:19,418 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element HeaderWithTimestamp.
+2015-03-27 18:13:19,419 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element svMain did not match a property.
+2015-03-27 18:13:19,419 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element ControlConfig.
+2015-03-27 18:13:30,137 [12] INFO  FollowMe.ShellViewModel [(null)] - TakeOff
+2015-03-27 18:13:35,036 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.5781491 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:35,147 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.96878 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:35,253 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -1 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:35,475 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.7500267 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:36,323 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.4375219 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:36,540 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.8984665 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:37,756 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.4140841 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:38,305 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.7500267 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:13:38,960 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.7187762 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:39,068 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.7969024 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:39,179 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.6953384 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:39,712 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.5312734 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:13:40,788 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.007827878 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:13:41,413 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.007827878 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:13:41,846 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:13:41,956 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.4140841 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:42,166 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.4843976 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:42,274 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.3593957 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:43,244 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.539086 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:13:43,353 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.476585 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:13:44,333 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ 0.3015946 -> SetProgressiveInputValues '-0.2', '0', '0', '0'
+2015-03-27 18:13:45,193 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:13:45,301 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.0156405 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:13:46,179 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.0156405 -> SetProgressiveInputValues '0', '0', '0', '-0.2'
+2015-03-27 18:13:46,288 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY 0.02381933 -> SetProgressiveInputValues '0', '0', '0', '-0.2'
+2015-03-27 18:13:47,040 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.007827878 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:13:47,147 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.007827878 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:13:47,261 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.09376669 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:13:47,677 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:13:48,432 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz 0.341268 -> SetProgressiveInputValues '0', '0.2', '0', '0'
+2015-03-27 18:13:48,545 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz 0.5237964 -> SetProgressiveInputValues '0', '0.2', '0', '0'
+2015-03-27 18:13:49,277 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.4375219 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:49,390 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.6562753 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:50,662 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:13:50,777 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:13:52,698 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:13:52,806 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:13:53,349 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.4297093 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:54,104 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz 0.3015946 -> SetProgressiveInputValues '0', '0.2', '0', '0'
+2015-03-27 18:13:54,319 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz 0.5793698 -> SetProgressiveInputValues '0', '0.2', '0', '0'
+2015-03-27 18:13:55,187 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.31252 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:55,311 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz 0.3888762 -> SetProgressiveInputValues '0', '0.2', '0', '0'
+2015-03-27 18:13:56,147 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.4062715 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:13:56,353 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.6484627 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:13:56,684 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.5000229 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:13:57,112 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz 0.3888762 -> SetProgressiveInputValues '0', '0.2', '0', '0'
+2015-03-27 18:13:57,229 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz 0.484123 -> SetProgressiveInputValues '0', '0.2', '0', '0'
+2015-03-27 18:13:57,450 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.3906462 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:13:57,665 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -1 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:13:57,773 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.96878 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:13:58,321 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.3281453 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:58,537 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.804715 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:58,652 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.6328374 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:13:59,195 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ 0.4365148 -> SetProgressiveInputValues '-0.2', '0', '0', '0'
+2015-03-27 18:13:59,304 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ 0.4999924 -> SetProgressiveInputValues '-0.2', '0', '0', '0'
+2015-03-27 18:13:59,730 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.09376669 -> SetProgressiveInputValues '0', '0', '0', '-0.2'
+2015-03-27 18:14:00,052 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '-0.2'
+2015-03-27 18:14:00,166 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY 1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '-0.2'
+2015-03-27 18:14:00,600 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.3593957 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:14:00,703 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.3593957 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:14:00,823 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.4062715 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:14:00,932 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.3359579 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:14:02,028 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ 0.4047455 -> SetProgressiveInputValues '-0.2', '0', '0', '0'
+2015-03-27 18:14:02,250 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.3906462 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:14:02,450 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.6093996 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:14:02,889 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:03,101 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.03907835 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:03,315 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ 0.3253987 -> SetProgressiveInputValues '-0.2', '0', '0', '0'
+2015-03-27 18:14:03,427 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.09376669 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:03,530 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ 0.4444495 -> SetProgressiveInputValues '-0.2', '0', '0', '0'
+2015-03-27 18:14:03,632 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.4843976 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:14:03,746 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ 0.341268 -> SetProgressiveInputValues '-0.2', '0', '0', '0'
+2015-03-27 18:14:03,850 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.5000229 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:14:04,805 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ 0.4603189 -> SetProgressiveInputValues '-0.2', '0', '0', '0'
+2015-03-27 18:14:05,021 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.03907835 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:05,131 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.03907835 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:05,240 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.03907835 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:05,347 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.03907835 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:05,883 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.05470359 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:06,102 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.06251621 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:06,420 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.06251621 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:07,381 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.007827878 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:07,588 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY 0.01588464 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:07,697 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:07,803 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY 0.01588464 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:08,558 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY 0.09523156 -> SetProgressiveInputValues '0', '0', '0', '-0.2'
+2015-03-27 18:14:09,489 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.31252 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:14:09,602 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.4531472 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:14:09,710 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.5468986 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:14:10,569 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.0156405 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:10,676 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.1172045 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:10,899 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.03126574 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:11,538 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.476585 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:14:11,744 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisRz -0.7109636 -> SetProgressiveInputValues '0', '-0.2', '0', '0'
+2015-03-27 18:14:12,936 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.07814145 -> SetProgressiveInputValues '0', '0', '0', '-0.2'
+2015-03-27 18:14:13,586 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '-0.2'
+2015-03-27 18:14:13,693 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.07814145 -> SetProgressiveInputValues '0', '0', '0', '-0.2'
+2015-03-27 18:14:14,573 [6] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY 0.1984131 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:15,652 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.1015793 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:16,197 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.03907835 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:16,327 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisZ -0.4843976 -> SetProgressiveInputValues '0.2', '0', '0', '0'
+2015-03-27 18:14:16,947 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.09376669 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:17,279 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.1250172 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:17,695 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.06251621 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:18,124 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY 0.1666743 -> SetProgressiveInputValues '0', '0', '0', '-0.2'
+2015-03-27 18:14:18,443 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY 0.1031662 -> SetProgressiveInputValues '0', '0', '0', '-0.2'
+2015-03-27 18:14:18,647 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY 0.07936218 -> SetProgressiveInputValues '0', '0', '0', '-0.2'
+2015-03-27 18:14:18,866 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY 0.09523156 -> SetProgressiveInputValues '0', '0', '0', '-0.2'
+2015-03-27 18:14:19,509 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.03126574 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:19,617 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.07814145 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:19,725 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.05470359 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:19,838 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.05470359 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:20,051 [15] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.1250172 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:20,384 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.0156405 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:20,494 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.05470359 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:20,605 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:20,929 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:21,131 [14] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -1.525902E-05 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:21,246 [12] INFO  FollowMe.ShellViewModel [(null)] - joystick.GetAxisY -0.06251621 -> SetProgressiveInputValues '0', '0', '0', '0.2'
+2015-03-27 18:14:21,886 [15] INFO  FollowMe.ShellViewModel [(null)] - Land
+2015-03-27 18:14:23,833 [15] INFO  FollowMe.ShellViewModel [(null)] - Land
+2015-03-27 18:14:24,052 [15] INFO  FollowMe.ShellViewModel [(null)] - Land
+2015-03-27 18:14:24,158 [14] INFO  FollowMe.ShellViewModel [(null)] - Land
+2015-03-27 18:14:24,274 [12] INFO  FollowMe.ShellViewModel [(null)] - Land
