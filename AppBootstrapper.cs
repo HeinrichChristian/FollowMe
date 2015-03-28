@@ -3,6 +3,7 @@ using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.Linq;
+using FollowMe.Configuration;
 
 namespace FollowMe {
     using System;
@@ -20,10 +21,12 @@ namespace FollowMe {
 
         protected override void Configure() {
             //container = new SimpleContainer();
+            var fileBasedTrackingConfigProvider = new FileBasedTrackingConfigProvider();
             container = new CompositionContainer(new AggregateCatalog(AssemblySource.Instance.Select(x => new AssemblyCatalog(x)).OfType<ComposablePartCatalog>()));
 
             CompositionBatch batch = new CompositionBatch();
 
+            
             batch.AddExportedValue<IWindowManager>(new WindowManager());
             batch.AddExportedValue<IEventAggregator>(new EventAggregator());
             

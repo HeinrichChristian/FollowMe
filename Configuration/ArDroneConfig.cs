@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FollowMe.ArDrone
+﻿namespace FollowMe.Configuration
 {
     public class ArDroneConfig
     {
-        private readonly string controlConfig;
         private int altitudeMax;
         private int altitudeMin;
         private bool outdoor;

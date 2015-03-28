@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Caliburn.Micro;
+using FollowMe.Configuration;
 using FollowMe.Interfaces;
 
 namespace FollowMe.ArDrone

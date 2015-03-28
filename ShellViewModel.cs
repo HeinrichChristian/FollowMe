@@ -1,21 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Diagnostics;
 using System.Threading;
 using System.Timers;
 using System.Windows;
 using System.Windows.Forms;
-using AForge.Controls;
 using Caliburn.Micro;
 using EZ_B;
 using EZ_B.ARDrone;
-using EZ_B.CameraDetection;
 using EZ_B.Joystick;
 using FollowMe.ArDrone;
+using FollowMe.Configuration;
 using FollowMe.Messages;
 using FollowMe.ViewModels;
-using Joystick = EZ_B.Joystick.Joystick;
 using Timer = System.Timers.Timer;
 
 namespace FollowMe {
@@ -28,7 +25,7 @@ namespace FollowMe {
         private readonly IWindowManager windowManager;
         private readonly IEventAggregator eventAggregator;
         private static readonly ILog Log = LogManager.GetLog(typeof(ShellViewModel));
-
+        private readonly FileBasedTrackingConfigProvider fileBasedTrackingConfigProvider = new FileBasedTrackingConfigProvider();
         #region privates
 
         /// <summary>
@@ -85,11 +82,10 @@ namespace FollowMe {
         private float luminanceMax;
         private int hueMin;
         private int hueMax;
+        private bool huePickerIsVisible;
 
         #endregion
-
-     
-
+        
         #region public properties
 
         /// <summary>
@@ -425,8 +421,18 @@ namespace FollowMe {
             }
         }
 
-
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool HuePickerIsVisible
+        {
+            get { return huePickerIsVisible; }
+            set
+            {
+                huePickerIsVisible = value;
+                NotifyOfPropertyChange(() => HuePickerIsVisible);
+            }
+        }
 
         #endregion
 
@@ -513,8 +519,7 @@ namespace FollowMe {
         }
 
         #endregion
-
-
+        
         #region Settings
 
         /// <summary>
@@ -609,6 +614,7 @@ namespace FollowMe {
 
         #endregion
 
+
         /// <summary>
         /// Constructor.
         /// Starts a timer which checks every 5 seconds the battery level of the connected AR.Drone
@@ -629,16 +635,28 @@ namespace FollowMe {
            
             RefreshJoysticks();
 
-           ConnectToDroneEnabled = true;
+            ConnectToDroneEnabled = true;
+            HuePickerIsVisible = false;
 
             var arDroneStatusTimer = new Timer();
             arDroneStatusTimer.Elapsed += OnArDroneStatusTimedEvent;
             arDroneStatusTimer.Interval = 5000;
             arDroneStatusTimer.Enabled = true;
 
-            
+
+            var trackingConfig = fileBasedTrackingConfigProvider.LoadTrackingConfig();
+
+            SearchObjectSizePixels = trackingConfig.SearchObjectSizePixels;
+            HueMax = trackingConfig.HueMax;
+            HueMin = trackingConfig.HueMin;
+            SaturationMax = trackingConfig.SaturationMax;
+            SaturationMin = trackingConfig.SaturationMin;
+            LuminanceMax = trackingConfig.LuminanceMax;
+            LuminanceMin = trackingConfig.LuminanceMin;
+
         }
 
+        #region buttons
         /// <summary>
         /// Connect to AR.Drone.
         /// The PC must first be connected via WIFI to the AR.Drone.
@@ -752,13 +770,11 @@ namespace FollowMe {
 
             Log.Info("StartCamera");
             camera.StartCamera(
-                  new ValuePair(Camera.CAMERA_NAME_AR_DRONE, Camera.CAMERA_NAME_AR_DRONE),
+                    new ValuePair(Camera.CAMERA_NAME_AR_DRONE, Camera.CAMERA_NAME_AR_DRONE),
                     cameraForm.ExternalCameraPanel,
                     cameraForm.ExternalCameraPanelTrackingPreview,
-                  320,
-                  240);
-
-            ezbConnect.EZB.ARDrone.StartVideo();
+                    320,
+                    240);
 
             CameraStarted = true;
         }
@@ -771,11 +787,6 @@ namespace FollowMe {
             camera.StopCamera();   
         }
 
-        public void ShowHuePicker(object sender, RoutedEventArgs e)
-        {
-            huePickerForm = new HuePickerForm(this.eventAggregator, new HuePickerMessage(HueMin,HueMax));
-            huePickerForm.Show();
-        }
         /// <summary>
         /// Disconnect from AR.Drone
         /// </summary>
@@ -799,18 +810,27 @@ namespace FollowMe {
             ezbConnect.EZB.ARDrone.PlayLedAnimation(Commands.LedAnimationEnum.BlinkRed, 2, 10);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ButtonShowActualConfigOfArDrone(object sender, RoutedEventArgs e)
         {
             Log.Info("GetControlConfig");
             var controlConfig = ezbConnect.EZB.ARDrone.GetControlConfig();
-            
+
             Log.Info(controlConfig);
             var arDroneConfigProvider = new ControlConfigBasedArDroneConfigProvider(controlConfig);
             ArDroneConfig = arDroneConfigProvider.GetArDroneConfig();
             windowManager.ShowWindow(new ControlConfigViewModel(controlConfig));
         }
-        
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ButtonSendDefaultValues(object sender, RoutedEventArgs e)
         {
             Log.Info("SendDefaultValues");
@@ -827,6 +847,47 @@ namespace FollowMe {
             RefreshJoysticks();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ButtonShowHuePicker(object sender, RoutedEventArgs e)
+        {
+            huePickerForm = new HuePickerForm(this.eventAggregator, new HuePickerMessage(HueMin, HueMax));
+            huePickerForm.Show();
+            HuePickerIsVisible = true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ButtonHideHuePicker(object sender, RoutedEventArgs e)
+        {
+            huePickerForm.Hide();
+            HuePickerIsVisible = false;
+        }
+
+        public void ButtonSaveTrackingConfig(object sender, RoutedEventArgs e)
+        {
+            fileBasedTrackingConfigProvider.StoreTrackingConfig(new TrackingConfig()
+            {
+                Date = DateTime.Now,
+                HueMax = HueMax,
+                HueMin = HueMin,
+                SearchObjectSizePixels = SearchObjectSizePixels,
+                LuminanceMax = LuminanceMax,
+                LuminanceMin = LuminanceMin,
+                SaturationMax = SaturationMax,
+                SaturationMin = SaturationMin
+            });
+        }
+
+        #endregion
+
+     
 
         /// <summary>
         /// 
@@ -1043,18 +1104,6 @@ namespace FollowMe {
             {
                 try
                 {
-                    //ObjectLocation objectLocationByColor = camera.CameraBasicColorDetection.GetObjectLocationByColor(true, ColorDetection.ColorEnum.Red, SearchObjectSizePixels, ColorBrightness);
-                    //if (objectLocationByColor != null)
-                    //{
-                    //    Debug.WriteLine(objectLocationByColor.VerticalLocation.ToString());
-                    //    TargetXCoordinate = objectLocationByColor.CenterX;
-                    //    Log.Info("Object detected: X = {0}", objectLocationByColor.CenterX);
-                    //    TargetYCoordinate = objectLocationByColor.CenterY;
-                    //    Log.Info("Object detected: Y = {0}", objectLocationByColor.CenterY);
-                    //}
-
-
-
                     objectLocation = camera.CameraCustomColorDetection.GetObjectLocationByColor(
                                         true,
                                         SearchObjectSizePixels, 
@@ -1072,7 +1121,7 @@ namespace FollowMe {
                 }
             }
 
-            camera.UpdatePreview();
+            camera.UpdatePreview(140);
 
 
             if (objectLocation != null && objectLocation.IsObjectFound)
@@ -1082,34 +1131,6 @@ namespace FollowMe {
                 TargetYCoordinate = objectLocation.CenterY;
                 Log.Info("Object detected: Y = {0}", objectLocation.CenterY);
             }
-            
-
-            try
-            {
-                //ObjectLocation objectLocationByQrCode = camera.CameraQRCodeDetection.GetObjectLocationByQRCode();
-
-                //if (objectLocationByQrCode != null)
-                //{
-                //    QrCode = objectLocationByQrCode.QRCodeText;
-                //    Debug.WriteLine(objectLocationByQrCode.QRCodeText);
-                //}
-                //else
-                //{
-                //    QrCode = string.Empty;
-                //}
-
-
-                //    if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left)
-                //        btnLeft_Click(null, null);
-                //    else if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right)
-                //        btnRight_Click(null, null);
-                //}
-            }
-            catch (Exception exception)
-            {
-                Log.Error(exception);
-            }
-
         }
 
         public void Handle(HuePickerMessage message)
