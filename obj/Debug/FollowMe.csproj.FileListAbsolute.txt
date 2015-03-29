@@ -36,3 +36,4 @@ E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\Views\Control
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.csprojResolveAssemblyReference.cache
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.HuePickerForm.resources
 E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\bin\Debug\trackingConfig.xml
+E:\OneDrive\Studium SS2015\VS Projekte\FollowMe\FollowMe\obj\Debug\FollowMe.CameraPreviewForm.resources

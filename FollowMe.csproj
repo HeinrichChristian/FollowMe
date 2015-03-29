@@ -99,6 +99,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppBootstrapper.cs" />
+    <Compile Include="CameraPreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CameraPreviewForm.Designer.cs">
+      <DependentUpon>CameraPreviewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuration\ArDroneConfig.cs" />
     <Compile Include="Configuration\ControlConfigBasedArDroneConfigProvider.cs" />
     <Compile Include="Configuration\FileBasedTrackingConfigProvider.cs" />
@@ -156,6 +162,9 @@
     </Compile>
     <EmbeddedResource Include="CameraForm.resx">
       <DependentUpon>CameraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CameraPreviewForm.resx">
+      <DependentUpon>CameraPreviewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HuePickerForm.resx">
       <DependentUpon>HuePickerForm.cs</DependentUpon>

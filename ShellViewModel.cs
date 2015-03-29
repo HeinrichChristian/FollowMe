@@ -86,6 +86,9 @@ namespace FollowMe {
 
         #endregion
         
+        CameraPreviewForm cameraPreviewForm = new CameraPreviewForm();
+        private bool trackingPreviewEnabled;
+
         #region public properties
 
         /// <summary>
@@ -139,6 +142,16 @@ namespace FollowMe {
             {
                 objectDetectionEnabled = value;
                 NotifyOfPropertyChange(() => ObjectDetectionEnabled);
+            }
+        }
+
+        public bool TrackingPreviewEnabled
+        {
+            get { return trackingPreviewEnabled; }
+            set
+            {
+                trackingPreviewEnabled = value;
+                NotifyOfPropertyChange(() => TrackingPreviewEnabled);
             }
         }
 
@@ -765,25 +778,30 @@ namespace FollowMe {
             camera.OnNewFrame += _camera_OnNewFrame;
 
 
-            cameraForm = new CameraForm();
-            cameraForm.Show();
+            //cameraForm = new CameraForm();
+            //cameraForm.Show();
 
             Log.Info("StartCamera");
+            
+            cameraPreviewForm.Show();
             camera.StartCamera(
                     new ValuePair(Camera.CAMERA_NAME_AR_DRONE, Camera.CAMERA_NAME_AR_DRONE),
-                    cameraForm.ExternalCameraPanel,
-                    cameraForm.ExternalCameraPanelTrackingPreview,
+                    cameraPreviewForm.panel1,
+//                    cameraForm.ExternalCameraPanel,
+                    
                     320,
                     240);
-
+            //camera.QuadBottomY = 33;
             CameraStarted = true;
         }
 
         public void ButtonStopCamera(object sender, RoutedEventArgs e)
         {
             CameraStarted = false;
-            cameraForm.Dispose();
-            cameraForm = null;
+
+            cameraPreviewForm.Hide();
+            //cameraForm.Dispose();
+            //cameraForm = null;
             camera.StopCamera();   
         }
 
@@ -1105,7 +1123,7 @@ namespace FollowMe {
                 try
                 {
                     objectLocation = camera.CameraCustomColorDetection.GetObjectLocationByColor(
-                                        true,
+                                        TrackingPreviewEnabled,
                                         SearchObjectSizePixels, 
                                         HueMin, 
                                         HueMax,
@@ -1121,7 +1139,7 @@ namespace FollowMe {
                 }
             }
 
-            camera.UpdatePreview(140);
+            camera.UpdatePreview();
 
 
             if (objectLocation != null && objectLocation.IsObjectFound)
@@ -1138,5 +1156,7 @@ namespace FollowMe {
             HueMax = message.HueMax;
             HueMin = message.HueMin;
         }
+
+        
     }
 }
