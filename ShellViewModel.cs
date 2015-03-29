@@ -88,6 +88,15 @@ namespace FollowMe {
         
         CameraPreviewForm cameraPreviewForm = new CameraPreviewForm();
         private bool trackingPreviewEnabled;
+        private bool searchObjectTopLeft;
+        private bool searchObjectTopCenter;
+        private bool searchObjectTopRight;
+        private bool searchObjectCenterLeft;
+        private bool searchObjectCenterCenter;
+        private bool searchObjectCenterRight;
+        private bool searchObjectBottomLeft;
+        private bool searchObjectBottomCenter;
+        private bool searchObjectBottomRight;
 
         #region public properties
 
@@ -531,8 +540,100 @@ namespace FollowMe {
             }
         }
 
+        #region Visualization of target in camera view
+        public bool SearchObjectTopLeft
+        {
+            get { return searchObjectTopLeft; }
+            set
+            {
+                searchObjectTopLeft = value;
+                NotifyOfPropertyChange(() => SearchObjectTopLeft);
+            }
+        }
+
+        public bool SearchObjectTopCenter
+        {
+            get { return searchObjectTopCenter; }
+            set
+            {
+                searchObjectTopCenter = value;
+                NotifyOfPropertyChange(() => SearchObjectTopCenter);
+            }
+        }
+
+        public bool SearchObjectTopRight
+        {
+            get { return searchObjectTopRight; }
+            set
+            {
+                searchObjectTopRight = value;
+                NotifyOfPropertyChange(() => SearchObjectTopRight);
+            }
+        }
+
+        public bool SearchObjectCenterLeft
+        {
+            get { return searchObjectCenterLeft; }
+            set
+            {
+                searchObjectCenterLeft = value;
+                NotifyOfPropertyChange(() => SearchObjectCenterLeft);
+            }
+        }
+
+        public bool SearchObjectCenterCenter
+        {
+            get { return searchObjectCenterCenter; }
+            set
+            {
+                searchObjectCenterCenter = value; 
+                NotifyOfPropertyChange(() => SearchObjectCenterCenter);
+            }
+        }
+
+        public bool SearchObjectCenterRight
+        {
+            get { return searchObjectCenterRight; }
+            set
+            {
+                searchObjectCenterRight = value;
+                NotifyOfPropertyChange(() => SearchObjectCenterRight);
+            }
+        }
+
+        public bool SearchObjectBottomLeft
+        {
+            get { return searchObjectBottomLeft; }
+            set
+            {
+                searchObjectBottomLeft = value; 
+                NotifyOfPropertyChange(() => SearchObjectBottomLeft);
+            }
+        }
+
+        public bool SearchObjectBottomCenter
+        {
+            get { return searchObjectBottomCenter; }
+            set
+            {
+                searchObjectBottomCenter = value;
+                NotifyOfPropertyChange(() => SearchObjectBottomCenter);
+            }
+        }
+
+        public bool SearchObjectBottomRight
+        {
+            get { return searchObjectBottomRight; }
+            set
+            {
+                searchObjectBottomRight = value;
+                NotifyOfPropertyChange(() => SearchObjectBottomRight);
+            }
+        }
         #endregion
-        
+
+        #endregion
+
         #region Settings
 
         /// <summary>
@@ -1139,11 +1240,25 @@ namespace FollowMe {
                 }
             }
 
-            camera.UpdatePreview();
+            camera.UpdatePreview(255);
 
 
             if (objectLocation != null && objectLocation.IsObjectFound)
             {
+                
+                SearchObjectBottomLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
+                SearchObjectBottomCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
+                SearchObjectBottomRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
+                
+                SearchObjectCenterLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
+                SearchObjectCenterCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
+                SearchObjectCenterRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
+                
+                SearchObjectTopLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
+                SearchObjectTopCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
+                SearchObjectTopRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
+                
+
                 TargetXCoordinate = objectLocation.CenterX;
                 Log.Info("Object detected: X = {0}", objectLocation.CenterX);
                 TargetYCoordinate = objectLocation.CenterY;
@@ -1156,7 +1271,5 @@ namespace FollowMe {
             HueMax = message.HueMax;
             HueMin = message.HueMin;
         }
-
-        
     }
 }

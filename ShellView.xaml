@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:converter="clr-namespace:FollowMe.Converter"
         xmlns:followMe="clr-namespace:FollowMe"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+
         Title="AR.Drone Follow Me" Height="640" Width="1027"
         ResizeMode="CanMinimize">
     <Window.Resources>
@@ -146,7 +148,8 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="250"></ColumnDefinition>
                                 <ColumnDefinition Width="250"></ColumnDefinition>
-                                <ColumnDefinition Width="200"></ColumnDefinition>
+                                <ColumnDefinition Width="110"></ColumnDefinition>
+                                <ColumnDefinition Width="380"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="40"></RowDefinition>
@@ -164,7 +167,37 @@
                                 <RowDefinition Height="35"></RowDefinition>
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Das Kamerabild live von der AR.Drone (wird in einem extra Fenster angezeigt)" VerticalAlignment="Top" Height="42" Width="253"/>
+
+                            
+                            <Grid Grid.Column="3" Grid.Row="3" Grid.RowSpan="7" Name="PreviewWindowsFormsHost" Background="PapayaWhip" >
+                                
+                                
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                
+                                <Canvas Grid.Row="0" Grid.Column="0" Background="Red" Visibility="{Binding SearchObjectTopLeft, Converter={StaticResource BoolToVisibilityConverter}}" ></Canvas>
+                                <Canvas Grid.Row="0" Grid.Column="1" Background="Red" Visibility="{Binding SearchObjectTopCenter, Converter={StaticResource BoolToVisibilityConverter}}" ></Canvas>
+                                <Canvas Grid.Row="0" Grid.Column="2" Background="Red" Visibility="{Binding SearchObjectTopRight, Converter={StaticResource BoolToVisibilityConverter}}" ></Canvas>
+                                <Canvas Grid.Row="1" Grid.Column="0" Background="Red" Visibility="{Binding SearchObjectCenterLeft, Converter={StaticResource BoolToVisibilityConverter}}" ></Canvas>
+                                <Canvas Grid.Row="1" Grid.Column="1" Background="ForestGreen" Visibility="{Binding SearchObjectCenterCenter, Converter={StaticResource BoolToVisibilityConverter}}" ></Canvas>
+                                <Canvas Grid.Row="1" Grid.Column="2" Background="Red" Visibility="{Binding SearchObjectCenterRight, Converter={StaticResource BoolToVisibilityConverter}}" ></Canvas>
+                                <Canvas Grid.Row="2" Grid.Column="0" Background="Red" Visibility="{Binding SearchObjectBottomLeft, Converter={StaticResource BoolToVisibilityConverter}}" ></Canvas>
+                                <Canvas Grid.Row="2" Grid.Column="1" Background="Red" Visibility="{Binding SearchObjectBottomCenter, Converter={StaticResource BoolToVisibilityConverter}}" ></Canvas>
+                                <Canvas Grid.Row="2" Grid.Column="2" Background="Red" Visibility="{Binding SearchObjectBottomRight, Converter={StaticResource BoolToVisibilityConverter}}" ></Canvas>
+                                
+                            </Grid>
+
+                            
+                            <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Das Kamerabild live von der AR.Drone (wird in einem extra Fenster angezeigt)" VerticalAlignment="Top" Height="42" Width="253"/>
                         <Button Grid.Row="1" Grid.Column="0" Margin="7" Content="Starte Kameraübertragung" x:Name="ButtonShowCamera" IsEnabled="{Binding CameraStarted, Converter={StaticResource InvertBoolConverter}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="42" />
                         <Button Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="7" Content="Stoppe Kameraübertragung" x:Name="ButtonStopCamera" IsEnabled="{Binding CameraStarted}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="42" />
                         <CheckBox Grid.Row="2" Grid.Column="0" Content="Aktiviere Objekterkennung" Name="ObjectDetectionEnabled"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
@@ -205,7 +238,7 @@
                         <TextBlock Grid.Row="8" Grid.Column="2" Name="HueMin" VerticalAlignment="Center"></TextBlock>
                        <TextBlock Grid.Row="9" Grid.Column="2" Name="HueMax" VerticalAlignment="Center"></TextBlock>
                             
-                            <Button Grid.Row="11" Grid.Column="2" Content="Tracking Einstellungen speichern" Name="ButtonSaveTrackingConfig"></Button>
+                            <Button Grid.Row="11" Grid.Column="1" Margin="7" Content="Tracking Einstellungen speichern" Name="ButtonSaveTrackingConfig"></Button>
                      </Grid>
                     </Grid>
                 </TabItem>
