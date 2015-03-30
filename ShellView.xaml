@@ -242,26 +242,57 @@
                      </Grid>
                     </Grid>
                 </TabItem>
-                <TabItem Header="AR.Drone manuell fliegen">
-                    <Grid>
+                <TabItem Header="AR.Drone autonom fliegen">
+                    
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                                <ColumnDefinition Width="250"></ColumnDefinition>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                            <RowDefinition Height="150"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="150"></RowDefinition>
+                        </Grid.RowDefinitions>
+                            <Grid Grid.Column="1" Grid.Row="1"  Grid.RowSpan="1" Name="PreviewWindowsFormsHost2" Background="PapayaWhip" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
 
-                        <TextBox x:Name="DroneStatus" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Margin="204,108,0,0"/>
+                            <TextBox Text="steuere nach rechts unten" TextWrapping="Wrap"  Grid.Row="0" Grid.Column="0" Background="Red" Visibility="{Binding SearchObjectTopLeft, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBox>
+                            <TextBox Text="steuere nach unten"  TextWrapping="Wrap" Grid.Row="0" Grid.Column="1" Background="Red" Visibility="{Binding SearchObjectTopCenter, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBox>
+                            <TextBox Text="steuere nach links unten" TextWrapping="Wrap" Grid.Row="0" Grid.Column="2" Background="Red" Visibility="{Binding SearchObjectTopRight, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBox>
+                            <TextBox Text="steuere nach rechts" TextWrapping="Wrap"  Grid.Row="1" Grid.Column="0" Background="Red" Visibility="{Binding SearchObjectCenterLeft, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBox>
+                            <TextBox Text="" Grid.Row="1" Grid.Column="1" Background="ForestGreen" Visibility="{Binding SearchObjectCenterCenter, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBox>
+                            <TextBlock Text="steuere nach links" TextWrapping="Wrap"  Grid.Row="1" Grid.Column="2" Background="Red" Visibility="{Binding SearchObjectCenterRight, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBlock>
+                            <TextBlock Text="steuere nach oben rechts" TextWrapping="Wrap"  Grid.Row="2" Grid.Column="0" Background="Red" Visibility="{Binding SearchObjectBottomLeft, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBlock>
+                            <TextBlock Text="steuere nach oben" TextWrapping="Wrap"  Grid.Row="2" Grid.Column="1" Background="Red" Visibility="{Binding SearchObjectBottomCenter, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBlock>
+                            <TextBlock Text="steuere nach oben links" TextWrapping="Wrap"  Grid.Row="2" Grid.Column="2" Background="Red" Visibility="{Binding SearchObjectBottomRight, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBlock>
 
-                        <TextBox x:Name="TextBoxXCoordinate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="TextBoxYCoordinate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-                        <Label Content="Rotes Ziel X-Koordinate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="151"/>
-                        <Label Content="Rotes Ziel Y-Koordinate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="137" Margin="234,22,0,0"/>
-                        <Label Content="QR-Code" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Margin="327,48,0,0"/>
-                        <TextBox x:Name="TextBoxQrCode" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="543,10,0,0"/>
+                        </Grid>
+                            <DockPanel Grid.Row="0" Grid.Column="3">
+                                <Button Content="Starte autonome Steuerung" Margin="30" Name="ButtonStartAutonomousFlight" Width="261" IsEnabled="{Binding ObjectDetectionEnabled}"></Button>
+                            <Button Content="Stoppe autonome Steuerung" Margin="30" Name="ButtonStopAutonomousFlight" IsEnabled="{Binding FlyingAtonomous}"/>
+                            </DockPanel>
+                            <StackPanel Grid.Row="1" Grid.Column="3" Grid.RowSpan="2">
+                                <TextBlock Text="An AR.Drone gesendete Steuerungsbefehle:"></TextBlock>
+                            <ScrollViewer Grid.Row="1" Grid.Column="3" Grid.RowSpan="2">
+                                <TextBlock Name="CommandsForAutonomousFlight"></TextBlock>
+                            </ScrollViewer>
+                        </StackPanel>
 
-                        <Button Margin="600,74,173,81">
-                            <Grid>
-                                <Label Content="Not Aus" Foreground="Teal"  Margin="57,21,40,170" RenderTransformOrigin="0.538,-1.346"/>
-                                <Ellipse Fill="Yellow" Height="217" Stroke="Black" Width="214"/>
-                                <Ellipse Fill="Red" HorizontalAlignment="Left" Height="126" Stroke="Black" VerticalAlignment="Top" Width="126" Margin="48,49,0,0"/>
-                            </Grid>
-                        </Button>
+
                     </Grid>
+                    
                 </TabItem>
             </TabControl>
             <StatusBar HorizontalAlignment="Left" Height="33" Margin="0" VerticalAlignment="Bottom" Width="1017">

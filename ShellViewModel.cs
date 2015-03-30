@@ -97,6 +97,8 @@ namespace FollowMe {
         private bool searchObjectBottomLeft;
         private bool searchObjectBottomCenter;
         private bool searchObjectBottomRight;
+        private string commandsForAutonomousFlight;
+        private bool flyingAtonomous;
 
         #region public properties
 
@@ -634,6 +636,30 @@ namespace FollowMe {
 
         #endregion
 
+        #region Autonomous flight
+
+        public string CommandsForAutonomousFlight
+        {
+            get { return commandsForAutonomousFlight; }
+            set
+            {
+                commandsForAutonomousFlight = value; 
+                NotifyOfPropertyChange(() => CommandsForAutonomousFlight);
+            }
+        }
+
+        public bool FlyingAtonomous
+        {
+            get { return flyingAtonomous; }
+            set
+            {
+                flyingAtonomous = value;
+                NotifyOfPropertyChange(() => FlyingAtonomous);
+            }
+        }
+
+        #endregion
+
         #region Settings
 
         /// <summary>
@@ -1004,6 +1030,30 @@ namespace FollowMe {
             });
         }
 
+
+        public void ButtonStartAutonomousFlight(object sender, RoutedEventArgs e)
+        {
+            FlyingAtonomous = true;
+
+            if (SearchObjectCenterLeft || SearchObjectBottomLeft || SearchObjectTopLeft)
+            {
+                // steer right
+                CommandsForAutonomousFlight = CommandsForAutonomousFlight + "\nRoll Right";
+                //RollRight();
+            }
+
+            if (SearchObjectCenterRight || SearchObjectTopRight || SearchObjectBottomRight)
+            {
+                // steer left
+                CommandsForAutonomousFlight = CommandsForAutonomousFlight + "\nRoll Left";
+                //RollLeft();
+            }
+        }
+
+        public void ButtonStopAutonomousFlight(object sender, RoutedEventArgs e)
+        {
+            FlyingAtonomous = false;
+        }
         #endregion
 
      
@@ -1126,18 +1176,12 @@ namespace FollowMe {
 
                 if (joystick.GetAxisX > 0.3)
                 {
-                    Log.Info("joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisY, 0, 0, 0, MoveSensitivivivity);
-                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, MoveSensitivivivity);
-                    Thread.Sleep(MoveSleepTimeMilliseconds);
-                    ezbConnect.EZB.ARDrone.Hover();
+                    YawLeft();
                 }
 
                 if (joystick.GetAxisX < -0.3)
                 {
-                    Log.Info("joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisY, 0, 0, 0, -MoveSensitivivivity);
-                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, -MoveSensitivivivity);
-                    Thread.Sleep(MoveSleepTimeMilliseconds);
-                    ezbConnect.EZB.ARDrone.Hover();
+                    YawRight();
                 }
             }
             // left stick, Y axis -> pitch
@@ -1170,19 +1214,13 @@ namespace FollowMe {
                 // to the right
                 if (joystick.GetAxisZ > 0.3)
                 {
-                    Log.Info("joystick.GetAxisZ {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisZ, -MoveSensitivivivity, 0, 0, 0);
-                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(MoveSensitivivivity, 0, 0, 0);
-                    Thread.Sleep(MoveSleepTimeMilliseconds);
-                    ezbConnect.EZB.ARDrone.Hover();
+                    RollRight();
                 }
 
                 // to the left
                 if (joystick.GetAxisZ < -0.3)
                 {
-                    Log.Info("joystick.GetAxisZ {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisZ, MoveSensitivivivity, 0, 0, 0);
-                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(-MoveSensitivivivity, 0, 0, 0);
-                    Thread.Sleep(MoveSleepTimeMilliseconds);
-                    ezbConnect.EZB.ARDrone.Hover();
+                    RollLeft();
                 }
 
 
@@ -1210,6 +1248,42 @@ namespace FollowMe {
 
                 
             }
+        }
+
+        private void RollLeft()
+        {
+            Log.Info("joystick.GetAxisZ {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisZ,
+                MoveSensitivivivity, 0, 0, 0);
+            ezbConnect.EZB.ARDrone.SetProgressiveInputValues(-MoveSensitivivivity, 0, 0, 0);
+            Thread.Sleep(MoveSleepTimeMilliseconds);
+            ezbConnect.EZB.ARDrone.Hover();
+        }
+
+        private void RollRight()
+        {
+            Log.Info("joystick.GetAxisZ {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisZ,
+                -MoveSensitivivivity, 0, 0, 0);
+            ezbConnect.EZB.ARDrone.SetProgressiveInputValues(MoveSensitivivivity, 0, 0, 0);
+            Thread.Sleep(MoveSleepTimeMilliseconds);
+            ezbConnect.EZB.ARDrone.Hover();
+        }
+
+        private void YawRight()
+        {
+            Log.Info("joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisY, 0, 0, 0,
+                -MoveSensitivivivity);
+            ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, -MoveSensitivivivity);
+            Thread.Sleep(MoveSleepTimeMilliseconds);
+            ezbConnect.EZB.ARDrone.Hover();
+        }
+
+        private void YawLeft()
+        {
+            Log.Info("joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisY, 0, 0, 0,
+                MoveSensitivivivity);
+            ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, MoveSensitivivivity);
+            Thread.Sleep(MoveSleepTimeMilliseconds);
+            ezbConnect.EZB.ARDrone.Hover();
         }
 
         /// <summary>
