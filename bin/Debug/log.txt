@@ -1,865 +1,686 @@
-2015-03-30 17:49:16,015 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 106
-2015-03-30 17:49:16,061 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 96
-2015-03-30 17:49:16,061 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 107
-2015-03-30 17:49:16,083 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:16,084 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 107
-2015-03-30 17:49:16,116 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:16,117 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 106
-2015-03-30 17:49:16,146 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 90
-2015-03-30 17:49:16,147 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 106
-2015-03-30 17:49:16,177 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 89
-2015-03-30 17:49:16,177 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 105
-2015-03-30 17:49:16,221 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 87
-2015-03-30 17:49:16,222 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 104
-2015-03-30 17:49:16,252 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 86
-2015-03-30 17:49:16,253 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 104
-2015-03-30 17:49:16,282 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 86
-2015-03-30 17:49:16,282 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 104
-2015-03-30 17:49:16,312 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 86
-2015-03-30 17:49:16,313 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 104
-2015-03-30 17:49:16,341 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 85
-2015-03-30 17:49:16,342 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 104
-2015-03-30 17:49:16,372 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 85
-2015-03-30 17:49:16,373 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 104
-2015-03-30 17:49:16,401 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 84
-2015-03-30 17:49:16,401 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 103
-2015-03-30 17:49:16,446 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 84
-2015-03-30 17:49:16,447 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 103
-2015-03-30 17:49:16,478 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 84
-2015-03-30 17:49:16,479 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 102
-2015-03-30 17:49:16,506 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 84
-2015-03-30 17:49:16,507 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 101
-2015-03-30 17:49:16,560 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 84
-2015-03-30 17:49:16,561 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 101
-2015-03-30 17:49:16,612 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 85
-2015-03-30 17:49:16,613 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 101
-2015-03-30 17:49:16,641 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 85
-2015-03-30 17:49:16,641 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 100
-2015-03-30 17:49:16,672 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 86
-2015-03-30 17:49:16,673 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 100
-2015-03-30 17:49:16,704 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 86
-2015-03-30 17:49:16,704 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:16,732 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 86
-2015-03-30 17:49:16,734 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:16,761 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 86
-2015-03-30 17:49:16,761 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 100
-2015-03-30 17:49:16,807 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 87
-2015-03-30 17:49:16,808 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 100
-2015-03-30 17:49:16,839 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 88
-2015-03-30 17:49:16,840 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 100
-2015-03-30 17:49:16,867 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 89
-2015-03-30 17:49:16,868 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 100
-2015-03-30 17:49:16,898 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 90
-2015-03-30 17:49:16,899 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 100
-2015-03-30 17:49:16,928 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:16,928 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 101
-2015-03-30 17:49:16,965 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 92
-2015-03-30 17:49:16,965 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 100
-2015-03-30 17:49:17,004 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:17,004 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:17,041 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:17,042 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 97
-2015-03-30 17:49:17,064 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 98
-2015-03-30 17:49:17,064 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 96
-2015-03-30 17:49:17,095 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 97
-2015-03-30 17:49:17,096 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 95
-2015-03-30 17:49:17,127 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 98
-2015-03-30 17:49:17,129 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 95
-2015-03-30 17:49:17,161 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 101
-2015-03-30 17:49:17,162 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 95
-2015-03-30 17:49:17,187 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 99
-2015-03-30 17:49:17,188 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 95
-2015-03-30 17:49:17,230 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 100
-2015-03-30 17:49:17,233 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,263 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 104
-2015-03-30 17:49:17,263 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,288 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 103
-2015-03-30 17:49:17,289 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,318 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 105
-2015-03-30 17:49:17,319 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,350 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 108
-2015-03-30 17:49:17,350 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,395 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 109
-2015-03-30 17:49:17,396 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,424 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 110
-2015-03-30 17:49:17,425 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,455 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 111
-2015-03-30 17:49:17,456 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,484 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 110
-2015-03-30 17:49:17,485 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,535 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 112
-2015-03-30 17:49:17,536 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,591 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 114
-2015-03-30 17:49:17,592 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 95
-2015-03-30 17:49:17,622 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 115
-2015-03-30 17:49:17,623 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 95
-2015-03-30 17:49:17,655 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 116
-2015-03-30 17:49:17,656 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 96
-2015-03-30 17:49:17,682 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 116
-2015-03-30 17:49:17,682 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 96
-2015-03-30 17:49:17,716 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 114
-2015-03-30 17:49:17,717 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 96
-2015-03-30 17:49:17,746 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 115
-2015-03-30 17:49:17,747 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 95
-2015-03-30 17:49:17,787 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 114
-2015-03-30 17:49:17,788 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 95
-2015-03-30 17:49:17,817 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 113
-2015-03-30 17:49:17,818 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,849 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 112
-2015-03-30 17:49:17,850 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,880 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 111
-2015-03-30 17:49:17,881 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,906 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 109
-2015-03-30 17:49:17,907 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,939 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 107
-2015-03-30 17:49:17,940 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:17,982 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 106
-2015-03-30 17:49:17,983 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:18,023 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 105
-2015-03-30 17:49:18,024 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 93
-2015-03-30 17:49:18,072 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 103
-2015-03-30 17:49:18,073 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 91
-2015-03-30 17:49:18,106 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 101
-2015-03-30 17:49:18,107 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 91
-2015-03-30 17:49:18,135 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 99
-2015-03-30 17:49:18,136 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 91
-2015-03-30 17:49:18,178 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 98
-2015-03-30 17:49:18,178 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 91
-2015-03-30 17:49:18,215 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 97
-2015-03-30 17:49:18,216 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 91
-2015-03-30 17:49:18,236 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 96
-2015-03-30 17:49:18,237 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 91
-2015-03-30 17:49:18,269 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 96
-2015-03-30 17:49:18,269 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 90
-2015-03-30 17:49:18,297 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 96
-2015-03-30 17:49:18,298 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 90
-2015-03-30 17:49:18,329 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 96
-2015-03-30 17:49:18,330 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 90
-2015-03-30 17:49:18,359 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 96
-2015-03-30 17:49:18,359 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 90
-2015-03-30 17:49:18,402 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 96
-2015-03-30 17:49:18,403 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 90
-2015-03-30 17:49:18,432 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:18,433 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 90
-2015-03-30 17:49:18,469 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 95
-2015-03-30 17:49:18,470 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 90
-2015-03-30 17:49:18,524 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:18,524 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 90
-2015-03-30 17:49:18,568 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:18,569 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 89
-2015-03-30 17:49:18,600 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:18,600 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 88
-2015-03-30 17:49:18,629 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:18,630 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 87
-2015-03-30 17:49:18,660 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:18,661 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 87
-2015-03-30 17:49:18,689 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 92
-2015-03-30 17:49:18,690 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 86
-2015-03-30 17:49:18,718 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 92
-2015-03-30 17:49:18,719 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 86
-2015-03-30 17:49:18,768 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 92
-2015-03-30 17:49:18,769 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 86
-2015-03-30 17:49:18,795 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:18,796 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 86
-2015-03-30 17:49:18,825 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:18,826 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 87
-2015-03-30 17:49:18,854 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:18,855 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 87
-2015-03-30 17:49:18,884 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:18,885 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 87
-2015-03-30 17:49:18,914 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:18,915 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 87
-2015-03-30 17:49:18,959 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 90
-2015-03-30 17:49:18,960 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 86
-2015-03-30 17:49:19,005 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 89
-2015-03-30 17:49:19,006 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 85
-2015-03-30 17:49:19,052 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:19,053 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:19,093 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:19,094 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:19,157 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:19,158 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,190 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 92
-2015-03-30 17:49:19,191 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,217 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:19,218 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,248 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:19,249 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:19,276 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:19,277 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:19,313 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:19,313 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,350 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:19,351 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,389 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:19,390 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,413 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 92
-2015-03-30 17:49:19,414 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,442 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:19,443 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,503 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:19,504 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,553 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:19,554 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,581 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:19,581 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,607 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:19,608 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,647 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:19,648 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,716 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:19,717 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,741 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:19,742 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,775 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:19,776 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,802 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:19,803 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:19,832 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:19,833 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:19,867 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:19,868 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:19,908 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:19,909 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:19,937 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:19,938 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:19,981 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:19,982 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:20,027 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 95
-2015-03-30 17:49:20,028 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:20,059 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:20,060 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:20,104 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 95
-2015-03-30 17:49:20,105 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:20,137 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:20,138 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:20,165 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:20,166 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:20,198 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:20,198 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 84
-2015-03-30 17:49:20,227 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:20,229 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 84
-2015-03-30 17:49:20,263 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:20,264 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 84
-2015-03-30 17:49:20,285 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:20,285 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 84
-2015-03-30 17:49:20,332 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:20,333 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 84
-2015-03-30 17:49:20,358 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:20,359 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:20,388 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:20,389 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:20,420 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:20,421 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:20,477 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:20,478 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:20,542 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 95
-2015-03-30 17:49:20,543 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:20,591 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 95
-2015-03-30 17:49:20,592 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 81
-2015-03-30 17:49:20,616 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 96
-2015-03-30 17:49:20,616 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 81
-2015-03-30 17:49:20,652 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 97
-2015-03-30 17:49:20,654 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 80
-2015-03-30 17:49:20,683 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 98
-2015-03-30 17:49:20,685 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 79
-2015-03-30 17:49:20,720 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 99
-2015-03-30 17:49:20,721 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 79
-2015-03-30 17:49:20,750 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 101
-2015-03-30 17:49:20,751 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 79
-2015-03-30 17:49:20,781 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 102
-2015-03-30 17:49:20,781 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 78
-2015-03-30 17:49:20,810 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 104
-2015-03-30 17:49:20,811 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 78
-2015-03-30 17:49:20,844 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 106
-2015-03-30 17:49:20,845 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 77
-2015-03-30 17:49:20,871 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 108
-2015-03-30 17:49:20,871 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 77
-2015-03-30 17:49:20,921 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 111
-2015-03-30 17:49:20,922 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 78
-2015-03-30 17:49:20,959 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 114
-2015-03-30 17:49:20,960 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 78
-2015-03-30 17:49:21,049 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 117
-2015-03-30 17:49:21,051 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 81
-2015-03-30 17:49:21,078 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 115
-2015-03-30 17:49:21,079 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:21,115 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 114
-2015-03-30 17:49:21,116 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:21,145 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 112
-2015-03-30 17:49:21,146 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:21,205 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 109
-2015-03-30 17:49:21,206 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:21,250 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 101
-2015-03-30 17:49:21,251 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 85
-2015-03-30 17:49:21,287 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 98
-2015-03-30 17:49:21,288 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 87
-2015-03-30 17:49:21,312 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:21,313 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 88
-2015-03-30 17:49:21,337 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 94
-2015-03-30 17:49:21,338 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 90
-2015-03-30 17:49:21,368 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 92
-2015-03-30 17:49:21,368 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 91
-2015-03-30 17:49:21,401 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:21,402 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 91
-2015-03-30 17:49:21,463 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 88
-2015-03-30 17:49:21,464 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 92
-2015-03-30 17:49:21,506 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 87
-2015-03-30 17:49:21,506 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 92
-2015-03-30 17:49:21,533 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 86
-2015-03-30 17:49:21,534 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 92
-2015-03-30 17:49:21,566 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 85
-2015-03-30 17:49:21,567 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 92
-2015-03-30 17:49:21,603 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 84
-2015-03-30 17:49:21,605 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 91
-2015-03-30 17:49:21,693 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 86
-2015-03-30 17:49:21,694 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 92
-2015-03-30 17:49:21,728 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 87
-2015-03-30 17:49:21,729 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 91
-2015-03-30 17:49:21,755 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 89
-2015-03-30 17:49:21,756 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 90
-2015-03-30 17:49:21,788 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 91
-2015-03-30 17:49:21,789 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 90
-2015-03-30 17:49:21,817 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 93
-2015-03-30 17:49:21,818 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 89
-2015-03-30 17:49:21,862 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 95
-2015-03-30 17:49:21,863 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 87
-2015-03-30 17:49:21,894 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 98
-2015-03-30 17:49:21,895 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 86
-2015-03-30 17:49:21,968 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 102
-2015-03-30 17:49:21,969 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 85
-2015-03-30 17:49:22,019 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 110
-2015-03-30 17:49:22,020 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 84
-2015-03-30 17:49:22,078 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 113
-2015-03-30 17:49:22,079 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 85
-2015-03-30 17:49:22,119 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 118
-2015-03-30 17:49:22,120 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 86
-2015-03-30 17:49:22,158 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 121
-2015-03-30 17:49:22,159 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 86
-2015-03-30 17:49:22,184 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 123
-2015-03-30 17:49:22,184 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 86
-2015-03-30 17:49:22,222 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 126
-2015-03-30 17:49:22,223 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 84
-2015-03-30 17:49:22,255 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 127
-2015-03-30 17:49:22,255 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 80
-2015-03-30 17:49:22,287 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 127
-2015-03-30 17:49:22,288 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 74
-2015-03-30 17:49:22,316 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 128
-2015-03-30 17:49:22,317 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 70
-2015-03-30 17:49:22,345 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 129
-2015-03-30 17:49:22,346 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 66
-2015-03-30 17:49:22,376 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 132
-2015-03-30 17:49:22,376 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 65
-2015-03-30 17:49:22,428 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 135
-2015-03-30 17:49:22,429 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 67
-2015-03-30 17:49:22,484 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 144
-2015-03-30 17:49:22,484 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 74
-2015-03-30 17:49:22,517 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 149
-2015-03-30 17:49:22,518 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 77
-2015-03-30 17:49:22,542 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 155
-2015-03-30 17:49:22,543 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 80
-2015-03-30 17:49:22,569 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 160
-2015-03-30 17:49:22,570 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 82
-2015-03-30 17:49:22,617 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 165
-2015-03-30 17:49:22,618 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:22,646 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 168
-2015-03-30 17:49:22,647 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 83
-2015-03-30 17:49:22,675 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 171
-2015-03-30 17:49:22,676 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 81
-2015-03-30 17:49:22,705 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 174
-2015-03-30 17:49:22,706 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 80
-2015-03-30 17:49:22,736 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 178
-2015-03-30 17:49:22,737 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 78
-2015-03-30 17:49:22,767 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 181
-2015-03-30 17:49:22,767 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 77
-2015-03-30 17:49:22,797 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 185
-2015-03-30 17:49:22,798 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 76
-2015-03-30 17:49:22,858 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 188
-2015-03-30 17:49:22,858 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 76
-2015-03-30 17:49:22,922 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 194
-2015-03-30 17:49:22,923 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 78
-2015-03-30 17:49:22,962 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 201
-2015-03-30 17:49:22,963 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 76
-2015-03-30 17:49:23,006 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 205
-2015-03-30 17:49:23,007 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 74
-2015-03-30 17:49:23,035 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 209
-2015-03-30 17:49:23,036 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 71
-2015-03-30 17:49:23,067 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 213
-2015-03-30 17:49:23,068 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 68
-2015-03-30 17:49:23,101 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 216
-2015-03-30 17:49:23,102 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 65
-2015-03-30 17:49:23,130 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 219
-2015-03-30 17:49:23,131 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 64
-2015-03-30 17:49:23,157 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 223
-2015-03-30 17:49:23,158 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 64
-2015-03-30 17:49:23,188 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 227
-2015-03-30 17:49:23,188 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 65
-2015-03-30 17:49:23,252 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 231
-2015-03-30 17:49:23,253 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 67
-2015-03-30 17:49:23,299 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 238
-2015-03-30 17:49:23,300 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 72
-2015-03-30 17:49:23,332 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 239
-2015-03-30 17:49:23,333 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 75
-2015-03-30 17:49:23,358 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 239
-2015-03-30 17:49:23,359 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 80
-2015-03-30 17:49:23,403 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 238
-2015-03-30 17:49:23,404 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 85
-2015-03-30 17:49:23,429 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 239
-2015-03-30 17:49:23,430 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 90
-2015-03-30 17:49:23,459 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 239
-2015-03-30 17:49:23,459 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:23,486 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 242
-2015-03-30 17:49:23,487 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 96
-2015-03-30 17:49:23,518 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 243
-2015-03-30 17:49:23,519 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 95
-2015-03-30 17:49:23,552 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 243
-2015-03-30 17:49:23,553 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:23,577 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 240
-2015-03-30 17:49:23,578 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 93
-2015-03-30 17:49:23,638 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 236
-2015-03-30 17:49:23,639 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 93
-2015-03-30 17:49:23,702 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 222
-2015-03-30 17:49:23,703 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 102
-2015-03-30 17:49:23,750 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 210
-2015-03-30 17:49:23,752 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 110
-2015-03-30 17:49:23,781 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 207
-2015-03-30 17:49:23,782 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 115
-2015-03-30 17:49:23,817 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 205
-2015-03-30 17:49:23,818 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 119
-2015-03-30 17:49:23,848 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 203
-2015-03-30 17:49:23,849 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 125
-2015-03-30 17:49:23,925 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 202
-2015-03-30 17:49:23,927 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
-2015-03-30 17:49:23,971 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 192
-2015-03-30 17:49:23,971 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 153
-2015-03-30 17:49:24,036 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 187
-2015-03-30 17:49:24,037 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 158
-2015-03-30 17:49:24,086 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 179
-2015-03-30 17:49:24,086 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 160
-2015-03-30 17:49:24,108 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 174
-2015-03-30 17:49:24,109 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 159
-2015-03-30 17:49:24,133 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 170
-2015-03-30 17:49:24,134 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 157
-2015-03-30 17:49:24,167 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 165
-2015-03-30 17:49:24,168 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 156
-2015-03-30 17:49:24,212 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 159
-2015-03-30 17:49:24,212 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 156
-2015-03-30 17:49:24,240 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 152
-2015-03-30 17:49:24,241 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 155
-2015-03-30 17:49:24,269 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 146
-2015-03-30 17:49:24,270 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 154
-2015-03-30 17:49:24,300 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 139
-2015-03-30 17:49:24,301 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 153
-2015-03-30 17:49:24,333 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 135
-2015-03-30 17:49:24,334 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 150
-2015-03-30 17:49:24,378 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 130
-2015-03-30 17:49:24,378 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 147
-2015-03-30 17:49:24,404 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 126
-2015-03-30 17:49:24,405 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 142
-2015-03-30 17:49:24,438 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 123
-2015-03-30 17:49:24,439 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 138
-2015-03-30 17:49:24,471 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 121
-2015-03-30 17:49:24,472 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 134
-2015-03-30 17:49:24,495 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 120
-2015-03-30 17:49:24,496 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 132
-2015-03-30 17:49:24,527 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 119
-2015-03-30 17:49:24,528 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
-2015-03-30 17:49:24,559 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 119
-2015-03-30 17:49:24,559 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
-2015-03-30 17:49:24,600 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 119
-2015-03-30 17:49:24,601 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 126
-2015-03-30 17:49:24,633 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 120
-2015-03-30 17:49:24,634 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 125
-2015-03-30 17:49:24,662 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 119
-2015-03-30 17:49:24,662 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 123
-2015-03-30 17:49:24,690 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 119
-2015-03-30 17:49:24,691 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 121
-2015-03-30 17:49:24,723 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 119
-2015-03-30 17:49:24,724 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 119
-2015-03-30 17:49:24,752 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 118
-2015-03-30 17:49:24,753 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 116
-2015-03-30 17:49:24,796 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 116
-2015-03-30 17:49:24,797 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 115
-2015-03-30 17:49:24,826 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 116
-2015-03-30 17:49:24,826 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 114
-2015-03-30 17:49:24,891 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 113
-2015-03-30 17:49:24,893 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 113
-2015-03-30 17:49:24,928 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 106
-2015-03-30 17:49:24,929 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 114
-2015-03-30 17:49:24,964 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 105
-2015-03-30 17:49:24,965 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 113
-2015-03-30 17:49:24,991 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 105
-2015-03-30 17:49:24,992 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 111
-2015-03-30 17:49:25,021 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 105
-2015-03-30 17:49:25,022 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 109
-2015-03-30 17:49:25,055 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 105
-2015-03-30 17:49:25,056 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 105
-2015-03-30 17:49:25,082 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 107
-2015-03-30 17:49:25,083 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 101
-2015-03-30 17:49:25,114 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 110
-2015-03-30 17:49:25,115 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:25,157 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 114
-2015-03-30 17:49:25,158 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 97
-2015-03-30 17:49:25,186 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 117
-2015-03-30 17:49:25,187 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:25,224 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 121
-2015-03-30 17:49:25,225 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 101
-2015-03-30 17:49:25,245 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 124
-2015-03-30 17:49:25,247 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 104
-2015-03-30 17:49:25,275 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 128
-2015-03-30 17:49:25,275 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 108
-2015-03-30 17:49:25,306 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 133
-2015-03-30 17:49:25,307 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 110
-2015-03-30 17:49:25,363 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 136
-2015-03-30 17:49:25,364 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 110
-2015-03-30 17:49:25,415 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 141
-2015-03-30 17:49:25,416 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 109
-2015-03-30 17:49:25,443 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 144
-2015-03-30 17:49:25,444 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 107
-2015-03-30 17:49:25,479 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 146
-2015-03-30 17:49:25,480 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 105
-2015-03-30 17:49:25,502 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 148
-2015-03-30 17:49:25,503 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 104
-2015-03-30 17:49:25,533 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 151
-2015-03-30 17:49:25,534 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 104
-2015-03-30 17:49:25,580 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 154
-2015-03-30 17:49:25,581 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 103
-2015-03-30 17:49:25,607 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 156
-2015-03-30 17:49:25,608 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 102
-2015-03-30 17:49:25,647 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 159
-2015-03-30 17:49:25,648 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 101
-2015-03-30 17:49:25,670 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 161
-2015-03-30 17:49:25,670 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 100
-2015-03-30 17:49:25,705 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 164
-2015-03-30 17:49:25,706 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:25,728 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 166
-2015-03-30 17:49:25,729 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:25,772 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 167
-2015-03-30 17:49:25,773 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 101
-2015-03-30 17:49:25,803 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 169
-2015-03-30 17:49:25,804 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 102
-2015-03-30 17:49:25,854 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 169
-2015-03-30 17:49:25,855 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 105
-2015-03-30 17:49:25,892 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 170
-2015-03-30 17:49:25,893 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 111
-2015-03-30 17:49:25,940 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 170
-2015-03-30 17:49:25,941 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 113
-2015-03-30 17:49:25,973 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 169
-2015-03-30 17:49:25,974 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 114
-2015-03-30 17:49:25,998 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 169
-2015-03-30 17:49:25,999 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 116
-2015-03-30 17:49:26,030 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 170
-2015-03-30 17:49:26,031 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 117
-2015-03-30 17:49:26,057 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 170
-2015-03-30 17:49:26,058 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 118
-2015-03-30 17:49:26,092 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 171
-2015-03-30 17:49:26,093 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 119
-2015-03-30 17:49:26,136 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 174
-2015-03-30 17:49:26,136 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 120
-2015-03-30 17:49:26,164 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 176
-2015-03-30 17:49:26,165 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 119
-2015-03-30 17:49:26,198 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 180
-2015-03-30 17:49:26,199 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 119
-2015-03-30 17:49:26,226 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 185
-2015-03-30 17:49:26,226 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 118
-2015-03-30 17:49:26,253 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 189
-2015-03-30 17:49:26,254 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 117
-2015-03-30 17:49:26,281 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 195
-2015-03-30 17:49:26,282 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 115
-2015-03-30 17:49:26,335 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 199
-2015-03-30 17:49:26,338 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 113
-2015-03-30 17:49:26,368 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 204
-2015-03-30 17:49:26,369 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 111
-2015-03-30 17:49:26,391 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 206
-2015-03-30 17:49:26,391 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 108
-2015-03-30 17:49:26,417 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 210
-2015-03-30 17:49:26,418 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 106
-2015-03-30 17:49:26,456 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 212
-2015-03-30 17:49:26,457 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 104
-2015-03-30 17:49:26,480 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 214
-2015-03-30 17:49:26,481 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 101
-2015-03-30 17:49:26,531 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 212
-2015-03-30 17:49:26,531 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:26,554 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 207
-2015-03-30 17:49:26,555 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:26,586 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 198
-2015-03-30 17:49:26,587 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:26,616 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 188
-2015-03-30 17:49:26,617 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 96
-2015-03-30 17:49:26,643 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 179
-2015-03-30 17:49:26,644 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 91
-2015-03-30 17:49:26,675 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 171
-2015-03-30 17:49:26,675 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 86
-2015-03-30 17:49:26,722 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 165
-2015-03-30 17:49:26,723 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 80
-2015-03-30 17:49:26,753 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 161
-2015-03-30 17:49:26,754 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 86
-2015-03-30 17:49:26,781 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 162
-2015-03-30 17:49:26,782 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 103
-2015-03-30 17:49:26,826 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 164
-2015-03-30 17:49:26,827 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 109
-2015-03-30 17:49:26,870 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 165
-2015-03-30 17:49:26,871 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 101
-2015-03-30 17:49:26,910 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 164
-2015-03-30 17:49:26,911 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:26,946 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 162
-2015-03-30 17:49:26,947 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 95
-2015-03-30 17:49:26,974 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 160
-2015-03-30 17:49:26,975 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 92
-2015-03-30 17:49:27,007 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 158
-2015-03-30 17:49:27,008 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 93
-2015-03-30 17:49:27,039 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 158
-2015-03-30 17:49:27,040 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 95
-2015-03-30 17:49:27,131 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 159
-2015-03-30 17:49:27,132 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 97
-2015-03-30 17:49:27,156 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 168
-2015-03-30 17:49:27,157 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 94
-2015-03-30 17:49:27,220 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 180
-2015-03-30 17:49:27,221 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 95
-2015-03-30 17:49:27,270 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 184
-2015-03-30 17:49:27,271 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:27,314 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,315 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:27,339 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,340 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:27,373 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,373 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:27,474 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,475 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:27,504 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,505 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:27,532 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,533 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:27,562 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,563 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:27,596 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,597 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:27,624 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,625 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:27,654 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,655 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:27,692 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,693 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:27,737 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,738 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:27,761 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,762 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:27,787 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,787 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:27,846 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,847 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:27,894 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,895 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:27,926 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,927 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:27,957 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,958 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:27,983 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:27,984 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,021 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 184
-2015-03-30 17:49:28,022 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,044 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 184
-2015-03-30 17:49:28,045 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,105 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 184
-2015-03-30 17:49:28,105 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,166 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,167 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,209 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,210 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,246 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,247 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,289 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,290 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,338 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,339 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,374 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,375 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,406 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,407 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,439 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,440 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,482 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,483 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,512 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,512 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,544 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,545 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,576 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,577 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,603 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,603 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,632 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,633 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,685 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,687 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,729 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,731 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,766 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,767 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,848 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,849 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,874 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,875 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,906 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,907 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,931 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,932 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,963 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,963 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:28,995 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:28,996 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,026 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,027 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,068 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,069 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,097 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,098 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,130 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,131 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,159 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,160 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,193 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,194 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,216 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,217 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,263 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,264 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,318 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,318 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,399 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,400 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,462 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,462 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,498 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,498 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,520 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,521 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,566 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,568 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,612 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,613 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,653 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,654 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,685 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,686 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,715 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,716 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,744 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,745 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,832 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,833 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,882 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,883 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,910 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,910 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,944 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,945 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:29,969 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:29,970 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,013 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,014 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,046 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,047 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,089 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,090 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,153 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,154 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,216 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,217 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,249 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,250 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,330 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,331 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,363 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,364 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,389 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,390 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:30,437 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,438 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:30,465 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,466 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:30,496 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,497 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:30,525 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,526 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:30,558 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,559 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:30,584 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,585 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:30,633 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,634 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:30,664 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,665 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:30,693 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,694 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:30,720 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,721 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:30,773 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,774 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 99
-2015-03-30 17:49:30,795 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,796 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,826 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,827 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,857 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,858 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,890 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,891 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,924 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,925 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,947 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,948 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:30,975 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:30,976 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,020 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,021 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,051 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,051 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,082 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,083 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,113 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,113 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,144 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,145 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,186 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,186 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,218 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 182
-2015-03-30 17:49:31,219 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,307 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,308 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,349 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,349 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,393 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,394 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,460 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,461 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,502 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,503 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,532 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,532 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,565 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,566 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,608 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,609 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,636 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,637 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,668 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,669 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,698 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,699 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,781 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,783 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,826 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:31,827 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,879 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 182
-2015-03-30 17:49:31,881 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,930 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 182
-2015-03-30 17:49:31,931 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:31,963 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 182
-2015-03-30 17:49:31,964 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:32,002 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 182
-2015-03-30 17:49:32,002 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:32,030 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:32,031 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:32,059 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:32,060 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
-2015-03-30 17:49:32,090 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 183
-2015-03-30 17:49:32,090 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 98
+2015-04-01 19:34:31,220 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 276
+2015-04-01 19:34:31,227 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 133
+2015-04-01 19:34:31,312 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:31,314 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 119
+2015-04-01 19:34:31,358 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:31,359 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 108
+2015-04-01 19:34:31,390 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:31,391 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 115
+2015-04-01 19:34:31,429 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:31,431 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 122
+2015-04-01 19:34:31,483 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:31,483 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 125
+2015-04-01 19:34:31,542 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:31,543 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 126
+2015-04-01 19:34:31,585 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:31,586 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 128
+2015-04-01 19:34:31,648 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:31,649 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:31,694 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:31,695 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 124
+2015-04-01 19:34:31,722 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:31,723 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 126
+2015-04-01 19:34:31,751 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:31,752 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 125
+2015-04-01 19:34:31,793 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:31,795 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 126
+2015-04-01 19:34:31,854 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:31,855 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:31,893 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:31,894 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:31,917 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:31,917 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:31,947 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:31,947 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:31,980 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:31,980 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:32,006 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,007 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:32,036 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:32,037 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 126
+2015-04-01 19:34:32,084 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,085 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:32,121 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,122 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:32,145 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,146 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:32,173 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,174 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 128
+2015-04-01 19:34:32,202 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,203 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 128
+2015-04-01 19:34:32,250 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,251 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:32,289 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,289 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:32,338 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,339 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:32,369 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,370 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:32,398 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,399 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:32,431 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,432 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:32,474 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:32,475 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:32,504 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,505 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:32,535 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:32,535 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:32,578 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,580 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 128
+2015-04-01 19:34:32,626 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:32,627 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:32,681 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,682 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:32,714 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,714 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 132
+2015-04-01 19:34:32,735 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,736 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:32,765 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,766 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:32,799 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,800 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:32,820 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:32,821 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:32,865 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,866 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:32,898 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,899 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 128
+2015-04-01 19:34:32,927 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,928 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:32,955 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:32,956 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:32,994 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:32,994 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:33,016 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:33,017 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:33,062 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:33,062 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:33,117 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:33,118 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 124
+2015-04-01 19:34:33,165 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:33,166 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 124
+2015-04-01 19:34:33,210 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:33,211 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 124
+2015-04-01 19:34:33,264 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:33,265 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:33,296 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:33,297 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:33,403 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:33,404 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 128
+2015-04-01 19:34:33,481 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:33,482 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:33,515 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:33,516 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:33,544 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:33,545 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:33,576 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:33,577 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:33,651 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:33,652 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:33,691 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:33,692 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:33,738 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:33,738 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:33,773 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:33,774 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:33,800 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:33,801 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:33,865 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:33,866 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:33,927 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:33,928 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:33,978 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:33,979 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:34,129 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:34,130 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:34,193 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:34,194 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:34,237 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:34,237 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:34,266 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:34,267 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:34,297 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:34,298 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 128
+2015-04-01 19:34:34,327 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:34,328 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:34,357 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:34,358 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:34,387 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:34,388 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:34,432 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:34,433 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:34,461 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:34,462 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:34,492 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:34,493 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:34,522 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:34,524 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:34,552 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:34,553 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:34,583 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:34,583 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:34,647 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:34,648 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:34,688 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:34,689 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:34,719 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:34,719 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:34,747 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:34,748 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:34,780 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:34,780 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:34,822 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:34,823 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 128
+2015-04-01 19:34:34,854 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:34,855 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:34,883 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:34,884 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:34,913 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:34,914 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:34,944 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:34,945 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:34,974 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:34,975 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,021 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:35,022 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,052 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:35,053 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,082 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:35,083 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,151 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:35,153 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 133
+2015-04-01 19:34:35,219 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:35,221 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 132
+2015-04-01 19:34:35,251 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:35,252 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,275 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:35,275 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,305 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:35,306 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,336 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:35,337 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,366 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:35,367 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,412 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:35,412 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,443 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:35,444 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,470 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:35,471 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,501 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:35,502 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,530 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:35,531 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,563 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:35,564 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:35,615 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:35,616 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:36,685 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:36,687 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:36,785 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:36,786 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:36,830 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:36,831 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:36,895 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:36,896 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:36,944 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:36,944 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:37,039 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:37,040 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:37,114 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:37,115 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 125
+2015-04-01 19:34:37,185 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 270
+2015-04-01 19:34:37,185 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:37,213 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:37,214 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 126
+2015-04-01 19:34:37,248 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:37,248 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 126
+2015-04-01 19:34:37,277 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:37,277 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 126
+2015-04-01 19:34:37,333 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:37,334 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 126
+2015-04-01 19:34:37,363 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 269
+2015-04-01 19:34:37,364 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 126
+2015-04-01 19:34:37,422 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 270
+2015-04-01 19:34:37,423 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 126
+2015-04-01 19:34:37,466 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:37,467 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 126
+2015-04-01 19:34:37,501 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 270
+2015-04-01 19:34:37,502 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 126
+2015-04-01 19:34:37,632 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:37,633 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 125
+2015-04-01 19:34:37,692 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:37,693 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:37,725 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:37,725 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:37,821 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:37,823 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 132
+2015-04-01 19:34:37,857 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:37,858 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:37,889 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:37,889 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:37,921 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:37,923 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:37,993 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:37,994 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:38,022 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:38,023 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:38,082 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:38,082 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 127
+2015-04-01 19:34:38,119 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:38,120 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:38,157 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:38,158 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:38,247 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:38,248 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:38,290 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:38,291 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:38,350 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:38,351 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:38,394 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:38,396 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:38,447 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:38,448 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:38,484 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:38,485 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 129
+2015-04-01 19:34:38,518 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:38,519 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 128
+2015-04-01 19:34:38,581 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 269
+2015-04-01 19:34:38,582 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 133
+2015-04-01 19:34:38,630 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 269
+2015-04-01 19:34:38,630 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:38,679 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 269
+2015-04-01 19:34:38,680 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 128
+2015-04-01 19:34:38,711 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:38,712 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 132
+2015-04-01 19:34:38,750 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:38,751 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 134
+2015-04-01 19:34:38,783 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:38,784 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 134
+2015-04-01 19:34:38,837 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:38,837 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:38,869 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:38,870 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 130
+2015-04-01 19:34:38,928 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 269
+2015-04-01 19:34:38,930 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 134
+2015-04-01 19:34:38,973 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:38,974 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 134
+2015-04-01 19:34:39,006 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:39,006 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:39,070 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:39,070 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 125
+2015-04-01 19:34:39,105 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:39,106 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 125
+2015-04-01 19:34:39,201 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:39,202 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 125
+2015-04-01 19:34:39,240 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:39,241 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 125
+2015-04-01 19:34:39,299 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:39,300 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 125
+2015-04-01 19:34:39,409 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 267
+2015-04-01 19:34:39,410 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:39,514 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:39,515 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 133
+2015-04-01 19:34:39,560 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 266
+2015-04-01 19:34:39,561 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 133
+2015-04-01 19:34:39,590 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:39,591 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:34:39,620 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: X = 268
+2015-04-01 19:34:39,621 [Camera Thread Processor] INFO  FollowMe.ShellViewModel [(null)] - Object detected: Y = 131
+2015-04-01 19:37:19,454 [9] INFO  FollowMe.App [(null)] - Hello Caliburn.Micro.Logging.NLog World!
+2015-04-01 19:37:19,702 [9] INFO  FollowMe.ShellViewModel [(null)] - Init
+2015-04-01 19:37:19,853 [9] INFO  FollowMe.Configuration.FileBasedTrackingConfigProvider [(null)] - LoadTrackingConfig
+2015-04-01 19:37:20,005 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding FollowMe.ShellView and FollowMe.ShellViewModel.
+2015-04-01 19:37:20,006 [9] INFO  Caliburn.Micro.Action [(null)] - Setting DC of FollowMe.ShellView to FollowMe.ShellViewModel.
+2015-04-01 19:37:20,007 [9] INFO  Caliburn.Micro.Action [(null)] - Attaching message handler FollowMe.ShellViewModel to FollowMe.ShellView.
+2015-04-01 19:37:20,020 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_ArDroneConfig.
+2015-04-01 19:37:20,020 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_ArDroneConfig.
+2015-04-01 19:37:20,021 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_BatteryLevel.
+2015-04-01 19:37:20,022 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_BatteryLevel.
+2015-04-01 19:37:20,022 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_ConnectToDroneEnabled.
+2015-04-01 19:37:20,023 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_ConnectToDroneEnabled.
+2015-04-01 19:37:20,023 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_ObjectDetectionEnabled.
+2015-04-01 19:37:20,024 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_ObjectDetectionEnabled.
+2015-04-01 19:37:20,024 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_TrackingPreviewEnabled.
+2015-04-01 19:37:20,025 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_TrackingPreviewEnabled.
+2015-04-01 19:37:20,025 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_CameraStarted.
+2015-04-01 19:37:20,026 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_CameraStarted.
+2015-04-01 19:37:20,026 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button1Pressed.
+2015-04-01 19:37:20,027 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button1Pressed.
+2015-04-01 19:37:20,028 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button2Pressed.
+2015-04-01 19:37:20,028 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button2Pressed.
+2015-04-01 19:37:20,028 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button3Pressed.
+2015-04-01 19:37:20,029 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button3Pressed.
+2015-04-01 19:37:20,029 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button4Pressed.
+2015-04-01 19:37:20,029 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button4Pressed.
+2015-04-01 19:37:20,030 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button5Pressed.
+2015-04-01 19:37:20,030 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button5Pressed.
+2015-04-01 19:37:20,030 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button6Pressed.
+2015-04-01 19:37:20,031 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button6Pressed.
+2015-04-01 19:37:20,031 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button7Pressed.
+2015-04-01 19:37:20,031 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button7Pressed.
+2015-04-01 19:37:20,032 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_Button8Pressed.
+2015-04-01 19:37:20,032 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_Button8Pressed.
+2015-04-01 19:37:20,032 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_LeftStickXAxis.
+2015-04-01 19:37:20,033 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_LeftStickXAxis.
+2015-04-01 19:37:20,033 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_LeftStickYAxis.
+2015-04-01 19:37:20,033 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_LeftStickYAxis.
+2015-04-01 19:37:20,034 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_RightStickXAxis.
+2015-04-01 19:37:20,034 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_RightStickXAxis.
+2015-04-01 19:37:20,034 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_RightStickYAxis.
+2015-04-01 19:37:20,035 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_RightStickYAxis.
+2015-04-01 19:37:20,035 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_TargetXCoordinate.
+2015-04-01 19:37:20,035 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_TargetXCoordinate.
+2015-04-01 19:37:20,036 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_TargetYCoordinate.
+2015-04-01 19:37:20,036 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_TargetYCoordinate.
+2015-04-01 19:37:20,037 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_AvailableJoystickDevices.
+2015-04-01 19:37:20,037 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_AvailableJoystickDevices.
+2015-04-01 19:37:20,038 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SelectedJoystickDevice.
+2015-04-01 19:37:20,038 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SelectedJoystickDevice.
+2015-04-01 19:37:20,039 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SelectedJoystick.
+2015-04-01 19:37:20,039 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SelectedJoystick.
+2015-04-01 19:37:20,040 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_QrCode.
+2015-04-01 19:37:20,040 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_QrCode.
+2015-04-01 19:37:20,041 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_CameraPanel.
+2015-04-01 19:37:20,042 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_CameraPanel.
+2015-04-01 19:37:20,042 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_DroneStatus.
+2015-04-01 19:37:20,042 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_DroneStatus.
+2015-04-01 19:37:20,043 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_HuePickerIsVisible.
+2015-04-01 19:37:20,043 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_HuePickerIsVisible.
+2015-04-01 19:37:20,044 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SearchObjectSizePixels.
+2015-04-01 19:37:20,044 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SearchObjectSizePixels.
+2015-04-01 19:37:20,045 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_ColorBrightness.
+2015-04-01 19:37:20,045 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_ColorBrightness.
+2015-04-01 19:37:20,046 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SaturationMin.
+2015-04-01 19:37:20,046 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SaturationMin.
+2015-04-01 19:37:20,047 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SaturationMax.
+2015-04-01 19:37:20,047 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SaturationMax.
+2015-04-01 19:37:20,048 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_LuminanceMin.
+2015-04-01 19:37:20,048 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_LuminanceMin.
+2015-04-01 19:37:20,048 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_LuminanceMax.
+2015-04-01 19:37:20,049 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_LuminanceMax.
+2015-04-01 19:37:20,049 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_HueMin.
+2015-04-01 19:37:20,049 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_HueMin.
+2015-04-01 19:37:20,050 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_HueMax.
+2015-04-01 19:37:20,050 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_HueMax.
+2015-04-01 19:37:20,050 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SearchObjectTopLeft.
+2015-04-01 19:37:20,051 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SearchObjectTopLeft.
+2015-04-01 19:37:20,051 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SearchObjectTopCenter.
+2015-04-01 19:37:20,051 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SearchObjectTopCenter.
+2015-04-01 19:37:20,052 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SearchObjectTopRight.
+2015-04-01 19:37:20,052 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SearchObjectTopRight.
+2015-04-01 19:37:20,052 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SearchObjectCenterLeft.
+2015-04-01 19:37:20,053 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SearchObjectCenterLeft.
+2015-04-01 19:37:20,053 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SearchObjectCenterCenter.
+2015-04-01 19:37:20,054 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SearchObjectCenterCenter.
+2015-04-01 19:37:20,054 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SearchObjectCenterRight.
+2015-04-01 19:37:20,055 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SearchObjectCenterRight.
+2015-04-01 19:37:20,055 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SearchObjectBottomLeft.
+2015-04-01 19:37:20,055 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SearchObjectBottomLeft.
+2015-04-01 19:37:20,056 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SearchObjectBottomCenter.
+2015-04-01 19:37:20,056 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SearchObjectBottomCenter.
+2015-04-01 19:37:20,056 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_SearchObjectBottomRight.
+2015-04-01 19:37:20,057 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_SearchObjectBottomRight.
+2015-04-01 19:37:20,057 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_CommandsForAutonomousFlight.
+2015-04-01 19:37:20,057 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_CommandsForAutonomousFlight.
+2015-04-01 19:37:20,058 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_FlyingAtonomous.
+2015-04-01 19:37:20,058 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_FlyingAtonomous.
+2015-04-01 19:37:20,059 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsOutside.
+2015-04-01 19:37:20,059 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsOutside.
+2015-04-01 19:37:20,060 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_FlyingWithoutShell.
+2015-04-01 19:37:20,060 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_FlyingWithoutShell.
+2015-04-01 19:37:20,060 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxYaw.
+2015-04-01 19:37:20,061 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxYaw.
+2015-04-01 19:37:20,061 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxVerticalSpeed.
+2015-04-01 19:37:20,061 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxVerticalSpeed.
+2015-04-01 19:37:20,062 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxEulerAngle.
+2015-04-01 19:37:20,062 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxEulerAngle.
+2015-04-01 19:37:20,062 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_MaxAltitude.
+2015-04-01 19:37:20,063 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_MaxAltitude.
+2015-04-01 19:37:20,063 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for set_IsNotifying.
+2015-04-01 19:37:20,063 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for get_IsNotifying.
+2015-04-01 19:37:20,064 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Handle.
+2015-04-01 19:37:20,064 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonConnect on element ButtonConnect(sender,e).
+2015-04-01 19:37:20,084 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxYaw on element ButtonSendMaxYaw(sender,e).
+2015-04-01 19:37:20,085 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxVerticalSpeed on element ButtonSendMaxVerticalSpeed(sender,e).
+2015-04-01 19:37:20,085 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxEulerAngle on element ButtonSendMaxEulerAngle(sender,e).
+2015-04-01 19:37:20,086 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendMaxAltitude on element ButtonSendMaxAltitude(sender,e).
+2015-04-01 19:37:20,086 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendIsOutside on element ButtonSendIsOutside(sender,e).
+2015-04-01 19:37:20,087 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendFlyingWithoutShell on element ButtonSendFlyingWithoutShell(sender,e).
+2015-04-01 19:37:20,087 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonShowCamera on element ButtonShowCamera(sender,e).
+2015-04-01 19:37:20,088 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonStopCamera on element ButtonStopCamera(sender,e).
+2015-04-01 19:37:20,088 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonDisconnect on element ButtonDisconnect(sender,e).
+2015-04-01 19:37:20,088 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ButtonBlinkLeds.
+2015-04-01 19:37:20,089 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonShowActualConfigOfArDrone on element ButtonShowActualConfigOfArDrone(sender,e).
+2015-04-01 19:37:20,089 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSendDefaultValues on element ButtonSendDefaultValues(sender,e).
+2015-04-01 19:37:20,090 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonRefreshJoysticks on element ButtonRefreshJoysticks(sender,e).
+2015-04-01 19:37:20,090 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonShowHuePicker on element ButtonShowHuePicker(sender,e).
+2015-04-01 19:37:20,090 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonHideHuePicker on element ButtonHideHuePicker(sender,e).
+2015-04-01 19:37:20,091 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonSaveTrackingConfig on element ButtonSaveTrackingConfig(sender,e).
+2015-04-01 19:37:20,091 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonStartAutonomousFlight on element ButtonStartAutonomousFlight(sender,e).
+2015-04-01 19:37:20,091 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Applied: Action ButtonStopAutonomousFlight on element ButtonStopAutonomousFlight(sender,e).
+2015-04-01 19:37:20,092 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for add_PropertyChanged.
+2015-04-01 19:37:20,092 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for remove_PropertyChanged.
+2015-04-01 19:37:20,092 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Refresh.
+2015-04-01 19:37:20,093 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
+2015-04-01 19:37:20,093 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for NotifyOfPropertyChange.
+2015-04-01 19:37:20,093 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for ToString.
+2015-04-01 19:37:20,094 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for Equals.
+2015-04-01 19:37:20,094 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetHashCode.
+2015-04-01 19:37:20,094 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Action Convention Not Applied: No actionable element for GetType.
+2015-04-01 19:37:20,097 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element SelectedJoystick.
+2015-04-01 19:37:20,097 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element ArDroneConnected did not match a property.
+2015-04-01 19:37:20,098 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element BatteryLevel.
+2015-04-01 19:37:20,099 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element AvailableJoystickDevices.
+2015-04-01 19:37:20,100 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button1Pressed.
+2015-04-01 19:37:20,100 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button2Pressed.
+2015-04-01 19:37:20,101 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button3Pressed.
+2015-04-01 19:37:20,101 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button4Pressed.
+2015-04-01 19:37:20,102 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button5Pressed.
+2015-04-01 19:37:20,102 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button6Pressed.
+2015-04-01 19:37:20,102 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button7Pressed.
+2015-04-01 19:37:20,103 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element Button8Pressed.
+2015-04-01 19:37:20,104 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickXAxis.
+2015-04-01 19:37:20,104 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LeftStickYAxis.
+2015-04-01 19:37:20,105 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickXAxis.
+2015-04-01 19:37:20,105 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element RightStickYAxis.
+2015-04-01 19:37:20,105 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element PreviewWindowsFormsHost2 did not match a property.
+2015-04-01 19:37:20,106 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element PreviewWindowsFormsHost did not match a property.
+2015-04-01 19:37:20,106 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element ObjectDetectionEnabled.
+2015-04-01 19:37:20,107 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element SearchObjectSizePixels.
+2015-04-01 19:37:20,107 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element SaturationMin.
+2015-04-01 19:37:20,108 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element SaturationMax.
+2015-04-01 19:37:20,108 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LuminanceMin.
+2015-04-01 19:37:20,109 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element LuminanceMax.
+2015-04-01 19:37:20,109 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element TrackingPreviewEnabled.
+2015-04-01 19:37:20,109 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element HueMin.
+2015-04-01 19:37:20,110 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element HueMax.
+2015-04-01 19:37:20,110 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxYawSlider did not match a property.
+2015-04-01 19:37:20,111 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxYaw.
+2015-04-01 19:37:20,111 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxVerticalSpeedSlider did not match a property.
+2015-04-01 19:37:20,111 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxVerticalSpeed.
+2015-04-01 19:37:20,112 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxEulerAngleSlider did not match a property.
+2015-04-01 19:37:20,112 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxEulerAngle.
+2015-04-01 19:37:20,113 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Not Applied: Element MaxAltitudeSlider did not match a property.
+2015-04-01 19:37:20,113 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element MaxAltitude.
+2015-04-01 19:37:20,113 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element IsOutside.
+2015-04-01 19:37:20,114 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element FlyingWithoutShell.
+2015-04-01 19:37:20,114 [9] INFO  Caliburn.Micro.ViewModelBinder [(null)] - Binding Convention Applied: Element CommandsForAutonomousFlight.
+2015-04-01 19:37:20,178 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
+2015-04-01 19:37:20,179 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonRefreshJoysticks availability update.
+2015-04-01 19:37:20,180 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonConnect availability update.
+2015-04-01 19:37:20,181 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonDisconnect availability update.
+2015-04-01 19:37:20,182 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxYaw availability update.
+2015-04-01 19:37:20,182 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxVerticalSpeed availability update.
+2015-04-01 19:37:20,183 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxEulerAngle availability update.
+2015-04-01 19:37:20,183 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendMaxAltitude availability update.
+2015-04-01 19:37:20,184 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendIsOutside availability update.
+2015-04-01 19:37:20,184 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendFlyingWithoutShell availability update.
+2015-04-01 19:37:20,185 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowActualConfigOfArDrone availability update.
+2015-04-01 19:37:20,185 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSendDefaultValues availability update.
+2015-04-01 19:37:20,186 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowCamera availability update.
+2015-04-01 19:37:20,186 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonStopCamera availability update.
+2015-04-01 19:37:20,187 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonShowHuePicker availability update.
+2015-04-01 19:37:20,187 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonHideHuePicker availability update.
+2015-04-01 19:37:20,188 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonSaveTrackingConfig availability update.
+2015-04-01 19:37:20,188 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonStartAutonomousFlight availability update.
+2015-04-01 19:37:20,188 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Action: ButtonStopAutonomousFlight availability update.
+2015-04-01 19:37:27,454 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonConnect.
+2015-04-01 19:37:28,609 [9] INFO  FollowMe.ShellViewModel [(null)] - <log4net.Error>Exception during StringFormat: Die Eingabezeichenfolge hat das falsche Format. <format>cat /data/config.ini
+
+[general]
+num_version_config             = 1
+num_version_mb                 = 34
+num_version_soft               = 2.4.8
+drone_serial                   = PS721003AG3L052944
+soft_build_date                = 2013-09-16 14:49
+motor1_soft                    = 1.43
+motor1_hard                    = 6.0
+motor1_supplier                = 1.1
+motor2_soft                    = 1.43
+motor2_hard                    = 6.0
+motor2_supplier                = 1.1
+motor3_soft                    = 1.43
+motor3_hard                    = 6.0
+motor3_supplier                = 1.1
+motor4_soft                    = 1.43
+motor4_hard                    = 6.0
+motor4_supplier                = 1.1
+ardrone_name                   = My ARDrone
+flying_time                    = 2800
+navdata_demo                   = TRUE
+com_watchdog                   = 2
+video_enable                   = TRUE
+vision_enable                  = TRUE
+vbat_min                       = 9000
+gps_soft                       = 0.0
+gps_hard                       = 0.0
+timezone                       = +0800
+battery_type                   = 0
+gps_soft_update                = 4.1.2-P6
+
+[control]
+accs_offset                    = { -4.1936479e+03 3.8041470e+03 4.0829834e+03 }
+accs_gains                     = {  1.9550196e+00 9.4805144e-02 -9.7676441e-03  7.8259587e-02 -1.9442046e+00 -1.8539310e-02  -3.7120908e-02 -3.7572004e-03 -1.9037731e+00 }
+gyros_offset                   = { -4.4282501e+01 3.1038750e+01 -1.8388750e+01 }
+gyros_gains                    = { 1.0684397e-03 -1.0689500e-03 -1.0675595e-03 }
+gyros110_offset                = { 1.6625000e+03 1.6625000e+03 }
+gyros110_gains                 = { 1.5271631e-03 -1.5271631e-03 }
+magneto_offset                 = { 9.6505623e+01 -2.2411734e+02 0.0000000e+00 }
+magneto_radius                 = 3.6836496e+02
+gyro_offset_thr_x              = 4.0000000e+00
+gyro_offset_thr_y              = 4.0000000e+00
+gyro_offset_thr_z              = 5.0000000e-01
+pwm_ref_gyros                  = 500
+osctun_value                   = 63
+osctun_test                    = TRUE
+altitude_max                   = 5000
+altitude_min                   = 50
+outdoor                        = FALSE
+flight_without_shell           = TRUE
+autonomous_flight              = FALSE
+control_level                  = 0
+euler_angle_max                = 2.5000000e-01
+control_iphone_tilt            = 3.4906584e-01
+control_vz_max                 = 1.0000000e+03
+control_yaw                    = 3.0000000e+00
+manual_trim                    = FALSE
+indoor_euler_angle_max         = 2.5000000e-01
+indoor_control_vz_max          = 1.0000000e+03
+indoor_control_yaw             = 3.0000000e+00
+outdoor_euler_angle_max        = 3.4906584e-01
+outdoor_control_vz_max         = 1.0000000e+03
+outdoor_control_yaw            = 3.4906585e+00
+
+[network]
+ssid_single_player             = ardrone2_052944
+ssid_multi_player              = ardrone2_052944
+wifi_mode                      = 0
+owner_mac                      = 00:00:00:00:00:00
+
+[pic]
+ultrasound_freq                = 8
+ultrasound_watchdog            = 3
+pic_version                    = 184877090
+
+[video]
+camif_fps                      = 30
+camif_buffers                  = 2
+num_trackers                   = 12
+video_on_usb                   = TRUE
+video_file_index               = 2
+codec_fps                      = 30
+exposure_mode                  = 0,0,0,0
+saturation_mode                = 0
+whitebalance_mode              = 0,0
+
+[leds]
+
+[detect]
+enemy_colors                   = 3
+enemy_without_shell            = 0
+groundstripe_colors            = 16
+detect_type                    = 3
+detections_select_h            = 0
+detections_select_v_hsync      = 0
+detections_select_v            = 0
+
+[syslog]
+output                         = 7
+max_size                       = 102400
+nb_files                       = 5
+
+[custom]
+application_desc               = Default application configuration
+profile_desc                   = Default profile configuration
+session_desc                   = Default session configuration
+
+[userbox]
+
+[gps]
+latitude                       = 5.0000000000000000e+02
+longitude                      = 5.0000000000000000e+02
+altitude                       = 0.0000000000000000e+00
+accuracy                       = 0.0000000000000000e+00
+
+[flightplan]
+default_validation_radius      = 3.0000000e+00
+default_validation_time        = 1.0000000e-03
+max_distance_from_takeoff      = 1000
+gcs_ip                         = 3
+video_stop_delay               = 10
+low_battery_go_home            = FALSE
+automatic_heading              = TRUE
+com_lost_action_delay          = 0
+altitude_go_home               = 0.0000000e+00
+mavlink_js_roll_left           = x-
+mavlink_js_roll_right          = x+
+mavlink_js_pitch_front         = y+
+mavlink_js_pitch_back          = y-
+mavlink_js_yaw_left            = 4
+mavlink_js_yaw_right           = 5
+mavlink_js_go_up               = 0
+mavlink_js_go_down             = 1
+mavlink_js_inc_gains           = 6
+mavlink_js_dec_gains           = 7
+mavlink_js_select              = 8
+mavlink_js_start               = 9
+
+[rescue]
+
+# </format><args>{}</args></log4net.Error>
+2015-04-01 19:37:32,036 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonShowCamera.
+2015-04-01 19:37:32,230 [9] INFO  FollowMe.ShellViewModel [(null)] - StartCamera
+2015-04-01 19:37:57,306 [11] INFO  FollowMe.ShellViewModel [(null)] - Land
+2015-04-01 19:38:00,148 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonStartAutonomousFlight.
+2015-04-01 19:38:03,427 [11] INFO  FollowMe.ShellViewModel [(null)] - Land
+2015-04-01 19:38:05,145 [112] INFO  FollowMe.ShellViewModel [(null)] - Land
+2015-04-01 19:38:05,859 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonStartAutonomousFlight.
+2015-04-01 19:38:12,663 [112] INFO  FollowMe.ShellViewModel [(null)] - Land
+2015-04-01 19:38:19,039 [11] INFO  FollowMe.ShellViewModel [(null)] - Land
+2015-04-01 19:38:20,717 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonStartAutonomousFlight.
+2015-04-01 19:38:25,621 [11] INFO  FollowMe.ShellViewModel [(null)] - Land
+2015-04-01 19:38:27,013 [11] INFO  FollowMe.ShellViewModel [(null)] - Land
+2015-04-01 19:38:28,560 [9] INFO  Caliburn.Micro.ActionMessage [(null)] - Invoking Action: ButtonStartAutonomousFlight.
+2015-04-01 19:38:30,556 [13] INFO  FollowMe.ShellViewModel [(null)] - Land

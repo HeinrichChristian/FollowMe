@@ -99,6 +99,7 @@ namespace FollowMe {
         private bool searchObjectBottomRight;
         private string commandsForAutonomousFlight;
         private bool flyingAtonomous;
+        private Timer autonomousTimer;
 
         #region public properties
 
@@ -903,11 +904,7 @@ namespace FollowMe {
         {
             camera = new Camera(ezbConnect.EZB);
             camera.OnNewFrame += _camera_OnNewFrame;
-
-
-            //cameraForm = new CameraForm();
-            //cameraForm.Show();
-
+            
             Log.Info("StartCamera");
             
             cameraPreviewForm.Show();
@@ -1035,23 +1032,41 @@ namespace FollowMe {
         {
             FlyingAtonomous = true;
 
-            if (SearchObjectCenterLeft || SearchObjectBottomLeft || SearchObjectTopLeft)
-            {
-                // steer right
-                CommandsForAutonomousFlight = CommandsForAutonomousFlight + "\nRoll Right";
-                //RollRight();
-            }
+            autonomousTimer = new Timer {Interval = 100, Enabled = true};
+            autonomousTimer.Elapsed += AutonomousTimerOnElapsed;
+          
+        }
 
-            if (SearchObjectCenterRight || SearchObjectTopRight || SearchObjectBottomRight)
+        private void AutonomousTimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
+        {
+            if (Button6Pressed)
             {
-                // steer left
-                CommandsForAutonomousFlight = CommandsForAutonomousFlight + "\nRoll Left";
-                //RollLeft();
+                if (SearchObjectCenterLeft || SearchObjectBottomLeft || SearchObjectTopLeft)
+                {
+                    // steer left
+                    Log.Info("Roll left");
+                    //CommandsForAutonomousFlight = CommandsForAutonomousFlight + "\nRoll Left";
+                    //RollLeft();
+                }
+
+                if (SearchObjectCenterRight || SearchObjectTopRight || SearchObjectBottomRight)
+                {
+                    // steer right
+                    Log.Info("Roll right");
+                    //CommandsForAutonomousFlight = CommandsForAutonomousFlight + "\nRoll Right";
+                    //RollRight();
+                }
+            }
+            else
+            {
+                autonomousTimer.Enabled = false;
+                FlyingAtonomous = false;
             }
         }
 
         public void ButtonStopAutonomousFlight(object sender, RoutedEventArgs e)
         {
+            autonomousTimer.Elapsed -= AutonomousTimerOnElapsed;
             FlyingAtonomous = false;
         }
         #endregion

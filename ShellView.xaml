@@ -36,7 +36,7 @@
                         <RadioButton x:Name="Button3Pressed" Content="3" HorizontalAlignment="Left" Margin="677,95,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                         <RadioButton x:Name="Button4Pressed" Content="4" HorizontalAlignment="Left" Margin="677,115,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                         <RadioButton x:Name="Button5Pressed" Content="5" HorizontalAlignment="Left" Margin="677,136,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                        <RadioButton x:Name="Button6Pressed" Content="6" HorizontalAlignment="Left" Margin="677,156,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <RadioButton x:Name="Button6Pressed" Content="6 - Autonome Steuerung aktiv - zum Beenden loslassen" HorizontalAlignment="Left" Margin="677,156,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                         <RadioButton x:Name="Button7Pressed" Content="7 - Emergency - Motoren aus!" HorizontalAlignment="Left" Margin="677,176,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                         <RadioButton x:Name="Button8Pressed" Content="8 - Takeoff - zum Landen loslassen" HorizontalAlignment="Left" Margin="677,196,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                         <Label Content="linker Knppel &#xA;Pitch / Yaw" HorizontalAlignment="Left" Margin="688,228,0,0" VerticalAlignment="Top" Grid.Column="1"/>
@@ -268,19 +268,20 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
 
-                            <TextBox Text="steuere nach rechts unten" TextWrapping="Wrap"  Grid.Row="0" Grid.Column="0" Background="Red" Visibility="{Binding SearchObjectTopLeft, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBox>
-                            <TextBox Text="steuere nach unten"  TextWrapping="Wrap" Grid.Row="0" Grid.Column="1" Background="Red" Visibility="{Binding SearchObjectTopCenter, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBox>
-                            <TextBox Text="steuere nach links unten" TextWrapping="Wrap" Grid.Row="0" Grid.Column="2" Background="Red" Visibility="{Binding SearchObjectTopRight, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBox>
-                            <TextBox Text="steuere nach rechts" TextWrapping="Wrap"  Grid.Row="1" Grid.Column="0" Background="Red" Visibility="{Binding SearchObjectCenterLeft, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBox>
+                            <TextBox Text="steuere nach links oben" TextWrapping="Wrap"  Grid.Row="0" Grid.Column="0" Background="Red" Visibility="{Binding SearchObjectTopLeft, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBox>
+                            <TextBox Text="steuere nach oben"  TextWrapping="Wrap" Grid.Row="0" Grid.Column="1" Background="Red" Visibility="{Binding SearchObjectTopCenter, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBox>
+                            <TextBox Text="steuere nach rechts oben" TextWrapping="Wrap" Grid.Row="0" Grid.Column="2" Background="Red" Visibility="{Binding SearchObjectTopRight, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBox>
+                            <TextBox Text="steuere nach links" TextWrapping="Wrap"  Grid.Row="1" Grid.Column="0" Background="Red" Visibility="{Binding SearchObjectCenterLeft, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBox>
                             <TextBox Text="" Grid.Row="1" Grid.Column="1" Background="ForestGreen" Visibility="{Binding SearchObjectCenterCenter, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBox>
-                            <TextBlock Text="steuere nach links" TextWrapping="Wrap"  Grid.Row="1" Grid.Column="2" Background="Red" Visibility="{Binding SearchObjectCenterRight, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBlock>
-                            <TextBlock Text="steuere nach oben rechts" TextWrapping="Wrap"  Grid.Row="2" Grid.Column="0" Background="Red" Visibility="{Binding SearchObjectBottomLeft, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBlock>
-                            <TextBlock Text="steuere nach oben" TextWrapping="Wrap"  Grid.Row="2" Grid.Column="1" Background="Red" Visibility="{Binding SearchObjectBottomCenter, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBlock>
-                            <TextBlock Text="steuere nach oben links" TextWrapping="Wrap"  Grid.Row="2" Grid.Column="2" Background="Red" Visibility="{Binding SearchObjectBottomRight, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBlock>
+                            <TextBlock Text="steuere nach rechts" TextWrapping="Wrap"  Grid.Row="1" Grid.Column="2" Background="Red" Visibility="{Binding SearchObjectCenterRight, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBlock>
+                            <TextBlock Text="steuere nach links unten" TextWrapping="Wrap"  Grid.Row="2" Grid.Column="0" Background="Red" Visibility="{Binding SearchObjectBottomLeft, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBlock>
+                            <TextBlock Text="steuere nach unten" TextWrapping="Wrap"  Grid.Row="2" Grid.Column="1" Background="Red" Visibility="{Binding SearchObjectBottomCenter, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBlock>
+                            <TextBlock Text="steuere nach rechts unten" TextWrapping="Wrap"  Grid.Row="2" Grid.Column="2" Background="Red" Visibility="{Binding SearchObjectBottomRight, Converter={StaticResource BoolToVisibilityConverter}}" ></TextBlock>
 
                         </Grid>
+                        <TextBlock Grid.Row="0" Grid.Column="3">Button 6 muss gedrückt und gehalten werden solange autonom geflogen werden soll.</TextBlock>
                             <DockPanel Grid.Row="0" Grid.Column="3">
-                                <Button Content="Starte autonome Steuerung" Margin="30" Name="ButtonStartAutonomousFlight" Width="261" IsEnabled="{Binding ObjectDetectionEnabled}"></Button>
+                            <Button Content="Starte autonome Steuerung" Margin="30" Name="ButtonStartAutonomousFlight" Width="261" IsEnabled="{Binding Button6Pressed}"></Button>
                             <Button Content="Stoppe autonome Steuerung" Margin="30" Name="ButtonStopAutonomousFlight" IsEnabled="{Binding FlyingAtonomous}"/>
                             </DockPanel>
                             <StackPanel Grid.Row="1" Grid.Column="3" Grid.RowSpan="2">
