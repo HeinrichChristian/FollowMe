@@ -124,12 +124,6 @@
     </Compile>
     <Compile Include="Interfaces\IArDroneConfigProvider.cs" />
     <Compile Include="Caliburn\Micro\Logging\DebugLogger.cs" />
-    <Compile Include="CameraForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CameraForm.Designer.cs">
-      <DependentUpon>CameraForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Converter\BatteryValueToColorConverter.cs" />
     <Compile Include="Converter\StringToRedOrGreenConverter.cs" />
     <Compile Include="Interfaces\IFlyingRobot.cs" />
@@ -166,9 +160,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="CameraForm.resx">
-      <DependentUpon>CameraForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CameraPreviewForm.resx">
       <DependentUpon>CameraPreviewForm.cs</DependentUpon>
     </EmbeddedResource>
