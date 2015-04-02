@@ -113,7 +113,9 @@
     <Compile Include="Converter\BoolToVisibilityConverter.cs" />
     <Compile Include="Converter\InvertBoolConverter.cs" />
     <Compile Include="Enums\HorizontalDirection.cs" />
+    <Compile Include="Enums\TargetLocation.cs" />
     <Compile Include="Enums\VerticalDirection.cs" />
+    <Compile Include="EzRobot\TatgetLocatorFactory.cs" />
     <Compile Include="EzRobot\UcezbConnectProvider.cs" />
     <Compile Include="FlyingRobot\ArDrone.cs" />
     <Compile Include="HuePickerForm.cs">
@@ -128,6 +130,9 @@
     <Compile Include="Converter\StringToRedOrGreenConverter.cs" />
     <Compile Include="Interfaces\IFlyingRobot.cs" />
     <Compile Include="Interfaces\IFlyingRobotConfigurationHandler.cs" />
+    <Compile Include="Interfaces\IObjectLocationProvider.cs" />
+    <Compile Include="Interfaces\ITargetLocator.cs" />
+    <Compile Include="Interfaces\ITargetLocatorFactory.cs" />
     <Compile Include="IShell.cs" />
     <Compile Include="Messages\HuePickerMessage.cs" />
     <Compile Include="ShellViewModel.cs" />
@@ -136,6 +141,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="SourceDefaultValueConverter.cs" />
+    <Compile Include="EzRobot\EzRobotCameraTargetLocator.cs" />
     <Compile Include="ViewModels\ControlConfigViewModel.cs" />
     <Page Include="ShellView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -206,6 +212,9 @@
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy /Y "$(SolutionDir)dlls" "$(TargetDir)"  /i</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

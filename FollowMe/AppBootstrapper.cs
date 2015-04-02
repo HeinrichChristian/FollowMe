@@ -4,6 +4,7 @@ using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.Linq;
 using FollowMe.Configuration;
+using FollowMe.EzRobot;
 using FollowMe.Interfaces;
 
 namespace FollowMe {
@@ -33,6 +34,7 @@ namespace FollowMe {
             var arDrone = new FlyingRobot.ArDrone();
             batch.AddExportedValue<IFlyingRobot>(arDrone);
             batch.AddExportedValue<IFlyingRobotConfigurationHandler>(arDrone);
+            batch.AddExportedValue<ITargetLocatorFactory>(new TatgetLocatorFactory());
 
             container.Compose(batch);
             

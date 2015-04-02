@@ -23,15 +23,16 @@ namespace FollowMe {
     [Export(typeof(ShellViewModel))]
     public class ShellViewModel : PropertyChangedBase, IShell, IHandle<HuePickerMessage>
     {
+        #region privates
+
         private readonly IWindowManager windowManager;
         private readonly IEventAggregator eventAggregator;
         private readonly IFlyingRobot flyingRobot;
         private readonly IFlyingRobotConfigurationHandler flyingRobotConfigurationHandler;
+        private readonly ITargetLocatorFactory targetLocatorFactory;
+        private ITargetLocator targetLocator;
         private static readonly ILog Log = LogManager.GetLog(typeof(ShellViewModel));
         private readonly FileBasedTrackingConfigProvider fileBasedTrackingConfigProvider = new FileBasedTrackingConfigProvider();
-        #region privates
-
-     
         private Joystick joystick;
         private Camera camera;
         private int batteryLevel;
@@ -91,8 +92,7 @@ namespace FollowMe {
         private Timer autonomousTimer;
 
         #endregion
-
-
+        
         #region public properties
 
         /// <summary>
@@ -145,6 +145,10 @@ namespace FollowMe {
             set
             {
                 objectDetectionEnabled = value;
+                if (value)
+                {
+                    targetLocator = targetLocatorFactory.CreateTargetLocator(this.camera);
+                }
                 NotifyOfPropertyChange(() => ObjectDetectionEnabled);
             }
         }
@@ -752,19 +756,21 @@ namespace FollowMe {
         /// Starts a timer which checks every 5 seconds the battery level of the connected AR.Drone
         /// </summary>
         [ImportingConstructor]
-        public ShellViewModel(IWindowManager windowManager, IEventAggregator eventAggregator, IFlyingRobot flyingRobot, IFlyingRobotConfigurationHandler flyingRobotConfigurationHandler)
+        public ShellViewModel(IWindowManager windowManager, IEventAggregator eventAggregator, IFlyingRobot flyingRobot, IFlyingRobotConfigurationHandler flyingRobotConfigurationHandler, ITargetLocatorFactory targetLocatorFactory)
         {
             if (windowManager == null) throw new ArgumentNullException("windowManager");
             if (eventAggregator == null) throw new ArgumentNullException("eventAggregator");
             if (flyingRobot == null) throw new ArgumentNullException("flyingRobot");
             if (flyingRobotConfigurationHandler == null)
                 throw new ArgumentNullException("flyingRobotConfigurationHandler");
+            if (targetLocatorFactory == null) throw new ArgumentNullException("targetLocatorFactory");
+            
 
             this.windowManager = windowManager;
             this.eventAggregator = eventAggregator;
             this.flyingRobot = flyingRobot;
             this.flyingRobotConfigurationHandler = flyingRobotConfigurationHandler;
-
+            this.targetLocatorFactory = targetLocatorFactory;
             this.eventAggregator.Subscribe(this);
 
             Log.Info("Init");
@@ -832,7 +838,6 @@ namespace FollowMe {
         {
             Log.Info("SetYaw: {0}", MaxYaw);
             flyingRobotConfigurationHandler.SetMaxYaw(MaxYaw);
-            
         }
 
         /// <summary>
@@ -844,7 +849,6 @@ namespace FollowMe {
         {
             Log.Info("SetVZMax: {0}", MaxVerticalSpeed);
             flyingRobotConfigurationHandler.SetMaxVerticalSpeed(MaxVerticalSpeed);
-            //ezbConnect.EZB.ARDrone.SetVZMax(MaxVerticalSpeed);
         }
 
         /// <summary>
@@ -856,7 +860,6 @@ namespace FollowMe {
         {
             Log.Info("SetMaxEulerAngle: {0}", MaxEulerAngle);
             flyingRobotConfigurationHandler.SetMaxEulerAngle(MaxEulerAngle);
-            //ezbConnect.EZB.ARDrone.SetMaxEulerAngle(MaxEulerAngle);
         }
 
         /// <summary>
@@ -867,9 +870,7 @@ namespace FollowMe {
         public void ButtonSendMaxAltitude(object sender, RoutedEventArgs e)
         {
             Log.Info("SetAltitudeMax: {0}", MaxAltitude);
-
             flyingRobotConfigurationHandler.SetMaxAltitude(MaxAltitude);
-            //ezbConnect.EZB.ARDrone.SetAltitudeMax(MaxAltitude);
         }
 
         /// <summary>
@@ -881,7 +882,6 @@ namespace FollowMe {
         {
             Log.Info("SetIsOutside: {0}", IsOutside);
             flyingRobotConfigurationHandler.SetIsOutside(IsOutside);
-            //ezbConnect.EZB.ARDrone.SetIsOutside(IsOutside);
         }
 
         /// <summary>
@@ -893,11 +893,11 @@ namespace FollowMe {
         {
             Log.Info("SetIsFlyingWithoutShell: {0}", FlyingWithoutShell);
             flyingRobotConfigurationHandler.SetIsFlyingWithoutShell(FlyingWithoutShell);
-            //ezbConnect.EZB.ARDrone.SetIsFlyingWithoutShell(FlyingWithoutShell);
         }
      
         /// <summary>
-        /// Start the camera
+        /// Start the camera.
+        /// Set handler for OnNewFrame event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -911,8 +911,6 @@ namespace FollowMe {
             camera.StartCamera(
                     new ValuePair(Camera.CAMERA_NAME_AR_DRONE, Camera.CAMERA_NAME_AR_DRONE),
                     cameraPreviewForm.panel1,
-//                    cameraForm.ExternalCameraPanel,
-                    
                     320,
                     240);
             //camera.QuadBottomY = 33;
@@ -1013,7 +1011,7 @@ namespace FollowMe {
 
         public void ButtonSaveTrackingConfig(object sender, RoutedEventArgs e)
         {
-            fileBasedTrackingConfigProvider.StoreTrackingConfig(new TrackingConfig()
+            fileBasedTrackingConfigProvider.StoreTrackingConfig(new TrackingConfig
             {
                 Date = DateTime.Now,
                 HueMax = HueMax,
@@ -1262,21 +1260,19 @@ namespace FollowMe {
         void _camera_OnNewFrame()
         {
             ObjectLocation objectLocation = null;
-
-            if(ObjectDetectionEnabled)
+            TargetLocation targetLocation = TargetLocation.Unknown;
+            if (targetLocator != null)
             {
                 try
                 {
-                    objectLocation = camera.CameraCustomColorDetection.GetObjectLocationByColor(
-                                        TrackingPreviewEnabled,
-                                        SearchObjectSizePixels, 
-                                        HueMin, 
+                    targetLocation = targetLocator.GetTargetLocation(TrackingPreviewEnabled,
+                                        SearchObjectSizePixels,
+                                        HueMin,
                                         HueMax,
-                                        SaturationMin, 
-                                        SaturationMax, 
-                                        LuminanceMin, 
+                                        SaturationMin,
+                                        SaturationMax,
+                                        LuminanceMin,
                                         LuminanceMax);
-        
                 }
                 catch (Exception exception)
                 {
@@ -1286,28 +1282,65 @@ namespace FollowMe {
 
             camera.UpdatePreview(255);
 
+            SearchObjectBottomLeft = false;
+            SearchObjectBottomCenter = false;
+            SearchObjectBottomRight = false;
+            SearchObjectCenterLeft = false;
+            SearchObjectCenterCenter = false;
+            SearchObjectCenterRight = false;
+            SearchObjectTopLeft = false;
+            SearchObjectTopCenter = false;
+            SearchObjectTopRight = false;
 
-            if (objectLocation != null && objectLocation.IsObjectFound)
+            switch (targetLocation)
             {
+                case TargetLocation.BottomLeft:
+                    SearchObjectBottomLeft = true;
+                    break;
+                case TargetLocation.BottomCenter:
+                    SearchObjectBottomCenter = true;
+                    break;
+                case TargetLocation.BottomRight:
+                    SearchObjectBottomRight = true;
+                    break;
+                case TargetLocation.CenterLeft:
+                    SearchObjectCenterLeft = true;
+                    break;
+                case TargetLocation.CenterCenter:
+                    SearchObjectCenterCenter = true;
+                    break;
+                case TargetLocation.CenterRight:
+                    SearchObjectCenterRight = true;
+                    break;
+                case TargetLocation.TopLeft:
+                    SearchObjectTopLeft = true;
+                    break;
+                case TargetLocation.TopCenter:
+                    SearchObjectTopCenter = true;
+                    break;
+                case TargetLocation.TopRight:
+                    SearchObjectTopRight = true;
+                    break;
+            }
                 
-                SearchObjectBottomLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
-                SearchObjectBottomCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
-                SearchObjectBottomRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
+                //SearchObjectBottomLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
+                //SearchObjectBottomCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
+                //SearchObjectBottomRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
                 
-                SearchObjectCenterLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
-                SearchObjectCenterCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
-                SearchObjectCenterRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
+                //SearchObjectCenterLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
+                //SearchObjectCenterCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
+                //SearchObjectCenterRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
                 
-                SearchObjectTopLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
-                SearchObjectTopCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
-                SearchObjectTopRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
+                //SearchObjectTopLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
+                //SearchObjectTopCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
+                //SearchObjectTopRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
                 
 
-                TargetXCoordinate = objectLocation.CenterX;
-                Log.Info("Object detected: X = {0}", objectLocation.CenterX);
-                TargetYCoordinate = objectLocation.CenterY;
-                Log.Info("Object detected: Y = {0}", objectLocation.CenterY);
-            }
+                //TargetXCoordinate = objectLocation.CenterX;
+                //Log.Info("Object detected: X = {0}", objectLocation.CenterX);
+                //TargetYCoordinate = objectLocation.CenterY;
+                //Log.Info("Object detected: Y = {0}", objectLocation.CenterY);
+            
         }
 
         public void Handle(HuePickerMessage message)
