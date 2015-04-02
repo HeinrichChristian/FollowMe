@@ -1,16 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Threading;
 using System.Timers;
 using System.Windows;
 using System.Windows.Forms;
 using Caliburn.Micro;
 using EZ_B;
-using EZ_B.ARDrone;
 using EZ_B.Joystick;
 using FollowMe.ArDrone;
 using FollowMe.Configuration;
+using FollowMe.Enums;
+using FollowMe.EzRobot;
+using FollowMe.Interfaces;
 using FollowMe.Messages;
 using FollowMe.ViewModels;
 using Timer = System.Timers.Timer;
@@ -24,23 +25,15 @@ namespace FollowMe {
     {
         private readonly IWindowManager windowManager;
         private readonly IEventAggregator eventAggregator;
+        private readonly IFlyingRobot flyingRobot;
+        private readonly IFlyingRobotConfigurationHandler flyingRobotConfigurationHandler;
         private static readonly ILog Log = LogManager.GetLog(typeof(ShellViewModel));
         private readonly FileBasedTrackingConfigProvider fileBasedTrackingConfigProvider = new FileBasedTrackingConfigProvider();
         #region privates
 
-        /// <summary>
-        /// This value is send to the drone
-        /// </summary>
-        private const float MoveSensitivivivity = 0.20f;
-
-        /// <summary>
-        /// After sending a move command this amount of milliseconds the thread sleeps
-        /// </summary>
-        private const int MoveSleepTimeMilliseconds = 100;
-
+     
         private Joystick joystick;
         private Camera camera;
-        private readonly UCEZB_Connect ezbConnect = new UCEZB_Connect();
         private int batteryLevel;
         private bool button1Pressed;
         private bool button2Pressed;
@@ -61,7 +54,6 @@ namespace FollowMe {
         private Control cameraPanel = new Control();
         private JoystickDevice selectedJoystickDevice;
         private string droneStatus;
-        private CameraForm cameraForm;
         private HuePickerForm huePickerForm;
         private bool connectToDroneEnabled;
         private string selectedJoystick;
@@ -85,8 +77,8 @@ namespace FollowMe {
         private bool huePickerIsVisible;
 
         #endregion
-        
-        CameraPreviewForm cameraPreviewForm = new CameraPreviewForm();
+
+        readonly CameraPreviewForm cameraPreviewForm = new CameraPreviewForm();
         private bool trackingPreviewEnabled;
         private bool searchObjectTopLeft;
         private bool searchObjectTopCenter;
@@ -264,7 +256,6 @@ namespace FollowMe {
             set
             {
                 button7Pressed = value;
-                
                 NotifyOfPropertyChange(() => Button7Pressed);
             }
         }
@@ -761,19 +752,23 @@ namespace FollowMe {
         /// Starts a timer which checks every 5 seconds the battery level of the connected AR.Drone
         /// </summary>
         [ImportingConstructor]
-        public ShellViewModel(IWindowManager windowManager, IEventAggregator eventAggregator)
+        public ShellViewModel(IWindowManager windowManager, IEventAggregator eventAggregator, IFlyingRobot flyingRobot, IFlyingRobotConfigurationHandler flyingRobotConfigurationHandler)
         {
             if (windowManager == null) throw new ArgumentNullException("windowManager");
             if (eventAggregator == null) throw new ArgumentNullException("eventAggregator");
+            if (flyingRobot == null) throw new ArgumentNullException("flyingRobot");
+            if (flyingRobotConfigurationHandler == null)
+                throw new ArgumentNullException("flyingRobotConfigurationHandler");
 
             this.windowManager = windowManager;
             this.eventAggregator = eventAggregator;
+            this.flyingRobot = flyingRobot;
+            this.flyingRobotConfigurationHandler = flyingRobotConfigurationHandler;
 
             this.eventAggregator.Subscribe(this);
 
             Log.Info("Init");
-            ezbConnect.EZB.ShowDebugWindow();
-           
+            
             RefreshJoysticks();
 
             ConnectToDroneEnabled = true;
@@ -808,8 +803,8 @@ namespace FollowMe {
         {
             try
             {
-                ezbConnect.EZB.ARDrone.Connect(ARDrone.ARDroneVersionEnum.V2);
-                 var controlConfig = ezbConnect.EZB.ARDrone.GetControlConfig();
+                var controlConfig = flyingRobot.Connect();
+
                 Log.Info(controlConfig);
                 if (!string.IsNullOrEmpty(controlConfig))
                 {
@@ -836,7 +831,7 @@ namespace FollowMe {
         public void ButtonSendMaxYaw(object sender, RoutedEventArgs e)
         {
             Log.Info("SetYaw: {0}", MaxYaw);
-            ezbConnect.EZB.ARDrone.SetYaw(MaxYaw);
+            flyingRobotConfigurationHandler.SetMaxYaw(MaxYaw);
             
         }
 
@@ -848,7 +843,8 @@ namespace FollowMe {
         public void ButtonSendMaxVerticalSpeed(object sender, RoutedEventArgs e)
         {
             Log.Info("SetVZMax: {0}", MaxVerticalSpeed);
-            ezbConnect.EZB.ARDrone.SetVZMax(MaxVerticalSpeed);
+            flyingRobotConfigurationHandler.SetMaxVerticalSpeed(MaxVerticalSpeed);
+            //ezbConnect.EZB.ARDrone.SetVZMax(MaxVerticalSpeed);
         }
 
         /// <summary>
@@ -858,8 +854,9 @@ namespace FollowMe {
         /// <param name="e"></param>
         public void ButtonSendMaxEulerAngle(object sender, RoutedEventArgs e)
         {
-            Log.Info("SetEulerAngleMax: {0}", MaxEulerAngle);
-            ezbConnect.EZB.ARDrone.SetEulerAngleMax(MaxEulerAngle);
+            Log.Info("SetMaxEulerAngle: {0}", MaxEulerAngle);
+            flyingRobotConfigurationHandler.SetMaxEulerAngle(MaxEulerAngle);
+            //ezbConnect.EZB.ARDrone.SetMaxEulerAngle(MaxEulerAngle);
         }
 
         /// <summary>
@@ -870,7 +867,9 @@ namespace FollowMe {
         public void ButtonSendMaxAltitude(object sender, RoutedEventArgs e)
         {
             Log.Info("SetAltitudeMax: {0}", MaxAltitude);
-            ezbConnect.EZB.ARDrone.SetAltitudeMax(MaxAltitude);
+
+            flyingRobotConfigurationHandler.SetMaxAltitude(MaxAltitude);
+            //ezbConnect.EZB.ARDrone.SetAltitudeMax(MaxAltitude);
         }
 
         /// <summary>
@@ -881,7 +880,8 @@ namespace FollowMe {
         public void ButtonSendIsOutside(object sender, RoutedEventArgs e)
         {
             Log.Info("SetIsOutside: {0}", IsOutside);
-            ezbConnect.EZB.ARDrone.SetIsOutside(IsOutside);
+            flyingRobotConfigurationHandler.SetIsOutside(IsOutside);
+            //ezbConnect.EZB.ARDrone.SetIsOutside(IsOutside);
         }
 
         /// <summary>
@@ -892,7 +892,8 @@ namespace FollowMe {
         public void ButtonSendFlyingWithoutShell(object sender, RoutedEventArgs e)
         {
             Log.Info("SetIsFlyingWithoutShell: {0}", FlyingWithoutShell);
-            ezbConnect.EZB.ARDrone.SetIsFlyingWithoutShell(FlyingWithoutShell);
+            flyingRobotConfigurationHandler.SetIsFlyingWithoutShell(FlyingWithoutShell);
+            //ezbConnect.EZB.ARDrone.SetIsFlyingWithoutShell(FlyingWithoutShell);
         }
      
         /// <summary>
@@ -902,11 +903,10 @@ namespace FollowMe {
         /// <param name="e"></param>
         public void ButtonShowCamera(object sender, RoutedEventArgs e)
         {
-            camera = new Camera(ezbConnect.EZB);
+            camera = new Camera(UcezbConnectProvider.Instance.EZB);
             camera.OnNewFrame += _camera_OnNewFrame;
-            
             Log.Info("StartCamera");
-            
+
             cameraPreviewForm.Show();
             camera.StartCamera(
                     new ValuePair(Camera.CAMERA_NAME_AR_DRONE, Camera.CAMERA_NAME_AR_DRONE),
@@ -924,8 +924,6 @@ namespace FollowMe {
             CameraStarted = false;
 
             cameraPreviewForm.Hide();
-            //cameraForm.Dispose();
-            //cameraForm = null;
             camera.StopCamera();   
         }
 
@@ -937,7 +935,7 @@ namespace FollowMe {
         public void ButtonDisconnect(object sender, RoutedEventArgs e)
         {
             Log.Info("Disconnect");
-            ezbConnect.EZB.ARDrone.Disconnect();
+            flyingRobot.Disconnect();
             ConnectToDroneEnabled = true;
         }
 
@@ -949,7 +947,7 @@ namespace FollowMe {
         public void ButtonBlinkLeds(object sender, RoutedEventArgs e)
         {
             Log.Info("PlayLedAnimation");
-            ezbConnect.EZB.ARDrone.PlayLedAnimation(Commands.LedAnimationEnum.BlinkRed, 2, 10);
+            flyingRobot.PlayLedAnimation();
         }
 
         /// <summary>
@@ -960,8 +958,9 @@ namespace FollowMe {
         public void ButtonShowActualConfigOfArDrone(object sender, RoutedEventArgs e)
         {
             Log.Info("GetControlConfig");
-            var controlConfig = ezbConnect.EZB.ARDrone.GetControlConfig();
 
+            var controlConfig = flyingRobotConfigurationHandler.GetControlConfig();
+            
             Log.Info(controlConfig);
             var arDroneConfigProvider = new ControlConfigBasedArDroneConfigProvider(controlConfig);
             ArDroneConfig = arDroneConfigProvider.GetArDroneConfig();
@@ -976,7 +975,7 @@ namespace FollowMe {
         public void ButtonSendDefaultValues(object sender, RoutedEventArgs e)
         {
             Log.Info("SendDefaultValues");
-            ezbConnect.EZB.ARDrone.SendDefaultValues();
+            flyingRobotConfigurationHandler.SendDefaultValues();
         }
 
         /// <summary>
@@ -996,7 +995,7 @@ namespace FollowMe {
         /// <param name="e"></param>
         public void ButtonShowHuePicker(object sender, RoutedEventArgs e)
         {
-            huePickerForm = new HuePickerForm(this.eventAggregator, new HuePickerMessage(HueMin, HueMax));
+            huePickerForm = new HuePickerForm(eventAggregator, new HuePickerMessage(HueMin, HueMax));
             huePickerForm.Show();
             HuePickerIsVisible = true;
         }
@@ -1039,6 +1038,12 @@ namespace FollowMe {
 
         private void AutonomousTimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
         {
+            if (!Button8Pressed)
+            {
+                // Land
+                flyingRobot.Land();
+
+            }
             if (Button6Pressed)
             {
                 if (SearchObjectCenterLeft || SearchObjectBottomLeft || SearchObjectTopLeft)
@@ -1059,7 +1064,9 @@ namespace FollowMe {
             }
             else
             {
+                flyingRobot.Hover();
                 autonomousTimer.Enabled = false;
+                
                 FlyingAtonomous = false;
             }
         }
@@ -1080,7 +1087,7 @@ namespace FollowMe {
         /// <param name="e"></param>
         private void OnArDroneStatusTimedEvent(object source, ElapsedEventArgs e)
         {
-            BatteryLevel = ezbConnect.EZB.ARDrone.CurrentNavigationData.BatteryLevel;
+            BatteryLevel = flyingRobot.GetBatteryLevel();
         }
 
         /// <summary>
@@ -1112,7 +1119,7 @@ namespace FollowMe {
         private void ActivateJoystick()
         {
             JoystickDevice joystickDevice = SelectedJoystickDevice;
-            joystick = new Joystick(joystickDevice, ezbConnect.EZB) {EventWatcherResolution = 100};
+            joystick = new Joystick(joystickDevice, UcezbConnectProvider.Instance.EZB) {EventWatcherResolution = 100};
             joystick.OnControllerAction += _joystick_OnControllerAction;
             joystick.StartEventWatcher();
         }
@@ -1123,18 +1130,15 @@ namespace FollowMe {
         /// </summary>
         private void _joystick_OnControllerAction()
         {
-
             // Button 8 -> Takeoff (deadman switch)
             if (joystick.ButtonPressed(7) && !Button8Pressed)
             {
-                Log.Info("TakeOff");
-                ezbConnect.EZB.ARDrone.TakeOff();
+                flyingRobot.TakeOff();
                 Button8Pressed = true;
             }
             else if (joystick.ButtonPressed(7) == false)
             {
-                Log.Info("Land");
-                ezbConnect.EZB.ARDrone.Land();
+                flyingRobot.Land();
                 Button8Pressed = false;
             }
 
@@ -1142,8 +1146,7 @@ namespace FollowMe {
             if (joystick.ButtonPressed(0))
             {
                 Button1Pressed = true;
-                if (ezbConnect.EZB.ARDrone.IsConnected)
-                    ezbConnect.EZB.ARDrone.PlayLedAnimation(Commands.LedAnimationEnum.BlinkRed, 2, 10);
+                flyingRobot.PlayLedAnimation();
             }
             else
             {
@@ -1155,7 +1158,7 @@ namespace FollowMe {
             if (joystick.ButtonPressed(1))
             {
                 Button2Pressed = true;
-                ezbConnect.EZB.ARDrone.SetFlatTrim();
+                flyingRobot.SetFlatTrim();
             }
             else
             {
@@ -1175,7 +1178,7 @@ namespace FollowMe {
             // Emergency
             if (joystick.ButtonPressed(6))
             {
-                ezbConnect.EZB.ARDrone.Emergency();
+                flyingRobot.Emergency();
                 Log.Info("Emergency");
                 Button7Pressed = true;
             }
@@ -1191,12 +1194,12 @@ namespace FollowMe {
 
                 if (joystick.GetAxisX > 0.3)
                 {
-                    YawLeft();
+                    flyingRobot.Yaw(HorizontalDirection.Right, joystick.GetAxisY);
                 }
 
                 if (joystick.GetAxisX < -0.3)
                 {
-                    YawRight();
+                    flyingRobot.Yaw(HorizontalDirection.Left, joystick.GetAxisY);
                 }
             }
             // left stick, Y axis -> pitch
@@ -1206,18 +1209,14 @@ namespace FollowMe {
 
                 if (joystick.GetAxisY > 0.3)
                 {
-                    Log.Info("joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisY, 0, 0, -MoveSensitivivivity, 0);
-                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, -MoveSensitivivivity, 0);
-                    Thread.Sleep(MoveSleepTimeMilliseconds);
-                    ezbConnect.EZB.ARDrone.Hover();
+                    flyingRobot.Pitch(VerticalDirection.Down, joystick.GetAxisY);
+               
                 }
 
                 if (joystick.GetAxisY < - 0.3)
                 {
-                    Log.Info("joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisY, 0, 0, MoveSensitivivivity, 0);
-                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, MoveSensitivivivity, 0);
-                    Thread.Sleep(MoveSleepTimeMilliseconds);
-                    ezbConnect.EZB.ARDrone.Hover();
+                    flyingRobot.Pitch(VerticalDirection.Up, joystick.GetAxisY);
+                   
                 }
             }
 
@@ -1229,13 +1228,13 @@ namespace FollowMe {
                 // to the right
                 if (joystick.GetAxisZ > 0.3)
                 {
-                    RollRight();
+                    flyingRobot.Roll(HorizontalDirection.Right, joystick.GetAxisZ);
                 }
 
                 // to the left
                 if (joystick.GetAxisZ < -0.3)
                 {
-                    RollLeft();
+                    flyingRobot.Roll(HorizontalDirection.Left, joystick.GetAxisZ);
                 }
 
 
@@ -1247,59 +1246,17 @@ namespace FollowMe {
 
                 if (joystick.GetAxisRz > 0.3)
                 {
-                    Log.Info("joystick.GetAxisRz {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisRz, 0, MoveSensitivivivity, 0, 0);
-                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, MoveSensitivivivity, 0, 0);
-                    Thread.Sleep(MoveSleepTimeMilliseconds);
-                    ezbConnect.EZB.ARDrone.Hover();
+                    flyingRobot.Nick(VerticalDirection.Down, joystick.GetAxisRz);
+                    
                 }
 
                 if (joystick.GetAxisRz < -0.3)
                 {
-                    Log.Info("joystick.GetAxisRz {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisRz, 0, -MoveSensitivivivity, 0, 0);
-                    ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, -MoveSensitivivivity, 0, 0);
-                    Thread.Sleep(MoveSleepTimeMilliseconds);
-                    ezbConnect.EZB.ARDrone.Hover();
+                    flyingRobot.Nick(VerticalDirection.Up, joystick.GetAxisRz);
                 }
-
-                
             }
         }
-
-        private void RollLeft()
-        {
-            Log.Info("joystick.GetAxisZ {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisZ,
-                MoveSensitivivivity, 0, 0, 0);
-            ezbConnect.EZB.ARDrone.SetProgressiveInputValues(-MoveSensitivivivity, 0, 0, 0);
-            Thread.Sleep(MoveSleepTimeMilliseconds);
-            ezbConnect.EZB.ARDrone.Hover();
-        }
-
-        private void RollRight()
-        {
-            Log.Info("joystick.GetAxisZ {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisZ,
-                -MoveSensitivivivity, 0, 0, 0);
-            ezbConnect.EZB.ARDrone.SetProgressiveInputValues(MoveSensitivivivity, 0, 0, 0);
-            Thread.Sleep(MoveSleepTimeMilliseconds);
-            ezbConnect.EZB.ARDrone.Hover();
-        }
-
-        private void YawRight()
-        {
-            Log.Info("joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisY, 0, 0, 0,
-                -MoveSensitivivivity);
-            ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, -MoveSensitivivivity);
-            Thread.Sleep(MoveSleepTimeMilliseconds);
-            ezbConnect.EZB.ARDrone.Hover();
-        }
-
-        private void YawLeft()
-        {
-            Log.Info("joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", joystick.GetAxisY, 0, 0, 0,
-                MoveSensitivivivity);
-            ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, MoveSensitivivivity);
-            Thread.Sleep(MoveSleepTimeMilliseconds);
-            ezbConnect.EZB.ARDrone.Hover();
-        }
+        
 
         /// <summary>
         /// New camera frame available, so we look again for markers

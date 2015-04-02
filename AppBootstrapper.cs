@@ -4,6 +4,7 @@ using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.Linq;
 using FollowMe.Configuration;
+using FollowMe.Interfaces;
 
 namespace FollowMe {
     using System;
@@ -29,7 +30,9 @@ namespace FollowMe {
             
             batch.AddExportedValue<IWindowManager>(new WindowManager());
             batch.AddExportedValue<IEventAggregator>(new EventAggregator());
-            
+            var arDrone = new FlyingRobot.ArDrone();
+            batch.AddExportedValue<IFlyingRobot>(arDrone);
+            batch.AddExportedValue<IFlyingRobotConfigurationHandler>(arDrone);
 
             container.Compose(batch);
             

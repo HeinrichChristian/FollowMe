@@ -112,6 +112,10 @@
     <Compile Include="Configuration\XmlDeSerializer.cs" />
     <Compile Include="Converter\BoolToVisibilityConverter.cs" />
     <Compile Include="Converter\InvertBoolConverter.cs" />
+    <Compile Include="Enums\HorizontalDirection.cs" />
+    <Compile Include="Enums\VerticalDirection.cs" />
+    <Compile Include="EzRobot\UcezbConnectProvider.cs" />
+    <Compile Include="FlyingRobot\ArDrone.cs" />
     <Compile Include="HuePickerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +133,7 @@
     <Compile Include="Converter\BatteryValueToColorConverter.cs" />
     <Compile Include="Converter\StringToRedOrGreenConverter.cs" />
     <Compile Include="Interfaces\IFlyingRobot.cs" />
+    <Compile Include="Interfaces\IFlyingRobotConfigurationHandler.cs" />
     <Compile Include="IShell.cs" />
     <Compile Include="Messages\HuePickerMessage.cs" />
     <Compile Include="ShellViewModel.cs" />
