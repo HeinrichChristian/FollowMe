@@ -75,9 +75,6 @@ namespace FollowMe {
         private int hueMin;
         private int hueMax;
         private bool huePickerIsVisible;
-
-        #endregion
-
         readonly CameraPreviewForm cameraPreviewForm = new CameraPreviewForm();
         private bool trackingPreviewEnabled;
         private bool searchObjectTopLeft;
@@ -92,6 +89,9 @@ namespace FollowMe {
         private string commandsForAutonomousFlight;
         private bool flyingAtonomous;
         private Timer autonomousTimer;
+
+        #endregion
+
 
         #region public properties
 
@@ -1154,7 +1154,7 @@ namespace FollowMe {
             }
 
             // Button 2
-            //  Must be called before take-off (start engines). Must be called on a flat surface. This flattens the trim values for the surface. 
+            //  Should be called before take-off (start engines). Must be called on a flat surface. This flattens the trim values for the surface. 
             if (joystick.ButtonPressed(1))
             {
                 Button2Pressed = true;
@@ -1164,8 +1164,6 @@ namespace FollowMe {
             {
                 Button2Pressed = false;
             }
-
-            
 
             Button3Pressed = joystick.ButtonPressed(2);
 

@@ -36,12 +36,30 @@ $RECYCLE.BIN/
 .Trashes
 
 # Directories potentially created on remote AFP share
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
 .AppleDB
 .AppleDesktop
 Network Trash Folder
 Temporary Items
 .apdisk
+bin/**
+obj/**
 FollowMe/bin/**
 FollowMe/obj/**
 FollowMe.UnitTests/bin/**
 FollowMe.UnitTests/obj/**
+[Oo]bj/
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
