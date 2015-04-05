@@ -34,7 +34,7 @@ namespace FollowMe {
             var arDrone = new FlyingRobot.ArDrone();
             batch.AddExportedValue<IFlyingRobot>(arDrone);
             batch.AddExportedValue<IFlyingRobotConfigurationHandler>(arDrone);
-            batch.AddExportedValue<ITargetLocatorFactory>(new TatgetLocatorFactory());
+            batch.AddExportedValue<ITargetLocatorFactory>(new TargetLocatorFactory());
 
             container.Compose(batch);
             

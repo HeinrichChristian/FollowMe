@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 using System.Timers;
 using System.Windows;
 using System.Windows.Forms;
@@ -90,6 +91,7 @@ namespace FollowMe {
         private string commandsForAutonomousFlight;
         private bool flyingAtonomous;
         private Timer autonomousTimer;
+        private Autopilot.Autopilot autopilot;
 
         #endregion
         
@@ -903,7 +905,8 @@ namespace FollowMe {
         /// <param name="e"></param>
         public void ButtonShowCamera(object sender, RoutedEventArgs e)
         {
-            camera = new Camera(UcezbConnectProvider.Instance.EZB);
+            //camera = new Camera(UcezbConnectProvider.Instance.EZB);
+            camera = EzbCameraProvider.Instance;
             camera.OnNewFrame += _camera_OnNewFrame;
             Log.Info("StartCamera");
 
@@ -1027,51 +1030,65 @@ namespace FollowMe {
 
         public void ButtonStartAutonomousFlight(object sender, RoutedEventArgs e)
         {
+            camera.OnNewFrame -= _camera_OnNewFrame;
             FlyingAtonomous = true;
+            autopilot = new Autopilot.Autopilot(targetLocator, flyingRobot, camera, new TrackingConfig()
+            {
+                HueMax = HueMax,
+                HueMin = HueMin,
+                SearchObjectSizePixels = SearchObjectSizePixels,
+                LuminanceMax = LuminanceMax,
+                LuminanceMin = LuminanceMin,
+                SaturationMax = SaturationMax,
+                SaturationMin = SaturationMin
+            });
+            autopilot.StartAutonomousFlight();
 
-            autonomousTimer = new Timer {Interval = 100, Enabled = true};
-            autonomousTimer.Elapsed += AutonomousTimerOnElapsed;
+            //autonomousTimer = new Timer {Interval = 100, Enabled = true};
+            //autonomousTimer.Elapsed += AutonomousTimerOnElapsed;
           
         }
 
-        private void AutonomousTimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
-        {
-            if (!Button8Pressed)
-            {
-                // Land
-                flyingRobot.Land();
+        //private void AutonomousTimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
+        //{
+        //    if (!Button8Pressed)
+        //    {
+        //        // Land
+        //        flyingRobot.Land();
 
-            }
-            if (Button6Pressed)
-            {
-                if (SearchObjectCenterLeft || SearchObjectBottomLeft || SearchObjectTopLeft)
-                {
-                    // steer left
-                    Log.Info("Roll left");
-                    //CommandsForAutonomousFlight = CommandsForAutonomousFlight + "\nRoll Left";
-                    //RollLeft();
-                }
+        //    }
+        //    if (Button6Pressed)
+        //    {
+        //        if (SearchObjectCenterLeft || SearchObjectBottomLeft || SearchObjectTopLeft)
+        //        {
+        //            // steer left
+        //            Log.Info("Roll left");
+        //            //CommandsForAutonomousFlight = CommandsForAutonomousFlight + "\nRoll Left";
+        //            //RollLeft();
+        //        }
 
-                if (SearchObjectCenterRight || SearchObjectTopRight || SearchObjectBottomRight)
-                {
-                    // steer right
-                    Log.Info("Roll right");
-                    //CommandsForAutonomousFlight = CommandsForAutonomousFlight + "\nRoll Right";
-                    //RollRight();
-                }
-            }
-            else
-            {
-                flyingRobot.Hover();
-                autonomousTimer.Enabled = false;
+        //        if (SearchObjectCenterRight || SearchObjectTopRight || SearchObjectBottomRight)
+        //        {
+        //            // steer right
+        //            Log.Info("Roll right");
+        //            //CommandsForAutonomousFlight = CommandsForAutonomousFlight + "\nRoll Right";
+        //            //RollRight();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        flyingRobot.Hover();
+        //        autonomousTimer.Enabled = false;
+        //        autopilot.StopAutonomousFlight();
+        //        FlyingAtonomous = false;
                 
-                FlyingAtonomous = false;
-            }
-        }
+        //    }
+        //}
 
         public void ButtonStopAutonomousFlight(object sender, RoutedEventArgs e)
         {
-            autonomousTimer.Elapsed -= AutonomousTimerOnElapsed;
+            //autonomousTimer.Elapsed -= AutonomousTimerOnElapsed;
+            autopilot.StopAutonomousFlight();
             FlyingAtonomous = false;
         }
         #endregion
@@ -1140,6 +1157,16 @@ namespace FollowMe {
                 Button8Pressed = false;
             }
 
+            if (joystick.ButtonPressed(5) && !Button6Pressed)
+            {
+                Log.Info("Autonomous flight enabled by button 6");
+            }
+            else if (!joystick.ButtonPressed(5) && Button6Pressed)
+            {
+                Log.Info("dead man's switch button 6 released ->  stop autonomous flight");
+                ButtonStopAutonomousFlight(null, null);
+            }
+
             // Button 1 -> blink LEDs
             if (joystick.ButtonPressed(0))
             {
@@ -1170,6 +1197,7 @@ namespace FollowMe {
             Button5Pressed = joystick.ButtonPressed(4);
 
             Button6Pressed = joystick.ButtonPressed(5);
+
 
             // Emergency
             if (joystick.ButtonPressed(6))
@@ -1259,20 +1287,33 @@ namespace FollowMe {
         /// </summary>
         void _camera_OnNewFrame()
         {
+            if (FlyingAtonomous)
+            {
+                return;
+            }
+
+            //Log.Info("NewCameraFrame");
             ObjectLocation objectLocation = null;
             TargetLocation targetLocation = TargetLocation.Unknown;
+
+            
             if (targetLocator != null)
             {
                 try
                 {
-                    targetLocation = targetLocator.GetTargetLocation(TrackingPreviewEnabled,
-                                        SearchObjectSizePixels,
-                                        HueMin,
-                                        HueMax,
-                                        SaturationMin,
-                                        SaturationMax,
-                                        LuminanceMin,
-                                        LuminanceMax);
+                    targetLocation = targetLocator.GetTargetLocation(
+                        new TrackingConfig
+                        {
+                            SearchObjectSizePixels = searchObjectSizePixels,
+                            HueMin = hueMin,
+                            HueMax = hueMax,
+                            SaturationMin = saturationMin,
+                            SaturationMax = saturationMax,
+                            LuminanceMin = luminanceMin,
+                            LuminanceMax = luminanceMax
+                        }, 
+                        TrackingPreviewEnabled
+                        );
                 }
                 catch (Exception exception)
                 {
@@ -1322,25 +1363,6 @@ namespace FollowMe {
                     SearchObjectTopRight = true;
                     break;
             }
-                
-                //SearchObjectBottomLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
-                //SearchObjectBottomCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
-                //SearchObjectBottomRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
-                
-                //SearchObjectCenterLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
-                //SearchObjectCenterCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
-                //SearchObjectCenterRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
-                
-                //SearchObjectTopLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
-                //SearchObjectTopCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
-                //SearchObjectTopRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
-                
-
-                //TargetXCoordinate = objectLocation.CenterX;
-                //Log.Info("Object detected: X = {0}", objectLocation.CenterX);
-                //TargetYCoordinate = objectLocation.CenterY;
-                //Log.Info("Object detected: Y = {0}", objectLocation.CenterY);
-            
         }
 
         public void Handle(HuePickerMessage message)

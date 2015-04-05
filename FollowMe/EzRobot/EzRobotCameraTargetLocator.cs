@@ -1,6 +1,7 @@
 ﻿using System;
 using Caliburn.Micro;
 using EZ_B;
+using FollowMe.Configuration;
 using FollowMe.Enums;
 using FollowMe.Interfaces;
 
@@ -8,30 +9,33 @@ namespace FollowMe.EzRobot
 {
     public class EzRobotCameraTargetLocator : ITargetLocator
     {
-        private readonly Camera camera;
+        //private readonly Camera camera;
         private static readonly ILog Log = LogManager.GetLog(typeof(EzRobotCameraTargetLocator));
 
         public EzRobotCameraTargetLocator(Camera camera)
         {
-            if (camera == null) throw new ArgumentNullException("camera");
-            this.camera = camera;
+            //if (camera == null) throw new ArgumentNullException("camera");
+            //this.camera = camera;
         }
 
-        public TargetLocation GetTargetLocation(bool trackingPreviewEnabled, int searchObjectSizePixels, int hueMin, int hueMax, float saturationMin, float saturationMax, float luminanceMin, float luminanceMax)
+        public TargetLocation GetTargetLocation(TrackingConfig trackingConfig, bool trackingPreviewEnabled = true)
         {
+            if (trackingConfig == null) throw new ArgumentNullException("trackingConfig");
             var targetLocation = TargetLocation.Unknown;
             ObjectLocation objectLocation = null;
+
             try
             {
-                objectLocation = camera.CameraCustomColorDetection.GetObjectLocationByColor(
+                //EzbCameraProvider.Instance
+                objectLocation = EzbCameraProvider.Instance.CameraCustomColorDetection.GetObjectLocationByColor(
                                     trackingPreviewEnabled,
-                                    searchObjectSizePixels, 
-                                    hueMin, 
-                                    hueMax,
-                                    saturationMin, 
-                                    saturationMax, 
-                                    luminanceMin, 
-                                    luminanceMax);
+                                    trackingConfig.SearchObjectSizePixels, 
+                                    trackingConfig.HueMin,
+                                    trackingConfig.HueMax,
+                                    trackingConfig.SaturationMin,
+                                    trackingConfig.SaturationMax,
+                                    trackingConfig.LuminanceMin,
+                                    trackingConfig.LuminanceMax);
         
             }
             catch (Exception exception)
@@ -39,13 +43,11 @@ namespace FollowMe.EzRobot
                 Log.Error(exception);
             }
 
-            camera.UpdatePreview(255);
+            EzbCameraProvider.Instance.UpdatePreview(255);
 
 
             if (objectLocation != null && objectLocation.IsObjectFound)
             {
-
-
                 if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left &&
                     objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom)
                 {
@@ -101,11 +103,12 @@ namespace FollowMe.EzRobot
 
 
                 //TargetXCoordinate = objectLocation.CenterX;
-                Log.Info("Object detected: X = {0}", objectLocation.CenterX);
+                //Log.Info("Object detected: X = {0}", objectLocation.CenterX);
                 //TargetYCoordinate = objectLocation.CenterY;
-                Log.Info("Object detected: Y = {0}", objectLocation.CenterY);
+                //Log.Info("Object detected: Y = {0}", objectLocation.CenterY);
             }
 
+            Log.Info("TargetLocation = {0}", targetLocation);
             return targetLocation;
         }
     }

@@ -99,6 +99,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppBootstrapper.cs" />
+    <Compile Include="Autopilot\Autopilot.cs" />
+    <Compile Include="Autopilot\AutopilotCameraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Autopilot\AutopilotCameraForm.Designer.cs">
+      <DependentUpon>AutopilotCameraForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CameraPreviewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,7 +122,8 @@
     <Compile Include="Enums\HorizontalDirection.cs" />
     <Compile Include="Enums\TargetLocation.cs" />
     <Compile Include="Enums\VerticalDirection.cs" />
-    <Compile Include="EzRobot\TatgetLocatorFactory.cs" />
+    <Compile Include="EzRobot\EzbCameraProvider.cs" />
+    <Compile Include="EzRobot\TargetLocatorFactory.cs" />
     <Compile Include="EzRobot\UcezbConnectProvider.cs" />
     <Compile Include="FlyingRobot\ArDrone.cs" />
     <Compile Include="HuePickerForm.cs">
@@ -166,6 +174,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Autopilot\AutopilotCameraForm.resx">
+      <DependentUpon>AutopilotCameraForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CameraPreviewForm.resx">
       <DependentUpon>CameraPreviewForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +222,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>xcopy /Y "$(SolutionDir)dlls" "$(TargetDir)"  /i</PreBuildEvent>

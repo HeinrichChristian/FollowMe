@@ -8,7 +8,7 @@ using FollowMe.Interfaces;
 
 namespace FollowMe.EzRobot
 {
-    public class TatgetLocatorFactory : ITargetLocatorFactory
+    public class TargetLocatorFactory : ITargetLocatorFactory
     {
         public ITargetLocator CreateTargetLocator(Camera camera)
         {
