@@ -80,8 +80,8 @@ namespace FollowMe.FlyingRobot
                     value,
                     MoveSensitivivivity, 0, 0, 0);
                 ezbConnect.EZB.ARDrone.SetProgressiveInputValues(-MoveSensitivivivity, 0, 0, 0);
-                Thread.Sleep(MoveSleepTimeMilliseconds);
-                ezbConnect.EZB.ARDrone.Hover();
+                //Thread.Sleep(MoveSleepTimeMilliseconds);
+                //ezbConnect.EZB.ARDrone.Hover();
             }
         
             else if (horizontalDirection == HorizontalDirection.Right)
@@ -89,8 +89,8 @@ namespace FollowMe.FlyingRobot
                 Log.Info("Roll Right: joystick.GetAxisZ {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", value,
                     -MoveSensitivivivity, 0, 0, 0);
                 ezbConnect.EZB.ARDrone.SetProgressiveInputValues(MoveSensitivivivity, 0, 0, 0);
-                Thread.Sleep(MoveSleepTimeMilliseconds);
-                ezbConnect.EZB.ARDrone.Hover();
+                //Thread.Sleep(MoveSleepTimeMilliseconds);
+                //ezbConnect.EZB.ARDrone.Hover();
             }
         }
 
@@ -101,16 +101,16 @@ namespace FollowMe.FlyingRobot
                 Log.Info("Yaw Right: joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", value, 0, 0, 0,
                     MoveSensitivivivity);
                 ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, MoveSensitivivivity);
-                Thread.Sleep(MoveSleepTimeMilliseconds);
-                ezbConnect.EZB.ARDrone.Hover();
+                //Thread.Sleep(MoveSleepTimeMilliseconds);
+                //ezbConnect.EZB.ARDrone.Hover();
             }
             else if (horizontalDirection == HorizontalDirection.Left)
             {
                 Log.Info("Yaw Left: joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", value, 0, 0, 0,
                     -MoveSensitivivivity);
                 ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, 0, -MoveSensitivivivity);
-                Thread.Sleep(MoveSleepTimeMilliseconds);
-                ezbConnect.EZB.ARDrone.Hover();    
+                //Thread.Sleep(MoveSleepTimeMilliseconds);
+                //ezbConnect.EZB.ARDrone.Hover();    
             }
         }
 
@@ -120,15 +120,15 @@ namespace FollowMe.FlyingRobot
             {
                 Log.Info("Nick Down: joystick.GetAxisRz {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", value, 0, MoveSensitivivivity, 0, 0);
                 ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, MoveSensitivivivity, 0, 0);
-                Thread.Sleep(MoveSleepTimeMilliseconds);
-                ezbConnect.EZB.ARDrone.Hover();
+                //Thread.Sleep(MoveSleepTimeMilliseconds);
+                //ezbConnect.EZB.ARDrone.Hover();
             }
             else if (verticalDirection == VerticalDirection.Up)
             {
                 Log.Info("Nick Up: joystick.GetAxisRz {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", value, 0, -MoveSensitivivivity, 0, 0);
                 ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, -MoveSensitivivivity, 0, 0);
-                Thread.Sleep(MoveSleepTimeMilliseconds);
-                ezbConnect.EZB.ARDrone.Hover();   
+                //Thread.Sleep(MoveSleepTimeMilliseconds);
+                //ezbConnect.EZB.ARDrone.Hover();   
             }
         }
 
@@ -138,15 +138,15 @@ namespace FollowMe.FlyingRobot
             {
                 Log.Info("Pitch Down: joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", value, 0, 0, -MoveSensitivivivity, 0);
                 ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, -MoveSensitivivivity, 0);
-                Thread.Sleep(MoveSleepTimeMilliseconds);
-                ezbConnect.EZB.ARDrone.Hover();
+                //Thread.Sleep(MoveSleepTimeMilliseconds);
+                //ezbConnect.EZB.ARDrone.Hover();
             }
             else if (verticalDirection == VerticalDirection.Up)
             {
                 Log.Info("Pitch Up: joystick.GetAxisY {0} -> SetProgressiveInputValues '{1}', '{2}', '{3}', '{4}'", value, 0, 0, MoveSensitivivivity, 0);
                 ezbConnect.EZB.ARDrone.SetProgressiveInputValues(0, 0, MoveSensitivivivity, 0);
-                Thread.Sleep(MoveSleepTimeMilliseconds);
-                ezbConnect.EZB.ARDrone.Hover();
+                //Thread.Sleep(MoveSleepTimeMilliseconds);
+                //ezbConnect.EZB.ARDrone.Hover();
             }
         }
 

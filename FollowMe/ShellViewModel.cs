@@ -25,6 +25,8 @@ namespace FollowMe {
     {
         #region privates
 
+        private readonly float autonomousFlyingSteeringForce = 0.15f;
+
         private readonly IWindowManager windowManager;
         private readonly IEventAggregator eventAggregator;
         private readonly IFlyingRobot flyingRobot;
@@ -782,7 +784,7 @@ namespace FollowMe {
 
             var arDroneStatusTimer = new Timer();
             arDroneStatusTimer.Elapsed += OnArDroneStatusTimedEvent;
-            arDroneStatusTimer.Interval = 5000;
+            arDroneStatusTimer.Interval = 10000;
             arDroneStatusTimer.Enabled = true;
 
 
@@ -1027,53 +1029,48 @@ namespace FollowMe {
 
         public void ButtonStartAutonomousFlight(object sender, RoutedEventArgs e)
         {
+            Log.Info(" ++++++++ START AUTONOMOUS FLIGHT +++++++++++++");
             FlyingAtonomous = true;
 
-            autonomousTimer = new Timer {Interval = 100, Enabled = true};
+            autonomousTimer = new Timer {Interval = 300, Enabled = true};
             autonomousTimer.Elapsed += AutonomousTimerOnElapsed;
           
         }
 
         private void AutonomousTimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
         {
-            if (!Button8Pressed)
-            {
-                // Land
-                flyingRobot.Land();
-
-            }
             if (Button6Pressed)
             {
                 if (SearchObjectCenterLeft || SearchObjectBottomLeft || SearchObjectTopLeft)
                 {
                     // steer left
-                    Log.Info("Roll left");
-                    //CommandsForAutonomousFlight = CommandsForAutonomousFlight + "\nRoll Left";
-                    //RollLeft();
+                    Log.Info("Yaw left");
+                    flyingRobot.Yaw(HorizontalDirection.Left, autonomousFlyingSteeringForce);
                 }
 
                 if (SearchObjectCenterRight || SearchObjectTopRight || SearchObjectBottomRight)
                 {
                     // steer right
-                    Log.Info("Roll right");
-                    //CommandsForAutonomousFlight = CommandsForAutonomousFlight + "\nRoll Right";
-                    //RollRight();
+                    Log.Info("Yaw right");
+                    flyingRobot.Yaw(HorizontalDirection.Right, autonomousFlyingSteeringForce);
                 }
             }
             else
             {
-                flyingRobot.Hover();
-                autonomousTimer.Enabled = false;
-                
-                FlyingAtonomous = false;
+                //Log.Info("Button 6 released -> Hover, manual flight");
+                ////flyingRobot.Hover();
+                //autonomousTimer.Enabled = false;
+                //FlyingAtonomous = false;
             }
         }
 
         public void ButtonStopAutonomousFlight(object sender, RoutedEventArgs e)
         {
-            autonomousTimer.Elapsed -= AutonomousTimerOnElapsed;
+            Log.Info(" ++++++++ STOP AUTONOMOUS FLIGHT +++++++++++++");
+            if (autonomousTimer != null) autonomousTimer.Elapsed -= AutonomousTimerOnElapsed;
             FlyingAtonomous = false;
         }
+
         #endregion
 
      
@@ -1100,6 +1097,7 @@ namespace FollowMe {
             }
 
             AvailableJoystickDevices.Clear();
+            AvailableJoystickDevices = new List<JoystickDevice>();
             var availableDevices = Joystick.GetAvailableDevices();
             if (availableDevices != null)
             {
@@ -1117,7 +1115,10 @@ namespace FollowMe {
         private void ActivateJoystick()
         {
             JoystickDevice joystickDevice = SelectedJoystickDevice;
-            joystick = new Joystick(joystickDevice, UcezbConnectProvider.Instance.EZB) {EventWatcherResolution = 100};
+            joystick = new Joystick(joystickDevice, UcezbConnectProvider.Instance.EZB)
+            {
+                EventWatcherResolution = 100
+            };
             joystick.OnControllerAction += _joystick_OnControllerAction;
             joystick.StartEventWatcher();
         }
@@ -1128,16 +1129,52 @@ namespace FollowMe {
         /// </summary>
         private void _joystick_OnControllerAction()
         {
+            if (joystick.ButtonPressed(7) && joystick.ButtonPressed(6))
+            {
+                Log.Info("joystick.ButtonPressed(7) && (6)");
+            }
             // Button 8 -> Takeoff (deadman switch)
             if (joystick.ButtonPressed(7) && !Button8Pressed)
             {
+                Log.Info("joystick.ButtonPressed(7) && !Button8Pressed");
                 flyingRobot.TakeOff();
                 Button8Pressed = true;
             }
             else if (joystick.ButtonPressed(7) == false)
             {
+                Log.Info("joystick.ButtonPressed(7) == false");
+
                 flyingRobot.Land();
                 Button8Pressed = false;
+            }
+
+            // Button 6 -> Autonomous flight
+            if (joystick.ButtonPressed(5) && !Button6Pressed)
+            {
+                Log.Info("joystick.ButtonPressed(5) && !Button6Pressed");
+                ButtonStartAutonomousFlight(null, null);
+                Button6Pressed = true;
+            }
+            if (!joystick.ButtonPressed(5))
+            {
+                Log.Info("!joystick.ButtonPressed(5)");
+                Button6Pressed = false;
+                if (FlyingAtonomous)
+                {
+                    ButtonStopAutonomousFlight(null, null);
+                }
+            }
+            
+            // Button 7 -> Emergency
+            if (joystick.ButtonPressed(6))
+            {
+                flyingRobot.Emergency();
+                Log.Info("Emergency");
+                Button7Pressed = true;
+            }
+            else
+            {
+                Button7Pressed = false;
             }
 
             // Button 1 -> blink LEDs
@@ -1169,87 +1206,85 @@ namespace FollowMe {
 
             Button5Pressed = joystick.ButtonPressed(4);
 
-            Button6Pressed = joystick.ButtonPressed(5);
-
-            // Emergency
-            if (joystick.ButtonPressed(6))
-            {
-                flyingRobot.Emergency();
-                Log.Info("Emergency");
-                Button7Pressed = true;
-            }
-            else
-            {
-                Button7Pressed = false;
-            }
-
+            
+            var moveFlyingRobot = false;
             // left stick, X axis -> yaw
-            if (joystick.AxisXStateChanged())
-            {
+            //if (joystick.AxisXStateChanged())
+            //{
                 LeftStickXAxis = joystick.GetAxisX;
 
                 if (joystick.GetAxisX > 0.3)
                 {
                     flyingRobot.Yaw(HorizontalDirection.Right, joystick.GetAxisY);
+                    moveFlyingRobot = true;
                 }
-
-                if (joystick.GetAxisX < -0.3)
+                else if (joystick.GetAxisX < -0.3)
                 {
                     flyingRobot.Yaw(HorizontalDirection.Left, joystick.GetAxisY);
+                    moveFlyingRobot = true;
                 }
-            }
+                
+            //}
+
             // left stick, Y axis -> pitch
-            if (joystick.AxisYStateChanged())
-            {
+            //if (joystick.AxisYStateChanged())
+            //{
                 LeftStickYAxis = joystick.GetAxisY;
 
                 if (joystick.GetAxisY > 0.3)
                 {
                     flyingRobot.Pitch(VerticalDirection.Down, joystick.GetAxisY);
-               
+                    moveFlyingRobot = true;
                 }
-
-                if (joystick.GetAxisY < - 0.3)
+                else if (joystick.GetAxisY < - 0.3)
                 {
                     flyingRobot.Pitch(VerticalDirection.Up, joystick.GetAxisY);
-                   
+                    moveFlyingRobot = true;
                 }
-            }
+                
+            //}
 
             // right stick, X axis-> roll
-            if (joystick.AxisZStateChanged())
-            {
+            //if (joystick.AxisZStateChanged())
+            //{
                 RightStickXAxis = joystick.GetAxisZ;
 
                 // to the right
                 if (joystick.GetAxisZ > 0.3)
                 {
                     flyingRobot.Roll(HorizontalDirection.Right, joystick.GetAxisZ);
+                    moveFlyingRobot = true;
                 }
 
                 // to the left
                 if (joystick.GetAxisZ < -0.3)
                 {
                     flyingRobot.Roll(HorizontalDirection.Left, joystick.GetAxisZ);
+                    moveFlyingRobot = true;
                 }
 
 
-            }
+            //}
             // right stick, Y axis -> nick
-            if (joystick.AxisRzStateChanged())
-            {
+            //if (joystick.AxisRzStateChanged())
+            //{
                 RightStickYAxis = joystick.GetAxisRz;
 
                 if (joystick.GetAxisRz > 0.3)
                 {
                     flyingRobot.Nick(VerticalDirection.Down, joystick.GetAxisRz);
-                    
+                    moveFlyingRobot = true;
                 }
 
                 if (joystick.GetAxisRz < -0.3)
                 {
                     flyingRobot.Nick(VerticalDirection.Up, joystick.GetAxisRz);
+                    moveFlyingRobot = true;
                 }
+            //}
+            if (moveFlyingRobot == false)
+            {
+                flyingRobot.Hover();
             }
         }
         
@@ -1322,25 +1357,6 @@ namespace FollowMe {
                     SearchObjectTopRight = true;
                     break;
             }
-                
-                //SearchObjectBottomLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
-                //SearchObjectBottomCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
-                //SearchObjectBottomRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom;
-                
-                //SearchObjectCenterLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
-                //SearchObjectCenterCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
-                //SearchObjectCenterRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle;
-                
-                //SearchObjectTopLeft = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
-                //SearchObjectTopCenter = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
-                //SearchObjectTopRight = objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right && objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top;
-                
-
-                //TargetXCoordinate = objectLocation.CenterX;
-                //Log.Info("Object detected: X = {0}", objectLocation.CenterX);
-                //TargetYCoordinate = objectLocation.CenterY;
-                //Log.Info("Object detected: Y = {0}", objectLocation.CenterY);
-            
         }
 
         public void Handle(HuePickerMessage message)

@@ -101,9 +101,9 @@ namespace FollowMe.EzRobot
 
 
                 //TargetXCoordinate = objectLocation.CenterX;
-                Log.Info("Object detected: X = {0}", objectLocation.CenterX);
+               // Log.Info("Object detected: X = {0}", objectLocation.CenterX);
                 //TargetYCoordinate = objectLocation.CenterY;
-                Log.Info("Object detected: Y = {0}", objectLocation.CenterY);
+             //   Log.Info("Object detected: Y = {0}", objectLocation.CenterY);
             }
 
             return targetLocation;

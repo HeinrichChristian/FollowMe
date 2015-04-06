@@ -31,14 +31,14 @@
                    DisplayMemberPath="Name" SelectedValuePath="Name"/>
                         <Label Content="Joysticks" HorizontalAlignment="Left" Margin="36,19,0,0" VerticalAlignment="Top"/>
                         <Button x:Name="ButtonRefreshJoysticks" Content="aktualisieren" HorizontalAlignment="Left" Margin="365,19,0,0" VerticalAlignment="Top" Width="75" />
-                        <RadioButton x:Name="Button1Pressed" Content="1 - Rotes LED-Blinken (10sec)" HorizontalAlignment="Left" Margin="677,55,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                        <RadioButton x:Name="Button2Pressed" Content="2 - Set flat trim - vor Takeoff ausführen" HorizontalAlignment="Left" Margin="677,75,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                        <RadioButton x:Name="Button3Pressed" Content="3" HorizontalAlignment="Left" Margin="677,95,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                        <RadioButton x:Name="Button4Pressed" Content="4" HorizontalAlignment="Left" Margin="677,115,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                        <RadioButton x:Name="Button5Pressed" Content="5" HorizontalAlignment="Left" Margin="677,136,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                        <RadioButton x:Name="Button6Pressed" Content="6 - Autonome Steuerung aktiv - zum Beenden loslassen" HorizontalAlignment="Left" Margin="677,156,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                        <RadioButton x:Name="Button7Pressed" Content="7 - Emergency - Motoren aus!" HorizontalAlignment="Left" Margin="677,176,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                        <RadioButton x:Name="Button8Pressed" Content="8 - Takeoff - zum Landen loslassen" HorizontalAlignment="Left" Margin="677,196,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <CheckBox x:Name="Button1Pressed" IsEnabled="False" IsChecked="{Binding Button1Pressed, Mode=OneWay}" Content="1 - Rotes LED-Blinken (10sec)" HorizontalAlignment="Left" Margin="677,55,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <CheckBox x:Name="Button2Pressed" IsEnabled="False" IsChecked="{Binding Button2Pressed, Mode=OneWay}" Content="2 - Set flat trim - vor Takeoff ausführen" HorizontalAlignment="Left" Margin="677,75,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <CheckBox x:Name="Button3Pressed" IsEnabled="False" IsChecked="{Binding Button3Pressed, Mode=OneWay}" Content="3" HorizontalAlignment="Left" Margin="677,95,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <CheckBox x:Name="Button4Pressed" IsEnabled="False" IsChecked="{Binding Button4Pressed, Mode=OneWay}" Content="4" HorizontalAlignment="Left" Margin="677,115,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <CheckBox x:Name="Button5Pressed" IsEnabled="False" IsChecked="{Binding Button5Pressed, Mode=OneWay}" Content="5" HorizontalAlignment="Left" Margin="677,136,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <CheckBox x:Name="Button6Pressed" IsEnabled="False" IsChecked="{Binding Button6Pressed, Mode=OneWay}" Content="6 - Autonome Steuerung aktiv - zum Beenden loslassen" HorizontalAlignment="Left" Margin="677,156,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <CheckBox x:Name="Button7Pressed" IsEnabled="False" IsChecked="{Binding Button7Pressed, Mode=OneWay}" Content="7 - Emergency - Motoren aus!" HorizontalAlignment="Left" Margin="677,176,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <CheckBox x:Name="Button8Pressed" IsEnabled="False" IsChecked="{Binding Button8Pressed, Mode=OneWay}" Content="8 - Takeoff - zum Landen loslassen" HorizontalAlignment="Left" Margin="677,196,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                         <Label Content="linker Knppel &#xA;Pitch / Yaw" HorizontalAlignment="Left" Margin="688,228,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                         <Label Content="rechter Knppel &#xA;Nick / Roll" HorizontalAlignment="Left" Margin="820,228,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                         <TextBox x:Name="LeftStickXAxis" HorizontalAlignment="Left" Height="23" Margin="697,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" Grid.Column="1"/>
@@ -285,7 +285,7 @@
                             <Button Content="Stoppe autonome Steuerung" Margin="30" Name="ButtonStopAutonomousFlight" IsEnabled="{Binding FlyingAtonomous}"/>
                             </DockPanel>
                             <StackPanel Grid.Row="1" Grid.Column="3" Grid.RowSpan="2">
-                                <TextBlock Text="An AR.Drone gesendete Steuerungsbefehle:"></TextBlock>
+                            <Grid Background="Chartreuse" Height="200" Visibility="{Binding Button6Pressed, Converter={StaticResource BoolToVisibilityConverter}}"></Grid>
                             <ScrollViewer Grid.Row="1" Grid.Column="3" Grid.RowSpan="2">
                                 <TextBlock Name="CommandsForAutonomousFlight"></TextBlock>
                             </ScrollViewer>
