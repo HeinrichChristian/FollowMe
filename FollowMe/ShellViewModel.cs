@@ -396,7 +396,7 @@ namespace FollowMe {
                 {
                     ActivateJoystick();
                 }
-                SelectedJoystick = selectedJoystickDevice.Name;
+                SelectedJoystick = string.Format("{0} Axes, {1} Buttons", selectedJoystickDevice.Axes, selectedJoystickDevice.Buttons);
                 NotifyOfPropertyChange(() => SelectedJoystickDevice);
             }
         }

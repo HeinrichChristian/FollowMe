@@ -297,14 +297,18 @@
                 </TabItem>-->
             </TabControl>
             <StatusBar HorizontalAlignment="Left" Height="33" Margin="0" VerticalAlignment="Bottom" Width="1017">
-                <Label Content="Joystick: "/>
-                <TextBlock x:Name="SelectedJoystick" HorizontalAlignment="Center" Width="160" Height="23" VerticalAlignment="Center" TextWrapping="Wrap" Text="" Background="{Binding SelectedJoystick, Converter={StaticResource StringToRedOrGreenConverter}}"/>
+                <Label Content="Joystick: "  HorizontalAlignment="Right" VerticalAlignment="Center" Width="75"/>
+                <Grid Height="28" Background="{Binding SelectedJoystick, Converter={StaticResource StringToRedOrGreenConverter}}" Width="200">
+                    <TextBlock x:Name="SelectedJoystick"  HorizontalAlignment="Center" Width="160" VerticalAlignment="Center" Text="Kein Joystick ausgewählt" MinWidth="190"/>
+                </Grid>
                 <!--<TextBlock x:Name="SelectedJoystick" ToolTip="{Binding SelectedJoystick}" Width="160" Background="{Binding SelectedJoystick, Converter={StaticResource StringToRedOrGreenConverter}}" />-->
-                <Label Content="Verbindung zu AR.Drone hergestellt." Background="Chartreuse" Visibility="{Binding ConnectedToFlyingRobot, Converter={StaticResource BoolToVisibilityConverter}}"/>
-                <Label Content="Keine Verbindung zu AR.Drone hergestellt." Background="Red" Visibility="{Binding ConnectedToFlyingRobot, Converter={StaticResource BoolToVisibilityConverter},  ConverterParameter=VisibleOnFalse }"/>
+                <Label Content="Verbindung zu AR.Drone hergestellt." Background="Chartreuse" Visibility="{Binding ConnectedToFlyingRobot, Converter={StaticResource BoolToVisibilityConverter}}" Height="28" VerticalAlignment="Center"/>
+                <Label Content="Keine Verbindung zu AR.Drone hergestellt." Background="Red" Visibility="{Binding ConnectedToFlyingRobot, Converter={StaticResource BoolToVisibilityConverter},  ConverterParameter=VisibleOnFalse }" Height="28" VerticalAlignment="Center"/>
                 
                 <Label Content="Batterielevel:" HorizontalAlignment="Right" VerticalAlignment="Center" Width="75"/>
-                <TextBlock x:Name="BatteryLevel" HorizontalAlignment="Center" VerticalAlignment="Center" Width="30"  Background="{Binding BatteryLevel, Converter={StaticResource BatteryValueToColorConverter}}" />
+                <Grid Height="28" Background="{Binding BatteryLevel, Converter={StaticResource BatteryValueToColorConverter}}" >
+                    <TextBlock x:Name="BatteryLevel" HorizontalAlignment="Center" VerticalAlignment="Center" Width="30" />
+                </Grid>
             </StatusBar>
         </Grid>
     </Grid>

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace FollowMe.Converter
@@ -15,7 +11,6 @@ namespace FollowMe.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            
             if (value == null ||  string.IsNullOrEmpty(value.ToString()))
             {
                 return Brushes.Red;
