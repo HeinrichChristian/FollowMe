@@ -58,11 +58,14 @@
                     <Grid Background="WhiteSmoke">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
-
                         </Grid.ColumnDefinitions>
-                        <Button Content="Mit AR.Drone verbinden" x:Name="ButtonConnect" IsEnabled="{Binding ConnectToDroneEnabled}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="50" Margin="39,96,0,0" />
-                        <Button Content="Verbindung trennen" x:Name="ButtonDisconnect" IsEnabled="{Binding ConnectToDroneEnabled, Converter={StaticResource InvertBoolConverter}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="53" Margin="41,168,0,0" />
-                        <TextBlock HorizontalAlignment="Left" Margin="39,24,0,0" TextWrapping="Wrap" Text="Bevor Sie sich hier mit der AR.Drone verbinden können, muss eine WLAN-Verbindung von diesem PC zur AR.Drone hergestellt werden." VerticalAlignment="Top" Height="47" Width="306"/>
+                        <StackPanel>
+                            <TextBlock HorizontalAlignment="Left" Margin="39,24,0,0" TextWrapping="Wrap" Text="Bevor Sie sich hier mit der AR.Drone verbinden können, muss eine WLAN-Verbindung von diesem PC zur AR.Drone hergestellt werden." VerticalAlignment="Top" Height="47" Width="306"/>
+                            <Button Content="Mit AR.Drone verbinden" x:Name="ButtonConnect" Visibility="{Binding ConnectedToFlyingRobot, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=VisibleOnFalse}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="50" Margin="30"/>
+                            <Button Content="Verbindung trennen" x:Name="ButtonDisconnect" Visibility="{Binding ConnectedToFlyingRobot, Converter={StaticResource BoolToVisibilityConverter} }" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="50"  Margin="30"/>
+                        </StackPanel>
+                        
+                        
                     </Grid>
                 </TabItem>
 
@@ -170,13 +173,10 @@
 
                             
                             <Grid Grid.Column="3" Grid.Row="3" Grid.RowSpan="7" Name="PreviewWindowsFormsHost" Background="PapayaWhip" >
-                                
-                                
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
-                                    
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"></RowDefinition>
@@ -242,7 +242,7 @@
                      </Grid>
                     </Grid>
                 </TabItem>
-                <TabItem Header="AR.Drone autonom fliegen">
+                <!--<TabItem Header="AR.Drone autonom fliegen">
                     
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -294,16 +294,17 @@
 
                     </Grid>
                     
-                </TabItem>
+                </TabItem>-->
             </TabControl>
             <StatusBar HorizontalAlignment="Left" Height="33" Margin="0" VerticalAlignment="Bottom" Width="1017">
                 <Label Content="Joystick: "/>
                 <TextBlock x:Name="SelectedJoystick" HorizontalAlignment="Center" Width="160" Height="23" VerticalAlignment="Center" TextWrapping="Wrap" Text="" Background="{Binding SelectedJoystick, Converter={StaticResource StringToRedOrGreenConverter}}"/>
                 <!--<TextBlock x:Name="SelectedJoystick" ToolTip="{Binding SelectedJoystick}" Width="160" Background="{Binding SelectedJoystick, Converter={StaticResource StringToRedOrGreenConverter}}" />-->
-                <Label Content="Verbindung zu AR.Drone:"/>
-                <TextBlock x:Name="ArDroneConnected" Width="60"/>
+                <Label Content="Verbindung zu AR.Drone hergestellt." Background="Chartreuse" Visibility="{Binding ConnectedToFlyingRobot, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                <Label Content="Keine Verbindung zu AR.Drone hergestellt." Background="Red" Visibility="{Binding ConnectedToFlyingRobot, Converter={StaticResource BoolToVisibilityConverter},  ConverterParameter=VisibleOnFalse }"/>
+                
                 <Label Content="Batterielevel:" HorizontalAlignment="Right" VerticalAlignment="Center" Width="75"/>
-                <TextBlock x:Name="BatteryLevel" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="30"  Background="{Binding BatteryLevel, Converter={StaticResource BatteryValueToColorConverter}}"/>
+                <TextBlock x:Name="BatteryLevel" HorizontalAlignment="Center" VerticalAlignment="Center" Width="30"  Background="{Binding BatteryLevel, Converter={StaticResource BatteryValueToColorConverter}}" />
             </StatusBar>
         </Grid>
     </Grid>

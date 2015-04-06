@@ -58,7 +58,7 @@ namespace FollowMe {
         private JoystickDevice selectedJoystickDevice;
         private string droneStatus;
         private HuePickerForm huePickerForm;
-        private bool connectToDroneEnabled;
+        private bool connectedToFlyingRobot;
         private string selectedJoystick;
         private float maxYaw;
         private int maxVerticalSpeed;
@@ -89,9 +89,12 @@ namespace FollowMe {
         private bool searchObjectBottomLeft;
         private bool searchObjectBottomCenter;
         private bool searchObjectBottomRight;
+        private TargetLocation LastKnownTargetLocation;
         private string commandsForAutonomousFlight;
+
         private bool flyingAtonomous;
         private Timer autonomousTimer;
+        private bool searchObjectLocationUnknown;
 
         #endregion
         
@@ -128,13 +131,14 @@ namespace FollowMe {
             }
         }
 
-        public bool ConnectToDroneEnabled
+
+        public bool ConnectedToFlyingRobot
         {
-            get { return connectToDroneEnabled; }
+            get { return connectedToFlyingRobot; }
             set
             {
-                connectToDroneEnabled = value;
-                NotifyOfPropertyChange(() => ConnectToDroneEnabled);
+                connectedToFlyingRobot = value;
+                NotifyOfPropertyChange(() => ConnectedToFlyingRobot);
             }
         }
 
@@ -630,6 +634,17 @@ namespace FollowMe {
                 NotifyOfPropertyChange(() => SearchObjectBottomRight);
             }
         }
+
+        public bool SearchObjectLocationUnknown
+        {
+            get { return searchObjectLocationUnknown; }
+            set
+            {
+                searchObjectLocationUnknown = value;
+                NotifyOfPropertyChange(() => SearchObjectLocationUnknown);
+            }
+        }
+
         #endregion
 
         #endregion
@@ -779,7 +794,7 @@ namespace FollowMe {
             
             RefreshJoysticks();
 
-            ConnectToDroneEnabled = true;
+            ConnectedToFlyingRobot = false;
             HuePickerIsVisible = false;
 
             var arDroneStatusTimer = new Timer();
@@ -817,16 +832,18 @@ namespace FollowMe {
                 if (!string.IsNullOrEmpty(controlConfig))
                 {
                     DroneStatus = "Verbunden";
-                    ConnectToDroneEnabled = false;
+                    ConnectedToFlyingRobot = true;
                 }
                 else
                 {
                     DroneStatus = "Nicht Verbunden";
+                    ConnectedToFlyingRobot = false;
                 }
             }
             catch (Exception exception)
             {
                 DroneStatus = "Fehler " + exception;
+                ConnectedToFlyingRobot = false;
                 Log.Error(exception);
             }
         }
@@ -936,7 +953,8 @@ namespace FollowMe {
         {
             Log.Info("Disconnect");
             flyingRobot.Disconnect();
-            ConnectToDroneEnabled = true;
+            ConnectedToFlyingRobot = false;
+            BatteryLevel = 0;
         }
 
         /// <summary>
@@ -1031,36 +1049,43 @@ namespace FollowMe {
         {
             Log.Info(" ++++++++ START AUTONOMOUS FLIGHT +++++++++++++");
             FlyingAtonomous = true;
-
-            autonomousTimer = new Timer {Interval = 300, Enabled = true};
+            autonomousTimer = new Timer
+            {
+                Interval = 200,
+                Enabled = true
+            };
             autonomousTimer.Elapsed += AutonomousTimerOnElapsed;
-          
         }
 
         private void AutonomousTimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
         {
             if (Button6Pressed)
             {
+                var moveFlyingRobot = false;
                 if (SearchObjectCenterLeft || SearchObjectBottomLeft || SearchObjectTopLeft)
                 {
                     // steer left
                     Log.Info("Yaw left");
+                    moveFlyingRobot = true;
                     flyingRobot.Yaw(HorizontalDirection.Left, autonomousFlyingSteeringForce);
                 }
-
-                if (SearchObjectCenterRight || SearchObjectTopRight || SearchObjectBottomRight)
+                else if (SearchObjectCenterRight || SearchObjectTopRight || SearchObjectBottomRight)
                 {
                     // steer right
                     Log.Info("Yaw right");
+                    moveFlyingRobot = true;
                     flyingRobot.Yaw(HorizontalDirection.Right, autonomousFlyingSteeringForce);
                 }
-            }
-            else
-            {
-                //Log.Info("Button 6 released -> Hover, manual flight");
-                ////flyingRobot.Hover();
-                //autonomousTimer.Enabled = false;
-                //FlyingAtonomous = false;
+                else if(SearchObjectLocationUnknown)
+                {
+                    
+                }
+
+                if(moveFlyingRobot == false)
+                {
+                    Log.Info("Hover");
+                    flyingRobot.Hover();
+                }
             }
         }
 
@@ -1208,80 +1233,60 @@ namespace FollowMe {
 
             
             var moveFlyingRobot = false;
+            
             // left stick, X axis -> yaw
-            //if (joystick.AxisXStateChanged())
-            //{
-                LeftStickXAxis = joystick.GetAxisX;
-
-                if (joystick.GetAxisX > 0.3)
-                {
-                    flyingRobot.Yaw(HorizontalDirection.Right, joystick.GetAxisY);
-                    moveFlyingRobot = true;
-                }
-                else if (joystick.GetAxisX < -0.3)
-                {
-                    flyingRobot.Yaw(HorizontalDirection.Left, joystick.GetAxisY);
-                    moveFlyingRobot = true;
-                }
-                
-            //}
-
+            LeftStickXAxis = joystick.GetAxisX;
+            if (joystick.GetAxisX > 0.3)
+            {
+                flyingRobot.Yaw(HorizontalDirection.Right, joystick.GetAxisY);
+                moveFlyingRobot = true;
+            }
+            else if (joystick.GetAxisX < -0.3)
+            {
+                flyingRobot.Yaw(HorizontalDirection.Left, joystick.GetAxisY);
+                moveFlyingRobot = true;
+            }
+            
             // left stick, Y axis -> pitch
-            //if (joystick.AxisYStateChanged())
-            //{
-                LeftStickYAxis = joystick.GetAxisY;
-
-                if (joystick.GetAxisY > 0.3)
-                {
-                    flyingRobot.Pitch(VerticalDirection.Down, joystick.GetAxisY);
-                    moveFlyingRobot = true;
-                }
-                else if (joystick.GetAxisY < - 0.3)
-                {
-                    flyingRobot.Pitch(VerticalDirection.Up, joystick.GetAxisY);
-                    moveFlyingRobot = true;
-                }
-                
-            //}
-
+            LeftStickYAxis = joystick.GetAxisY;
+            if (joystick.GetAxisY > 0.3)
+            {
+                flyingRobot.Pitch(VerticalDirection.Down, joystick.GetAxisY);
+                moveFlyingRobot = true;
+            }
+            else if (joystick.GetAxisY < - 0.3)
+            {
+                flyingRobot.Pitch(VerticalDirection.Up, joystick.GetAxisY);
+                moveFlyingRobot = true;
+            }
+            
             // right stick, X axis-> roll
-            //if (joystick.AxisZStateChanged())
-            //{
-                RightStickXAxis = joystick.GetAxisZ;
+            RightStickXAxis = joystick.GetAxisZ;
+            // to the right
+            if (joystick.GetAxisZ > 0.3)
+            {
+                flyingRobot.Roll(HorizontalDirection.Right, joystick.GetAxisZ);
+                moveFlyingRobot = true;
+            }
+            // to the left
+            else if (joystick.GetAxisZ < -0.3)
+            {
+                flyingRobot.Roll(HorizontalDirection.Left, joystick.GetAxisZ);
+                moveFlyingRobot = true;
+            }
 
-                // to the right
-                if (joystick.GetAxisZ > 0.3)
-                {
-                    flyingRobot.Roll(HorizontalDirection.Right, joystick.GetAxisZ);
-                    moveFlyingRobot = true;
-                }
-
-                // to the left
-                if (joystick.GetAxisZ < -0.3)
-                {
-                    flyingRobot.Roll(HorizontalDirection.Left, joystick.GetAxisZ);
-                    moveFlyingRobot = true;
-                }
-
-
-            //}
-            // right stick, Y axis -> nick
-            //if (joystick.AxisRzStateChanged())
-            //{
-                RightStickYAxis = joystick.GetAxisRz;
-
-                if (joystick.GetAxisRz > 0.3)
-                {
-                    flyingRobot.Nick(VerticalDirection.Down, joystick.GetAxisRz);
-                    moveFlyingRobot = true;
-                }
-
-                if (joystick.GetAxisRz < -0.3)
-                {
-                    flyingRobot.Nick(VerticalDirection.Up, joystick.GetAxisRz);
-                    moveFlyingRobot = true;
-                }
-            //}
+            RightStickYAxis = joystick.GetAxisRz;
+            if (joystick.GetAxisRz > 0.3)
+            {
+                flyingRobot.Nick(VerticalDirection.Down, joystick.GetAxisRz);
+                moveFlyingRobot = true;
+            }
+            else if (joystick.GetAxisRz < -0.3)
+            {
+                flyingRobot.Nick(VerticalDirection.Up, joystick.GetAxisRz);
+                moveFlyingRobot = true;
+            }
+            
             if (moveFlyingRobot == false)
             {
                 flyingRobot.Hover();
@@ -1294,8 +1299,7 @@ namespace FollowMe {
         /// </summary>
         void _camera_OnNewFrame()
         {
-            ObjectLocation objectLocation = null;
-            TargetLocation targetLocation = TargetLocation.Unknown;
+            var targetLocation = TargetLocation.Unknown;
             if (targetLocator != null)
             {
                 try
@@ -1308,6 +1312,7 @@ namespace FollowMe {
                                         SaturationMax,
                                         LuminanceMin,
                                         LuminanceMax);
+                    LastKnownTargetLocation = targetLocation;
                 }
                 catch (Exception exception)
                 {
@@ -1326,6 +1331,7 @@ namespace FollowMe {
             SearchObjectTopLeft = false;
             SearchObjectTopCenter = false;
             SearchObjectTopRight = false;
+            SearchObjectLocationUnknown = false;
 
             switch (targetLocation)
             {
@@ -1356,7 +1362,11 @@ namespace FollowMe {
                 case TargetLocation.TopRight:
                     SearchObjectTopRight = true;
                     break;
+                case TargetLocation.Unknown:
+                    SearchObjectLocationUnknown = true;
+                    break;
             }
+            
         }
 
         public void Handle(HuePickerMessage message)
