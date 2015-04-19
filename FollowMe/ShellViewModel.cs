@@ -89,7 +89,7 @@ namespace FollowMe {
         private bool searchObjectBottomLeft;
         private bool searchObjectBottomCenter;
         private bool searchObjectBottomRight;
-        private TargetLocation LastKnownTargetLocation;
+        private TargetLocation LastKnownTargetLocationByColor;
         private string commandsForAutonomousFlight;
 
         private bool flyingAtonomous;
@@ -642,6 +642,17 @@ namespace FollowMe {
             {
                 searchObjectLocationUnknown = value;
                 NotifyOfPropertyChange(() => SearchObjectLocationUnknown);
+            }
+        }
+
+        private bool glyphAheadDetected;
+        public bool GlyphAheadDetected
+        { 
+            get { return glyphAheadDetected; }
+            set
+            {
+                glyphAheadDetected = value;
+                NotifyOfPropertyChange(() => GlyphAheadDetected);
             }
         }
 
@@ -1299,12 +1310,14 @@ namespace FollowMe {
         /// </summary>
         void _camera_OnNewFrame()
         {
-            var targetLocation = TargetLocation.Unknown;
+            var targetLocationByColor = TargetLocation.Unknown;
+            var targetLocationByGlyph = TargetLocation.Unknown;
+
             if (targetLocator != null)
             {
                 try
                 {
-                    targetLocation = targetLocator.GetTargetLocation(TrackingPreviewEnabled,
+                    targetLocationByColor = targetLocator.GetTargetLocation(TrackingPreviewEnabled,
                                         SearchObjectSizePixels,
                                         HueMin,
                                         HueMax,
@@ -1312,7 +1325,16 @@ namespace FollowMe {
                                         SaturationMax,
                                         LuminanceMin,
                                         LuminanceMax);
-                    LastKnownTargetLocation = targetLocation;
+                    LastKnownTargetLocationByColor = targetLocationByColor;
+                }
+                catch (Exception exception)
+                {
+                    Log.Error(exception);
+                }
+
+                try
+                {
+                    targetLocationByGlyph = targetLocator.GetGlyphLocation();
                 }
                 catch (Exception exception)
                 {
@@ -1333,7 +1355,8 @@ namespace FollowMe {
             SearchObjectTopRight = false;
             SearchObjectLocationUnknown = false;
 
-            switch (targetLocation)
+
+            switch (targetLocationByColor)
             {
                 case TargetLocation.BottomLeft:
                     SearchObjectBottomLeft = true;
@@ -1366,6 +1389,20 @@ namespace FollowMe {
                     SearchObjectLocationUnknown = true;
                     break;
             }
+
+
+            if(targetLocationByGlyph == TargetLocation.TopCenter 
+                || targetLocationByGlyph == TargetLocation.CenterCenter)
+            {
+
+                Log.Info("ATTENTION!!!!! Target ahead!!!");
+                GlyphAheadDetected = true;
+            }
+            else
+            {
+                GlyphAheadDetected = false;
+            }
+
             
         }
 

@@ -171,7 +171,9 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
 
-                            
+                            <TextBlock Grid.Column="3" Grid.Row="1"  Background="Aqua" TextAlignment="Center" VerticalAlignment="Center" Height="30" Visibility="{Binding GlyphAheadDetected, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=VisibleOnFalse}">Suche Glyph</TextBlock>
+                            <TextBlock Grid.Column="3" Grid.Row="1" Background="Red" TextAlignment="Center" VerticalAlignment="Center" Height="30" Visibility="{Binding GlyphAheadDetected, Converter={StaticResource BoolToVisibilityConverter}}">Glyph voraus erkannt</TextBlock>
+
                             <Grid Grid.Column="3" Grid.Row="3" Grid.RowSpan="7" Name="PreviewWindowsFormsHost" Background="PapayaWhip" >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"></ColumnDefinition>

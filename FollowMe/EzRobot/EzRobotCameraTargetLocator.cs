@@ -45,65 +45,89 @@ namespace FollowMe.EzRobot
             if (objectLocation != null && objectLocation.IsObjectFound)
             {
 
-
-                if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left &&
-                    objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom)
-                {
-                    targetLocation = TargetLocation.BottomLeft;
-                }
-
-                if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle &&
-                    objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom)
-                {
-                    targetLocation = TargetLocation.BottomCenter;
-                }
-
-                if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right &&
-                    objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom)
-                {
-                    targetLocation = TargetLocation.BottomRight;
-                }
-
-                if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left &&
-                    objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle)
-                {
-                    targetLocation = TargetLocation.CenterLeft;
-                }
-
-                if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle &&
-                    objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle)
-                {
-                    targetLocation = TargetLocation.CenterCenter;
-                }
-
-                if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right &&
-                    objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle)
-                {
-                    targetLocation = TargetLocation.CenterRight;
-                }
-                if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left &&
-                    objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top)
-                {
-                    targetLocation = TargetLocation.TopLeft;
-                }
-
-                if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle &&
-                    objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top)
-                {
-                    targetLocation = TargetLocation.TopCenter;
-                }
-                
-                if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right &&
-                    objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top)
-                {
-                    targetLocation = TargetLocation.TopRight;
-                }
-
+                targetLocation = GetTargetLocationFromObjectLocation(objectLocation);
 
                 //TargetXCoordinate = objectLocation.CenterX;
                // Log.Info("Object detected: X = {0}", objectLocation.CenterX);
                 //TargetYCoordinate = objectLocation.CenterY;
              //   Log.Info("Object detected: Y = {0}", objectLocation.CenterY);
+            }
+
+            return targetLocation;
+        }
+
+        public TargetLocation GetGlyphLocation()
+        {
+            TargetLocation targetLocation = TargetLocation.Unknown;
+            var glyphDetection = camera.CameraGlyphDetection.GetGlyphDetection();
+            if (glyphDetection.IsObjectFound)
+            {
+                Log.Info("GlyphDetection-ObjectName: {0}", glyphDetection.ObjectName);
+                Log.Info("GlyphDetection-VerticalLocation: {0}", glyphDetection.VerticalLocation);
+                Log.Info("GlyphDetection-HorizontalLocation: {0}", glyphDetection.HorizontalLocation);
+
+                targetLocation = GetTargetLocationFromObjectLocation(glyphDetection);
+            }
+
+            return targetLocation;
+        }
+
+
+        private TargetLocation GetTargetLocationFromObjectLocation(ObjectLocation objectLocation)
+        {
+            TargetLocation targetLocation = TargetLocation.Unknown;
+
+            if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left &&
+                  objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom)
+            {
+                targetLocation = TargetLocation.BottomLeft;
+            }
+
+            if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle &&
+                objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom)
+            {
+                targetLocation = TargetLocation.BottomCenter;
+            }
+
+            if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right &&
+                objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Bottom)
+            {
+                targetLocation = TargetLocation.BottomRight;
+            }
+
+            if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left &&
+                objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle)
+            {
+                targetLocation = TargetLocation.CenterLeft;
+            }
+
+            if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle &&
+                objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle)
+            {
+                targetLocation = TargetLocation.CenterCenter;
+            }
+
+            if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right &&
+                objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Middle)
+            {
+                targetLocation = TargetLocation.CenterRight;
+            }
+            if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Left &&
+                objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top)
+            {
+                targetLocation = TargetLocation.TopLeft;
+            }
+
+            if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Middle &&
+                objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top)
+            {
+                targetLocation = TargetLocation.TopCenter;
+            }
+
+            if (objectLocation.HorizontalLocation == ObjectLocation.HorizontalLocationEnum.Right &&
+                objectLocation.VerticalLocation == ObjectLocation.VerticalLocationEnum.Top)
+            {
+                targetLocation = TargetLocation.TopRight;
             }
 
             return targetLocation;
