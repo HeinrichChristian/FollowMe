@@ -76,6 +76,8 @@
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Channels" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.2.0.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -143,6 +145,11 @@
     <Compile Include="SourceDefaultValueConverter.cs" />
     <Compile Include="EzRobot\EzRobotCameraTargetLocator.cs" />
     <Compile Include="ViewModels\ControlConfigViewModel.cs" />
+    <Compile Include="WebService\IRemoteControlCallback.cs" />
+    <Compile Include="WebService\IRemoteControl.cs" />
+    <Compile Include="WebService\RemoteControl.cs" />
+    <Compile Include="WebService\RemoteControlCallback.cs" />
+    <Compile Include="WebService\RemoteControlServiceHost.cs" />
     <Page Include="ShellView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -187,7 +194,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

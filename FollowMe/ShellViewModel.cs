@@ -15,6 +15,8 @@ using FollowMe.Interfaces;
 using FollowMe.Messages;
 using FollowMe.ViewModels;
 using Timer = System.Timers.Timer;
+using FollowMe.WebService;
+using System.ServiceModel;
 
 namespace FollowMe {
     /// <summary>
@@ -95,6 +97,10 @@ namespace FollowMe {
         private bool flyingAtonomous;
         private Timer autonomousTimer;
         private bool searchObjectLocationUnknown;
+
+        private bool remoteControlServiceIsRunning;
+
+        private ServiceHost remoteControlServiceHost;
 
         #endregion
         
@@ -646,6 +652,7 @@ namespace FollowMe {
         }
 
         private bool glyphAheadDetected;
+        private string remoteServiceUri;
         public bool GlyphAheadDetected
         { 
             get { return glyphAheadDetected; }
@@ -680,6 +687,53 @@ namespace FollowMe {
                 flyingAtonomous = value;
                 NotifyOfPropertyChange(() => FlyingAtonomous);
             }
+        }
+
+        #endregion
+
+
+        #region Service for SmartPhone
+
+        public string RemoteServiceUri
+        {
+            get { return remoteServiceUri; }
+            set
+            {
+                remoteServiceUri = value;
+                NotifyOfPropertyChange(() => RemoteServiceUri);
+            }
+        }
+
+        public bool RemoteControlServiceIsRunning
+        {
+            get { return remoteControlServiceIsRunning; }
+            set
+            {
+                remoteControlServiceIsRunning = value;
+                NotifyOfPropertyChange(() => RemoteControlServiceIsRunning);
+            }
+        }
+        public void ButtonStartRemoteControlServiceHost()
+        {
+            Log.Info("Start RemoteControlServiceHost");
+            RemoteControlServiceIsRunning = true;
+            remoteControlServiceHost = RemoteControlServiceHost.Instance;
+
+            foreach (var address in remoteControlServiceHost.BaseAddresses)
+            {
+                RemoteServiceUri = address.ToString();
+                break;
+            }
+        }
+
+        public void ButtonStopRemoteControlServiceHost()
+        {
+            Log.Info("Stop RemoteControlServiceHost");
+            RemoteControlServiceIsRunning = false;
+            remoteControlServiceHost.Close();
+
+            RemoteServiceUri = "Service gestoppt.";
+            
         }
 
         #endregion
@@ -1340,6 +1394,8 @@ namespace FollowMe {
                 {
                     Log.Error(exception);
                 }
+
+                
             }
 
             camera.UpdatePreview(255);

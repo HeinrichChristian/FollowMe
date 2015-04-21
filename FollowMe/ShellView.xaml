@@ -244,6 +244,37 @@
                      </Grid>
                     </Grid>
                 </TabItem>
+                <TabItem Header="Service für SmartPhone">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"></ColumnDefinition>
+                            <ColumnDefinition Width="250"></ColumnDefinition>
+                            <ColumnDefinition Width="110"></ColumnDefinition>
+                            <ColumnDefinition Width="380"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
+                            <RowDefinition Height="35"></RowDefinition>
+                            <RowDefinition Height="35"></RowDefinition>
+                            <RowDefinition Height="35"></RowDefinition>
+                            <RowDefinition Height="35"></RowDefinition>
+                            <RowDefinition Height="35"></RowDefinition>
+                            <RowDefinition Height="35"></RowDefinition>
+                            <RowDefinition Height="35"></RowDefinition>
+                            <RowDefinition Height="35"></RowDefinition>
+                            <RowDefinition Height="35"></RowDefinition>
+                            <RowDefinition Height="35"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="1" Grid.Column="1" Name="ButtonStartRemoteControlServiceHost" Visibility="{Binding  RemoteControlServiceIsRunning, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=VisibleOnFalse}">Starte Service</Button>
+                        <Button Grid.Row="1" Grid.Column="1" Name="ButtonStopRemoteControlServiceHost" Visibility="{Binding  RemoteControlServiceIsRunning, Converter={StaticResource BoolToVisibilityConverter}}">Stoppe Service</Button>
+                        
+                        <TextBox Grid.Row="2" Grid.Column="1"  Name="RemoteServiceUri" /> 
+                    </Grid>
+                </TabItem>
                 <!--<TabItem Header="AR.Drone autonom fliegen">
                     
                         <Grid>

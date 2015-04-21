@@ -63,14 +63,24 @@ namespace FollowMe.EzRobot
             if (glyphDetection.IsObjectFound)
             {
                 Log.Info("GlyphDetection-ObjectName: {0}", glyphDetection.ObjectName);
-                Log.Info("GlyphDetection-VerticalLocation: {0}", glyphDetection.VerticalLocation);
-                Log.Info("GlyphDetection-HorizontalLocation: {0}", glyphDetection.HorizontalLocation);
+                Log.Info("GlyphDetection-VerticalLocation: {0}, HorizontalLocation: {1}", glyphDetection.VerticalLocation, glyphDetection.HorizontalLocation);               
 
                 targetLocation = GetTargetLocationFromObjectLocation(glyphDetection);
             }
 
             return targetLocation;
         }
+
+        //public TargetLocation GetObjectLocation(EZ_B.AVM.TrainedObjectsContainer.TrainedObject trainedObject)
+        //{
+        //    TargetLocation targetLocation = TargetLocation.Unknown;
+        //    camera.CameraAVMObjectDetection.AddObject(trainedObject);
+
+        //    var objectLocation = camera.CameraAVMObjectDetection.GetDetectedObjects(true, true);
+
+        //    targetLocation = GetTargetLocationFromObjectLocation(objectLocation);
+
+        //}
 
 
         private TargetLocation GetTargetLocationFromObjectLocation(ObjectLocation objectLocation)
