@@ -23,7 +23,7 @@ namespace FollowMe {
     /// The viewModel for the shellview.
     /// </summary>
     [Export(typeof(ShellViewModel))]
-    public class ShellViewModel : PropertyChangedBase, IShell, IHandle<HuePickerMessage>
+    public class ShellViewModel : PropertyChangedBase, IShell, IHandle<HuePickerMessage>, IHandle<StopMessage>
     {
         #region privates
 
@@ -99,6 +99,7 @@ namespace FollowMe {
         private bool searchObjectLocationUnknown;
 
         private bool remoteControlServiceIsRunning;
+        private bool remoteControlRequestsStop;
 
         private ServiceHost remoteControlServiceHost;
 
@@ -711,6 +712,16 @@ namespace FollowMe {
             {
                 remoteControlServiceIsRunning = value;
                 NotifyOfPropertyChange(() => RemoteControlServiceIsRunning);
+            }
+        }
+
+        public bool RemoteControlRequestsStop
+        {
+            get { return remoteControlRequestsStop; }
+            set
+            {
+                remoteControlRequestsStop = value;
+                NotifyOfPropertyChange(() => RemoteControlRequestsStop);
             }
         }
         public void ButtonStartRemoteControlServiceHost()
@@ -1462,10 +1473,18 @@ namespace FollowMe {
             
         }
 
+        #region handle messages from eventAggregator
         public void Handle(HuePickerMessage message)
         {
             HueMax = message.HueMax;
             HueMin = message.HueMin;
         }
+
+        public void Handle(StopMessage message)
+        {
+            RemoteControlRequestsStop = true;
+        }
+
+        #endregion
     }
 }

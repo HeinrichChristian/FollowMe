@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace FollowMe.WebService
 {
-    [ServiceContract]
-    public interface IRemoteControlCallback
-    {
-        [OperationContract]
-        void DangerDetected(TargetLocation location);
+    //[ServiceContract]
+    //public interface IRemoteControlCallback
+    //{
+    //    [OperationContract]
+    //    void DangerDetected(TargetLocation location);
 
-        [OperationContract]
-        void PersonDetected(Enums.TargetLocation location);
+    //    [OperationContract]
+    //    void PersonDetected(Enums.TargetLocation location);
 
-        [OperationContract]
-        void Started();
+    //    [OperationContract]
+    //    void Started();
 
-        [OperationContract]
-        void Stopped();
-    }
+    //    [OperationContract]
+    //    void Stopped();
+    //}
 }

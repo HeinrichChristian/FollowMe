@@ -136,7 +136,10 @@
     <Compile Include="Interfaces\ITargetLocator.cs" />
     <Compile Include="Interfaces\ITargetLocatorFactory.cs" />
     <Compile Include="IShell.cs" />
+    <Compile Include="Messages\DangerLocationMessage.cs" />
     <Compile Include="Messages\HuePickerMessage.cs" />
+    <Compile Include="Messages\PersonLocationMessage.cs" />
+    <Compile Include="Messages\StopMessage.cs" />
     <Compile Include="ShellViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>

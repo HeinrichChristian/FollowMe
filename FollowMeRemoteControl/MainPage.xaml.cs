@@ -30,8 +30,18 @@ namespace FollowMeRemoteControl
             //BuildLocalizedApplicationBar();
         }
 
-   
 
+
+        public void ButtonStopClick(object sender, RoutedEventArgs e)
+        {
+            remoteControlClient.StopCompleted += remoteControlClient_StopCompleted;
+            remoteControlClient.BeginStop(new AsyncCallback(TaskCompleted), null);
+        }
+
+        void remoteControlClient_StopCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            
+        }
 
         public void ButtonStartClick(object sender, RoutedEventArgs e)
         {

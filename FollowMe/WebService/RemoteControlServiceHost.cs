@@ -13,13 +13,10 @@ namespace FollowMe.WebService
         private static readonly ILog Log = LogManager.GetLog(typeof(RemoteControlServiceHost));
 
         private static ServiceHost remoteControlServiceHost;
-
-        private static readonly RemoteControlServiceHost instance = null;
-
+        
         private static readonly object padlock = new object();
 
 
-     
         private RemoteControlServiceHost()
         {
             Log.Info("private RemoteControlServiceHost()");
@@ -34,8 +31,17 @@ namespace FollowMe.WebService
                 {                    
                     if(remoteControlServiceHost == null)
                     {
-                        remoteControlServiceHost = new ServiceHost(typeof(RemoteControl));
-                        remoteControlServiceHost.Open();
+                        try
+                        {
+                            var eventAggregator = IoC.Get<IEventAggregator>();
+                            remoteControlServiceHost = new ServiceHost(new RemoteControl(eventAggregator));
+                            remoteControlServiceHost.Open();
+                        }
+                        catch(Exception e)
+                        {
+                            System.Windows.MessageBox.Show(e.ToString());
+                        }
+                        
                     }
 
                 }

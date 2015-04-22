@@ -44,8 +44,8 @@
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="FollowMe" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock Text="Remote" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-            <Button Content="Start" HorizontalAlignment="Left" Margin="20,20,0,20" Grid.Row="1" VerticalAlignment="Top" Width="405" Height="127" Click="ButtonStartClick"/>
-            <Button Content="Stop" HorizontalAlignment="Left" Margin="20" Grid.Row="1" VerticalAlignment="Top"  Width="405" Height="127"/>
+            <!--<Button Content="Start" HorizontalAlignment="Left" Margin="20,20,0,20" Grid.Row="1" VerticalAlignment="Top" Width="405" Height="127" Click="ButtonStartClick"/>-->
+            <Button Content="Stop" HorizontalAlignment="Left" Margin="20" Grid.Row="1" VerticalAlignment="Top"  Width="405" Height="127" Click="ButtonStopClick"/>
             <Canvas Height="50" Background="Green" Margin="10">
                 <TextBlock Margin="40, 10">Person erkannt</TextBlock>
             </Canvas>
