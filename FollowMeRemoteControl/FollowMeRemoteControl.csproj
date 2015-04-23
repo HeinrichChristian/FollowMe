@@ -95,6 +95,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Client\RemoteControl.cs" />
+    <Compile Include="Converter\BoolToOpacityConverter.cs" />
     <Compile Include="Converter\BoolToVisibilityConverter.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -129,7 +130,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Client\output.config" />
+    <Content Include="Client\ServiceReferences.ClientConfig" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
@@ -137,6 +138,12 @@
     <None Include="Service References\FollowMeService\FollowMe.disco" />
     <None Include="Service References\FollowMeService\configuration91.svcinfo" />
     <None Include="Service References\FollowMeService\configuration.svcinfo" />
+    <None Include="Service References\FollowMeService\FollowMe3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FollowMeService\FollowMeRemoteControl.FollowMeService.PersonAndDangerLocation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\FollowMeService\FollowMeRemoteControl.FollowMeService.TargetLocation.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

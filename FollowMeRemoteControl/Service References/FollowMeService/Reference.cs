@@ -50,6 +50,51 @@ namespace FollowMeRemoteControl.FollowMeService {
         BottomRight = 9,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PersonAndDangerLocation", Namespace="http://schemas.datacontract.org/2004/07/FollowMe.WebService")]
+    public partial class PersonAndDangerLocation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private FollowMeRemoteControl.FollowMeService.TargetLocation DangerLocationField;
+        
+        private FollowMeRemoteControl.FollowMeService.TargetLocation PersonLocationField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FollowMeRemoteControl.FollowMeService.TargetLocation DangerLocation {
+            get {
+                return this.DangerLocationField;
+            }
+            set {
+                if ((this.DangerLocationField.Equals(value) != true)) {
+                    this.DangerLocationField = value;
+                    this.RaisePropertyChanged("DangerLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FollowMeRemoteControl.FollowMeService.TargetLocation PersonLocation {
+            get {
+                return this.PersonLocationField;
+            }
+            set {
+                if ((this.PersonLocationField.Equals(value) != true)) {
+                    this.PersonLocationField = value;
+                    this.RaisePropertyChanged("PersonLocation");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FollowMeService.IRemoteControl")]
     public interface IRemoteControl {
@@ -73,6 +118,11 @@ namespace FollowMeRemoteControl.FollowMeService {
         System.IAsyncResult BeginGetDangerLocation(System.AsyncCallback callback, object asyncState);
         
         FollowMeRemoteControl.FollowMeService.TargetLocation EndGetDangerLocation(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IRemoteControl/GetPersonAndDangerLocation", ReplyAction="http://tempuri.org/IRemoteControl/GetPersonAndDangerLocationResponse")]
+        System.IAsyncResult BeginGetPersonAndDangerLocation(System.AsyncCallback callback, object asyncState);
+        
+        FollowMeRemoteControl.FollowMeService.PersonAndDangerLocation EndGetPersonAndDangerLocation(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -119,6 +169,25 @@ namespace FollowMeRemoteControl.FollowMeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetPersonAndDangerLocationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetPersonAndDangerLocationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public FollowMeRemoteControl.FollowMeService.PersonAndDangerLocation Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((FollowMeRemoteControl.FollowMeService.PersonAndDangerLocation)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class RemoteControlClient : System.ServiceModel.ClientBase<FollowMeRemoteControl.FollowMeService.IRemoteControl>, FollowMeRemoteControl.FollowMeService.IRemoteControl {
         
         private BeginOperationDelegate onBeginStartDelegate;
@@ -144,6 +213,12 @@ namespace FollowMeRemoteControl.FollowMeService {
         private EndOperationDelegate onEndGetDangerLocationDelegate;
         
         private System.Threading.SendOrPostCallback onGetDangerLocationCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetPersonAndDangerLocationDelegate;
+        
+        private EndOperationDelegate onEndGetPersonAndDangerLocationDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetPersonAndDangerLocationCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -205,6 +280,8 @@ namespace FollowMeRemoteControl.FollowMeService {
         public event System.EventHandler<GetPersonLocationCompletedEventArgs> GetPersonLocationCompleted;
         
         public event System.EventHandler<GetDangerLocationCompletedEventArgs> GetDangerLocationCompleted;
+        
+        public event System.EventHandler<GetPersonAndDangerLocationCompletedEventArgs> GetPersonAndDangerLocationCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -384,6 +461,50 @@ namespace FollowMeRemoteControl.FollowMeService {
             base.InvokeAsync(this.onBeginGetDangerLocationDelegate, null, this.onEndGetDangerLocationDelegate, this.onGetDangerLocationCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult FollowMeRemoteControl.FollowMeService.IRemoteControl.BeginGetPersonAndDangerLocation(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetPersonAndDangerLocation(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        FollowMeRemoteControl.FollowMeService.PersonAndDangerLocation FollowMeRemoteControl.FollowMeService.IRemoteControl.EndGetPersonAndDangerLocation(System.IAsyncResult result) {
+            return base.Channel.EndGetPersonAndDangerLocation(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetPersonAndDangerLocation(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return ((FollowMeRemoteControl.FollowMeService.IRemoteControl)(this)).BeginGetPersonAndDangerLocation(callback, asyncState);
+        }
+        
+        private object[] OnEndGetPersonAndDangerLocation(System.IAsyncResult result) {
+            FollowMeRemoteControl.FollowMeService.PersonAndDangerLocation retVal = ((FollowMeRemoteControl.FollowMeService.IRemoteControl)(this)).EndGetPersonAndDangerLocation(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetPersonAndDangerLocationCompleted(object state) {
+            if ((this.GetPersonAndDangerLocationCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetPersonAndDangerLocationCompleted(this, new GetPersonAndDangerLocationCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetPersonAndDangerLocationAsync() {
+            this.GetPersonAndDangerLocationAsync(null);
+        }
+        
+        public void GetPersonAndDangerLocationAsync(object userState) {
+            if ((this.onBeginGetPersonAndDangerLocationDelegate == null)) {
+                this.onBeginGetPersonAndDangerLocationDelegate = new BeginOperationDelegate(this.OnBeginGetPersonAndDangerLocation);
+            }
+            if ((this.onEndGetPersonAndDangerLocationDelegate == null)) {
+                this.onEndGetPersonAndDangerLocationDelegate = new EndOperationDelegate(this.OnEndGetPersonAndDangerLocation);
+            }
+            if ((this.onGetPersonAndDangerLocationCompletedDelegate == null)) {
+                this.onGetPersonAndDangerLocationCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetPersonAndDangerLocationCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetPersonAndDangerLocationDelegate, null, this.onEndGetPersonAndDangerLocationDelegate, this.onGetPersonAndDangerLocationCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -503,6 +624,18 @@ namespace FollowMeRemoteControl.FollowMeService {
             public FollowMeRemoteControl.FollowMeService.TargetLocation EndGetDangerLocation(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 FollowMeRemoteControl.FollowMeService.TargetLocation _result = ((FollowMeRemoteControl.FollowMeService.TargetLocation)(base.EndInvoke("GetDangerLocation", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetPersonAndDangerLocation(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
+                System.IAsyncResult _result = base.BeginInvoke("GetPersonAndDangerLocation", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public FollowMeRemoteControl.FollowMeService.PersonAndDangerLocation EndGetPersonAndDangerLocation(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                FollowMeRemoteControl.FollowMeService.PersonAndDangerLocation _result = ((FollowMeRemoteControl.FollowMeService.PersonAndDangerLocation)(base.EndInvoke("GetPersonAndDangerLocation", _args, result)));
                 return _result;
             }
         }

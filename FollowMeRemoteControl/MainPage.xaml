@@ -15,6 +15,7 @@
     shell:SystemTray.IsVisible="True">
     <phone:PhoneApplicationPage.Resources>    
         <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <converter:BoolToOpacityConverter x:Key="BoolToOpacityConverter" />
     </phone:PhoneApplicationPage.Resources>
             <!--Der Datenkontext wird auf die Beispieldaten (oben) festgelegt. LayoutRoot enthält das Stammraster, in dem alle anderen Seiteninhalte platziert werden-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -50,8 +51,7 @@
             <!--<Button Content="Start" HorizontalAlignment="Left" Margin="20,20,0,20" Grid.Row="1" VerticalAlignment="Top" Width="405" Height="127" Click="ButtonStartClick"/>-->
 
             <TextBlock Text="Fehler bei Verbindung mit Service" Visibility="{Binding ErrorOccured, Converter={StaticResource BoolToVisibilityConverter}}"/>
-            <ScrollViewer VerticalScrollBarVisibility="Visible" MaxHeight="600" MaxWidth="450">
-            
+            <ScrollViewer VerticalScrollBarVisibility="Visible" MaxHeight="600" MaxWidth="450">            
                 <TextBlock Text="{Binding ErrorMessage}" Visibility="{Binding ErrorOccured, Converter={StaticResource BoolToVisibilityConverter}}" Height="6000" TextWrapping="Wrap"/>
             </ScrollViewer>
             
@@ -66,34 +66,15 @@
                     <TextBlock Margin="40, 10">Person nicht lokalisiert</TextBlock>
                 </Canvas>
 
-                <Canvas Height="150" Background="Red" Margin="10">
-                    <TextBlock FontSize="60" Margin="60,30">G E F A H R</TextBlock>
+                <Canvas Height="150" Background="Red" Margin="10" Opacity="{Binding DangerDetected, Converter={StaticResource BoolToOpacityConverter}}">
+                    <StackPanel>                        
+                        <TextBlock FontSize="60" Margin="60,30,0,0">G E F A H R</TextBlock>
+                        <TextBlock Margin="60,0" HorizontalAlignment="Center" Text="{Binding DangerLocation, FallbackValue='Unknown'}" />
+                    </StackPanel>
                 </Canvas>
-                <Button Content="Stop" HorizontalAlignment="Left" Margin="20" Grid.Row="1" VerticalAlignment="Top"  Width="405" Height="327" Click="ButtonStopClick"/>
+                <Button Content="Stop" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20" Grid.Row="1" Width="405" Height="327" Click="ButtonStopClick"/>
             </StackPanel>
         </StackPanel>
-
-        <!--ContentPanel enthält ItemTemplate für phone:LongListSelector und phone:LongListSelector Zusätzliche Inhalte hier einfügen-->
-        <!--<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <phone:LongListSelector x:Name="MainLongListSelector" Margin="0,0,-12,0" ItemsSource="{Binding Items}" SelectionChanged="MainLongListSelector_SelectionChanged">
-                <phone:LongListSelector.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Margin="0,0,0,17">
-                            <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                            <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </phone:LongListSelector.ItemTemplate>
-            </phone:LongListSelector>
-        </Grid>-->
-
-        <!--Auskommentieren, um ein Ausrichtungsraster anzuzeigen und sicherzustellen, dass Ihre Steuerelemente
-            an den allgemeinen Grenzen ausgerichtet sind.  Das Bild hat oben einen Rand von -32 px wegen
-            der Taskleiste. Legen Sie dies auf 0 fest (oder entfernen Sie den Rand komplett),
-            wenn die Taskleiste ausgeblendet wird.
-
-            Entfernen Sie vor dem Versand dieses XAML und das Bild selbst.-->
-        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
     </Grid>
 
 </phone:PhoneApplicationPage>

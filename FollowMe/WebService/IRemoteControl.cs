@@ -22,5 +22,9 @@ namespace FollowMe.WebService
 
         [OperationContract]
         TargetLocation GetDangerLocation();
+
+
+        [OperationContract]
+        PersonAndDangerLocation GetPersonAndDangerLocation();
     }
 }

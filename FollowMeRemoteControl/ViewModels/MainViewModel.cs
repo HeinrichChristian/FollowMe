@@ -21,6 +21,7 @@ namespace FollowMeRemoteControl.ViewModels
 
         private bool dangerDetected;
 
+        private string dangerLocation;
         private string personLocation;
 
         private string errorMessage;
@@ -64,6 +65,19 @@ namespace FollowMeRemoteControl.ViewModels
             {
                 personLocation = value;
                 NotifyPropertyChanged("PersonLocation");
+            }
+        }
+
+        public string DangerLocation
+        {
+            get
+            {
+                return dangerLocation;
+            }
+            set
+            {
+                dangerLocation = value;
+                NotifyPropertyChanged("DangerLocation");
             }
         }
 
@@ -119,6 +133,8 @@ namespace FollowMeRemoteControl.ViewModels
             {
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
-        }        
+        }
+
+    
     }
 }

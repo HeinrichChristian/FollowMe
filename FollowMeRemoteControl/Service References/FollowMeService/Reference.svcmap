@@ -23,11 +23,12 @@
     <MetadataSource Address="http://192.168.178.32:8080/FollowMe" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="FollowMe.xsd" MetadataType="Schema" ID="54b0c286-7630-4871-9dfa-dd5f842250cc" SourceId="1" SourceUrl="http://192.168.178.32:8080/FollowMe?xsd=xsd0" />
-    <MetadataFile FileName="FollowMe.disco" MetadataType="Disco" ID="9b33385e-ea41-47de-a3ad-a43563fb3efa" SourceId="1" SourceUrl="http://192.168.178.32:8080/FollowMe?disco" />
-    <MetadataFile FileName="FollowMe1.xsd" MetadataType="Schema" ID="a185989a-0e6a-47b0-9ed5-3b61a5ecd4c2" SourceId="1" SourceUrl="http://192.168.178.32:8080/FollowMe?xsd=xsd2" />
-    <MetadataFile FileName="FollowMe2.xsd" MetadataType="Schema" ID="a4c9701f-3d0c-451a-9268-4e05bb1ef272" SourceId="1" SourceUrl="http://192.168.178.32:8080/FollowMe?xsd=xsd1" />
     <MetadataFile FileName="RemoteControl.wsdl" MetadataType="Wsdl" ID="671e68c2-7eda-4bca-8b79-d5f9f508dd4c" SourceId="1" SourceUrl="http://192.168.178.32:8080/FollowMe?wsdl" />
+    <MetadataFile FileName="FollowMe.disco" MetadataType="Disco" ID="9b33385e-ea41-47de-a3ad-a43563fb3efa" SourceId="1" SourceUrl="http://192.168.178.32:8080/FollowMe?disco" />
+    <MetadataFile FileName="FollowMe.xsd" MetadataType="Schema" ID="54b0c286-7630-4871-9dfa-dd5f842250cc" SourceId="1" SourceUrl="http://192.168.178.32:8080/FollowMe?xsd=xsd0" />
+    <MetadataFile FileName="FollowMe1.xsd" MetadataType="Schema" ID="a185989a-0e6a-47b0-9ed5-3b61a5ecd4c2" SourceId="1" SourceUrl="http://192.168.178.32:8080/FollowMe?xsd=xsd2" />
+    <MetadataFile FileName="FollowMe3.xsd" MetadataType="Schema" ID="f77097a4-68da-4c59-99e1-2c58932a7ffa" SourceId="1" SourceUrl="http://192.168.178.32:8080/FollowMe?xsd=xsd3" />
+    <MetadataFile FileName="FollowMe2.xsd" MetadataType="Schema" ID="a4c9701f-3d0c-451a-9268-4e05bb1ef272" SourceId="1" SourceUrl="http://192.168.178.32:8080/FollowMe?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -29,73 +29,59 @@ namespace FollowMeRemoteControl
 
             // Datenkontext des Steuerelements LongListSelector auf die Beispieldaten festlegen
             DataContext = App.ViewModel;
-
+            remoteControlClient.GetPersonAndDangerLocationCompleted += remoteControlClient_GetPersonAndDangerLocationCompleted;
             pollTimer = new System.Windows.Threading.DispatcherTimer();
             pollTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             pollTimer.Interval = new TimeSpan(0, 0, 1);
             pollTimer.Start();
             
         }
-          
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-            // TODO: one call with both results
-            try            
-            {
-                var asyncResult = remoteControlClient.BeginGetPersonLocation(new AsyncCallback(GetPersonLocationTaskCompleted), null);
-                
-            }
-            catch(Exception exception)
-            {
-
-            }
-            
-        }
-
-
-
-        public void ButtonStopClick(object sender, RoutedEventArgs e)
-        {
-            remoteControlClient.StopCompleted += remoteControlClient_StopCompleted;
-            remoteControlClient.BeginStop(new AsyncCallback(TaskCompleted), null);
-        }
-
-        void remoteControlClient_StopCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-            
-        }
-              
-
-        public void TaskCompleted(IAsyncResult R)
-        {
-            // Write here code to handle the completion of
-            // your asynchronous method
-        }
-
-        public void GetPersonLocationTaskCompleted(IAsyncResult asyncResult)
-        {
-            FollowMe.Enums.TargetLocation result = FollowMe.Enums.TargetLocation.Unknown;
-          
             try
             {
-                result = remoteControlClient.EndGetPersonLocation(asyncResult);
+                remoteControlClient.GetPersonAndDangerLocationAsync();
             }
-            catch(Exception e)
+            catch (Exception exception)
+            {
+                Dispatcher.BeginInvoke(
+                  () =>
+                  {
+                      App.ViewModel.ErrorMessage = exception.ToString();
+                  });
+            }
+        }
+        void remoteControlClient_GetPersonAndDangerLocationCompleted(object sender, GetPersonAndDangerLocationCompletedEventArgs e)
+        {
+            FollowMe.Enums.TargetLocation personLocation = FollowMe.Enums.TargetLocation.Unknown;
+            FollowMe.Enums.TargetLocation dangerLocation = FollowMe.Enums.TargetLocation.Unknown;
+
+            try
+            {
+
+                personLocation = e.Result.PersonLocation;
+                dangerLocation = e.Result.DangerLocation;
+            }
+            catch (Exception exception)
             {
                 Dispatcher.BeginInvoke(
                     () =>
                     {
-                        App.ViewModel.ErrorMessage = e.ToString();
+                        App.ViewModel.ErrorMessage = exception.ToString();
                     });
                 return;
             }
+
+
             Dispatcher.BeginInvoke(
                  () =>
                  {
                      App.ViewModel.ErrorMessage = string.Empty;
                  });
 
-            if (result.ToString() == TargetLocation.Unknown.ToString())
+
+
+            if (personLocation.ToString() == TargetLocation.Unknown.ToString())
             {
                 Dispatcher.BeginInvoke(
                     () =>
@@ -110,10 +96,45 @@ namespace FollowMeRemoteControl
                     () =>
                     {
                         App.ViewModel.PersonDetected = true;
-                        App.ViewModel.PersonLocation = result.ToString();
+                        App.ViewModel.PersonLocation = personLocation.ToString();
                     });
 
             }
-        }    
+
+            if(dangerLocation.ToString() == TargetLocation.Unknown.ToString())
+            {
+                Dispatcher.BeginInvoke(
+                                  () =>
+                                  {
+                                      App.ViewModel.DangerDetected = false;
+                                      App.ViewModel.DangerLocation = string.Empty;
+                                  });
+            }
+            else
+            {
+                Dispatcher.BeginInvoke(
+                    () =>
+                    {
+                        App.ViewModel.DangerDetected = true;
+                        App.ViewModel.DangerLocation = dangerLocation.ToString();
+                    });
+
+            }
+        }
+          
+      
+
+
+
+        public void ButtonStopClick(object sender, RoutedEventArgs e)
+        {
+            remoteControlClient.StopCompleted += remoteControlClient_StopCompleted;
+            remoteControlClient.StopAsync();
+        }
+
+        void remoteControlClient_StopCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            
+        }
     }
 }
