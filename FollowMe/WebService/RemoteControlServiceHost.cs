@@ -34,8 +34,7 @@ namespace FollowMe.WebService
                         try
                         {
                             var eventAggregator = IoC.Get<IEventAggregator>();
-                            remoteControlServiceHost = new ServiceHost(new RemoteControl(eventAggregator));
-                            remoteControlServiceHost.Open();
+                            remoteControlServiceHost = new ServiceHost(new RemoteControl(eventAggregator));                            
                         }
                         catch(Exception e)
                         {
@@ -47,6 +46,17 @@ namespace FollowMe.WebService
                 }
                 return remoteControlServiceHost;
             }
+        }
+
+        public static void Start()
+        {
+            remoteControlServiceHost.Open();
+        }
+
+        public static void Stop()
+        {
+            remoteControlServiceHost.Close();
+            remoteControlServiceHost = null;
         }
     }
 }

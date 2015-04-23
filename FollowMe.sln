@@ -55,8 +55,6 @@ Global
 		{E9AC2032-BBD6-4F36-86A4-308134BF6525}.Release|ARM.Build.0 = Release|ARM
 		{E9AC2032-BBD6-4F36-86A4-308134BF6525}.Release|ARM.Deploy.0 = Release|ARM
 		{E9AC2032-BBD6-4F36-86A4-308134BF6525}.Release|x86.ActiveCfg = Release|x86
-		{E9AC2032-BBD6-4F36-86A4-308134BF6525}.Release|x86.Build.0 = Release|x86
-		{E9AC2032-BBD6-4F36-86A4-308134BF6525}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

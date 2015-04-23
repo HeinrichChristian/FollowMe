@@ -730,6 +730,8 @@ namespace FollowMe {
             RemoteControlServiceIsRunning = true;
             remoteControlServiceHost = RemoteControlServiceHost.Instance;
 
+            RemoteControlServiceHost.Start();
+            
             foreach (var address in remoteControlServiceHost.BaseAddresses)
             {
                 RemoteServiceUri = address.ToString();
@@ -747,7 +749,7 @@ namespace FollowMe {
         {
             Log.Info("Stop RemoteControlServiceHost");
             RemoteControlServiceIsRunning = false;
-            remoteControlServiceHost.Close();
+            RemoteControlServiceHost.Stop();
 
             RemoteServiceUri = "Service gestoppt.";
             
