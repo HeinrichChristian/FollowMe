@@ -257,6 +257,7 @@
                             <RowDefinition Height="20"></RowDefinition>
                             <RowDefinition Height="10"></RowDefinition>
                             <RowDefinition Height="100"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>                            
                         </Grid.RowDefinitions>
 
@@ -266,8 +267,9 @@
                         <TextBox Grid.Row="3" Grid.Column="1"  Name="RemoteServiceUri" />
 
                         <Grid Grid.Row="5" Grid.Column="1" Background="Red" Visibility="{Binding  RemoteControlRequestsStop, Converter={StaticResource BoolToVisibilityConverter}}">
-                            <TextBox Grid.Row="5" Grid.Column="1" Background="Transparent" Foreground="White" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center">STOP</TextBox>
+                            <TextBox Grid.Row="5" Grid.Column="1" Background="Red" Foreground="White"  FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center">STOP</TextBox>
                         </Grid>
+                        <Button Grid.Row="6" Grid.Column="1" Name="ButtonResetRequestedStop" Content="Reset Stop Anfrage" Visibility="{Binding  RemoteControlRequestsStop, Converter={StaticResource BoolToVisibilityConverter}}" />
                     </Grid>
                 </TabItem>
                 <!--<TabItem Header="AR.Drone autonom fliegen">

@@ -21,7 +21,7 @@ namespace FollowMeRemoteControl
 
         RemoteControlClient remoteControlClient = new RemoteControlClient();
         private DispatcherTimer pollTimer;
-        private TargetLocation personLocation; 
+        
         // Konstruktor
         public MainPage()
         {
@@ -42,7 +42,7 @@ namespace FollowMeRemoteControl
             // TODO: one call with both results
             try            
             {
-                var asyncResult = remoteControlClient.BeginGetPersonLocation(new AsyncCallback(GetPersonLocationTaskCompleted), personLocation);
+                var asyncResult = remoteControlClient.BeginGetPersonLocation(new AsyncCallback(GetPersonLocationTaskCompleted), null);
                 
             }
             catch(Exception exception)
@@ -64,18 +64,7 @@ namespace FollowMeRemoteControl
         {
             
         }
-
-        public void ButtonStartClick(object sender, RoutedEventArgs e)
-        {
-            remoteControlClient.StartCompleted += remoteControlClient_StartCompleted;
-            remoteControlClient.BeginStart(new AsyncCallback(TaskCompleted), null);
-        }
-
-        void remoteControlClient_StartCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-            
-        }
-
+              
 
         public void TaskCompleted(IAsyncResult R)
         {

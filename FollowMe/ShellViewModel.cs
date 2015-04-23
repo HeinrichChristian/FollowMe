@@ -737,6 +737,12 @@ namespace FollowMe {
             }
         }
 
+        public void ButtonResetRequestedStop()
+        {
+            Log.Info("Reset requested stop");
+            RemoteControlRequestsStop = false;
+        }
+
         public void ButtonStopRemoteControlServiceHost()
         {
             Log.Info("Stop RemoteControlServiceHost");
