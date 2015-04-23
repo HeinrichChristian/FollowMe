@@ -17,6 +17,7 @@ using FollowMe.ViewModels;
 using Timer = System.Timers.Timer;
 using FollowMe.WebService;
 using System.ServiceModel;
+using System.Threading.Tasks;
 
 namespace FollowMe {
     /// <summary>
@@ -1399,6 +1400,11 @@ namespace FollowMe {
                                         LuminanceMin,
                                         LuminanceMax);
                     LastKnownTargetLocationByColor = targetLocationByColor;
+                    eventAggregator.Publish(new PersonLocationMessage(targetLocationByColor), action =>
+                    {
+                        Task.Factory.StartNew(action);
+
+                    });
                 }
                 catch (Exception exception)
                 {
@@ -1408,6 +1414,11 @@ namespace FollowMe {
                 try
                 {
                     targetLocationByGlyph = targetLocator.GetGlyphLocation();
+                    eventAggregator.Publish(new DangerLocationMessage(targetLocationByGlyph), action =>
+                    {
+                        Task.Factory.StartNew(action);
+
+                    });
                 }
                 catch (Exception exception)
                 {

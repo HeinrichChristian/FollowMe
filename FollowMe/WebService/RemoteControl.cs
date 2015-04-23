@@ -16,15 +16,19 @@ namespace FollowMe.WebService
     [ServiceBehavior(
     ConcurrencyMode=ConcurrencyMode.Single,
     InstanceContextMode=InstanceContextMode.Single)]
-    public class RemoteControl : IRemoteControl
+    public class RemoteControl : IRemoteControl, IHandle<DangerLocationMessage>, IHandle<PersonLocationMessage>
     {
         private static readonly ILog Log = LogManager.GetLog(typeof(RemoteControl));
         private readonly IEventAggregator eventAggregator;
 
+        private Enums.TargetLocation personLocation = Enums.TargetLocation.Unknown;
+        private Enums.TargetLocation dangerLocation = Enums.TargetLocation.Unknown;
         public RemoteControl(IEventAggregator eventAggregator)
         {
             if (eventAggregator == null) throw new ArgumentNullException("eventAggregator");
             this.eventAggregator = eventAggregator;
+
+            this.eventAggregator.Subscribe(this);
         }
 
         /// <summary>
@@ -52,24 +56,35 @@ namespace FollowMe.WebService
 
         public Enums.TargetLocation GetPersonLocation()
         {
-            Log.Info("GetPersonLocation");
-            // TODO: logic
-            return Enums.TargetLocation.CenterCenter;
+            Log.Info("GetPersonLocation {0}", personLocation);            
+            return personLocation;
         }
 
         public Enums.TargetLocation GetDangerLocation()
         {
-            Log.Info("GetDangerLocation");
-            // TODO: logic
-            return Enums.TargetLocation.Unknown;
+            Log.Info("GetDangerLocation {0}", dangerLocation);            
+            return dangerLocation;
         }
 
 
         public PersonAndDangerLocation GetPersonAndDangerLocation()
         {
-            Log.Info("GetPersonAndDangerLocation");
-            // TODO: logic
-            return new PersonAndDangerLocation { DangerLocation = Enums.TargetLocation.Unknown, PersonLocation = Enums.TargetLocation.CenterCenter };
+            Log.Info("GetPersonAndDangerLocation, person: {0}, danger: {1}", personLocation, dangerLocation);            
+            return new PersonAndDangerLocation 
+            { 
+                DangerLocation = dangerLocation,
+                PersonLocation = personLocation
+            };
+        }
+
+        public void Handle(DangerLocationMessage message)
+        {
+            this.dangerLocation = message.DangerLocation;
+        }
+
+        public void Handle(PersonLocationMessage message)
+        {
+            this.personLocation = message.PersonLocation;
         }
     }
 }
