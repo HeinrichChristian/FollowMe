@@ -12,14 +12,38 @@ using FollowMeRemoteControl.ViewModels;
 using System.Windows.Threading;
 using FollowMeRemoteControl.FollowMeService;
 using System.ComponentModel;
-
+using Microsoft.Devices;
+using Windows.Phone.Speech.Synthesis;
 
 namespace FollowMeRemoteControl
 {
     public partial class MainPage : PhoneApplicationPage
     {
-
         RemoteControlClient remoteControlClient = new RemoteControlClient();
+        VibrateController vibrateController = VibrateController.Default;
+        private bool personLocalized;
+        public bool PersonLocalized
+        {
+            get
+            {
+                return personLocalized;
+            }
+            set
+            {
+                if (personLocalized == value)
+                    return;
+
+                personLocalized = value;
+                if(value)
+                {
+                    Speak("Found you!");
+                }
+                else
+                {
+                    Speak("Lost you!");
+                }
+            }
+        }
         private DispatcherTimer pollTimer;
         
         // Konstruktor
@@ -34,7 +58,15 @@ namespace FollowMeRemoteControl
             pollTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             pollTimer.Interval = new TimeSpan(0, 0, 1);
             pollTimer.Start();
+      
+            vibrateController.Start(TimeSpan.FromMilliseconds(500));         
+        }
+
+        private void Speak(string textToSpeak)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
             
+            synth.SpeakTextAsync(textToSpeak);
         }
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
@@ -83,6 +115,7 @@ namespace FollowMeRemoteControl
 
             if (personLocation.ToString() == TargetLocation.Unknown.ToString())
             {
+                PersonLocalized = false;
                 Dispatcher.BeginInvoke(
                     () =>
                     {
@@ -92,6 +125,7 @@ namespace FollowMeRemoteControl
             }
             else
             {
+                PersonLocalized = true;
                 Dispatcher.BeginInvoke(
                     () =>
                     {
@@ -112,6 +146,20 @@ namespace FollowMeRemoteControl
             }
             else
             {
+                vibrateController.Start(TimeSpan.FromMilliseconds(1000));
+               
+                if(dangerLocation.ToString().ToLower().Contains("right"))
+                {
+                    Speak("Danger ahead, right side!");
+                }
+                else if (dangerLocation.ToString().ToLower().Contains("left"))
+                {
+                    Speak("Danger ahead, left side!");
+                } else  if (dangerLocation.ToString().ToLower().Contains("center"))
+                {
+                    Speak("Danger ahead!");
+                }
+
                 Dispatcher.BeginInvoke(
                     () =>
                     {
@@ -128,6 +176,7 @@ namespace FollowMeRemoteControl
 
         public void ButtonStopClick(object sender, RoutedEventArgs e)
         {
+            Speak("Request Stop!");
             remoteControlClient.StopCompleted += remoteControlClient_StopCompleted;
             remoteControlClient.StopAsync();
         }
