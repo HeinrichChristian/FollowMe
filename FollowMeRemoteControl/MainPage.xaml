@@ -44,24 +44,33 @@
 
         <!--TitlePanel enthält den Namen der Anwendung und den Seitentitel-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            
             <TextBlock Text="FollowMe" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock Text="Remote" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
             <!--<Button Content="Start" HorizontalAlignment="Left" Margin="20,20,0,20" Grid.Row="1" VerticalAlignment="Top" Width="405" Height="127" Click="ButtonStartClick"/>-->
 
-            <Canvas Height="50" Background="Green" Margin="10" Visibility="{Binding PersonDetected, Converter={StaticResource BoolToVisibilityConverter}}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="40, 10">Person lokalisiert</TextBlock>
-                    <TextBlock Margin="10" Text="{Binding PersonLocation}"></TextBlock>
-                </StackPanel>
-            </Canvas>
-            <Canvas Height="50" Background="Darkred" Margin="10" Visibility="{Binding PersonDetected, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=VisibleOnFalse}">
-                <TextBlock Margin="40, 10">Person nicht lokalisiert</TextBlock>
-            </Canvas>
+            <TextBlock Text="Fehler bei Verbindung mit Service" Visibility="{Binding ErrorOccured, Converter={StaticResource BoolToVisibilityConverter}}"/>
+            <ScrollViewer VerticalScrollBarVisibility="Visible" MaxHeight="600" MaxWidth="450">
+            
+                <TextBlock Text="{Binding ErrorMessage}" Visibility="{Binding ErrorOccured, Converter={StaticResource BoolToVisibilityConverter}}" Height="6000" TextWrapping="Wrap"/>
+            </ScrollViewer>
+            
+            <StackPanel Visibility="{Binding ErrorOccured, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=VisibleOnFalse}">
+                <Canvas Height="50" Background="Green" Margin="10" Visibility="{Binding PersonDetected, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="40, 10">Person lokalisiert</TextBlock>
+                        <TextBlock Margin="10" Text="{Binding PersonLocation}"></TextBlock>
+                    </StackPanel>
+                </Canvas>
+                <Canvas Height="50" Background="Darkred" Margin="10" Visibility="{Binding PersonDetected, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=VisibleOnFalse}">
+                    <TextBlock Margin="40, 10">Person nicht lokalisiert</TextBlock>
+                </Canvas>
 
-            <Canvas Height="150" Background="Red" Margin="10">
-                <TextBlock FontSize="60" Margin="60,30">G E F A H R</TextBlock>
-            </Canvas>
-            <Button Content="Stop" HorizontalAlignment="Left" Margin="20" Grid.Row="1" VerticalAlignment="Top"  Width="405" Height="327" Click="ButtonStopClick"/>
+                <Canvas Height="150" Background="Red" Margin="10">
+                    <TextBlock FontSize="60" Margin="60,30">G E F A H R</TextBlock>
+                </Canvas>
+                <Button Content="Stop" HorizontalAlignment="Left" Margin="20" Grid.Row="1" VerticalAlignment="Top"  Width="405" Height="327" Click="ButtonStopClick"/>
+            </StackPanel>
         </StackPanel>
 
         <!--ContentPanel enthält ItemTemplate für phone:LongListSelector und phone:LongListSelector Zusätzliche Inhalte hier einfügen-->

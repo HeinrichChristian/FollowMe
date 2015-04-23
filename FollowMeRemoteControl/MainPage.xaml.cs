@@ -73,8 +73,27 @@ namespace FollowMeRemoteControl
         }
 
         public void GetPersonLocationTaskCompleted(IAsyncResult asyncResult)
-        {         
-            var result = remoteControlClient.EndGetPersonLocation(asyncResult);
+        {
+            FollowMe.Enums.TargetLocation result = FollowMe.Enums.TargetLocation.Unknown;
+          
+            try
+            {
+                result = remoteControlClient.EndGetPersonLocation(asyncResult);
+            }
+            catch(Exception e)
+            {
+                Dispatcher.BeginInvoke(
+                    () =>
+                    {
+                        App.ViewModel.ErrorMessage = e.ToString();
+                    });
+                return;
+            }
+            Dispatcher.BeginInvoke(
+                 () =>
+                 {
+                     App.ViewModel.ErrorMessage = string.Empty;
+                 });
 
             if (result.ToString() == TargetLocation.Unknown.ToString())
             {

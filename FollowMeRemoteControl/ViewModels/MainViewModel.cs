@@ -23,7 +23,10 @@ namespace FollowMeRemoteControl.ViewModels
 
         private string personLocation;
 
-        
+        private string errorMessage;
+
+        private bool errorOccured;
+
 
         public bool PersonDetected
         {
@@ -51,9 +54,7 @@ namespace FollowMeRemoteControl.ViewModels
                 dangerDetected = value;
                 NotifyPropertyChanged("DangerDetected");
             }
-
         }
-
        
         public string PersonLocation
         {
@@ -63,6 +64,34 @@ namespace FollowMeRemoteControl.ViewModels
             {
                 personLocation = value;
                 NotifyPropertyChanged("PersonLocation");
+            }
+        }
+
+        public string ErrorMessage
+        {
+            get { return errorMessage; }
+            set
+            {
+                errorMessage = value;
+                if(value == string.Empty)
+                {
+                    ErrorOccured = false;
+                }
+                else
+                {
+                    ErrorOccured = true;
+                }
+                NotifyPropertyChanged("ErrorMessage");
+            }
+        }
+
+        public bool ErrorOccured
+        {
+            get { return errorOccured; }
+            set
+            {
+                errorOccured = value;
+                NotifyPropertyChanged("ErrorOccured");                
             }
         }
 
@@ -90,6 +119,6 @@ namespace FollowMeRemoteControl.ViewModels
             {
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
-        }
+        }        
     }
 }
