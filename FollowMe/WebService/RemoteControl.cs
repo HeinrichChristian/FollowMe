@@ -53,7 +53,7 @@ namespace FollowMe.WebService
         public Enums.TargetLocation GetPersonLocation()
         {
             Log.Info("GetPersonLocation");
-            return Enums.TargetLocation.Unknown;
+            return Enums.TargetLocation.CenterCenter;
         }
 
         public Enums.TargetLocation GetDangerLocation()

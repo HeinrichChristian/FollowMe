@@ -9,6 +9,9 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using FollowMeRemoteControl.Resources;
 using FollowMeRemoteControl.ViewModels;
+using System.Windows.Threading;
+using FollowMeRemoteControl.FollowMeService;
+using System.ComponentModel;
 
 
 namespace FollowMeRemoteControl
@@ -17,7 +20,8 @@ namespace FollowMeRemoteControl
     {
 
         RemoteControlClient remoteControlClient = new RemoteControlClient();
-        
+        private DispatcherTimer pollTimer;
+        private TargetLocation personLocation; 
         // Konstruktor
         public MainPage()
         {
@@ -26,8 +30,26 @@ namespace FollowMeRemoteControl
             // Datenkontext des Steuerelements LongListSelector auf die Beispieldaten festlegen
             DataContext = App.ViewModel;
 
-            // Beispielcode zur Lokalisierung der ApplicationBar
-            //BuildLocalizedApplicationBar();
+            pollTimer = new System.Windows.Threading.DispatcherTimer();
+            pollTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            pollTimer.Interval = new TimeSpan(0, 0, 1);
+            pollTimer.Start();
+            
+        }
+          
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            // TODO: one call with both results
+            try            
+            {
+                var asyncResult = remoteControlClient.BeginGetPersonLocation(new AsyncCallback(GetPersonLocationTaskCompleted), personLocation);
+                
+            }
+            catch(Exception exception)
+            {
+
+            }
+            
         }
 
 
@@ -60,5 +82,30 @@ namespace FollowMeRemoteControl
             // Write here code to handle the completion of
             // your asynchronous method
         }
+
+        public void GetPersonLocationTaskCompleted(IAsyncResult asyncResult)
+        {         
+            var result = remoteControlClient.EndGetPersonLocation(asyncResult);
+
+            if (result.ToString() == TargetLocation.Unknown.ToString())
+            {
+                Dispatcher.BeginInvoke(
+                    () =>
+                    {
+                        App.ViewModel.PersonDetected = false;
+                        App.ViewModel.PersonLocation = string.Empty;
+                    });
+            }
+            else
+            {
+                Dispatcher.BeginInvoke(
+                    () =>
+                    {
+                        App.ViewModel.PersonDetected = true;
+                        App.ViewModel.PersonLocation = result.ToString();
+                    });
+
+            }
+        }    
     }
 }

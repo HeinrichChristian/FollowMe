@@ -21,6 +21,8 @@ namespace FollowMeRemoteControl.ViewModels
 
         private bool dangerDetected;
 
+        private string personLocation;
+
         
 
         public bool PersonDetected
@@ -53,6 +55,16 @@ namespace FollowMeRemoteControl.ViewModels
         }
 
        
+        public string PersonLocation
+        {
+            get { return personLocation; }
+            
+            set
+            {
+                personLocation = value;
+                NotifyPropertyChanged("PersonLocation");
+            }
+        }
 
         public bool IsDataLoaded
         {
