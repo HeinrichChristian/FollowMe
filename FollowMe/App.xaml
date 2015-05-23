@@ -9,7 +9,7 @@
                     <followMe:AppBootstrapper x:Key="bootstrapper" />
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
-            <!--<followMe:SourceDefaultValueConverter x:Key="converter:BatteryValueToColorConverter" />-->
+            <followMe:SourceDefaultValueConverter x:Key="converter:BatteryValueToColorConverter" />
         </ResourceDictionary>
 
     </Application.Resources>

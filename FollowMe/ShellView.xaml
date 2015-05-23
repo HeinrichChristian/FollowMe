@@ -171,10 +171,10 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
 
-                            <TextBlock Grid.Column="3" Grid.Row="1"  Background="Aqua" TextAlignment="Center" VerticalAlignment="Center" Height="30" Visibility="{Binding GlyphAheadDetected, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=VisibleOnFalse}">Suche Glyph</TextBlock>
-                            <TextBlock Grid.Column="3" Grid.Row="1" Background="Red" TextAlignment="Center" VerticalAlignment="Center" Height="30" Visibility="{Binding GlyphAheadDetected, Converter={StaticResource BoolToVisibilityConverter}}">Glyph voraus erkannt</TextBlock>
+                            <!--<TextBlock Grid.Column="3" Grid.Row="1"  Background="Aqua" TextAlignment="Center" VerticalAlignment="Center" Height="30" Visibility="{Binding GlyphAheadDetected, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=VisibleOnFalse}">Suche Glyph</TextBlock>
+                            <TextBlock Grid.Column="3" Grid.Row="1" Background="Red" TextAlignment="Center" VerticalAlignment="Center" Height="30" Visibility="{Binding GlyphAheadDetected, Converter={StaticResource BoolToVisibilityConverter}}">Glyph voraus erkannt</TextBlock>-->
 
-                            <Grid Grid.Column="3" Grid.Row="3" Grid.RowSpan="7" Name="PreviewWindowsFormsHost" Background="PapayaWhip" >
+                            <Grid Grid.Column="3" Grid.Row="4" Grid.RowSpan="7" Name="PreviewWindowsFormsHost" Background="PapayaWhip" Margin="10" >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -202,44 +202,76 @@
                             <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Das Kamerabild live von der AR.Drone (wird in einem extra Fenster angezeigt)" VerticalAlignment="Top" Height="42" Width="253"/>
                         <Button Grid.Row="1" Grid.Column="0" Margin="7" Content="Starte Kameraübertragung" x:Name="ButtonShowCamera" IsEnabled="{Binding CameraStarted, Converter={StaticResource InvertBoolConverter}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="42" />
                         <Button Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="7" Content="Stoppe Kameraübertragung" x:Name="ButtonStopCamera" IsEnabled="{Binding CameraStarted}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="42" />
-                        <CheckBox Grid.Row="2" Grid.Column="0" Content="Aktiviere Objekterkennung" Name="ObjectDetectionEnabled"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                        
                             
-                            <Label Grid.Row="3" Grid.Column="0" Content="Objektgröße" HorizontalAlignment="Right" VerticalAlignment="Top" />
-                        <Slider Grid.Row="3" Grid.Column="1" Value="{Binding SearchObjectSizePixels}" Minimum="0" Maximum="255" Width="200" HorizontalAlignment="Left" Margin="7" VerticalAlignment="Center"/>
-                        <TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="SearchObjectSizePixels" VerticalAlignment="Top" Width="120"/>
-                     
-                        <!--<Label Grid.Row="4" Grid.Column="0" Content="Objekthelligkeit" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <CheckBox Grid.Row="2" Grid.Column="0" Content="Aktiviere Objekterkennung" Name="ObjectDetectionEnabled"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                            <CheckBox Grid.Row="2" Grid.Column="1" Content="Aktiviere Trackingvorschau" Name="TrackingPreviewEnabled"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                            <TabControl Grid.Row="3" Grid.Column="0" Grid.RowSpan="9" Grid.ColumnSpan="3" >
+                                <TabItem Header="Person" >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="250"></ColumnDefinition>
+                                            <ColumnDefinition Width="250"></ColumnDefinition>
+                                            <ColumnDefinition Width="110"></ColumnDefinition>                                            
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        
+                                        <Label Grid.Row="0" Grid.Column="0" Content="Objektgröße" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                                        <Slider Grid.Row="0" Grid.Column="1" Value="{Binding SearchObjectSizePixels}" Minimum="0" Maximum="255" Width="200" HorizontalAlignment="Left" Margin="7" VerticalAlignment="Center"/>
+                                        <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="SearchObjectSizePixels" VerticalAlignment="Top" Width="120"/>
+
+                                        <!--<Label Grid.Row="4" Grid.Column="0" Content="Objekthelligkeit" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         <Slider Grid.Row="4" Grid.Column="1" Value="{Binding ColorBrightness}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="0" Maximum="255" />
                         <TextBlock Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="ColorBrightness" VerticalAlignment="Center"/>-->
 
-                       <Label Grid.Row="4" Grid.Column="0" Content="Saturation Min" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                       <Slider Grid.Row="4" Grid.Column="1" Value="{Binding SaturationMin}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
-                        <TextBlock Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="SaturationMin" VerticalAlignment="Center"/>
+                                        <Label Grid.Row="1" Grid.Column="0" Content="Saturation Min" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                        <Slider Grid.Row="1" Grid.Column="1" Value="{Binding SaturationMin}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
+                                        <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="SaturationMin" VerticalAlignment="Center"/>
 
-                        <Label Grid.Row="5" Grid.Column="0" Content="Saturation Max" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <Slider Grid.Row="5" Grid.Column="1" Value="{Binding SaturationMax}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
-                        <TextBlock Grid.Row="5" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="SaturationMax" VerticalAlignment="Center"/>
+                                        <Label Grid.Row="2" Grid.Column="0" Content="Saturation Max" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                        <Slider Grid.Row="2" Grid.Column="1" Value="{Binding SaturationMax}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
+                                        <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="SaturationMax" VerticalAlignment="Center"/>
 
-                        <Label Grid.Row="6" Grid.Column="0" Content="Luminanz Min" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <Slider Grid.Row="6" Grid.Column="1" Value="{Binding LuminanceMin}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
-                        <TextBlock Grid.Row="6" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="LuminanceMin" VerticalAlignment="Center"/>
+                                        <Label Grid.Row="3" Grid.Column="0" Content="Luminanz Min" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                        <Slider Grid.Row="3" Grid.Column="1" Value="{Binding LuminanceMin}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
+                                        <TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="LuminanceMin" VerticalAlignment="Center"/>
 
-                        <Label Grid.Row="7" Grid.Column="0" Content="Luminanz Max" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <Slider Grid.Row="7" Grid.Column="1" Value="{Binding LuminanceMax}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
-                        <TextBlock Grid.Row="7" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="LuminanceMax" VerticalAlignment="Center"/>
+                                        <Label Grid.Row="4" Grid.Column="0" Content="Luminanz Max" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                        <Slider Grid.Row="4" Grid.Column="1" Value="{Binding LuminanceMax}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
+                                        <TextBlock Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="LuminanceMax" VerticalAlignment="Center"/>
 
-                        <Label Grid.Row="8" Grid.Column="0" Content="Hue Min" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
-                        <Label Grid.Row="9" Grid.Column="0" Content="Hue Max" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
-                        <Button Grid.Row="8" Grid.RowSpan="2" Grid.Column="1" Margin="7" Content="Öffne Hue Picker" Name="ButtonShowHuePicker" Visibility="{Binding HuePickerIsVisible, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=VisibleOnFalse}"></Button>
-                        <Button Grid.Row="8" Grid.RowSpan="2" Grid.Column="1" Margin="7" Content="Schließe Hue Picker" Name="ButtonHideHuePicker" Visibility="{Binding HuePickerIsVisible, Converter={StaticResource BoolToVisibilityConverter}}"></Button>
-                        <CheckBox Grid.Row="10" Grid.Column="0" Content="Aktiviere Trackingvorschau" Name="TrackingPreviewEnabled"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-
+                                        <Label Grid.Row="5" Grid.Column="0" Content="Hue Min" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                                        <Label Grid.Row="6" Grid.Column="0" Content="Hue Max" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                                        <Button Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" Margin="7" Content="Öffne Hue Picker" Name="ButtonShowHuePicker" Visibility="{Binding HuePickerIsVisible, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=VisibleOnFalse}"></Button>
+                                        <Button Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" Margin="7" Content="Schließe Hue Picker" Name="ButtonHideHuePicker" Visibility="{Binding HuePickerIsVisible, Converter={StaticResource BoolToVisibilityConverter}}"></Button>
+                                        <TextBlock Grid.Row="5" Grid.Column="2" Name="HueMin" VerticalAlignment="Center"></TextBlock>
+                                        <TextBlock Grid.Row="6" Grid.Column="2" Name="HueMax" VerticalAlignment="Center"></TextBlock>
+                                        <Button Grid.Row="7" Grid.Column="1" Margin="7" Content="Person Tracking Einstellungen speichern" Name="ButtonSaveTrackingConfig"></Button>
+                                    </Grid>
+                                </TabItem>
+                                <TabItem Header="Gefahr" >
+                                    
+                                </TabItem>
+                            </TabControl>
+                            
                             <!--<WindowsFormsHost Grid.Row="9" Grid.RowSpan="3" Grid.Column="1" >
                                 <followMe:HuePickerForm></followMe:HuePickerForm>    
                           </WindowsFormsHost>-->
-                        <TextBlock Grid.Row="8" Grid.Column="2" Name="HueMin" VerticalAlignment="Center"></TextBlock>
-                       <TextBlock Grid.Row="9" Grid.Column="2" Name="HueMax" VerticalAlignment="Center"></TextBlock>
-                                                        <Button Grid.Row="11" Grid.Column="1" Margin="7" Content="Tracking Einstellungen speichern" Name="ButtonSaveTrackingConfig"></Button>
+                        
+                                                        
                      </Grid>
                     </Grid>
                 </TabItem>
