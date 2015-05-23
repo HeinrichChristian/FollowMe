@@ -259,14 +259,67 @@
                                         <Button Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" Margin="7" Content="Schließe Hue Picker" Name="ButtonHideHuePicker" Visibility="{Binding HuePickerIsVisible, Converter={StaticResource BoolToVisibilityConverter}}"></Button>
                                         <TextBlock Grid.Row="5" Grid.Column="2" Name="HueMin" VerticalAlignment="Center"></TextBlock>
                                         <TextBlock Grid.Row="6" Grid.Column="2" Name="HueMax" VerticalAlignment="Center"></TextBlock>
-                                        <Button Grid.Row="7" Grid.Column="1" Margin="7" Content="Person Tracking Einstellungen speichern" Name="ButtonSaveTrackingConfig"></Button>
+                                        
                                     </Grid>
                                 </TabItem>
                                 <TabItem Header="Gefahr" >
-                                    
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="250"></ColumnDefinition>
+                                            <ColumnDefinition Width="250"></ColumnDefinition>
+                                            <ColumnDefinition Width="110"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="35"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+
+                                        <Label Grid.Row="0" Grid.Column="0" Content="Objektgröße" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                                        <Slider Grid.Row="0" Grid.Column="1" Value="{Binding DangerSearchObjectSizePixels}" Minimum="0" Maximum="255" Width="200" HorizontalAlignment="Left" Margin="7" VerticalAlignment="Center"/>
+                                        <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="DangerSearchObjectSizePixels" VerticalAlignment="Top" Width="120"/>
+
+                                        <!--<Label Grid.Row="4" Grid.Column="0" Content="Objekthelligkeit" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <Slider Grid.Row="4" Grid.Column="1" Value="{Binding ColorBrightness}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="0" Maximum="255" />
+                        <TextBlock Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="ColorBrightness" VerticalAlignment="Center"/>-->
+
+                                        <Label Grid.Row="1" Grid.Column="0" Content="Saturation Min" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                        <Slider Grid.Row="1" Grid.Column="1" Value="{Binding DangerSaturationMin}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
+                                        <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="DangerSaturationMin" VerticalAlignment="Center"/>
+
+                                        <Label Grid.Row="2" Grid.Column="0" Content="Saturation Max" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                        <Slider Grid.Row="2" Grid.Column="1" Value="{Binding DangerSaturationMax}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
+                                        <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="DangerSaturationMax" VerticalAlignment="Center"/>
+
+                                        <Label Grid.Row="3" Grid.Column="0" Content="Luminanz Min" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                        <Slider Grid.Row="3" Grid.Column="1" Value="{Binding DangerLuminanceMin}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
+                                        <TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="DangerLuminanceMin" VerticalAlignment="Center"/>
+
+                                        <Label Grid.Row="4" Grid.Column="0" Content="Luminanz Max" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                        <Slider Grid.Row="4" Grid.Column="1" Value="{Binding DangerLuminanceMax}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7" Width="200" Minimum="-1" Maximum="1" />
+                                        <TextBlock Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Name="DangerLuminanceMax" VerticalAlignment="Center"/>
+
+                                        <Label Grid.Row="5" Grid.Column="0" Content="Hue Min" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                                        <Label Grid.Row="6" Grid.Column="0" Content="Hue Max" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                                        <Button Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" Margin="7" Content="Öffne Hue Picker" Name="DangerButtonShowHuePicker" Visibility="{Binding DangerHuePickerIsVisible, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=VisibleOnFalse}"></Button>
+                                        <Button Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" Margin="7" Content="Schließe Hue Picker" Name="DangerButtonHideHuePicker" Visibility="{Binding DangerHuePickerIsVisible, Converter={StaticResource BoolToVisibilityConverter}}"></Button>
+                                        <TextBlock Grid.Row="5" Grid.Column="2" Name="DangerHueMin" VerticalAlignment="Center"></TextBlock>
+                                        <TextBlock Grid.Row="6" Grid.Column="2" Name="DangerHueMax" VerticalAlignment="Center"></TextBlock>
+                                        
+                                    </Grid>
                                 </TabItem>
+                                
                             </TabControl>
-                            
+                            <Button Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="3"  Margin="15,3" Content="Person und Danger Tracking Einstellungen speichern" Name="ButtonSaveTrackingConfig"></Button>
                             <!--<WindowsFormsHost Grid.Row="9" Grid.RowSpan="3" Grid.Column="1" >
                                 <followMe:HuePickerForm></followMe:HuePickerForm>    
                           </WindowsFormsHost>-->

@@ -9,31 +9,61 @@ namespace FollowMe.Configuration
     [Serializable()]
     public class TrackingConfig
     {
-          [System.Xml.Serialization.XmlElement()]
+        [System.Xml.Serialization.XmlElement()]
         public DateTime Date { get; set; }
 
-          [System.Xml.Serialization.XmlElement()]
+        [System.Xml.Serialization.XmlElement()]
         public string Name { get; set; }
 
-          [System.Xml.Serialization.XmlElement()]
-        public int SearchObjectSizePixels { get; set; }
+          #region Person tracking
+
+            [System.Xml.Serialization.XmlElement()]         
+            public int SearchObjectSizePixels { get; set; }
+
+            [System.Xml.Serialization.XmlElement()]
+            public int HueMin { get; set; }
+
+            [System.Xml.Serialization.XmlElement()]
+            public int HueMax { get; set; }
+
+            [System.Xml.Serialization.XmlElement()]
+            public float SaturationMin { get; set; }
+
+            [System.Xml.Serialization.XmlElement()]
+            public float SaturationMax { get; set; }
+
+            [System.Xml.Serialization.XmlElement()]
+            public float LuminanceMin { get; set; }
+
+            [System.Xml.Serialization.XmlElement()]
+            public float LuminanceMax { get; set; }
+
+          #endregion
+
+
+        #region Danger tracking
 
           [System.Xml.Serialization.XmlElement()]
-        public int HueMin { get; set; }
+          public int DangerSearchObjectSizePixels { get; set; }
 
           [System.Xml.Serialization.XmlElement()]
-        public int HueMax { get; set; }
+          public int DangerHueMin { get; set; }
 
           [System.Xml.Serialization.XmlElement()]
-        public float SaturationMin { get; set; }
+          public int DangerHueMax { get; set; }
 
           [System.Xml.Serialization.XmlElement()]
-        public float SaturationMax { get; set; }
+          public float DangerSaturationMin { get; set; }
 
           [System.Xml.Serialization.XmlElement()]
-        public float LuminanceMin { get; set; }
+          public float DangerSaturationMax { get; set; }
 
           [System.Xml.Serialization.XmlElement()]
-        public float LuminanceMax { get; set; }
+          public float DangerLuminanceMin { get; set; }
+
+          [System.Xml.Serialization.XmlElement()]
+          public float DangerLuminanceMax { get; set; }
+
+        #endregion
     }
 }

@@ -61,6 +61,7 @@ namespace FollowMe {
         private JoystickDevice selectedJoystickDevice;
         private string droneStatus;
         private HuePickerForm huePickerForm;
+        private HuePickerForm dangerHuePickerForm;
         private bool connectedToFlyingRobot;
         private string selectedJoystick;
         private float maxYaw;
@@ -81,6 +82,16 @@ namespace FollowMe {
         private int hueMin;
         private int hueMax;
         private bool huePickerIsVisible;
+
+        private int dangerSearchObjectSizePixels;
+        private byte dangerColorBrightness;
+        private float dangerSaturationMin;
+        private float dangerSaturationMax;
+        private float dangerLuminanceMax;
+        private int dangerHueMin;
+        private int dangerHueMax;
+        private float dangerLuminanceMin;
+
         readonly CameraPreviewForm cameraPreviewForm = new CameraPreviewForm();
         private bool trackingPreviewEnabled;
         private bool searchObjectTopLeft;
@@ -468,9 +479,21 @@ namespace FollowMe {
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool DangerHuePickerIsVisible
+        {
+            get { return dangerHuePickerIsVisible; }
+            set
+            {
+                dangerHuePickerIsVisible = value;
+                NotifyOfPropertyChange(() => DangerHuePickerIsVisible);
+            }
+        }
         #endregion
 
-        #region Object tracking
+        #region Object tracking - person
 
         public int SearchObjectSizePixels
         {
@@ -655,6 +678,7 @@ namespace FollowMe {
 
         private bool glyphAheadDetected;
         private string remoteServiceUri;
+        private bool dangerHuePickerIsVisible;
         public bool GlyphAheadDetected
         { 
             get { return glyphAheadDetected; }
@@ -666,6 +690,90 @@ namespace FollowMe {
         }
 
         #endregion
+
+        #endregion
+
+        #region Object tracking - danger
+
+        public int DangerSearchObjectSizePixels
+        {
+            get { return dangerSearchObjectSizePixels; }
+            set
+            {
+                dangerSearchObjectSizePixels = value;
+                NotifyOfPropertyChange(() => DangerSearchObjectSizePixels);
+            }
+        }
+
+        public byte DangerColorBrightness
+        {
+            get { return dangerColorBrightness; }
+            set
+            {
+                dangerColorBrightness = value;
+                NotifyOfPropertyChange(() => DangerColorBrightness);
+            }
+        }
+
+        public float DangerSaturationMin
+        {
+            get { return dangerSaturationMin; }
+            set
+            {
+                dangerSaturationMin = value;
+                NotifyOfPropertyChange(() => DangerSaturationMin);
+            }
+        }
+
+        public float DangerSaturationMax
+        {
+            get { return dangerSaturationMax; }
+            set
+            {
+                dangerSaturationMax = value;
+                NotifyOfPropertyChange(() => DangerSaturationMax);
+            }
+        }
+
+        public float DangerLuminanceMin
+        {
+            get { return dangerLuminanceMin; }
+            set
+            {
+                dangerLuminanceMin = value;
+                NotifyOfPropertyChange(() => DangerLuminanceMin);
+            }
+        }
+
+        public float DangerLuminanceMax
+        {
+            get { return dangerLuminanceMax; }
+            set
+            {
+                dangerLuminanceMax = value;
+                NotifyOfPropertyChange(() => DangerLuminanceMax);
+            }
+        }
+
+        public int DangerHueMin
+        {
+            get { return dangerHueMin; }
+            set
+            {
+                dangerHueMin = value;
+                NotifyOfPropertyChange(() => DangerHueMin);
+            }
+        }
+
+        public int DangerHueMax
+        {
+            get { return dangerHueMax; }
+            set
+            {
+                dangerHueMax = value;
+                NotifyOfPropertyChange(() => DangerHueMax);
+            }
+        }
 
         #endregion
 
@@ -692,7 +800,6 @@ namespace FollowMe {
         }
 
         #endregion
-
 
         #region Service for SmartPhone
 
@@ -890,6 +997,7 @@ namespace FollowMe {
 
             var trackingConfig = fileBasedTrackingConfigProvider.LoadTrackingConfig();
 
+            // Person tracking config
             SearchObjectSizePixels = trackingConfig.SearchObjectSizePixels;
             HueMax = trackingConfig.HueMax;
             HueMin = trackingConfig.HueMin;
@@ -897,6 +1005,15 @@ namespace FollowMe {
             SaturationMin = trackingConfig.SaturationMin;
             LuminanceMax = trackingConfig.LuminanceMax;
             LuminanceMin = trackingConfig.LuminanceMin;
+
+            // Danger tracking config
+            DangerSearchObjectSizePixels = trackingConfig.DangerSearchObjectSizePixels;
+            DangerHueMax = trackingConfig.DangerHueMax;
+            DangerHueMin = trackingConfig.DangerHueMin;
+            DangerLuminanceMax = trackingConfig.DangerLuminanceMax;
+            DangerLuminanceMin = trackingConfig.DangerLuminanceMin;
+            DangerSaturationMax = trackingConfig.DangerSaturationMax;
+            DangerSaturationMin = trackingConfig.DangerSaturationMin;
 
         }
 
@@ -1098,11 +1215,11 @@ namespace FollowMe {
         /// <param name="e"></param>
         public void ButtonShowHuePicker(object sender, RoutedEventArgs e)
         {
-            huePickerForm = new HuePickerForm(eventAggregator, new HuePickerMessage(HueMin, HueMax));
+            huePickerForm = new HuePickerForm(eventAggregator, new HuePickerMessage(HuePickerMessageType.Person,  HueMin, HueMax));
             huePickerForm.Show();
             HuePickerIsVisible = true;
         }
-
+              
         /// <summary>
         /// 
         /// </summary>
@@ -1112,6 +1229,19 @@ namespace FollowMe {
         {
             huePickerForm.Hide();
             HuePickerIsVisible = false;
+        }
+
+        public void DangerButtonShowHuePicker(object sender, RoutedEventArgs e)
+        {
+            dangerHuePickerForm = new HuePickerForm(eventAggregator, new HuePickerMessage(HuePickerMessageType.Danger, DangerHueMin, DangerHueMax));
+            dangerHuePickerForm.Show();
+            DangerHuePickerIsVisible = true;
+        }
+
+        public void DangerButtonHideHuePicker(object sender, RoutedEventArgs e)
+        {
+            dangerHuePickerForm.Hide();
+            DangerHuePickerIsVisible = false;
         }
 
         public void ButtonSaveTrackingConfig(object sender, RoutedEventArgs e)
@@ -1125,10 +1255,17 @@ namespace FollowMe {
                 LuminanceMax = LuminanceMax,
                 LuminanceMin = LuminanceMin,
                 SaturationMax = SaturationMax,
-                SaturationMin = SaturationMin
+                SaturationMin = SaturationMin,
+                DangerHueMax = DangerHueMax,
+                DangerHueMin = DangerHueMin,
+                DangerLuminanceMax = DangerLuminanceMax,
+                DangerLuminanceMin = DangerLuminanceMin,
+                DangerSaturationMax = DangerSaturationMax,
+                DangerSaturationMin = DangerSaturationMin,
+                DangerSearchObjectSizePixels = DangerSearchObjectSizePixels
             });
         }
-
+            
 
         public void ButtonStartAutonomousFlight(object sender, RoutedEventArgs e)
         {
@@ -1495,8 +1632,16 @@ namespace FollowMe {
         #region handle messages from eventAggregator
         public void Handle(HuePickerMessage message)
         {
-            HueMax = message.HueMax;
-            HueMin = message.HueMin;
+            if (message.Type == HuePickerMessageType.Person)
+            {
+                HueMax = message.HueMax;
+                HueMin = message.HueMin;
+            }
+            else
+            {
+                DangerHueMax = message.HueMax;
+                DangerHueMin = message.HueMin;
+            }
         }
 
         public void Handle(StopMessage message)
@@ -1505,5 +1650,7 @@ namespace FollowMe {
         }
 
         #endregion
+
+     
     }
 }

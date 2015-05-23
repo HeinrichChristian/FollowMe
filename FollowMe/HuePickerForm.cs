@@ -13,6 +13,8 @@ namespace FollowMe
         
         private HuePicker huePicker;
 
+        private HuePickerMessageType type;
+
         public HuePickerForm(IEventAggregator eventAggregator, HuePickerMessage huePickerMessage)
         {
             if (eventAggregator == null) throw new ArgumentNullException("eventAggregator");
@@ -22,12 +24,13 @@ namespace FollowMe
             huePicker1.Max = huePickerMessage.HueMax;
             huePicker1.Min = huePickerMessage.HueMin;
             huePicker1.Invalidate();
+            type = huePickerMessage.Type;
             huePicker1.ValuesChanged += huePicker1_ValuesChanged;
         }
 
         void huePicker1_ValuesChanged(object sender, EventArgs e)
         {
-            eventAggregator.Publish(new HuePickerMessage(huePicker1.Min, huePicker1.Max), action =>
+            eventAggregator.Publish(new HuePickerMessage(type, huePicker1.Min, huePicker1.Max), action =>
             {
                 Task.Factory.StartNew(action);
 
