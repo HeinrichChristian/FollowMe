@@ -205,7 +205,8 @@
                         
                             
                             <CheckBox Grid.Row="2" Grid.Column="0" Content="Aktiviere Objekterkennung" Name="ObjectDetectionEnabled"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-                            <CheckBox Grid.Row="2" Grid.Column="1" Content="Aktiviere Trackingvorschau" Name="TrackingPreviewEnabled"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                            <CheckBox Grid.Row="2" Grid.Column="1" Content="Aktiviere Tracking für Person" Name="TrackingPreviewEnabled"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                            <CheckBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"  Content="Aktiviere Tracking für Gefahr" Name="DangerTrackingPreviewEnabled"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
                             <TabControl Grid.Row="3" Grid.Column="0" Grid.RowSpan="9" Grid.ColumnSpan="3" >
                                 <TabItem Header="Person" >
                                     <Grid>

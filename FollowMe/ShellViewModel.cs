@@ -83,6 +83,7 @@ namespace FollowMe {
         private int hueMax;
         private bool huePickerIsVisible;
 
+        private bool dangerTrackingPreviewEnabled;
         private int dangerSearchObjectSizePixels;
         private byte dangerColorBrightness;
         private float dangerSaturationMin;
@@ -185,6 +186,16 @@ namespace FollowMe {
             {
                 trackingPreviewEnabled = value;
                 NotifyOfPropertyChange(() => TrackingPreviewEnabled);
+            }
+        }
+
+        public bool DangerTrackingPreviewEnabled
+        {
+            get { return dangerTrackingPreviewEnabled; }
+            set
+            {
+                dangerTrackingPreviewEnabled = value;
+                NotifyOfPropertyChange(() => DangerTrackingPreviewEnabled);
             }
         }
 
@@ -1524,43 +1535,77 @@ namespace FollowMe {
             var targetLocationByColor = TargetLocation.Unknown;
             var targetLocationByGlyph = TargetLocation.Unknown;
 
+            var dangerLocationByColor = TargetLocation.Unknown;
+
             if (targetLocator != null)
             {
-                try
+                if (TrackingPreviewEnabled)
                 {
-                    targetLocationByColor = targetLocator.GetTargetLocation(TrackingPreviewEnabled,
-                                        SearchObjectSizePixels,
-                                        HueMin,
-                                        HueMax,
-                                        SaturationMin,
-                                        SaturationMax,
-                                        LuminanceMin,
-                                        LuminanceMax);
-                    LastKnownTargetLocationByColor = targetLocationByColor;
-                    eventAggregator.Publish(new PersonLocationMessage(targetLocationByColor), action =>
+                    try
                     {
-                        Task.Factory.StartNew(action);
+                        targetLocationByColor = targetLocator.GetTargetLocation(TrackingPreviewEnabled,
+                                            SearchObjectSizePixels,
+                                            HueMin,
+                                            HueMax,
+                                            SaturationMin,
+                                            SaturationMax,
+                                            LuminanceMin,
+                                            LuminanceMax);
+                        LastKnownTargetLocationByColor = targetLocationByColor;
+                        eventAggregator.Publish(new PersonLocationMessage(targetLocationByColor), action =>
+                        {
+                            Task.Factory.StartNew(action);
 
-                    });
-                }
-                catch (Exception exception)
-                {
-                    Log.Error(exception);
-                }
-
-                try
-                {
-                    targetLocationByGlyph = targetLocator.GetGlyphLocation();
-                    eventAggregator.Publish(new DangerLocationMessage(targetLocationByGlyph), action =>
+                        });
+                    }
+                    catch (Exception exception)
                     {
-                        Task.Factory.StartNew(action);
+                        Log.Error(exception);
+                    }
+                }
 
-                    });
-                }
-                catch (Exception exception)
+                if (DangerTrackingPreviewEnabled)
                 {
-                    Log.Error(exception);
+                    try
+                    {
+                        dangerLocationByColor = targetLocator.GetTargetLocation(DangerTrackingPreviewEnabled,
+                                            DangerSearchObjectSizePixels,
+                                            DangerHueMin,
+                                            DangerHueMax,
+                                            DangerSaturationMin,
+                                            DangerSaturationMax,
+                                            DangerLuminanceMin,
+                                            DangerLuminanceMax);
+
+                        eventAggregator.Publish(new DangerLocationMessage(dangerLocationByColor), action =>
+                        {
+                            Task.Factory.StartNew(action);
+
+                        });
+                    }
+                    catch (Exception exception)
+                    {
+                        Log.Error(exception);
+                    }
+
                 }
+
+                Log.Info("Locations: Person {0} - Danger {1}", targetLocationByColor, dangerLocationByColor);
+
+                //try
+                //{
+                //    targetLocationByGlyph = targetLocator.GetGlyphLocation();
+                //    eventAggregator.Publish(new DangerLocationMessage(targetLocationByGlyph), action =>
+                //    {
+                //        Task.Factory.StartNew(action);
+
+                //    });
+                //}
+                //catch (Exception exception)
+                //{
+                //    Log.Error(exception);
+                //}
+
 
                 
             }
@@ -1614,17 +1659,17 @@ namespace FollowMe {
             }
 
 
-            if(targetLocationByGlyph == TargetLocation.TopCenter 
-                || targetLocationByGlyph == TargetLocation.CenterCenter)
-            {
+            //if(targetLocationByGlyph == TargetLocation.TopCenter 
+            //    || targetLocationByGlyph == TargetLocation.CenterCenter)
+            //{
 
-                Log.Info("ATTENTION!!!!! Target ahead!!!");
-                GlyphAheadDetected = true;
-            }
-            else
-            {
-                GlyphAheadDetected = false;
-            }
+            //    Log.Info("ATTENTION!!!!! Target ahead!!!");
+            //    GlyphAheadDetected = true;
+            //}
+            //else
+            //{
+            //    GlyphAheadDetected = false;
+            //}
 
             
         }
