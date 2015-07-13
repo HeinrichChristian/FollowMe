@@ -12,10 +12,10 @@
       </basicHttpBinding>
     </bindings>
     <client>
-      <endpoint address="http://192.168.178.32:8080/FollowMe" binding="basicHttpBinding"
+      <endpoint address="http://192.168.0.140:8080/FollowMe" binding="basicHttpBinding"
         bindingConfiguration="BasicHttpBinding_IRemoteControl" contract="IRemoteControl"
         name="BasicHttpBinding_IRemoteControl" />
-      <endpoint address="http://192.168.178.32:8080/FollowMe" binding="basicHttpBinding"
+      <endpoint address="http://192.168.0.140:8080/FollowMe" binding="basicHttpBinding"
         bindingConfiguration="BasicHttpBinding_IRemoteControl1" contract="FollowMeService.IRemoteControl"
         name="BasicHttpBinding_IRemoteControl1" />
     </client>
